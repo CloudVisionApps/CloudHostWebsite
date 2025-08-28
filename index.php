@@ -65,204 +65,264 @@
     <?php include 'header.php'; ?>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Modern Background with Gradient Mesh -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22]">
-            <!-- Animated Background Elements -->
-            <div class="absolute top-0 left-0 w-full h-full">
-                <div class="absolute top-20 left-20 w-72 h-72 bg-[#1683ab]/10 rounded-full blur-3xl animate-pulse"></div>
-                <div class="absolute top-40 right-20 w-96 h-96 bg-[#1e9975]/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-                <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-[#1683ab]/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+    <section class="relative min-h-screen py-24 overflow-hidden">
+        <!-- Enhanced Background System -->
+        <div class="absolute inset-0">
+            <!-- Primary Gradient Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#1683ab]/20 to-slate-900"></div>
+            
+            <!-- Animated Mesh Pattern -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(22,131,171,0.08)_0%,transparent_50%)]"></div>
+                <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(30,153,117,0.08)_0%,transparent_50%)]"></div>
+                <div class="absolute bottom-0 left-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(22,131,171,0.05)_0%,transparent_50%)]"></div>
             </div>
             
             <!-- Geometric Pattern Overlay -->
-            <div class="absolute inset-0 opacity-20">
-                <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, rgba(22, 131, 171, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(30, 153, 117, 0.1) 0%, transparent 50%);"></div>
+            <div class="absolute inset-0 opacity-15">
+                <div class="absolute top-20 left-10 w-20 h-20 border border-[#1683ab]/15 rounded-full"></div>
+                <div class="absolute top-40 right-20 w-16 h-16 border border-[#1e9975]/15 rounded-full"></div>
+                <div class="absolute bottom-32 left-1/4 w-14 h-14 border border-[#1683ab]/15 rounded-full"></div>
+                <div class="absolute bottom-20 right-1/3 w-12 h-12 border border-[#1e9975]/15 rounded-full"></div>
             </div>
+            
+            <!-- Floating Animated Elements -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-1/4 left-1/6 w-1.5 h-1.5 bg-[#1683ab]/30 rounded-full animate-ping" style="animation-delay: 0s;"></div>
+                <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-[#1e9975]/30 rounded-full animate-ping" style="animation-delay: 2s;"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-[#1683ab]/25 rounded-full animate-ping" style="animation-delay: 4s;"></div>
+                <div class="absolute bottom-1/3 right-1/6 w-1 h-1 bg-[#1e9975]/20 rounded-full animate-ping" style="animation-delay: 6s;"></div>
+            </div>
+            
+       
         </div>
         
-        <!-- Content Container -->
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <!-- Badge -->
-            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-[#1683ab]/30 rounded-full text-[#1683ab] text-sm font-medium backdrop-blur-sm mb-8">
-                <i class="fas fa-rocket mr-2 text-[#1e9975]"></i>
-                #1 Български хостинг провайдер
-            </div>
-            
-            <!-- Main Headline with Integrated Domain Search -->
-            <div class="space-y-8 mb-12">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                    Създайте бъдещето си в
-                    <span class="bg-gradient-to-r from-[#1683ab] via-[#1e9975] to-[#1683ab] bg-clip-text text-transparent animate-gradient-x">
-                        облака
-                    </span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    КлаудХост - вашият надежден партньор за професионален уеб хостинг с 99.9% гаранция за работа
-                </p>
-                
-                <!-- Integrated Domain Search Form -->
-                <div class="max-w-2xl mx-auto">
-                    <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-                        <div class="text-center mb-6">
-                            <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-globe text-white text-2xl"></i>
+        <!-- Content Container --> 
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <!-- Left Side - Enhanced Content -->
+                <div class="space-y-6">
+                    <!-- Enhanced Badge -->
+                    <div class="inline-flex items-center px-3 py-1.5 bg-[#1683ab]/15 border border-[#1e9975]/25 rounded-full backdrop-blur-sm">
+                        <div class="w-1.5 h-1.5 bg-[#1e9975] rounded-full mr-2 animate-pulse"></div>
+                        <span class="text-[#1e9975] text-xs font-medium">Ново в КлаудХост</span>
+                    </div>
+                    
+                    <!-- Enhanced Headline -->
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                            <span class="text-white">Най-доброто</span>
+                            <br>
+                            <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">хостинг решение</span>
+                            <br>
+                            <span class="text-white">за вашия бизнес</span>
+                        </h1>
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-lg">
+                            Професионален хостинг с 99.9% uptime, 24/7 поддръжка и най-новите технологии за вашия уебсайт.
+                        </p>
+                    </div>
+                    
+                    <!-- Enhanced Stats -->
+                    <div class="grid grid-cols-3 gap-4 py-4">
+                        <div class="group cursor-pointer">
+                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
+                                <!-- Animated Background -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <!-- Floating Elements -->
+                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
+                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-server text-white text-lg"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">99.9%</div>
+                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Uptime</div>
+                                </div>
                             </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Намерете домейн</h3>
-                            <p class="text-gray-400">Проверете наличността на вашия идеален домейн</p>
                         </div>
                         
-                        <!-- Search Form -->
-                        <div class="space-y-4">
-                            <div class="flex gap-3">
-                                <input type="text" placeholder="example" class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:bg-white/20 transition-all duration-300">
-                                <select class="px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-[#1e9975] focus:bg-white/20 transition-all duration-300">
-                                    <option value=".com">.com</option>
-                                    <option value=".bg">.bg</option>
-                                    <option value=".net">.net</option>
-                                    <option value=".org">.org</option>
-                                    <option value=".eu">.eu</option>
-                                    <option value=".co">.co</option>
-                                </select>
+                        <div class="group cursor-pointer">
+                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
+                                <!-- Animated Background -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <!-- Floating Elements -->
+                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
+                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-users text-white text-lg"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">1000+</div>
+                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Клиенти</div>
+                                </div>
                             </div>
-                            <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                                <i class="fas fa-search mr-2"></i>
-                                Провери наличност
-                            </button>
+                        </div>
+                        
+                        <div class="group cursor-pointer">
+                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
+                                <!-- Animated Background -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <!-- Floating Elements -->
+                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
+                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-rocket text-white text-lg"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">&lt;2мин</div>
+                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Поддръжка</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button class="px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1e9975]/25 flex items-center justify-center gap-2 group">
+                            <span>Започнете сега</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                        <button class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-[#1683ab]/30 transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2 group">
+                            <i class="fas fa-play text-[#1e9975]"></i>
+                            <span>Вижте демо</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Enhanced Trust Indicators -->
+                    <div class="flex items-center space-x-4 pt-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-[#1e9975] text-sm"></i>
+                            <span class="text-xs text-gray-400">SSL защита</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-database text-[#1683ab] text-sm"></i>
+                            <span class="text-xs text-gray-400">SSD дискове</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-[#1e9975] text-sm"></i>
+                            <span class="text-xs text-gray-400">CDN включен</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Enhanced Domain Search Form -->
+                <div class="relative">
+                    <!-- Enhanced Form Container -->
+                    <div class="relative">
+                        <!-- Complex Background System -->
+                        <div class="absolute inset-0">
+                            <!-- Primary Background Shape -->
+                            <div class="absolute inset-0 bg-[#1683ab]/8 rounded-[2rem] blur-lg"></div>
+                            
+                            <!-- Secondary Background Elements -->
+                            <div class="absolute -top-3 -right-3 w-20 h-20 bg-[#1683ab]/8 rounded-full blur-xl"></div>
+                            <div class="absolute -bottom-3 -left-3 w-16 h-16 bg-[#1e9975]/8 rounded-full blur-xl"></div>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-[#1683ab]/5 rounded-full blur-2xl"></div>
+                        </div>
+                        
+                        <!-- Main Form Container -->
+                        <div class="relative bg-white/8 backdrop-blur-lg border border-[#1683ab]/15 rounded-[2rem] p-5 overflow-hidden">
+                            <!-- Enhanced Floating Elements -->
+                            <div class="absolute inset-0 pointer-events-none">
+                                <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
+                                <div class="absolute bottom-3 left-3 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                                <div class="absolute top-1/2 left-2 w-1 h-1 bg-[#1683ab]/30 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+                                <div class="absolute top-1/4 right-1/4 w-1 h-1 bg-[#1e9975]/20 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
+                            </div>
+                            
+                            <!-- Enhanced Form Header -->
+                            <div class="text-center mb-5 relative">
+                                <div class="absolute inset-0 bg-[#1683ab]/8 rounded-full blur-lg"></div>
+                                <div class="relative inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-full mb-3 shadow-lg">
+                                    <i class="fas fa-search text-white text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Намерете домейн</h3>
+                                <p class="text-white/70 text-sm">Проверете наличността на вашия идеален домейн</p>
+                            </div>
+                            
+                            <!-- Enhanced Domain Search Form -->
+                            <form class="space-y-3 relative">
+                                <div class="relative group">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-globe text-white/60 group-hover:text-[#1683ab] transition-colors duration-300 text-sm"></i>
+                                    </div>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Въведете име на домейн" 
+                                        class="w-full pl-10 pr-3 py-2.5 bg-white/15 border border-white/25 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/40 focus:border-[#1683ab] transition-all duration-300 text-sm group-hover:border-[#1683ab]/40"
+                                    >
+                                </div>
+                                
+                                <button 
+                                    type="submit" 
+                                    class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold py-2.5 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1e9975]/25 flex items-center justify-center gap-2 text-sm relative overflow-hidden group"
+                                >
+                                    <div class="absolute inset-0 bg-gradient-to-r from-[#1a8a6a] to-[#147a9a] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <span class="relative z-10 flex items-center gap-2">
+                                        <i class="fas fa-search text-sm"></i>
+                                        Провери наличност
+                                    </span>
+                                </button>
+                            </form>
+                            
+                            <!-- Enhanced TLD Selection -->
+                            <div class="mt-5 pt-4 border-t border-white/15 relative">
+                                <p class="text-xs text-white/70 mb-2 text-center font-medium">Популярни домейни:</p>
+                                <div class="grid grid-cols-3 gap-1.5">
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.com</div>
+                                                <div class="text-xs text-white/70 mt-0.5">15лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.bg</div>
+                                                <div class="text-xs text-white/70 mt-0.5">12лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.net</div>
+                                                <div class="text-xs text-white/70 mt-0.5">18лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Enhanced Trust Indicators -->
+                            <div class="mt-4 pt-3 border-t border-white/15">
+                                <div class="flex items-center justify-center space-x-4 text-white/70 text-xs">
+                                    <div class="flex items-center group">
+                                        <div class="w-5 h-5 bg-[#1e9975]/15 rounded-full flex items-center justify-center mr-1.5 group-hover:bg-[#1e9975]/25 transition-colors duration-300">
+                                            <i class="fas fa-shield-alt text-[#1e9975] text-xs"></i>
+                                        </div>
+                                        <span class="group-hover:text-white transition-colors duration-300">SSL включен</span>
+                                    </div>
+                                    <div class="flex items-center justify-center group">
+                                        <div class="w-5 h-5 bg-[#1683ab]/15 rounded-full flex items-center justify-center mr-1.5 group-hover:bg-[#1683ab]/25 transition-colors duration-300">
+                                            <i class="fas fa-clock text-[#1683ab] text-xs"></i>
+                                        </div>
+                                        <span class="group-hover:text-white transition-colors duration-300">Моментална регистрация</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Key Stats -->
-            <div class="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-[#1e9975] mb-1">99.9%</div>
-                    <div class="text-sm text-gray-400">Uptime</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-[#1683ab] mb-1">&lt;2мин</div>
-                    <div class="text-sm text-gray-400">Поддръжка</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-[#1e9975] mb-1">24/7</div>
-                    <div class="text-sm text-gray-400">Достъпност</div>
-                </div>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                <a href="#plans" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-8 py-4 rounded-2xl font-bold shadow-2xl hover:shadow-[#1e9975]/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
-                    <span class="mr-3">Започнете днес</span>
-                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
-                </a>
-                <a href="#features" class="group border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 text-lg px-8 py-4 rounded-2xl font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center">
-                    <i class="fas fa-play mr-3 group-hover:scale-110 transition-transform duration-300"></i>
-                    Демо
-                </a>
-            </div>
-        </div>
-        
-        <!-- Floating Animated Cloud TLDs -->
-        <div class="absolute inset-0 pointer-events-none">
-            <!-- .com Cloud - Top left of form -->
-            <div class="absolute top-1/3 left-1/3 animate-float-slow">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1e9975]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1e9975]">.com</span>
-                            <span class="text-sm text-gray-300">12.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1e9975]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1e9975]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- .bg Cloud - Top right of form -->
-            <div class="absolute top-1/3 right-1/3 animate-float-medium" style="animation-delay: 2s;">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1683ab]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1683ab]">.bg</span>
-                            <span class="text-sm text-gray-300">15.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1683ab]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1683ab]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- .net Cloud - Bottom left of form -->
-            <div class="absolute bottom-1/3 left-1/3 animate-float-fast" style="animation-delay: 4s;">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1e9975]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1e9975]">.net</span>
-                            <span class="text-sm text-gray-300">14.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1e9975]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1e9975]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- .org Cloud - Bottom right of form -->
-            <div class="absolute bottom-1/3 right-1/3 animate-float-slow" style="animation-delay: 6s;">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1683ab]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1683ab]">.org</span>
-                            <span class="text-sm text-gray-300">13.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1683ab]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1683ab]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- .eu Cloud - Above left of form -->
-            <div class="absolute top-1/4 left-1/4 animate-float-medium" style="animation-delay: 1s;">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1e9975]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1e9975]">.eu</span>
-                            <span class="text-sm text-gray-300">16.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1e9975]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1e9975]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- .co Cloud - Above right of form -->
-            <div class="absolute top-1/4 right-1/4 animate-float-fast" style="animation-delay: 3s;">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full blur-md animate-pulse"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-[#1683ab]/40 transition-all duration-500">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-lg font-bold text-[#1683ab]">.co</span>
-                            <span class="text-sm text-gray-300">11.99</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#1683ab]/40 rounded-full"></div>
-                        <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-[#1683ab]/30 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-[#1e9975] rounded-full animate-ping"></div>
-            <div class="absolute top-1/3 left-1/4 w-3 h-3 bg-[#1683ab] rounded-full animate-ping" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-1/4 right-1/3 w-2 h-2 bg-[#1e9975] rounded-full animate-ping" style="animation-delay: 2s;"></div>
         </div>
     </section>
 
