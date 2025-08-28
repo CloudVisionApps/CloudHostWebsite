@@ -400,23 +400,72 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section-clean bg-clean">
-        <div class="container-clean text-center">
+    <section class="py-24 bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-[#1683ab]/30 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-[#1e9975]/30 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-[#1683ab]/30 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="animate-fade-in-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-8">
-                    Ready to <span class="text-gradient-clean">Transform</span> Your Business?
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-lg">
+                    <i class="fas fa-rocket mr-3 text-lg"></i>
+                    Готови сте за промяна?
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                    Готови ли сте да <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">трансформирате</span> вашия бизнес?
                 </h2>
-                <p class="text-xl md:text-2xl text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
-                    Join thousands of satisfied customers who trust CloudHost Pro for their hosting needs. 
-                    Experience the difference that premium hosting makes.
+                <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Присъединете се към доволните клиенти, които се доверяват на КлаудХост за своите хостинг нужди. 
+                    Изживейте разликата, която премиум хостингът прави.
                 </p>
+                
+                <!-- Trust Indicators -->
+                <div class="flex items-center justify-center space-x-8 text-gray-400 mb-12">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>Без скрити такси</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>30-дневна гаранция</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>Безплатна миграция</span>
+                    </div>
+                </div>
+                
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <a href="#plans" class="btn-clean text-xl px-12 py-5">
-                        Start Your Journey Today
+                    <a href="#plans" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-xl px-12 py-5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+                        <span>Започнете днес</span>
+                        <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
                     </a>
-                    <a href="#contact" class="btn-outline-clean text-xl px-12 py-5">
-                        Talk to an Expert
+                    <a href="#contact" class="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-xl px-12 py-5 rounded-xl font-semibold transition-all duration-300 flex items-center backdrop-blur-sm">
+                        <i class="fas fa-headset mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        Говорете с експерт
                     </a>
+                </div>
+                
+                <!-- Additional CTA Info -->
+                <div class="mt-12 pt-8 border-t border-white/10">
+                    <p class="text-sm text-gray-400 mb-4">Няма дългосрочни договори • Отменете по всяко време • 24/7 поддръжка</p>
+                    <div class="flex justify-center items-center space-x-6 text-gray-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
+                            <span>SSL включен</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-[#1e9975] mr-2"></i>
+                            <span>SSD хранилище</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-[#1683ab] mr-2"></i>
+                            <span>CDN включен</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
