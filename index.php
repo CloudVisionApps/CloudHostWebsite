@@ -213,6 +213,93 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="py-24 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22] relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
+                    <i class="fas fa-star mr-2"></i>
+                    Нашите постижения
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">КлаудХост</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Изживейте перфектното съчетание от производителност, сигурност и надеждност, което ни отличава от конкуренцията
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 lg:gap-12">
+                <!-- Uptime Stat -->
+                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                            <i class="fas fa-chart-line text-[#1683ab] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1683ab] transition-colors duration-300">99.9%</div>
+                    <div class="text-lg text-gray-300 font-medium mb-2">Гарантирана работа</div>
+                    <div class="text-sm text-gray-400">Най-високата надеждност за вашия сайт</div>
+                </div>
+                
+                <!-- Customers Stat -->
+                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
+                            <i class="fas fa-users text-[#1e9975] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center">
+                            <i class="fas fa-heart text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1e9975] transition-colors duration-300">24/7</div>
+                    <div class="text-lg text-gray-300 font-medium mb-2">Експертна поддръжка</div>
+                    <div class="text-sm text-gray-400">Нашият екип е тук за вас</div>
+                </div>
+                
+                <!-- Support Stat -->
+                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                            <i class="fas fa-clock text-[#1683ab] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center">
+                            <i class="fas fa-bolt text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1683ab] transition-colors duration-300">&lt;2мин</div>
+                    <div class="text-lg text-gray-300 font-medium mb-2">Време за отговор</div>
+                    <div class="text-sm text-gray-400">Бърза и ефективна поддръжка</div>
+                </div>
+                
+                <!-- Experience Stat -->
+                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
+                            <i class="fas fa-trophy text-[#1e9975] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center">
+                            <i class="fas fa-crown text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1e9975] transition-colors duration-300">100%</div>
+                    <div class="text-lg text-gray-300 font-medium mb-2">Гаранция за качество</div>
+                    <div class="text-sm text-gray-400">Доверете се на нашата експертиза</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Plans -->
     <section id="plans" class="py-24 bg-white/5 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,93 +394,6 @@
                             Започнете
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-24 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22] relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
-            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
-                    <i class="fas fa-star mr-2"></i>
-                    Нашите постижения
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">КлаудХост</span>?
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Изживейте перфектното съчетание от производителност, сигурност и надеждност, което ни отличава от конкуренцията
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8 lg:gap-12">
-                <!-- Uptime Stat -->
-                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
-                            <i class="fas fa-chart-line text-[#1683ab] text-2xl group-hover:text-white transition-colors duration-300"></i>
-                        </div>
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center">
-                            <i class="fas fa-check text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1683ab] transition-colors duration-300">99.9%</div>
-                    <div class="text-lg text-gray-300 font-medium mb-2">Гарантирана работа</div>
-                    <div class="text-sm text-gray-400">Най-високата надеждност за вашия сайт</div>
-                </div>
-                
-                <!-- Customers Stat -->
-                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
-                            <i class="fas fa-users text-[#1e9975] text-2xl group-hover:text-white transition-colors duration-300"></i>
-                        </div>
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center">
-                            <i class="fas fa-heart text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1e9975] transition-colors duration-300">24/7</div>
-                    <div class="text-lg text-gray-300 font-medium mb-2">Експертна поддръжка</div>
-                    <div class="text-sm text-gray-400">Нашият екип е тук за вас</div>
-                </div>
-                
-                <!-- Support Stat -->
-                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
-                            <i class="fas fa-clock text-[#1683ab] text-2xl group-hover:text-white transition-colors duration-300"></i>
-                        </div>
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center">
-                            <i class="fas fa-bolt text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1683ab] transition-colors duration-300">&lt;2мин</div>
-                    <div class="text-lg text-gray-300 font-medium mb-2">Време за отговор</div>
-                    <div class="text-sm text-gray-400">Бърза и ефективна поддръжка</div>
-                </div>
-                
-                <!-- Experience Stat -->
-                <div class="group text-center animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
-                            <i class="fas fa-trophy text-[#1e9975] text-2xl group-hover:text-white transition-colors duration-300"></i>
-                        </div>
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center">
-                            <i class="fas fa-crown text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <div class="text-4xl font-bold mb-3 text-white group-hover:text-[#1e9975] transition-colors duration-300">100%</div>
-                    <div class="text-lg text-gray-300 font-medium mb-2">Гаранция за качество</div>
-                    <div class="text-sm text-gray-400">Доверете се на нашата експертиза</div>
                 </div>
             </div>
         </div>
