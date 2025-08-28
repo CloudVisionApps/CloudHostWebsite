@@ -224,70 +224,99 @@
     </section>
 
     <!-- Pricing Plans -->
-    <section id="plans" class="section-dark bg-dark">
-        <div class="">
+    <section id="plans" class="py-24 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
-                    Изберете вашия <span class="text-gradient-dark">План</span>
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
+                    <i class="fas fa-tags mr-2"></i>
+                    Цени и планове
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Изберете вашия <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">План</span>
                 </h2>
-                <p class="text-xl text-secondary max-w-3xl mx-auto">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Изберете перфектното хостинг решение, което отговаря на нуждите и бюджета на вашия бизнес.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Starter Plan -->
-                <div class="pricing-card-clean text-center p-8 hover-lift">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.starter.name'); ?></h3>
-                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
-                        <div class="text-lg text-secondary"><?php echo_config('plans.starter.period'); ?></div>
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            <?php echo_config('plans.starter.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1683ab]"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.starter.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.starter.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
                     </div>
-                    <ul class="space-y-3 mb-8 text-left">
-                        <?php foreach (get_config('plans.starter.features') as $feature): ?>
-                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <button class="w-full btn-clean py-3">
-                        Започнете
-                    </button>
                 </div>
 
                 <!-- Professional Plan -->
-                <div class="pricing-card-clean popular text-center p-8 hover-lift">
-                    <div class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full inline-block mb-4">
-                        Най-популярен
+                <div class="group relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-[#1683ab]/50 hover:border-[#1683ab] scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
+                            <i class="fas fa-star mr-2"></i>
+                            Препоръчан
+                        </div>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.professional.name'); ?></h3>
-                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
-                        <div class="text-lg text-secondary"><?php echo_config('plans.professional.period'); ?></div>
+                    
+                    <div class="text-center mt-4">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            <?php echo_config('plans.professional.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.professional.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.professional.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1e9975] to-[#1683ab] hover:from-[#1a8a6a] hover:to-[#147a9a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
                     </div>
-                    <ul class="space-y-3 mb-8 text-left">
-                        <?php foreach (get_config('plans.professional.features') as $feature): ?>
-                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <button class="w-full btn-clean py-3">
-                        Започнете
-                    </button>
                 </div>
 
                 <!-- Enterprise Plan -->
-                <div class="pricing-card-clean text-center p-8 hover-lift">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.enterprise.name'); ?></h3>
-                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
-                        <div class="text-lg text-secondary"><?php echo_config('plans.enterprise.period'); ?></div>
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1e9975] transition-colors duration-300">
+                            <?php echo_config('plans.enterprise.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.enterprise.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
                     </div>
-                    <ul class="space-y-3 mb-8 text-left">
-                        <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
-                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <button class="w-full btn-clean py-3">
-                        Започнете
-                    </button>
                 </div>
             </div>
         </div>
