@@ -4,7 +4,7 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo Section -->
             <div class="flex items-center space-x-4">
-            <img src="assets/img/logo-on-dark.svg" alt="Logo" class="h-12">
+            <img src="assets/img/logo-on-dark.svg" alt="Logo" class="h-10">
             </div>
 
             <!-- Center Navigation Menu -->

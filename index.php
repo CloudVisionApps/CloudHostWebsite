@@ -86,8 +86,288 @@
         </div>
     </section>
 
+    <!-- Migration Section -->
+    <section class="py-32 relative overflow-hidden ">
+        <!-- Enhanced Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-20 h-20 border border-white/15 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-20 right-1/4 w-28 h-28 border border-white/15 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <!-- Floating Tech Icons -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-32 right-20 text-white/10 animate-bounce" style="animation-delay: 0s;">
+                <i class="fas fa-database text-4xl"></i>
+            </div>
+            <div class="absolute top-1/3 left-16 text-white/10 animate-bounce" style="animation-delay: 1s;">
+                <i class="fas fa-code text-3xl"></i>
+            </div>
+            <div class="absolute bottom-1/3 right-1/4 text-white/10 animate-bounce" style="animation-delay: 2s;">
+                <i class="fas fa-server text-4xl"></i>
+            </div>
+        </div>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1683ab]/5 to-[#1e9975]/5"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header Section -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-2xl">
+                    <i class="fas fa-exchange-alt mr-3 text-lg"></i>
+                    Безплатна миграция
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                    Преместете сайта си <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">безплатно</span> при нас
+                </h2>
+                <p class="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Нашият експертен екип ще премести вашия сайт от текущия хостинг безплатно. 
+                    <span class="text-white font-semibold">Без прекъсване, без проблеми, без скрити такси.</span>
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <!-- Left Side - Enhanced Content -->
+                <div class="text-center lg:text-left">
+                    <!-- Migration Benefits with Enhanced Icons -->
+                    <div class="space-y-6 mb-12">
+                        <div class="group flex items-center text-gray-300 hover:text-white transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <i class="fas fa-database text-[#1e9975] text-xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-semibold text-lg mb-1">Безплатна миграция</div>
+                                <div class="text-gray-400">На всички файлове и бази данни</div>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-center text-gray-300 hover:text-white transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <i class="fas fa-clock text-[#1683ab] text-xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-semibold text-lg mb-1">Нулево време на прекъсване</div>
+                                <div class="text-gray-400">Вашият сайт работи непрекъснато</div>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-center text-gray-300 hover:text-white transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <i class="fas fa-cogs text-[#1e9975] text-xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-semibold text-lg mb-1">Тестване и оптимизация</div>
+                                <div class="text-gray-400">След миграцията за максимална производителност</div>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-center text-gray-300 hover:text-white transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <i class="fas fa-headset text-[#1683ab] text-xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-semibold text-lg mb-1">24/7 поддръжка</div>
+                                <div class="text-gray-400">По време на целия процес</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="#contact" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-xl px-10 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-[#1e9975]/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975] to-[#1683ab] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <span class="relative z-10 flex items-center">
+                                <i class="fas fa-rocket mr-4 text-2xl group-hover:animate-bounce"></i>
+                                Започнете миграцията
+                            </span>
+                        </a>
+                        <a href="#migration-info" class="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-xl px-10 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:shadow-2xl">
+                            <i class="fas fa-info-circle mr-4 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                            Научете повече
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 pt-8 border-t border-white/10">
+                        <div class="flex items-center justify-center lg:justify-start space-x-8 text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
+                                <span>SSL включен</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-database text-[#1e9975] mr-2"></i>
+                                <span>SSD хранилище</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe text-[#1683ab] mr-2"></i>
+                                <span>CDN включен</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Enhanced Visual -->
+                <div class="relative">
+                    <!-- Main Migration Icon with Enhanced Effects -->
+                    <div class="relative mx-auto lg:mx-0">
+                        <div class="w-56 h-56 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-3xl flex items-center justify-center mx-auto shadow-2xl backdrop-blur-sm relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                            <i class="fas fa-server text-[#1683ab] text-7xl group-hover:text-white transition-all duration-500 relative z-10"></i>
+                            
+                            <!-- Enhanced Floating Elements -->
+                            <div class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-arrow-right text-white text-2xl"></i>
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 0.5s;">
+                                <i class="fas fa-check text-white text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Migration Process Steps -->
+                    <div class="mt-16 space-y-8">
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <span class="text-[#1683ab] font-bold text-2xl group-hover:text-white transition-colors duration-300">1</span>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-lg mb-1">Свържете се с нас</div>
+                                <div class="text-gray-400">Обяснете текущия хостинг и нуждите</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <span class="text-[#1e9975] font-bold text-2xl group-hover:text-white transition-colors duration-300">2</span>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-lg mb-1">Нашият екип действа</div>
+                                <div class="text-gray-400">Безопасно преместване с експертна грижа</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
+                                <span class="text-[#1683ab] font-bold text-2xl group-hover:text-white transition-colors duration-300">3</span>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-lg mb-1">Готово!</div>
+                                <div class="text-gray-400">Сайтът работи перфектно на новия хостинг</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pricing Plans -->
+    <section id="plans" class="py-24">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
+                    <i class="fas fa-tags mr-2"></i>
+                    Цени и планове
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Изберете вашия <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">План</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Изберете перфектното хостинг решение, което отговаря на нуждите и бюджета на вашия бизнес.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            <?php echo_config('plans.starter.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1683ab]"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.starter.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.starter.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="group relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-[#1683ab]/50 hover:border-[#1683ab] scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
+                            <i class="fas fa-star mr-2"></i>
+                            Препоръчан
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            <?php echo_config('plans.professional.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.professional.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.professional.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1e9975] to-[#1683ab] hover:from-[#1a8a6a] hover:to-[#147a9a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1e9975] transition-colors duration-300">
+                            <?php echo_config('plans.enterprise.name'); ?>
+                        </h3>
+                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
+                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.enterprise.period'); ?></div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
+                                <li class="flex items-center text-gray-300">
+                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Започнете
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Features Section -->
-    <section id="features" class="py-24 ">
+    <section id="features" class="py-24 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
@@ -299,106 +579,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Pricing Plans -->
-    <section id="plans" class="py-24 bg-white/5 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
-                    <i class="fas fa-tags mr-2"></i>
-                    Цени и планове
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Изберете вашия <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">План</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Изберете перфектното хостинг решение, което отговаря на нуждите и бюджета на вашия бизнес.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Starter Plan -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            <?php echo_config('plans.starter.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1683ab]"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.starter.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.starter.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Professional Plan -->
-                <div class="group relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-[#1683ab]/50 hover:border-[#1683ab] scale-105">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
-                            <i class="fas fa-star mr-2"></i>
-                            Препоръчан
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-4">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            <?php echo_config('plans.professional.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.professional.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.professional.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1e9975] to-[#1683ab] hover:from-[#1a8a6a] hover:to-[#147a9a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1e9975] transition-colors duration-300">
-                            <?php echo_config('plans.enterprise.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.enterprise.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5 relative overflow-hidden">
         <!-- Background Pattern -->
