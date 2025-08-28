@@ -369,7 +369,7 @@
     <!-- Features Section -->
     <section id="features" class="py-24 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
+            <div class="text-center mb-16">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
                     <i class="fas fa-star mr-2"></i>
                     Нашите предимства
@@ -378,116 +378,84 @@
                     Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">КлаудХост</span>?
                 </h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Изживейте перфектното съчетание от производителност, сигурност и надеждност, което ни отличава от конкуренцията
+                    Изживейте перфектното съчетание от производителност, сигурност и надеждност
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-                <!-- Feature Card 1 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-rocket text-2xl text-white"></i>
-                        </div>
+            <!-- Main Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Performance -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
-                    
-                    <div class="mt-8 text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            Светкавично бързо
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            SSD инфраструктура с глобална CDN мрежа за оптимална производителност по света.
-                        </p>
-                        
-                        <!-- Feature Stats -->
-                        <div class="bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg p-4 border border-[#1683ab]/30">
-                            <div class="text-2xl font-bold text-[#1683ab] mb-1">99.9%</div>
-                            <div class="text-sm text-gray-300">Гарантирана работа</div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Светкавично бързо</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        SSD инфраструктура с глобална CDN мрежа за оптимална производителност.
+                    </p>
+                    <div class="text-2xl font-bold text-[#1683ab]">99.9%</div>
+                    <div class="text-sm text-gray-400">Гарантирана работа</div>
                 </div>
                 
-                <!-- Feature Card 2 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-shield-alt text-2xl text-white"></i>
-                        </div>
+                <!-- Security -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
-                    
-                    <div class="mt-8 text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1e9975] transition-colors duration-300">
-                            Корпоративна сигурност
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            DDoS защита, SSL сертификати и ежедневни резервни копия включени във всеки план.
-                        </p>
-                        
-                        <!-- Feature Stats -->
-                        <div class="bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-lg p-4 border border-[#1e9975]/30">
-                            <div class="text-2xl font-bold text-[#1e9975] mb-1">256-bit</div>
-                            <div class="text-sm text-gray-300">SSL Криптиране</div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Корпоративна сигурност</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        DDoS защита, SSL сертификати и ежедневни резервни копия включени.
+                    </p>
+                    <div class="text-2xl font-bold text-[#1e9975]">256-bit</div>
+                    <div class="text-sm text-gray-400">SSL Криптиране</div>
                 </div>
                 
-                <!-- Feature Card 3 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-headset text-2xl text-white"></i>
-                        </div>
+                <!-- Support -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-white text-2xl"></i>
                     </div>
-                    
-                    <div class="mt-8 text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            24/7 Поддръжка
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            Експертен екип за поддръжка на разположение 24/7, за да ви помогне да успеете.
-                        </p>
-                        
-                        <!-- Feature Stats -->
-                        <div class="bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg p-4 border border-[#1683ab]/30">
-                            <div class="text-2xl font-bold text-[#1683ab] mb-1">&lt;2мин</div>
-                            <div class="text-sm text-gray-300">Време за отговор</div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">24/7 Поддръжка</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Експертен екип за поддръжка на разположение 24/7.
+                    </p>
+                    <div class="text-2xl font-bold text-[#1683ab]">&lt;2мин</div>
+                    <div class="text-sm text-gray-400">Време за отговор</div>
                 </div>
             </div>
             
-            <!-- Additional Features Row -->
-            <div class="mt-20 grid md:grid-cols-4 gap-8">
+            <!-- Additional Features -->
+            <div class="grid md:grid-cols-4 gap-6">
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-globe text-white"></i>
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-exchange-alt text-white"></i>
                     </div>
-                    <h4 class="font-semibold text-white mb-2">Глобална CDN</h4>
-                    <p class="text-sm text-gray-300">Световна мрежа за бърз достъп</p>
+                    <h4 class="font-semibold text-white mb-2">Безплатна миграция</h4>
+                    <p class="text-sm text-gray-300">Преместване без прекъсване</p>
                 </div>
                 
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-cogs text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-white mb-2">cPanel</h4>
+                    <p class="text-sm text-gray-300">Лесно управление</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-envelope text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-white mb-2">Имейл акаунти</h4>
+                    <p class="text-sm text-gray-300">Безлимитни</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-3">
                         <i class="fas fa-database text-white"></i>
                     </div>
-                    <h4 class="font-semibold text-white mb-2">SSD Хранилище</h4>
-                    <p class="text-sm text-gray-300">Светкавично бързи дискове</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-sync text-white"></i>
-                    </div>
-                    <h4 class="font-semibold text-white mb-2">Автоматични Backups</h4>
-                    <p class="text-sm text-gray-300">Ежедневни резервни копия</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-white"></i>
-                    </div>
-                    <h4 class="font-semibold text-white mb-2">Мониторинг 24/7</h4>
-                    <p class="text-sm text-gray-300">Постоянен надзор на системите</p>
+                    <h4 class="font-semibold text-white mb-2">SSD хранилище</h4>
+                    <p class="text-sm text-gray-300">Максимална скорост</p>
                 </div>
             </div>
         </div>
