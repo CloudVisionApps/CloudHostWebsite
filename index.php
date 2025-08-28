@@ -66,48 +66,23 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen py-24 overflow-hidden">
-        <!-- Enhanced Background System -->
-        <div class="absolute inset-0">
-            <!-- Primary Gradient Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#1683ab]/20 to-slate-900"></div>
-            
-            <!-- Animated Mesh Pattern -->
-            <div class="absolute inset-0 opacity-20">
-                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(22,131,171,0.08)_0%,transparent_50%)]"></div>
-                <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(30,153,117,0.08)_0%,transparent_50%)]"></div>
-                <div class="absolute bottom-0 left-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(22,131,171,0.05)_0%,transparent_50%)]"></div>
-            </div>
-            
-            <!-- Geometric Pattern Overlay -->
-            <div class="absolute inset-0 opacity-15">
-                <div class="absolute top-20 left-10 w-20 h-20 border border-[#1683ab]/15 rounded-full"></div>
-                <div class="absolute top-40 right-20 w-16 h-16 border border-[#1e9975]/15 rounded-full"></div>
-                <div class="absolute bottom-32 left-1/4 w-14 h-14 border border-[#1683ab]/15 rounded-full"></div>
-                <div class="absolute bottom-20 right-1/3 w-12 h-12 border border-[#1e9975]/15 rounded-full"></div>
-            </div>
-            
-            <!-- Floating Animated Elements -->
-            <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute top-1/4 left-1/6 w-1.5 h-1.5 bg-[#1683ab]/30 rounded-full animate-ping" style="animation-delay: 0s;"></div>
-                <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-[#1e9975]/30 rounded-full animate-ping" style="animation-delay: 2s;"></div>
-                <div class="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-[#1683ab]/25 rounded-full animate-ping" style="animation-delay: 4s;"></div>
-                <div class="absolute bottom-1/3 right-1/6 w-1 h-1 bg-[#1e9975]/20 rounded-full animate-ping" style="animation-delay: 6s;"></div>
-            </div>
-            
-       
+        <!-- Animated Gradient Background -->
+        <div class="header-animation">
+            <div class="animation animation-orange"></div>
+            <div class="animation animation-black"></div>
+            <div class="animation animation-gray"></div>
+            <div class="animation animation-blue"></div>
         </div>
         
+        <!-- Overlay -->
+        <div class="overlay"></div>
+      
         <!-- Content Container --> 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div class="grid lg:grid-cols-2 gap-24 items-center">
                 <!-- Left Side - Enhanced Content -->
                 <div class="space-y-6">
-                    <!-- Enhanced Badge -->
-                    <div class="inline-flex items-center px-3 py-1.5 bg-[#1683ab]/15 border border-[#1e9975]/25 rounded-full backdrop-blur-sm">
-                        <div class="w-1.5 h-1.5 bg-[#1e9975] rounded-full mr-2 animate-pulse"></div>
-                        <span class="text-[#1e9975] text-xs font-medium">Ново в КлаудХост</span>
-                    </div>
-                    
+               
                     <!-- Enhanced Headline -->
                     <div class="space-y-4">
                         <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
@@ -122,62 +97,7 @@
                         </p>
                     </div>
                     
-                    <!-- Enhanced Stats -->
-                    <div class="grid grid-cols-3 gap-4 py-4">
-                        <div class="group cursor-pointer">
-                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
-                                <!-- Animated Background -->
-                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <!-- Floating Elements -->
-                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
-                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                                
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                        <i class="fas fa-server text-white text-lg"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">99.9%</div>
-                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Uptime</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="group cursor-pointer">
-                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
-                                <!-- Animated Background -->
-                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <!-- Floating Elements -->
-                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
-                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                                
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                        <i class="fas fa-users text-white text-lg"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">1000+</div>
-                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Клиенти</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="group cursor-pointer">
-                            <div class="relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 hover:from-[#1683ab]/30 hover:to-[#1e9975]/30 rounded-2xl p-4 text-center transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-[#1e9975]/25 border border-[#1683ab]/20 overflow-hidden">
-                                <!-- Animated Background -->
-                                <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <!-- Floating Elements -->
-                                <div class="absolute top-2 right-2 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
-                                <div class="absolute bottom-2 left-2 w-1 h-1 bg-[#1e9975]/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                                
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                        <i class="fas fa-rocket text-white text-lg"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-[#1e9975] bg-clip-text text-transparent mb-1 group-hover:from-[#1683ab] group-hover:to-white transition-all duration-300">&lt;2мин</div>
-                                    <div class="text-xs text-gray-300 font-medium uppercase tracking-wide">Поддръжка</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
                     
                     <!-- Enhanced CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3">
@@ -903,7 +823,7 @@
         
         .header-animation {
             width: 100%;
-            height: 1160px;
+            height: 1560px;
             position: absolute;
             top: -180px;
             left: 0;
