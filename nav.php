@@ -1,51 +1,143 @@
-<!-- Navigation Menu -->
-<nav class="bg-gray-800 text-white">
-    <div class="container mx-auto px-6">
-        <div class="flex items-center justify-between">
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="py-4 px-2 text-white hover:text-blue-300 transition duration-300">Home</a>
-                <a href="#features" class="py-4 px-2 text-white hover:text-blue-300 transition duration-300">Features</a>
-                <a href="#plans" class="py-4 px-2 text-white hover:text-blue-300 transition duration-300">Pricing</a>
-                <a href="#about" class="py-4 px-2 text-white hover:text-blue-300 transition duration-300">About</a>
-                <a href="#contact" class="py-4 px-2 text-white hover:text-blue-300 transition duration-300">Contact</a>
+<!-- Modern Professional Navigation -->
+<nav class="nav-modern">
+    <div class="nav-container">
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+            <div class="nav-links">
+                <a href="#home" class="nav-link">
+                    <span class="nav-text">Home</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#features" class="nav-link">
+                    <span class="nav-text">Features</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#plans" class="nav-link">
+                    <span class="nav-text">Pricing</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="nav-text">About</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-text">Contact</span>
+                    <div class="nav-indicator"></div>
+                </a>
             </div>
 
-            <!-- Right Side Menu -->
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="#login" class="py-2 px-4 text-white hover:text-blue-300 transition duration-300">Login</a>
-                <a href="#signup" class="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Sign Up</a>
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <a href="#login" class="btn-login">Sign In</a>
+                <a href="#signup" class="btn-signup">Get Started</a>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Home</a>
-                <a href="#features" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Features</a>
-                <a href="#plans" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Pricing</a>
-                <a href="#about" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">About</a>
-                <a href="#contact" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Contact</a>
-                <div class="border-t border-gray-700 pt-4 mt-4">
-                    <a href="#login" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Login</a>
-                    <a href="#signup" class="block px-3 py-2 text-white hover:text-blue-300 transition duration-300">Sign Up</a>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobile-menu">
+            <div class="mobile-nav-header">
+                <div class="mobile-logo">
+                    <div class="mobile-logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="mobile-logo-text"><?php echo_config('company.name'); ?></span>
                 </div>
+                <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close mobile menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#features" class="mobile-nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Features</span>
+                </a>
+                <a href="#plans" class="mobile-nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V22M17 5H9.5A3.5 3.5 0 0 0 6 8.5V8.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 18 15.5V16A3.5 3.5 0 0 1 14.5 19.5H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Pricing</span>
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>About</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2136 21.3521 21.4019C21.1469 21.5902 20.9048 21.7335 20.6407 21.8227C20.3766 21.9119 20.0966 21.9452 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3146 6.72533 15.2661 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.09494 3.90347 2.12826 3.62351 2.21749 3.35945C2.30672 3.09538 2.44999 2.85334 2.63826 2.64816C2.82653 2.44298 3.05547 2.27943 3.31059 2.16787C3.56572 2.05631 3.84139 1.99936 4.11999 2H7.11999C7.59522 1.99522 8.06552 2.16708 8.43373 2.48353C8.80194 2.79999 9.04201 3.23945 9.11999 3.72C9.23662 4.68007 9.47145 5.62273 9.81999 6.53C9.94454 6.88792 9.97351 7.27675 9.90382 7.65318C9.83413 8.02961 9.66879 8.37785 9.42399 8.66L8.11999 9.96C9.01999 11.96 10.04 12.98 12.04 13.88L13.34 12.58C13.6222 12.3352 13.9704 12.1699 14.3468 12.1002C14.7233 12.0305 15.1121 12.0595 15.47 12.184C16.3773 12.5326 17.3199 12.7674 18.28 12.884C18.7658 12.9614 19.2094 13.2032 19.5265 13.5745C19.8437 13.9458 20.0128 14.4201 19.9999 14.9L19.9999 14.92H22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <div class="mobile-nav-actions">
+                <a href="#login" class="mobile-btn-login">Sign In</a>
+                <a href="#signup" class="mobile-btn-signup">Get Started</a>
             </div>
         </div>
     </div>
 </nav>
 
 <script>
-// Mobile menu toggle
-document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileCloseBtn = document.getElementById('mobile-close-btn');
+
+// Open mobile menu
+mobileMenuBtn.addEventListener('click', function() {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// Close mobile menu
+mobileCloseBtn.addEventListener('click', function() {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.add('hidden');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Close mobile menu on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 </script>
+

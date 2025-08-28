@@ -5,12 +5,12 @@
 // Company Information
 $config = [
     'company' => [
-        'name' => 'CloudHost Pro',
+        'name' => 'CloudHost.bg',
         'tagline' => 'Premium Cloud Solutions',
         'phone' => '+1 (555) 123-4567',
-        'email' => 'support@cloudhostpro.com',
+        'email' => 'support@cloudhost.bg',
         'address' => '123 Cloud Street, Tech City, TC 12345',
-        'website' => 'https://cloudhostpro.com'
+        'website' => 'https://cloudhost.bg'
     ],
     
     // Social Media Links

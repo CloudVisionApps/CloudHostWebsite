@@ -12,139 +12,219 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-dark">
     <?php include 'header.php'; ?>
     <?php include 'nav.php'; ?>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-6">Cloud Hosting Made Simple</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto"><?php echo_config('seo.description'); ?></p>
-            <div class="space-x-4">
-                <a href="#plans" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Started</a>
-                <a href="#features" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">Learn More</a>
+    <section class="bg-dark text-center py-32">
+        <div class="container-dark">
+            <div class="animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-8 text-primary-green leading-tight">
+                    Cloud Hosting<br>
+                    <span class="text-gradient-dark">Made Simple</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-secondary leading-relaxed">
+                    <?php echo_config('seo.description'); ?>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#plans" class="btn-dark text-lg px-10 py-4">
+                        Get Started Today
+                    </a>
+                    <a href="#features" class="btn-outline-dark text-lg px-10 py-4">
+                        Learn More
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Why Choose CloudHost Pro?</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-rocket text-2xl text-blue-600"></i>
+    <section id="features" class="section-dark bg-dark-surface">
+        <div class="container-dark">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
+                    Why Choose <span class="text-gradient-dark">CloudHost Pro</span>?
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
+                    Experience the perfect blend of performance, security, and reliability that sets us apart from the competition.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="card-dark text-center p-8 hover-lift">
+                    <div class="icon-dark">
+                        <i class="fas fa-rocket text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
-                    <p class="text-gray-600">SSD-powered infrastructure with global CDN for optimal performance worldwide.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-green">Lightning Fast</h3>
+                    <p class="text-secondary leading-relaxed">SSD-powered infrastructure with global CDN for optimal performance worldwide.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-2xl text-green-600"></i>
+                
+                <div class="card-dark text-center p-8 hover-lift">
+                    <div class="icon-blue-dark">
+                        <i class="fas fa-shield-alt text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Enterprise Security</h3>
-                    <p class="text-gray-600">DDoS protection, SSL certificates, and daily backups included with every plan.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-blue">Enterprise Security</h3>
+                    <p class="text-secondary leading-relaxed">DDoS protection, SSL certificates, and daily backups included with every plan.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-2xl text-purple-600"></i>
+                
+                <div class="card-dark text-center p-8 hover-lift">
+                    <div class="icon-dark">
+                        <i class="fas fa-headset text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
-                    <p class="text-gray-600">Expert support team available around the clock to help you succeed.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-green">24/7 Support</h3>
+                    <p class="text-secondary leading-relaxed">Expert support team available around the clock to help you succeed.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Plans -->
-    <section id="plans" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Choose Your Plan</h2>
+    <section id="plans" class="section-dark bg-dark">
+        <div class="container-dark">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
+                    Choose Your <span class="text-gradient-dark">Plan</span>
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
+                    Select the perfect hosting solution that matches your business needs and budget.
+                </p>
+            </div>
+            
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Starter Plan -->
-                <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Starter</h3>
-                    <div class="text-4xl font-bold text-blue-600 mb-6">$9.99<span class="text-lg text-gray-500">/month</span></div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>10 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>5 Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>24/7 Support</li>
+                <div class="pricing-card-clean text-center p-8 hover-lift">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Starter</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">$9.99</div>
+                        <div class="text-lg text-secondary">per month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-left">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>10 GB SSD Storage</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>5 Email Accounts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>24/7 Support</li>
                     </ul>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Get Started</button>
+                    <button class="w-full btn-clean py-3">
+                        Get Started
+                    </button>
                 </div>
 
                 <!-- Professional Plan -->
-                <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-purple-500 transform scale-105">
-                    <div class="bg-purple-500 text-white text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">Most Popular</div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Professional</h3>
-                    <div class="text-4xl font-bold text-purple-600 mb-6">$19.99<span class="text-lg text-gray-500">/month</span></div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>50 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>25 Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Daily Backups</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Priority Support</li>
+                <div class="pricing-card-clean popular text-center p-8 hover-lift">
+                    <div class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full inline-block mb-4">
+                        Most Popular
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Professional</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">$19.99</div>
+                        <div class="text-lg text-secondary">per month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-left">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>50 GB SSD Storage</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>25 Email Accounts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Daily Backups</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Priority Support</li>
                     </ul>
-                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">Get Started</button>
+                    <button class="w-full btn-clean py-3">
+                        Get Started
+                    </button>
                 </div>
 
                 <!-- Enterprise Plan -->
-                <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-green-500">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Enterprise</h3>
-                    <div class="text-4xl font-bold text-green-600 mb-6">$39.99<span class="text-lg text-gray-500">/month</span></div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>200 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Unlimited Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Hourly Backups</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>DDoS Protection</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Dedicated IP</li>
+                <div class="pricing-card-clean text-center p-8 hover-lift">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Enterprise</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">$39.99</div>
+                        <div class="text-lg text-secondary">per month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-left">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>200 GB SSD Storage</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Email Accounts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Hourly Backups</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>DDoS Protection</li>
+                        <li class="flex items-center"><i class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Dedicated IP</li>
                     </ul>
-                    <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">Get Started</button>
+                    <button class="w-full btn-clean py-3">
+                        Get Started
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2"><?php echo_config('features.uptime'); ?></div>
-                    <div class="text-blue-100">Uptime Guarantee</div>
+    <section class="section-clean bg-secondary-clean">
+        <div class="container-clean">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Trusted by <span class="text-gradient-clean">Thousands</span> Worldwide
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-12 text-center">
+                <div class="animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="icon-clean mx-auto mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-primary"><?php echo_config('features.uptime'); ?></div>
+                    <div class="text-lg text-secondary font-medium">Uptime Guarantee</div>
                 </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2"><?php echo_config('features.customers'); ?></div>
-                    <div class="text-blue-100">Happy Customers</div>
+                
+                <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="icon-clean mx-auto mb-6">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-primary"><?php echo_config('features.customers'); ?></div>
+                    <div class="text-lg text-secondary font-medium">Happy Customers</div>
                 </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2"><?php echo_config('features.support'); ?></div>
-                    <div class="text-blue-100">Support Available</div>
+                
+                <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="icon-clean mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-primary"><?php echo_config('features.support'); ?></div>
+                    <div class="text-lg text-secondary font-medium">Support Available</div>
                 </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2"><?php echo_config('features.experience'); ?></div>
-                    <div class="text-blue-100">Years Experience</div>
+                
+                <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="icon-clean mx-auto mb-6">
+                        <i class="fas fa-trophy text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-3 text-primary"><?php echo_config('features.experience'); ?></div>
+                    <div class="text-lg text-secondary font-medium">Years Experience</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-6">Ready to Get Started?</h2>
-            <p class="text-xl text-gray-600 mb-8">Join thousands of satisfied customers who trust CloudHost Pro for their hosting needs.</p>
-            <a href="#plans" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300">Start Your Journey Today</a>
+    <section class="section-clean bg-clean">
+        <div class="container-clean text-center">
+            <div class="animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-8">
+                    Ready to <span class="text-gradient-clean">Transform</span> Your Business?
+                </h2>
+                <p class="text-xl md:text-2xl text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Join thousands of satisfied customers who trust CloudHost Pro for their hosting needs. 
+                    Experience the difference that premium hosting makes.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#plans" class="btn-clean text-xl px-12 py-5">
+                        Start Your Journey Today
+                    </a>
+                    <a href="#contact" class="btn-outline-clean text-xl px-12 py-5">
+                        Talk to an Expert
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <?php include 'footer.php'; ?>
 </body>
 </html>

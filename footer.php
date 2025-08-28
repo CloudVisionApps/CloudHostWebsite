@@ -1,30 +1,31 @@
 <!-- Footer -->
-<footer class="bg-gray-900 text-white">
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid md:grid-cols-4 gap-8">
+<footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white w-full">
+
+    <div class="container mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-4 gap-12">
             <!-- Company Info -->
             <div class="col-span-2">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3">
-                        <i class="fas fa-cloud text-white text-xl"></i>
+                <div class="flex items-center mb-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold"><?php echo_config('company.name'); ?></h3>
-                        <p class="text-gray-400"><?php echo_config('company.tagline'); ?></p>
+                        <h3 class="text-2xl font-bold text-white"><?php echo_config('company.name'); ?></h3>
+                        <p class="text-gray-300 font-medium"><?php echo_config('company.tagline'); ?></p>
                     </div>
                 </div>
-                <p class="text-gray-400 mb-4"><?php echo_config('seo.description'); ?></p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <p class="text-gray-300 mb-6 text-lg leading-relaxed"><?php echo_config('seo.description'); ?></p>
+                <div class="flex space-x-6">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-primary-green hover:bg-white/20 transition duration-300">
                         <i class="fab fa-facebook-f text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-primary-green hover:bg-white/20 transition duration-300">
                         <i class="fab fa-twitter text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-primary-green hover:bg-white/20 transition duration-300">
                         <i class="fab fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-primary-green hover:bg-white/20 transition duration-300">
                         <i class="fab fa-instagram text-xl"></i>
                     </a>
                 </div>
