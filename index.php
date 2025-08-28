@@ -39,13 +39,9 @@
             <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full"></div>
         </div>
         
-        <div class="container-dark relative z-20">
+        <div class=" relative z-20">
             <div class="animate-fade-in-up max-w-5xl mx-auto">
-                <!-- Badge -->
-                <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm font-medium mb-8">
-                    <i class="fas fa-star text-yellow-400 mr-2"></i>
-                    Доверено от над 10,000 бизнеса по света
-                </div>
+            
                 
                 <!-- Main Heading -->
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white leading-tight tracking-tight">
@@ -109,7 +105,7 @@
                     Нашите предимства
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">CloudHost Pro</span>?
+                    Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">КлаудХост</span>?
                 </h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Изживейте перфектното съчетание от производителност, сигурност и надеждност, което ни отличава от конкуренцията.
@@ -229,7 +225,7 @@
 
     <!-- Pricing Plans -->
     <section id="plans" class="section-dark bg-dark">
-        <div class="container-dark">
+        <div class="">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
                     Изберете вашия <span class="text-gradient-dark">План</span>
@@ -398,7 +394,7 @@
         
         .header-animation .animation-orange {
             opacity: 1;
-            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%, #1683ab 0, transparent 100%);
+            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%,rgb(5, 30, 39) 0, transparent 100%);
             animation: orangeAnimation 16s linear infinite;
         }
         
@@ -409,7 +405,7 @@
         .header-animation .animation-gray {
             opacity: 0;
             animation: grayAnimation 16s linear infinite;
-            background: radial-gradient(169.22% 169.22% at 50% -45.86%, #1e9975 0, transparent 100%);
+            background: radial-gradient(169.22% 169.22% at 50% -45.86%,rgb(15, 81, 61) 0, transparent 100%);
         }
         
         .header-animation .animation-blue {
