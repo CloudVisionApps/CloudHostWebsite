@@ -400,10 +400,10 @@
                     <i class="fas fa-rocket mr-3 text-lg"></i>
                     Ексклузивен достъп
                 </div>
-                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                     Бъдете първите, които научават
                 </h2>
-                <p class="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
                     Получете ексклузивни оферти, новини за продуктите и експертни съвети
                 </p>
                 <div class="flex items-center justify-center space-x-6 text-gray-400">
@@ -438,7 +438,7 @@
                                 <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-6 shadow-lg">
                                     <i class="fas fa-envelope-open text-white text-3xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-white mb-4">Присъединете се към общността</h3>
+                                <h3 class="text-xl font-bold text-white mb-4">Присъединете се към общността</h3>
                                 <p class="text-gray-300 leading-relaxed">
                                     Получете най-новите новини, оферти и ексклузивни съвети за вашия хостинг
                                 </p>
@@ -448,17 +448,17 @@
                             <div class="space-y-6">
                                 <div class="space-y-4">
                                     <div class="relative">
-                                        <input type="email" placeholder="Вашият имейл адрес" class="w-full px-6 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-lg backdrop-blur-sm">
+                                        <input type="email" placeholder="Вашият имейл адрес" class="w-full px-6 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
                                         <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
                                     </div>
                                     
                                     <div class="relative">
-                                        <input type="text" placeholder="Вашето име (по желание)" class="w-full px-6 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-lg backdrop-blur-sm">
+                                        <input type="text" placeholder="Вашето име (по желание)" class="w-full px-4 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
                                         <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
                                     </div>
                                 </div>
                                 
-                                <button class="group w-full px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1e9975]/30 flex items-center justify-center text-lg relative overflow-hidden">
+                                <button class="group w-full px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1e9975]/30 flex items-center justify-center text-base relative overflow-hidden">
                                     <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975] to-[#1683ab] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     <span class="relative z-10 flex items-center">
                                         <i class="fas fa-paper-plane mr-3 group-hover:animate-bounce"></i>
