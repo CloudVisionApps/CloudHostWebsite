@@ -90,40 +90,127 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="section-dark bg-dark-surface">
-        <div class="container-dark">
+    <section id="features" class="py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
-                    Why Choose <span class="text-gradient-dark">CloudHost Pro</span>?
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
+                    <i class="fas fa-star mr-2"></i>
+                    Нашите предимства
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                    Защо да изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">CloudHost Pro</span>?
                 </h2>
-                <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    Experience the perfect blend of performance, security, and reliability that sets us apart from the competition.
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Изживейте перфектното съчетание от производителност, сигурност и надеждност, което ни отличава от конкуренцията.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="card-dark text-center p-8 hover-lift">
-                    <div class="icon-dark">
-                        <i class="fas fa-rocket text-2xl"></i>
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Feature Card 1 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-rocket text-2xl text-white"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-primary-green">Lightning Fast</h3>
-                    <p class="text-secondary leading-relaxed">SSD-powered infrastructure with global CDN for optimal performance worldwide.</p>
+                    
+                    <div class="mt-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            Светкавично бързо
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            SSD инфраструктура с глобална CDN мрежа за оптимална производителност по света.
+                        </p>
+                        
+                        <!-- Feature Stats -->
+                        <div class="bg-gradient-to-r from-[#1683ab]/10 to-[#1e9975]/10 rounded-lg p-4 border border-[#1683ab]/20">
+                            <div class="text-2xl font-bold text-[#1683ab] mb-1">99.9%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Гарантирана работа</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card-dark text-center p-8 hover-lift">
-                    <div class="icon-blue-dark">
-                        <i class="fas fa-shield-alt text-2xl"></i>
+                <!-- Feature Card 2 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-2xl text-white"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-primary-blue">Enterprise Security</h3>
-                    <p class="text-secondary leading-relaxed">DDoS protection, SSL certificates, and daily backups included with every plan.</p>
+                    
+                    <div class="mt-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-[#1e9975] transition-colors duration-300">
+                            Корпоративна сигурност
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            DDoS защита, SSL сертификати и ежедневни резервни копия включени във всеки план.
+                        </p>
+                        
+                        <!-- Feature Stats -->
+                        <div class="bg-gradient-to-r from-[#1e9975]/10 to-[#1683ab]/10 rounded-lg p-4 border border-[#1e9975]/20">
+                            <div class="text-2xl font-bold text-[#1e9975] mb-1">256-bit</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">SSL Криптиране</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card-dark text-center p-8 hover-lift">
-                    <div class="icon-dark">
-                        <i class="fas fa-headset text-2xl"></i>
+                <!-- Feature Card 3 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-headset text-2xl text-white"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-primary-green">24/7 Support</h3>
-                    <p class="text-secondary leading-relaxed">Expert support team available around the clock to help you succeed.</p>
+                    
+                    <div class="mt-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            24/7 Поддръжка
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            Експертен екип за поддръжка на разположение 24/7, за да ви помогне да успеете.
+                        </p>
+                        
+                        <!-- Feature Stats -->
+                        <div class="bg-gradient-to-r from-[#1683ab]/10 to-[#1e9975]/10 rounded-lg p-4 border border-[#1683ab]/20">
+                            <div class="text-2xl font-bold text-[#1683ab] mb-1">&lt;2мин</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Време за отговор</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Features Row -->
+            <div class="mt-20 grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Глобална CDN</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Световна мрежа за бърз достъп</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-database text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">SSD Хранилище</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Светкавично бързи дискове</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sync text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Автоматични Backups</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Ежедневни резервни копия</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Мониторинг 24/7</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Постоянен надзор на системите</p>
                 </div>
             </div>
         </div>
@@ -134,10 +221,10 @@
         <div class="container-dark">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-primary-green mb-6">
-                    Choose Your <span class="text-gradient-dark">Plan</span>
+                    Изберете вашия <span class="text-gradient-dark">План</span>
                 </h2>
                 <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    Select the perfect hosting solution that matches your business needs and budget.
+                    Изберете перфектното хостинг решение, което отговаря на нуждите и бюджета на вашия бизнес.
                 </p>
             </div>
             
@@ -145,63 +232,54 @@
                 <!-- Starter Plan -->
                 <div class="pricing-card-clean text-center p-8 hover-lift">
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2">Starter</h3>
-                        <div class="text-4xl font-bold text-primary mb-2">$9.99</div>
-                        <div class="text-lg text-secondary">per month</div>
+                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.starter.name'); ?></h3>
+                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
+                        <div class="text-lg text-secondary"><?php echo_config('plans.starter.period'); ?></div>
                     </div>
                     <ul class="space-y-3 mb-8 text-left">
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>10 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>5 Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>24/7 Support</li>
+                        <?php foreach (get_config('plans.starter.features') as $feature): ?>
+                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
+                        <?php endforeach; ?>
                     </ul>
                     <button class="w-full btn-clean py-3">
-                        Get Started
+                        Започнете
                     </button>
                 </div>
 
                 <!-- Professional Plan -->
                 <div class="pricing-card-clean popular text-center p-8 hover-lift">
                     <div class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full inline-block mb-4">
-                        Most Popular
+                        Най-популярен
                     </div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2">Professional</h3>
-                        <div class="text-4xl font-bold text-primary mb-2">$19.99</div>
-                        <div class="text-lg text-secondary">per month</div>
+                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.professional.name'); ?></h3>
+                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
+                        <div class="text-lg text-secondary"><?php echo_config('plans.professional.period'); ?></div>
                     </div>
                     <ul class="space-y-3 mb-8 text-left">
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>50 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>25 Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Daily Backups</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Priority Support</li>
+                        <?php foreach (get_config('plans.professional.features') as $feature): ?>
+                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
+                        <?php endforeach; ?>
                     </ul>
                     <button class="w-full btn-clean py-3">
-                        Get Started
+                        Започнете
                     </button>
                 </div>
 
                 <!-- Enterprise Plan -->
                 <div class="pricing-card-clean text-center p-8 hover-lift">
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2">Enterprise</h3>
-                        <div class="text-4xl font-bold text-primary mb-2">$39.99</div>
-                        <div class="text-lg text-secondary">per month</div>
+                        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo_config('plans.enterprise.name'); ?></h3>
+                        <div class="text-4xl font-bold text-primary mb-2"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
+                        <div class="text-lg text-secondary"><?php echo_config('plans.enterprise.period'); ?></div>
                     </div>
                     <ul class="space-y-3 mb-8 text-left">
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>200 GB SSD Storage</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Bandwidth</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Unlimited Email Accounts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Free SSL Certificate</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Hourly Backups</li>
-                        <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>DDoS Protection</li>
-                        <li class="flex items-center"><i class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i>Dedicated IP</li>
+                        <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
+                            <li class="flex items-center"><i class="fas fa-check text-accent-green mr-3"></i><?php echo $feature; ?></li>
+                        <?php endforeach; ?>
                     </ul>
                     <button class="w-full btn-clean py-3">
-                        Get Started
+                        Започнете
                     </button>
                 </div>
             </div>
