@@ -82,16 +82,6 @@
                     </a>
                 </div>
                 
-                <!-- Trust Indicators -->
-                <div class="mt-16 pt-8 border-t border-white/10">
-                    <p class="text-sm text-gray-400 mb-4">Доверено от лидерите в индустрията</p>
-                    <div class="flex justify-center items-center gap-8 opacity-60">
-                        <div class="w-20 h-8 bg-white/20 rounded"></div>
-                        <div class="w-20 h-8 bg-white/20 rounded"></div>
-                        <div class="w-20 h-8 bg-white/20 rounded"></div>
-                        <div class="w-20 h-8 bg-white/20 rounded"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
