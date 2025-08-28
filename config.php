@@ -6,10 +6,10 @@
 $config = [
     'company' => [
         'name' => 'CloudHost.bg',
-        'tagline' => 'Premium Cloud Solutions',
-        'phone' => '+1 (555) 123-4567',
+        'tagline' => 'Премиум Cloud Решения',
+        'phone' => '+359 (888) 123-456',
         'email' => 'support@cloudhost.bg',
-        'address' => '123 Cloud Street, Tech City, TC 12345',
+        'address' => 'ул. Cloud 123, Техноград, БГ 1000',
         'website' => 'https://cloudhost.bg'
     ],
     
@@ -24,9 +24,9 @@ $config = [
     
     // Contact Information
     'contact' => [
-        'support_hours' => '24/7 Support',
-        'response_time' => 'Under 2 hours',
-        'emergency_phone' => '+1 (555) 999-8888'
+        'support_hours' => '24/7 Поддръжка',
+        'response_time' => 'Под 2 часа',
+        'emergency_phone' => '+359 (888) 999-888'
     ],
     
     // Features
@@ -40,48 +40,48 @@ $config = [
     // Pricing Plans
     'plans' => [
         'starter' => [
-            'name' => 'Starter',
+            'name' => 'Стартер',
             'price' => '9.99',
-            'currency' => '$',
-            'period' => '/month',
+            'currency' => 'лв.',
+            'period' => '/месец',
             'features' => [
-                '10 GB SSD Storage',
-                'Unlimited Bandwidth',
-                '5 Email Accounts',
-                'Free SSL Certificate',
-                '24/7 Support'
+                '10 GB SSD Хранилище',
+                'Неограничен Трафик',
+                '5 Имейл Акаунта',
+                'Безплатен SSL Сертификат',
+                '24/7 Поддръжка'
             ],
             'color' => 'blue'
         ],
         'professional' => [
-            'name' => 'Professional',
+            'name' => 'Професионален',
             'price' => '19.99',
-            'currency' => '$',
-            'period' => '/month',
+            'currency' => 'лв.',
+            'period' => '/месец',
             'popular' => true,
             'features' => [
-                '50 GB SSD Storage',
-                'Unlimited Bandwidth',
-                '25 Email Accounts',
-                'Free SSL Certificate',
-                'Daily Backups',
-                'Priority Support'
+                '50 GB SSD Хранилище',
+                'Неограничен Трафик',
+                '25 Имейл Акаунта',
+                'Безплатен SSL Сертификат',
+                'Ежедневни Резервни Копия',
+                'Приоритетна Поддръжка'
             ],
             'color' => 'purple'
         ],
         'enterprise' => [
-            'name' => 'Enterprise',
+            'name' => 'Корпоративен',
             'price' => '39.99',
-            'currency' => '$',
-            'period' => '/month',
+            'currency' => 'лв.',
+            'period' => '/месец',
             'features' => [
-                '200 GB SSD Storage',
-                'Unlimited Bandwidth',
-                'Unlimited Email Accounts',
-                'Free SSL Certificate',
-                'Hourly Backups',
-                'DDoS Protection',
-                'Dedicated IP'
+                '200 GB SSD Хранилище',
+                'Неограничен Трафик',
+                'Неограничени Имейл Акаунти',
+                'Безплатен SSL Сертификат',
+                'Почасови Резервни Копия',
+                'DDoS Защита',
+                'Отделен IP Адрес'
             ],
             'color' => 'green'
         ]
@@ -89,9 +89,9 @@ $config = [
     
     // SEO Settings
     'seo' => [
-        'title' => 'CloudHost Pro - Premium Cloud Hosting Solutions',
-        'description' => 'Experience lightning-fast performance, 99.9% uptime, and enterprise-grade security with our cloud hosting solutions.',
-        'keywords' => 'cloud hosting, web hosting, VPS, dedicated servers, cloud solutions',
+        'title' => 'CloudHost Pro - Премиум Cloud Хостинг Решения',
+        'description' => 'Изживейте светкавична производителност, 99.9% гарантирана работа и корпоративна сигурност с нашите cloud хостинг решения.',
+        'keywords' => 'cloud хостинг, уеб хостинг, VPS, сървъри, cloud решения',
         'author' => 'CloudHost Pro'
     ]
 ];

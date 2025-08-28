@@ -9,31 +9,81 @@
     <meta name="keywords" content="<?php echo_config('seo.keywords'); ?>">
     <meta name="author" content="<?php echo_config('seo.author'); ?>">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-dark">
     <?php include 'header.php'; ?>
-    <?php include 'nav.php'; ?>
 
     <!-- Hero Section -->
-    <section class="bg-dark text-center py-32">
-        <div class="container-dark">
-            <div class="animate-fade-in-up">
-                <h1 class="text-5xl md:text-6xl font-bold mb-8 text-primary-green leading-tight">
-                    Cloud Hosting<br>
-                    <span class="text-gradient-dark">Made Simple</span>
+    <section class="bg-gradient-to-br from-[#202020] to-[#06171e] text-center min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full"></div>
+            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full"></div>
+        </div>
+        
+        <div class="container-dark relative z-10">
+            <div class="animate-fade-in-up max-w-5xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm font-medium mb-8">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i>
+                    Доверено от над 10,000 бизнеса по света
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white leading-tight tracking-tight">
+                    Корпоративно<br>
+                    <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Cloud Хостинг</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-secondary leading-relaxed">
+                
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl lg:text-2xl mb-10 max-w-4xl mx-auto text-gray-300 leading-relaxed font-light">
                     <?php echo_config('seo.description'); ?>
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <a href="#plans" class="btn-dark text-lg px-10 py-4">
-                        Get Started Today
+                
+                <!-- Key Benefits -->
+                <div class="flex flex-wrap justify-center gap-8 mb-12 text-sm text-gray-400">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>99.9% Гаранция за работа</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>24/7 Експертна поддръжка</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
+                        <span>Корпоративна сигурност</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#plans" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+                        Започнете днес
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
                     </a>
-                    <a href="#features" class="btn-outline-dark text-lg px-10 py-4">
-                        Learn More
+                    <a href="#features" class="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center">
+                        <i class="fas fa-play mr-2"></i>
+                        Гледайте демо
                     </a>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <p class="text-sm text-gray-400 mb-4">Доверено от лидерите в индустрията</p>
+                    <div class="flex justify-center items-center gap-8 opacity-60">
+                        <div class="w-20 h-8 bg-white/20 rounded"></div>
+                        <div class="w-20 h-8 bg-white/20 rounded"></div>
+                        <div class="w-20 h-8 bg-white/20 rounded"></div>
+                        <div class="w-20 h-8 bg-white/20 rounded"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -226,5 +276,6 @@
         </div>
     </section>
 
+    <?php include 'footer.php'; ?>
 </body>
 </html>
