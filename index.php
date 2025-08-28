@@ -380,6 +380,41 @@
         </div>
     </section>
 
+    <!-- Newsletter Subscription Section -->
+    <section class="py-20 bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
+                <i class="fas fa-envelope-open-text mr-2"></i>
+                Бюлетин
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Останете информирани</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Получете най-новите новини, оферти и ексклузивни съвети за вашия хостинг
+            </p>
+            
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="relative flex-1">
+                        <input type="email" placeholder="Вашият имейл адрес" class="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-2 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-lg">
+                        <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <button class="group px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1e9975]/25 flex items-center justify-center text-lg">
+                        <span>Абониране</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-400 mt-4">Отписването е възможно по всяко време</p>
+            </div>
+        </div>
+    </section>
+
     <?php include 'footer.php'; ?>
 
     <!-- Custom CSS for Animated Gradients -->
