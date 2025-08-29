@@ -1,18 +1,8 @@
 <!-- Footer -->
-<footer class="bg-white/5 backdrop-blur-sm border-t border-white/10 relative overflow-hidden">
-    <!-- Enhanced Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-        <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
-        <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/3 w-20 h-20 border border-white/15 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-        <div class="absolute bottom-20 right-1/4 w-28 h-28 border border-white/15 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
-    </div>
+<footer class="  overflow-hidden">
+   
     
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1683ab]/5 to-[#1e9975]/5"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20  z-10">
         <!-- Main Footer Content -->
         <div class="grid md:grid-cols-4 gap-16 mb-20">
             <!-- Company Info -->
@@ -133,7 +123,6 @@
         <div class="border-t border-white/10 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-gray-400 text-sm mb-4 md:mb-0 flex items-center">
-                    <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
                     © 2024 <?php echo_config('company.name'); ?>. Всички права запазени.
                 </div>
                 <div class="flex space-x-8 text-sm">
