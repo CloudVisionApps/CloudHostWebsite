@@ -69,7 +69,7 @@
     <?php include 'header.php'; ?>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen py-24 overflow-hidden">
+    <section class="relative min-h-screen overflow-hidden">
         <!-- Animated Gradient Background -->
         <div class="header-animation">
             <div class="animation animation-orange"></div>
@@ -82,13 +82,13 @@
         <div class="overlay"></div>
       
         <!-- Content Container --> 
-        <div class="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32">
-            <div class="grid lg:grid-cols-2 gap-32 items-center">
+        <div class="relative z-20 max-w-7xl mx-auto py-20 lg:py-32">
+            <!-- Main Hero Content -->
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[80vh]">
                 <!-- Left Side - Enhanced Content -->
-                <div class="space-y-10">
-               
+                <div class="space-y-8 lg:space-y-12 text-center lg:text-left">
                     <!-- Enhanced Headline -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 lg:space-y-8">
                         <h1 class="text-4xl lg:text-6xl xl:text-6xl font-bold leading-tight tracking-tight">
                             <span class="text-white drop-shadow-lg">Най-доброто</span>
                             <br>
@@ -96,15 +96,13 @@
                             <br>
                             <span class="text-white drop-shadow-lg">за вашия бизнес</span>
                         </h1>
-                        <p class="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl font-medium">
+                        <p class="text-lg lg:text-xl xl:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                             Професионален хостинг с 99.9% uptime, 24/7 поддръжка и най-новите технологии за вашия уебсайт.
                         </p>
                     </div>
                     
-            
-                    
                     <!-- Enhanced CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-6">
+                    <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start">
                         <button class="px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1e9975]/30 flex items-center justify-center gap-3 group shadow-lg">
                             <span>Започнете сега</span>
                             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300 text-xl"></i>
@@ -116,24 +114,34 @@
                     </div>
                     
                     <!-- Enhanced Trust Indicators -->
-                    <div class="flex items-center space-x-8 pt-8">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-shield-alt text-[#1e9975] text-lg"></i>
-                            <span class="text-sm text-gray-300 font-medium">SSL защита</span>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 pt-6 lg:pt-8">
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-10 h-10 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-shield-alt text-[#1e9975] text-lg"></i>
+                            </div>
+                            <span class="text-sm text-gray-300 font-medium group-hover:text-white transition-colors duration-300">SSL защита</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-database text-[#1683ab] text-lg"></i>
-                            <span class="text-sm text-gray-300 font-medium">SSD дискове</span>
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-10 h-10 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-database text-[#1683ab] text-lg"></i>
+                            </div>
+                            <span class="text-sm text-gray-300 font-medium group-hover:text-white transition-colors duration-300">SSD дискове</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-globe text-[#1e9975] text-lg"></i>
-                            <span class="text-sm text-gray-300 font-medium">CDN включен</span>
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-10 h-10 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-globe text-[#1e9975] text-lg"></i>
+                            </div>
+                            <span class="text-sm text-gray-300 font-medium group-hover:text-white transition-colors duration-300">CDN включен</span>
                         </div>
                     </div>
+                    
+                 
+
+
                 </div>
                 
                 <!-- Right Side - Enhanced Domain Search Form -->
-                <div class="relative">
+                <div class="relative order-first lg:order-last">
                     <!-- Enhanced Form Container -->
                     <div class="relative">
                         <!-- Complex Background System -->
@@ -150,151 +158,123 @@
                         <!-- Main Form Container -->
                         <div class="relative rounded-[2.5rem] p-[2px] animate-border-gradient overflow-hidden shadow-2xl">
                             <!-- Inner Content Box -->
-                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/30 to-[#1a1a1a]/40 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
-                            <!-- Enhanced Background Pattern -->
-                            <div class="absolute inset-0 opacity-20">
-                                <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-xl"></div>
-                                <div class="absolute bottom-4 left-4 w-20 h-20 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full blur-xl"></div>
-                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full blur-2xl"></div>
-                            </div>
-                            
-                            <!-- Enhanced Floating Elements -->
-                            <div class="absolute inset-0 pointer-events-none">
-                                <div class="absolute top-6 right-6 w-2 h-2 bg-[#1683ab] rounded-full animate-pulse"></div>
-                                <div class="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#1e9975] rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                                <div class="absolute top-1/3 left-6 w-1 h-1 bg-[#1683ab]/60 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-                                <div class="absolute top-2/3 right-8 w-1.5 h-1.5 bg-[#1e9975]/60 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
-                            </div>
-                            
-                            <!-- Enhanced Form Header -->
-                            <div class="text-center mb-8 relative">
-                               
-                                <h3 class="text-3xl font-bold text-white mb-3">Намерете своя домейн</h3>
-                                <p class="text-white/80 text-base leading-relaxed max-w-sm mx-auto">Проверете наличността на вашия идеален домейн и започнете онлайн пътуването</p>
-                            </div>
-                            
-                            <!-- Enhanced Domain Search Form -->
-                            <form class="space-y-6 relative">
-                                <div class="relative group">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-globe text-white/70 group-hover:text-[#1683ab] transition-colors duration-300 text-lg"></i>
-                                    </div>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Въведете име на домейн (например: mywebsite)" 
-                                        class="w-full pl-12 pr-4 py-4 bg-white/10 border-2 border-white/20 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-4 focus:ring-[#1683ab]/20 focus:border-[#1683ab] transition-all duration-300 text-base group-hover:border-[#1683ab]/40 group-hover:bg-white/15"
-                                    >
-                                    <div class="absolute inset-y-0 right-3 flex items-center">
-                                        <div class="w-2 h-2 bg-[#1e9975] rounded-full animate-pulse"></div>
-                                    </div>
+                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/30 to-[#1a1a1a]/40 backdrop-blur-xl rounded-[2.4rem] p-8 lg:p-10 overflow-hidden">
+                                <!-- Enhanced Background Pattern -->
+                                <div class="absolute inset-0 opacity-20">
+                                    <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-xl"></div>
+                                    <div class="absolute bottom-4 left-4 w-20 h-20 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full blur-xl"></div>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-full blur-2xl"></div>
                                 </div>
                                 
-                                <button 
-                                    type="submit" 
-                                    class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg relative overflow-hidden group shadow-xl"
-                                >
-                                    <div class="absolute inset-0 bg-gradient-to-r from-[#1a8a6a] to-[#147a9a] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    <span class="relative z-10 flex items-center gap-3">
-                                        <i class="fas fa-search text-xl"></i>
-                                        Провери наличност
-                                    </span>
-                                </button>
-                            </form>
-                            
-                        
-                            
-                            <!-- Enhanced Trust Indicators -->
-                            <div class="mt-8 pt-6 border-t border-white/20">
-                                <div class="flex items-center justify-center space-x-8 text-white/80 text-sm">
-                                    <div class="flex items-center group">
-                                        <div class="w-6 h-6 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-300">
-                                            <i class="fas fa-shield-alt text-[#1e9975] text-sm"></i>
+                                <!-- Enhanced Floating Elements -->
+                                <div class="absolute inset-0 pointer-events-none">
+                                    <div class="absolute top-6 right-6 w-2 h-2 bg-[#1683ab] rounded-full animate-pulse"></div>
+                                    <div class="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#1e9975] rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                                    <div class="absolute top-1/3 left-6 w-1 h-1 bg-[#1683ab]/60 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+                                    <div class="absolute top-2/3 right-8 w-1.5 h-1.5 bg-[#1e9975]/60 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
+                                </div>
+                                
+                                <!-- Enhanced Form Header -->
+                                <div class="text-center mb-6 lg:mb-8 relative">
+                                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Намерете своя домейн</h3>
+                                    <p class="text-white/80 text-sm lg:text-base leading-relaxed max-w-sm mx-auto">Проверете наличността на вашия идеален домейн и започнете онлайн пътуването</p>
+                                </div>
+                                
+                                <!-- Enhanced Domain Search Form -->
+                                <form class="space-y-4 lg:space-y-6 relative">
+                                    <div class="relative group">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <i class="fas fa-globe text-white/70 group-hover:text-[#1683ab] transition-colors duration-300 text-lg"></i>
                                         </div>
-                                        <span class="group-hover:text-white transition-colors duration-300 font-medium">SSL включен</span>
+                                        <input 
+                                            type="text" 
+                                            placeholder="Въведете име на домейн" 
+                                            class="w-full pl-12 pr-4 py-4 bg-white/10 border-2 border-white/20 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-4 focus:ring-[#1683ab]/20 focus:border-[#1683ab] transition-all duration-300 text-base group-hover:border-[#1683ab]/40 group-hover:bg-white/15"
+                                        >
+                                        <div class="absolute inset-y-0 right-3 flex items-center">
+                                            <div class="w-2 h-2 bg-[#1e9975] rounded-full animate-pulse"></div>
+                                        </div>
                                     </div>
-                                    <div class="flex items-center justify-center group">
-                                        <div class="w-6 h-6 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-300">
-                                            <i class="fas fa-clock text-[#1683ab] text-sm"></i>
+                                    
+                                    <button 
+                                        type="submit" 
+                                        class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg relative overflow-hidden group shadow-xl"
+                                    >
+                                        <div class="absolute inset-0 bg-gradient-to-r from-[#1a8a6a] to-[#147a9a] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <span class="relative z-10 flex items-center gap-3">
+                                            <i class="fas fa-search text-xl"></i>
+                                            Провери наличност
+                                        </span>
+                                    </button>
+                                </form>
+                                
+                                <!-- Enhanced Trust Indicators -->
+                                <div class="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-white/20">
+                                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-8 text-white/80 text-sm">
+                                        <div class="flex items-center group">
+                                            <div class="w-6 h-6 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-300">
+                                                <i class="fas fa-shield-alt text-[#1e9975] text-sm"></i>
+                                            </div>
+                                            <span class="group-hover:text-white transition-colors duration-300 font-medium">SSL включен</span>
                                         </div>
-                                        <span class="group-hover:text-white transition-colors duration-300 font-medium">Моментална регистрация</span>
+                                        <div class="flex items-center justify-center group">
+                                            <div class="w-6 h-6 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-300">
+                                                <i class="fas fa-clock text-[#1683ab] text-sm"></i>
+                                            </div>
+                                            <span class="group-hover:text-white transition-colors duration-300 font-medium">Моментална регистрация</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                       <!-- TLD Badges - Small informational badges -->
+                       <div class="pt-6 lg:pt-8">
+                        <div class="text-center lg:text-left mb-4">
+                            <p class="text-sm text-gray-400 font-medium">Популярни домейн разширения</p>
+                        </div>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3">
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.com</span>
+                                    <span class="text-xs text-gray-400 ml-1">15лв</span>
+                                </div>
                             </div>
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.bg</span>
+                                    <span class="text-xs text-gray-400 ml-1">12лв</span>
+                                </div>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.net</span>
+                                    <span class="text-xs text-gray-400 ml-1">18лв</span>
+                                </div>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.org</span>
+                                    <span class="text-xs text-gray-400 ml-1">20лв</span>
+                                </div>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.eu</span>
+                                    <span class="text-xs text-gray-400 ml-1">16лв</span>
+                                </div>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
+                                    <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.info</span>
+                                    <span class="text-xs text-gray-400 ml-1">14лв</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-              <!-- Enhanced TLD Selection -->
-              <div class="mt-8 pt-6 relative">
-                               
-                                <div class="grid grid-cols-6 gap-4">
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1683ab]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.com</div>
-                                                <div class="text-sm text-white/80 font-medium">15лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1e9975]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.bg</div>
-                                                <div class="text-sm text-white/80 font-medium">12лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.net</div>
-                                                <div class="text-sm text-white/80 font-medium">18лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1e9975]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.org</div>
-                                                <div class="text-sm text-white/80 font-medium">20лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.eu</div>
-                                                <div class="text-sm text-white/80 font-medium">16лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
-                                            <div class="relative z-10">
-                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.info</div>
-                                                <div class="text-sm text-white/80 font-medium">14лв/година</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
         </div>
     </section>
 
@@ -425,7 +405,7 @@
                     
                     <!-- Trust Indicators -->
                     <div class="mt-12 pt-8 border-t border-white/10">
-                        <div class="flex items-center justify-center lg:justify-start space-x-8 text-gray-400">
+                        <div class="flex items-center justify-center space-x-8 text-gray-400">
                             <div class="flex items-center">
                                 <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
                                 <span>SSL включен</span>
