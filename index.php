@@ -604,8 +604,18 @@
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
                         <div class="mb-6">
-                            <span class="text-4xl font-bold text-white" id="starter-price">19.99</span>
-                            <span class="text-gray-400 ml-2" id="starter-period">лв/месец</span>
+                            <div class="monthly-price">
+                                <span class="text-4xl font-bold text-white" id="starter-price">19.99</span>
+                                <span class="text-gray-400 ml-2" id="starter-period">лв/месец</span>
+                            </div>
+                            <div class="yearly-price hidden">
+                            <div class="text-xl font-bold text-white">или</div>
+                                <span class="text-4xl font-bold text-white" id="starter-yearly-price">239.88</span>
+                                <span class="text-gray-400 ml-2">лв/година</span>
+                                <div class="mt-2">
+                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
+                                </div>
+                            </div>
                         </div>
                         <p class="text-gray-400">Идеален за малки сайтове и блогове</p>
                     </div>
@@ -649,8 +659,17 @@
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
                         <div class="mb-6">
-                            <span class="text-4xl font-bold text-white" id="pro-price">39.99</span>
-                            <span class="text-gray-400 ml-2" id="pro-period">лв/месец</span>
+                            <div class="monthly-price">
+                                <span class="text-4xl font-bold text-white" id="pro-price">39.99</span>
+                                <span class="text-gray-400 ml-2" id="pro-period">лв/месец</span>
+                            </div>
+                            <div class="yearly-price hidden">
+                                <span class="text-4xl font-bold text-white" id="pro-yearly-price">479.88</span>
+                                <span class="text-gray-400 ml-2">лв/година</span>
+                                <div class="mt-2">
+                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
+                                </div>
+                            </div>
                         </div>
                         <p class="text-gray-400">За растещи бизнеси и e-commerce</p>
                     </div>
@@ -692,8 +711,17 @@
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
                         <div class="mb-6">
-                            <span class="text-4xl font-bold text-white" id="enterprise-price">79.99</span>
-                            <span class="text-gray-400 ml-2" id="enterprise-period">лв/месец</span>
+                            <div class="monthly-price">
+                                <span class="text-4xl font-bold text-white" id="enterprise-price">79.99</span>
+                                <span class="text-gray-400 ml-2" id="enterprise-period">лв/месец</span>
+                            </div>
+                            <div class="yearly-price hidden">
+                                <span class="text-4xl font-bold text-white" id="enterprise-yearly-price">959.88</span>
+                                <span class="text-gray-400 ml-2">лв/година</span>
+                                <div class="mt-2">
+                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
+                                </div>
+                            </div>
                         </div>
                         <p class="text-gray-400">За големи проекти и корпорации</p>
                     </div>
@@ -1178,11 +1206,11 @@
                 enterprise: '79.99'
             };
             
-            // Yearly prices (20% discount)
+            // Yearly prices (12 months × monthly price)
             const yearlyPrices = {
-                starter: '15.99',
-                pro: '31.99',
-                enterprise: '63.99'
+                starter: '239.88',
+                pro: '479.88',
+                enterprise: '959.88'
             };
             
             // Monthly periods
@@ -1194,22 +1222,25 @@
             
             // Yearly periods
             const yearlyPeriods = {
-                starter: 'лв/месец',
-                pro: 'лв/месец',
-                enterprise: 'лв/месец'
+                starter: 'лв/година',
+                pro: 'лв/година',
+                enterprise: 'лв/година'
             };
             
             function updatePrices(isYearly) {
-                const prices = isYearly ? yearlyPrices : monthlyPrices;
-                const periods = isYearly ? yearlyPeriods : monthlyPeriods;
+                // Show/hide monthly vs yearly price sections
+                const monthlyPriceElements = document.querySelectorAll('.monthly-price');
+                const yearlyPriceElements = document.querySelectorAll('.yearly-price');
                 
-                document.getElementById('starter-price').textContent = prices.starter;
-                document.getElementById('pro-price').textContent = prices.pro;
-                document.getElementById('enterprise-price').textContent = prices.enterprise;
-                
-                document.getElementById('starter-period').textContent = periods.starter;
-                document.getElementById('pro-period').textContent = periods.pro;
-                document.getElementById('enterprise-period').textContent = periods.enterprise;
+                if (isYearly) {
+                    // Show yearly prices, hide monthly
+                    monthlyPriceElements.forEach(element => element.classList.remove('hidden'));
+                    yearlyPriceElements.forEach(element => element.classList.remove('hidden'));
+                } else {
+                    // Show monthly prices, hide yearly
+                    monthlyPriceElements.forEach(element => element.classList.remove('hidden'));
+                    yearlyPriceElements.forEach(element => element.classList.add('hidden'));
+                }
             }
             
             function switchToMonthly() {
