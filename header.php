@@ -9,13 +9,19 @@
 
             <!-- Center Navigation Menu -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="#home" class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl">Начало</a>
+                <a href="#home" class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl hover:scale-105 transform relative group">
+                    <span class="relative z-10">Начало</span>
+                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] transition-all duration-300 group-hover:w-full"></div>
+                </a>
                 
                 <!-- Hosting Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
-                        Хостинг
-                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                    <button class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl flex items-center gap-2 hover:scale-105 transform relative">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Хостинг
+                            <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] transition-all duration-300 group-hover:w-full"></div>
                     </button>
                     
                     <?php include 'mega-menu-wrapper.php'; ?>
@@ -24,9 +30,12 @@
                 
                 <!-- Domains Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
-                        Домейни
-                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                    <button class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl flex items-center gap-2 hover:scale-105 transform relative">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Домейни
+                            <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] transition-all duration-300 group-hover:w-full"></div>
                     </button>
                     
                     <?php render_domains_mega_menu(); ?>
@@ -34,9 +43,12 @@
                 
                 <!-- Solutions Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
-                        Решения
-                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                    <button class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl flex items-center gap-2 hover:scale-105 transform relative">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Решения
+                            <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] transition-all duration-300 group-hover:w-full"></div>
                     </button>
                     
                     <?php render_solutions_mega_menu(); ?>
