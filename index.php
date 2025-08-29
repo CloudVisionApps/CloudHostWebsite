@@ -303,28 +303,48 @@
     <section class="py-32 relative overflow-hidden ">
         <!-- Enhanced Background Pattern -->
         <div class="absolute inset-0">
-            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
-            <div class="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/3 w-20 h-20 border border-white/15 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-            <div class="absolute bottom-20 right-1/4 w-28 h-28 border border-white/15 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+            <!-- Animated Circles -->
+            <div class="absolute top-20 left-20 w-40 h-40 border border-[#1683ab]/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-32 h-32 border border-[#1e9975]/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-24 h-24 border border-[#1683ab]/15 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-36 h-36 border border-[#1e9975]/15 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-20 right-1/4 w-28 h-28 border border-[#1683ab]/15 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+            
+            <!-- Floating Geometric Shapes -->
+            <div class="absolute top-16 right-1/4 w-16 h-16 border border-[#1e9975]/20 rotate-45 animate-pulse" style="animation-delay: 0.8s;"></div>
+            <div class="absolute bottom-16 left-16 w-12 h-12 border border-[#1683ab]/20 rotate-45 animate-pulse" style="animation-delay: 2.5s;"></div>
         </div>
         
-        <!-- Floating Tech Icons -->
+        <!-- Enhanced Floating Tech Icons -->
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-32 right-20 text-white/10 animate-bounce" style="animation-delay: 0s;">
-                <i class="fas fa-database text-4xl"></i>
+            <div class="absolute top-32 right-20 text-white/15 animate-bounce group" style="animation-delay: 0s;">
+                <div class="relative">
+                    <i class="fas fa-database text-5xl group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute -top-2 -right-2 w-3 h-3 bg-[#1683ab] rounded-full animate-ping"></div>
+                </div>
             </div>
-            <div class="absolute top-1/3 left-16 text-white/10 animate-bounce" style="animation-delay: 1s;">
-                <i class="fas fa-code text-3xl"></i>
+            <div class="absolute top-1/3 left-16 text-white/15 animate-bounce group" style="animation-delay: 1s;">
+                <div class="relative">
+                    <i class="fas fa-code text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute -top-2 -right-2 w-3 h-3 bg-[#1e9975] rounded-full animate-ping"></div>
+                </div>
             </div>
-            <div class="absolute bottom-1/3 right-1/4 text-white/10 animate-bounce" style="animation-delay: 2s;">
-                <i class="fas fa-server text-4xl"></i>
+            <div class="absolute bottom-1/3 right-1/4 text-white/15 animate-bounce group" style="animation-delay: 2s;">
+                <div class="relative">
+                    <i class="fas fa-server text-5xl group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute -top-2 -right-2 w-3 h-3 bg-[#1683ab] rounded-full animate-ping"></div>
+                </div>
+            </div>
+            <div class="absolute top-1/4 left-1/3 text-white/10 animate-bounce group" style="animation-delay: 1.5s;">
+                <div class="relative">
+                    <i class="fas fa-cloud text-3xl group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute -top-2 -right-2 w-2 h-2 bg-[#1e9975] rounded-full animate-ping"></div>
+                </div>
             </div>
         </div>
         
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1683ab]/5 to-[#1e9975]/5"></div>
+        <!-- Enhanced Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1683ab]/8 to-[#1e9975]/8"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header Section -->
@@ -426,49 +446,81 @@
                 <div class="relative">
                     <!-- Main Migration Icon with Enhanced Effects -->
                     <div class="relative mx-auto lg:mx-0">
-                        <div class="w-56 h-56 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-3xl flex items-center justify-center mx-auto shadow-2xl backdrop-blur-sm relative overflow-hidden group">
+                        <div class="w-64 h-64 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-3xl flex items-center justify-center mx-auto shadow-2xl backdrop-blur-sm relative overflow-hidden group">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fas fa-server text-[#1683ab] text-7xl group-hover:text-white transition-all duration-500 relative z-10"></i>
+                            
+                            <!-- Animated Background Pattern -->
+                            <div class="absolute inset-0 opacity-20">
+                                <div class="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-lg"></div>
+                                <div class="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full blur-lg"></div>
+                            </div>
+                            
+                            <i class="fas fa-server text-[#1683ab] text-8xl group-hover:text-white transition-all duration-500 relative z-10 group-hover:scale-110"></i>
                             
                             <!-- Enhanced Floating Elements -->
-                            <div class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-arrow-right text-white text-2xl"></i>
+                            <div class="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-arrow-right text-white text-3xl group-hover:animate-pulse"></i>
+                                <div class="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-ping"></div>
                             </div>
-                            <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 0.5s;">
-                                <i class="fas fa-check text-white text-2xl"></i>
+                            <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 0.5s;">
+                                <i class="fas fa-check text-white text-3xl group-hover:animate-pulse"></i>
+                                <div class="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-ping"></div>
+                            </div>
+                            
+                            <!-- Additional Floating Elements -->
+                            <div class="absolute top-1/2 -right-4 w-16 h-16 bg-gradient-to-r from-[#1683ab]/40 to-[#1e9975]/40 rounded-xl flex items-center justify-center shadow-xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 1s;">
+                                <i class="fas fa-sync-alt text-white text-lg group-hover:animate-spin"></i>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Enhanced Migration Process Steps -->
                     <div class="mt-16 space-y-8">
-                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
-                            <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
-                                <span class="text-[#1683ab] font-bold text-2xl group-hover:text-white transition-colors duration-300">1</span>
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-all duration-300 p-4 rounded-2xl hover:bg-white/5">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
+                                    <span class="text-[#1683ab] font-bold text-3xl group-hover:text-white transition-colors duration-300">1</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab] rounded-full animate-ping"></div>
                             </div>
-                            <div>
-                                <div class="font-bold text-white text-lg mb-1">Свържете се с нас</div>
-                                <div class="text-gray-400">Обяснете текущия хостинг и нуждите</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1683ab] transition-colors duration-300">Свържете се с нас</div>
+                                <div class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Обяснете текущия хостинг и нуждите</div>
                             </div>
-                        </div>
-                        
-                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
-                            <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110">
-                                <span class="text-[#1e9975] font-bold text-2xl group-hover:text-white transition-colors duration-300">2</span>
-                            </div>
-                            <div>
-                                <div class="font-bold text-white text-lg mb-1">Нашият екип действа</div>
-                                <div class="text-gray-400">Безопасно преместване с експертна грижа</div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                                <i class="fas fa-arrow-right text-[#1683ab] text-xl"></i>
                             </div>
                         </div>
                         
-                        <div class="flex items-center text-gray-300 group hover:text-white transition-colors duration-300">
-                            <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110">
-                                <span class="text-[#1683ab] font-bold text-2xl group-hover:text-white transition-colors duration-300">3</span>
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-all duration-300 p-4 rounded-2xl hover:bg-white/5">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
+                                    <span class="text-[#1e9975] font-bold text-3xl group-hover:text-white transition-colors duration-300">2</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975] rounded-full animate-ping"></div>
                             </div>
-                            <div>
-                                <div class="font-bold text-white text-lg mb-1">Готово!</div>
-                                <div class="text-gray-400">Сайтът работи перфектно на новия хостинг</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1e9975] transition-colors duration-300">Нашият екип действа</div>
+                                <div class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Безопасно преместване с експертна грижа</div>
+                            </div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                                <i class="fas fa-cogs text-[#1e9975] text-xl group-hover:animate-spin"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-300 group hover:text-white transition-all duration-300 p-4 rounded-2xl hover:bg-white/5">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
+                                    <span class="text-[#1683ab] font-bold text-3xl group-hover:text-white transition-colors duration-300">3</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab] rounded-full animate-ping"></div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1683ab] transition-colors duration-300">Готово!</div>
+                                <div class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Сайтът работи перфектно на новия хостинг</div>
+                            </div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                                <i class="fas fa-check-circle text-[#1683ab] text-xl group-hover:scale-110"></i>
                             </div>
                         </div>
                     </div>
