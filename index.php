@@ -9,9 +9,13 @@
     <meta name="keywords" content="<?php echo_config('seo.keywords'); ?>">
     <meta name="author" content="<?php echo_config('seo.author'); ?>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #121212;
+            font-family: 'Comfortaa', cursive;
         }
         
         /* Floating Cloud Animations */
@@ -199,59 +203,71 @@
                             
                             <!-- Enhanced TLD Selection -->
                             <div class="mt-8 pt-6 border-t border-white/20 relative">
-                                <p class="text-sm text-white/80 mb-4 text-center font-semibold uppercase tracking-wide">Популярни домейни:</p>
-                                <div class="grid grid-cols-3 gap-3">
+                                <p class="text-sm text-white/80 mb-6 text-center font-semibold uppercase tracking-wide">Популярни домейни:</p>
+                                <div class="grid grid-cols-3 gap-4">
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1683ab]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.com</div>
-                                                <div class="text-xs text-white/70 mt-0.5">15лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.com</div>
+                                                <div class="text-sm text-white/80 font-medium">15лв/година</div>
+                                                <div class="text-xs text-[#1683ab]/70 mt-1 font-medium">Най-популярен</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1e9975]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.bg</div>
-                                                <div class="text-xs text-white/70 mt-0.5">12лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.bg</div>
+                                                <div class="text-sm text-white/80 font-medium">12лв/година</div>
+                                                <div class="text-xs text-[#1e9975]/70 mt-1 font-medium">Български</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.net</div>
-                                                <div class="text-xs text-white/70 mt-0.5">18лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.net</div>
+                                                <div class="text-sm text-white/80 font-medium">18лв/година</div>
+                                                <div class="text-xs text-[#1683ab]/70 mt-1 font-medium">Професионален</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1e9975]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.org</div>
-                                                <div class="text-xs text-white/70 mt-0.5">20лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.org</div>
+                                                <div class="text-sm text-white/80 font-medium">20лв/година</div>
+                                                <div class="text-xs text-[#1e9975]/70 mt-1 font-medium">Организации</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.eu</div>
-                                                <div class="text-xs text-white/70 mt-0.5">16лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300 mb-2">.eu</div>
+                                                <div class="text-sm text-white/80 font-medium">16лв/година</div>
+                                                <div class="text-xs text-[#1683ab]/70 mt-1 font-medium">Европейски</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="group cursor-pointer">
-                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
-                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div class="bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 rounded-2xl p-3 text-center transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-white/20 relative overflow-hidden group-hover:border-[#1683ab]/50 group-hover:shadow-xl group-hover:shadow-[#1e9975]/20">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975]/30 rounded-full group-hover:scale-150 transition-all duration-500"></div>
                                             <div class="relative z-10">
-                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.info</div>
-                                                <div class="text-xs text-white/70 mt-0.5">14лв/година</div>
+                                                <div class="text-xl font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300 mb-2">.info</div>
+                                                <div class="text-sm text-white/80 font-medium">14лв/година</div>
+                                                <div class="text-xs text-[#1e9975]/70 mt-1 font-medium">Информационен</div>
                                             </div>
                                         </div>
                                     </div>
