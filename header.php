@@ -9,11 +9,11 @@
 
             <!-- Center Navigation Menu -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="#home" class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/10">Начало</a>
+                <a href="#home" class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl">Начало</a>
                 
                 <!-- Hosting Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">
+                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
                         Хостинг
                         <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
                     </button>
@@ -24,7 +24,7 @@
                 
                 <!-- Domains Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">
+                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
                         Домейни
                         <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
                     </button>
@@ -34,7 +34,7 @@
                 
                 <!-- Solutions Mega Menu -->
                 <div class="relative group">
-                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">
+                    <button class="text-gray-200 hover:text-white font-medium transition-colors duration-200 px-3 py-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 backdrop-contrast-125 border border-white/5 rounded-2xl shadow-2xl flex items-center gap-2">
                         Решения
                         <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
                     </button>

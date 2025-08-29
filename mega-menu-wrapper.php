@@ -120,7 +120,7 @@ function render_hosting_mega_menu() {
 // Example usage function for domains mega menu
 function render_domains_mega_menu() {
     $domains_menu = [
-        'width' => 'w-[600px]',
+        'width' => 'w-[800px]',
         'custom_design' => true,
         'custom_template' => 'custom_domains_template',
         'show_bottom_cta' => true,
@@ -134,7 +134,7 @@ function render_domains_mega_menu() {
 // Example usage function for solutions mega menu
 function render_solutions_mega_menu() {
     $solutions_menu = [
-        'width' => 'w-[700px]',
+        'width' => 'w-[750px]',
         'sections' => [
             [
                 'icon' => 'cogs',
