@@ -78,21 +78,21 @@
         <div class="overlay"></div>
       
         <!-- Content Container --> 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
+        <div class="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32">
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
                 <!-- Left Side - Enhanced Content -->
-                <div class="space-y-6">
+                <div class="space-y-10">
                
                     <!-- Enhanced Headline -->
-                    <div class="space-y-4">
-                        <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-                            <span class="text-white">Най-доброто</span>
+                    <div class="space-y-8">
+                        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                            <span class="text-white drop-shadow-lg">Най-доброто</span>
                             <br>
-                            <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">хостинг решение</span>
+                            <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent drop-shadow-lg">хостинг решение</span>
                             <br>
-                            <span class="text-white">за вашия бизнес</span>
+                            <span class="text-white drop-shadow-lg">за вашия бизнес</span>
                         </h1>
-                        <p class="text-lg text-gray-300 leading-relaxed max-w-lg">
+                        <p class="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl font-medium">
                             Професионален хостинг с 99.9% uptime, 24/7 поддръжка и най-новите технологии за вашия уебсайт.
                         </p>
                     </div>
@@ -100,30 +100,30 @@
             
                     
                     <!-- Enhanced CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <button class="px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1e9975]/25 flex items-center justify-center gap-2 group">
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <button class="px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1e9975]/30 flex items-center justify-center gap-3 group shadow-lg">
                             <span>Започнете сега</span>
-                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300 text-xl"></i>
                         </button>
-                        <button class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-[#1683ab]/30 transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2 group">
-                            <i class="fas fa-play text-[#1e9975]"></i>
+                        <button class="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold text-lg rounded-2xl border-2 border-[#1683ab]/40 transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-3 group shadow-lg">
+                            <i class="fas fa-play text-[#1e9975] text-xl"></i>
                             <span>Вижте демо</span>
                         </button>
                     </div>
                     
                     <!-- Enhanced Trust Indicators -->
-                    <div class="flex items-center space-x-4 pt-4">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-shield-alt text-[#1e9975] text-sm"></i>
-                            <span class="text-xs text-gray-400">SSL защита</span>
+                    <div class="flex items-center space-x-8 pt-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-shield-alt text-[#1e9975] text-lg"></i>
+                            <span class="text-sm text-gray-300 font-medium">SSL защита</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-database text-[#1683ab] text-sm"></i>
-                            <span class="text-xs text-gray-400">SSD дискове</span>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-database text-[#1683ab] text-lg"></i>
+                            <span class="text-sm text-gray-300 font-medium">SSD дискове</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-globe text-[#1e9975] text-sm"></i>
-                            <span class="text-xs text-gray-400">CDN включен</span>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-globe text-[#1e9975] text-lg"></i>
+                            <span class="text-sm text-gray-300 font-medium">CDN включен</span>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                         </div>
                         
                         <!-- Main Form Container -->
-                        <div class="relative bg-white/8 backdrop-blur-lg border border-[#1683ab]/15 rounded-[2rem] p-5 overflow-hidden">
+                        <div class="relative bg-white/8 backdrop-blur-lg border border-[#1683ab]/15 rounded-[2rem] p-8 overflow-hidden">
                             <!-- Enhanced Floating Elements -->
                             <div class="absolute inset-0 pointer-events-none">
                                 <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-[#1683ab]/40 rounded-full animate-pulse"></div>
@@ -818,7 +818,8 @@
             right: 0px;
             height: 100%;
             background: linear-gradient(180deg, transparent 44.24%, #121212);
-            z-index: 15;
+            z-index: 5;
+            pointer-events: none;
         }
         
         .header-animation {
@@ -828,6 +829,7 @@
             top: -180px;
             left: 0;
             z-index: 1;
+            pointer-events: none;
         }
         
         .header-animation .animation {
