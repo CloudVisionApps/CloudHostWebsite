@@ -618,13 +618,18 @@
                                 <span class="text-gray-400 ml-2" id="<?php echo $planKey; ?>-period"><?php echo $plan['monthly_period']; ?></span>
                             </div>
                             <div class="yearly-price hidden">
-                                <div class="text-center space-y-2">
-                                    <div class="text-2xl text-[#1e9975] font-semibold"><?php echo $plan['yearly_discount']; ?> отстъпка</div>
+                                    <div class="text-center space-y-3">
+                                  
                                     <div class="text-white">
-                                        <span class="text-4xl font-bold "><?php echo $plan['yearly_monthly_price']; ?> </span>   <span class="text-gray-400"><?php echo $plan['monthly_period']; ?></span>
+                                        <span class="text-4xl font-bold"><?php echo $plan['yearly_monthly_price']; ?></span>
+                                        <span class="text-gray-400 ml-2"><?php echo $plan['monthly_period']; ?></span>
                                     </div>
-                                
+                                    
                                     <div class="text-xl text-gray-300"><?php echo $plan['yearly_price']; ?> лв/година</div>
+
+                                    <div class="inline-flex items-center px-3 py-1 bg-[#1e9975] text-white text-sm font-semibold rounded-full">
+                                        <?php echo $plan['yearly_discount']; ?> отстъпка
+                                    </div>
                                 </div>
                             </div>
                         </div>
