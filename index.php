@@ -446,31 +446,70 @@
                 <div class="relative">
                     <!-- Main Migration Icon with Enhanced Effects -->
                     <div class="relative mx-auto lg:mx-0">
-                        <div class="w-64 h-64 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-3xl flex items-center justify-center mx-auto shadow-2xl backdrop-blur-sm relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                        <!-- Main Container with Better Design -->
+                        <div class="relative w-96 h-96 mx-auto lg:mx-0">
+                            <!-- Central Migration Icon -->
+                            <div class="absolute inset-0 flex items-center justify-center  group">
+                                <div class="absolute inset-0  animate-pulse"></div>
+                                
                             
-                            <!-- Animated Background Pattern -->
-                            <div class="absolute inset-0 opacity-20">
-                                <div class="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-lg"></div>
-                                <div class="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-r from-[#1e9975]/30 to-[#1683ab]/30 rounded-full blur-lg"></div>
                             </div>
                             
-                            <i class="fas fa-server text-[#1683ab] text-8xl group-hover:text-white transition-all duration-500 relative z-10 group-hover:scale-110"></i>
+                            <!-- New Migration Concept: Data Flow Visualization -->
+                            <div class="relative w-full h-full ">
+                                <!-- Central Migration Hub -->
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-full flex items-center justify-center shadow-[0_0_80px_rgba(22,131,171,0.6),0_0_120px_rgba(30,153,117,0.4)] group-hover:scale-110 transition-all duration-500">
+                                    <i class="fas fa-exchange-alt text-white text-4xl group-hover:rotate-180 transition-all duration-700"></i>
+                                </div>
+                                
+                                <!-- Circular Data Flow Lines -->
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 288 288">
+                                    <!-- Circular flow paths around the center -->
+                                    <path d="M144 48 A 96 96 0 0 1 240 144" stroke="url(#gradient1)" stroke-width="3" fill="none" stroke-dasharray="8,4" class="animate-dash"/>
+                                    <path d="M240 144 A 96 96 0 0 1 144 240" stroke="url(#gradient2)" stroke-width="3" fill="none" stroke-dasharray="8,4" class="animate-dash" style="animation-delay: 0.5s"/>
+                                    <path d="M144 240 A 96 96 0 0 1 48 144" stroke="url(#gradient3)" stroke-width="3" fill="none" stroke-dasharray="8,4" class="animate-dash" style="animation-delay: 1s"/>
+                                    <path d="M48 144 A 96 96 0 0 1 144 48" stroke="url(#gradient4)" stroke-width="3" fill="none" stroke-dasharray="8,4" class="animate-dash" style="animation-delay: 1.5s"/>
+                                    
+                                    <!-- Gradient definitions -->
+                                    <defs>
+                                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1e9975;stop-opacity:0.8"/>
+                                            <stop offset="100%" style="stop-color:#1683ab;stop-opacity:0.8"/>
+                                        </linearGradient>
+                                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1683ab;stop-opacity:0.8"/>
+                                            <stop offset="100%" style="stop-color:#1e9975;stop-opacity:0.8"/>
+                                        </linearGradient>
+                                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1e9975;stop-opacity:0.6"/>
+                                            <stop offset="100%" style="stop-color:#1683ab;stop-opacity:0.6"/>
+                                        </linearGradient>
+                                        <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1683ab;stop-opacity:0.7"/>
+                                            <stop offset="100%" style="stop-color:#1e9975;stop-opacity:0.7"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                
+                                <!-- Flow Nodes -->
+                                <div class="absolute top-[36px] left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#1e9975] rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-database text-white text-sm"></i>
+                                </div>
+                                
+                                <div class="absolute bottom-[36px] left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#1683ab] rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-server text-white text-sm"></i>
+                                </div>
+                                
+                                <div class="absolute top-1/2 right-[36px] transform -translate-y-1/2 w-12 h-12 bg-[#1e9975] rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-cloud text-white text-sm"></i>
+                                </div>
+                                
+                                <div class="absolute top-1/2 left-[36px] transform -translate-y-1/2 w-12 h-12 bg-[#1683ab] rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-code text-white text-sm"></i>
+                                </div>
+                            </div>
                             
-                            <!-- Enhanced Floating Elements -->
-                            <div class="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-arrow-right text-white text-3xl group-hover:animate-pulse"></i>
-                                <div class="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-ping"></div>
-                            </div>
-                            <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center shadow-2xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 0.5s;">
-                                <i class="fas fa-check text-white text-3xl group-hover:animate-pulse"></i>
-                                <div class="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-ping"></div>
-                            </div>
-                            
-                            <!-- Additional Floating Elements -->
-                            <div class="absolute top-1/2 -right-4 w-16 h-16 bg-gradient-to-r from-[#1683ab]/40 to-[#1e9975]/40 rounded-xl flex items-center justify-center shadow-xl animate-bounce group-hover:scale-110 transition-transform duration-300" style="animation-delay: 1s;">
-                                <i class="fas fa-sync-alt text-white text-lg group-hover:animate-spin"></i>
-                            </div>
+                         
                         </div>
                     </div>
                     
@@ -481,7 +520,6 @@
                                 <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
                                     <span class="text-[#1683ab] font-bold text-3xl group-hover:text-white transition-colors duration-300">1</span>
                                 </div>
-                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab] rounded-full animate-ping"></div>
                             </div>
                             <div class="flex-1">
                                 <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1683ab] transition-colors duration-300">Свържете се с нас</div>
@@ -497,7 +535,6 @@
                                 <div class="w-20 h-20 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1e9975]/40 group-hover:to-[#1683ab]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
                                     <span class="text-[#1e9975] font-bold text-3xl group-hover:text-white transition-colors duration-300">2</span>
                                 </div>
-                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975] rounded-full animate-ping"></div>
                             </div>
                             <div class="flex-1">
                                 <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1e9975] transition-colors duration-300">Нашият екип действа</div>
@@ -513,7 +550,6 @@
                                 <div class="w-20 h-20 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
                                     <span class="text-[#1683ab] font-bold text-3xl group-hover:text-white transition-colors duration-300">3</span>
                                 </div>
-                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1683ab] rounded-full animate-ping"></div>
                             </div>
                             <div class="flex-1">
                                 <div class="font-bold text-white text-xl mb-2 group-hover:text-[#1683ab] transition-colors duration-300">Готово!</div>
@@ -1035,6 +1071,16 @@
             background: conic-gradient(from 0deg, rgba(9, 36, 46, 0.46), rgba(6, 28, 21, 0.55),rgb(5, 29, 37),rgb(4, 28, 21), rgb(7, 35, 45));
             background-size: 200% 200%;
             animation: border-gradient 18s linear infinite;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -24;
+            }
+        }
+        
+        .animate-dash {
+            animation: dash 3s linear infinite;
         }
     </style>
 </body>
