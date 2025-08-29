@@ -1265,7 +1265,7 @@
         
         .header-animation .animation-orange {
             opacity: 1;
-            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%,rgb(6, 32, 42) 0, transparent 100%);
+            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%,rgb(20, 101, 132) 0, transparent 100%);
             animation: orangeAnimation 16s linear infinite;
         }
         
@@ -1276,13 +1276,13 @@
         .header-animation .animation-gray {
             opacity: 0;
             animation: grayAnimation 16s linear infinite;
-            background: radial-gradient(169.22% 169.22% at 50% -45.86%,rgb(1, 7, 5) 0, transparent 100%);
+            background: radial-gradient(169.22% 169.22% at 50% -45.86%,rgb(9, 67, 48) 0, transparent 100%);
         }
         
         .header-animation .animation-blue {
             opacity: 0;
             animation: blueAnimation 16s linear infinite;
-            background: radial-gradient(111.77% 306.21% at -17.34% -6.72%, #0a1a22 0, transparent 100%);
+            background: radial-gradient(111.77% 306.21% at -17.34% -6.72%,rgb(17, 62, 85) 0, transparent 100%);
         }
         
         @keyframes orangeAnimation {
