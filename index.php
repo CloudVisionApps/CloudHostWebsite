@@ -146,7 +146,7 @@
                         <!-- Main Form Container -->
                         <div class="relative rounded-[2.5rem] p-[2px] animate-border-gradient overflow-hidden shadow-2xl">
                             <!-- Inner Content Box -->
-                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/95 to-[#1a1a1a]/95 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
+                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/5 to-[#1a1a1a]/10 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
                             <!-- Enhanced Background Pattern -->
                             <div class="absolute inset-0 opacity-20">
                                 <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-xl"></div>
@@ -164,10 +164,8 @@
                             
                             <!-- Enhanced Form Header -->
                             <div class="text-center mb-8 relative">
-                                <div class="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#1683ab] to-[#1e9975] rounded-2xl mb-6 shadow-xl">
-                                    <i class="fas fa-search text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white mb-3">Намерете домейн</h3>
+                               
+                                <h3 class="text-3xl font-bold text-white mb-3">Намерете своя домейн</h3>
                                 <p class="text-white/80 text-base leading-relaxed max-w-sm mx-auto">Проверете наличността на вашия идеален домейн и започнете онлайн пътуването</p>
                             </div>
                             
@@ -939,9 +937,9 @@
         }
         
         .animate-border-gradient {
-            background: conic-gradient(from 0deg, rgba(9, 36, 46, 0.46), rgba(6, 28, 21, 0.55),rgb(5, 29, 37),rgb(10, 63, 47), rgb(9, 36, 46));
+            background: conic-gradient(from 0deg, rgba(9, 36, 46, 0.46), rgba(6, 28, 21, 0.55),rgb(5, 29, 37),rgb(4, 28, 21), rgb(7, 35, 45));
             background-size: 200% 200%;
-            animation: border-gradient 8s linear infinite;
+            animation: border-gradient 18s linear infinite;
         }
     </style>
 </body>
