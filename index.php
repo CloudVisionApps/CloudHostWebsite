@@ -150,7 +150,7 @@
                         <!-- Main Form Container -->
                         <div class="relative rounded-[2.5rem] p-[2px] animate-border-gradient overflow-hidden shadow-2xl">
                             <!-- Inner Content Box -->
-                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/5 to-[#1a1a1a]/10 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
+                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/30 to-[#1a1a1a]/40 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
                             <!-- Enhanced Background Pattern -->
                             <div class="absolute inset-0 opacity-20">
                                 <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-xl"></div>
@@ -570,7 +570,7 @@
     <!-- Pricing Plans -->
     <section id="plans" class="py-24">
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
                     <i class="fas fa-tags mr-2"></i>
@@ -620,9 +620,11 @@
                             <div class="yearly-price hidden">
                                 <div class="text-center space-y-2">
                                     <div class="text-2xl text-[#1e9975] font-semibold"><?php echo $plan['yearly_discount']; ?> отстъпка</div>
-                                    <div class="text-4xl font-bold text-white"><?php echo $plan['yearly_monthly_price']; ?></div>
-                                    <div class="text-gray-400"><?php echo $plan['monthly_period']; ?></div>
-                                    <div class="text-sm text-gray-300">Общо: <?php echo $plan['yearly_price']; ?> лв/година</div>
+                                    <div class="text-white">
+                                        <span class="text-4xl font-bold "><?php echo $plan['yearly_monthly_price']; ?> </span>   <span class="text-gray-400"><?php echo $plan['monthly_period']; ?></span>
+                                    </div>
+                                
+                                    <div class="text-xl text-gray-300"><?php echo $plan['yearly_price']; ?> лв/година</div>
                                 </div>
                             </div>
                         </div>
@@ -662,9 +664,25 @@
 
 
     <!-- Features Section -->
-    <section id="features" class="py-24 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+    <section id="features" class="relative overflow-hidden py-24 ">
+
+      <!-- Animated Background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#121819] via-[#11272a] to-[#112627]"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-2 h-2 bg-[#1e9975] rounded-full animate-ping" style="animation-delay: 0s;"></div>
+            <div class="absolute top-32 right-20 w-3 h-3 bg-[#1683ab] rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/3 w-2 h-2 bg-[#1e9975] rounded-full animate-ping" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 right-1/4 w-4 h-4 bg-[#1683ab] rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+        </div>
+    
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    
+
+            <div class=" text-center mb-16">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
                     <i class="fas fa-star mr-2"></i>
                     Нашите предимства
@@ -757,7 +775,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5 relative overflow-hidden">
+    <section class="py-24 relative overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-20 w-32 h-32 border border-[#1683ab]/30 rounded-full animate-pulse"></div>
@@ -831,7 +849,7 @@
     <!-- Newsletter Subscription Section -->
     <section class="py-24 relative overflow-hidden">
         <!-- Animated Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#0a1a22] via-[#0f2a35] to-[#0a1a22]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#121819] via-[#11272a] to-[#112627]"></div>
         
         <!-- Floating Elements -->
         <div class="absolute inset-0 overflow-hidden">
@@ -1084,41 +1102,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const monthlyTab = document.getElementById('monthly-tab');
             const yearlyTab = document.getElementById('yearly-tab');
-            
-            // Get pricing data from PHP config
-            const monthlyPrices = {
-                starter: '<?php echo get_config('plans.starter.monthly_price'); ?>',
-                professional: '<?php echo get_config('plans.professional.monthly_price'); ?>',
-                enterprise: '<?php echo get_config('plans.enterprise.monthly_price'); ?>'
-            };
-            
-            // Yearly prices from config
-            const yearlyPrices = {
-                starter: '<?php echo get_config('plans.starter.yearly_price'); ?>',
-                professional: '<?php echo get_config('plans.professional.yearly_price'); ?>',
-                enterprise: '<?php echo get_config('plans.enterprise.yearly_price'); ?>'
-            };
-            
-            // Yearly monthly prices (discounted monthly rate when paying yearly)
-            const yearlyMonthlyPrices = {
-                starter: '<?php echo get_config('plans.starter.yearly_monthly_price'); ?>',
-                professional: '<?php echo get_config('plans.professional.yearly_monthly_price'); ?>',
-                enterprise: '<?php echo get_config('plans.enterprise.yearly_monthly_price'); ?>'
-            };
-            
-            // Monthly periods from config
-            const monthlyPeriods = {
-                starter: '<?php echo get_config('plans.starter.monthly_period'); ?>',
-                professional: '<?php echo get_config('plans.professional.monthly_period'); ?>',
-                enterprise: '<?php echo get_config('plans.enterprise.monthly_period'); ?>'
-            };
-            
-            // Yearly periods from config
-            const yearlyPeriods = {
-                starter: '<?php echo get_config('plans.starter.yearly_period'); ?>',
-                professional: '<?php echo get_config('plans.professional.yearly_period'); ?>',
-                enterprise: '<?php echo get_config('plans.enterprise.yearly_period'); ?>'
-            };
+        
             
             function updatePrices(isYearly) {
                 // Show/hide monthly vs yearly price sections
