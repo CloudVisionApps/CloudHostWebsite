@@ -599,164 +599,50 @@
             
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Starter Plan -->
-                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
-                        <div class="mb-6">
-                            <div class="monthly-price">
-                                <span class="text-4xl font-bold text-white" id="starter-price">19.99</span>
-                                <span class="text-gray-400 ml-2" id="starter-period">лв/месец</span>
-                            </div>
-                            <div class="yearly-price hidden">
-                            <div class="text-xl font-bold text-white">или</div>
-                                <span class="text-4xl font-bold text-white" id="starter-yearly-price">239.88</span>
-                                <span class="text-gray-400 ml-2">лв/година</span>
-                                <div class="mt-2">
-                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-400">Идеален за малки сайтове и блогове</p>
-                    </div>
+                <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                <div class="<?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-8 border-2 border-[#1683ab] relative group hover:scale-105 transition-all duration-500' : 'bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105'; ?>">
                     
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            10 GB SSD пространство
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            Безлимитна трафик
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            5 бази данни
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            SSL сертификат
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            24/7 поддръжка
-                        </li>
-                    </ul>
-                    
-                    <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Избери план
-                    </button>
-                </div>
-                
-                <!-- Professional Plan -->
-                <div class="bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-8 border-2 border-[#1683ab] relative group hover:scale-105 transition-all duration-500">
+                    <?php if (isset($plan['popular']) && $plan['popular']): ?>
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white px-6 py-2 rounded-full text-sm font-semibold">
                             Най-популярен
                         </span>
                     </div>
+                    <?php endif; ?>
                     
                     <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4"><?php echo $plan['name']; ?></h3>
                         <div class="mb-6">
                             <div class="monthly-price">
-                                <span class="text-4xl font-bold text-white" id="pro-price">39.99</span>
-                                <span class="text-gray-400 ml-2" id="pro-period">лв/месец</span>
+                                <span class="text-4xl font-bold text-white" id="<?php echo $planKey; ?>-price"><?php echo $plan['monthly_price']; ?></span>
+                                <span class="text-gray-400 ml-2" id="<?php echo $planKey; ?>-period"><?php echo $plan['monthly_period']; ?></span>
                             </div>
                             <div class="yearly-price hidden">
-                                <span class="text-4xl font-bold text-white" id="pro-yearly-price">479.88</span>
-                                <span class="text-gray-400 ml-2">лв/година</span>
-                                <div class="mt-2">
-                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
+                                <div class="text-center space-y-2">
+                                    <div class="text-2xl text-[#1e9975] font-semibold"><?php echo $plan['yearly_discount']; ?> отстъпка</div>
+                                    <div class="text-4xl font-bold text-white"><?php echo $plan['yearly_monthly_price']; ?></div>
+                                    <div class="text-gray-400"><?php echo $plan['monthly_period']; ?></div>
+                                    <div class="text-sm text-gray-300">Общо: <?php echo $plan['yearly_price']; ?> лв/година</div>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-gray-400">За растещи бизнеси и e-commerce</p>
+                        <p class="text-gray-400"><?php echo $plan['description']; ?></p>
                     </div>
                     
                     <ul class="space-y-4 mb-8">
+                        <?php foreach ($plan['features'] as $feature): ?>
                         <li class="flex items-center text-gray-300">
                             <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            50 GB SSD пространство
+                            <?php echo $feature; ?>
                         </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            Безлимитна трафик
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            25 бази данни
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            SSL сертификат
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            CDN включен
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            Приоритетна поддръжка
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                     
                     <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Избери план
                     </button>
                 </div>
-                
-                <!-- Enterprise Plan -->
-                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
-                        <div class="mb-6">
-                            <div class="monthly-price">
-                                <span class="text-4xl font-bold text-white" id="enterprise-price">79.99</span>
-                                <span class="text-gray-400 ml-2" id="enterprise-period">лв/месец</span>
-                            </div>
-                            <div class="yearly-price hidden">
-                                <span class="text-4xl font-bold text-white" id="enterprise-yearly-price">959.88</span>
-                                <span class="text-gray-400 ml-2">лв/година</span>
-                                <div class="mt-2">
-                                    <span class="text-sm text-[#1e9975] font-semibold">✓ Обща цена за 12 месеца</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-400">За големи проекти и корпорации</p>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            200 GB SSD пространство
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            Безлимитна трафик
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            Безлимитни бази данни
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            SSL сертификат
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            CDN + DDoS защита
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                            VIP поддръжка
-                        </li>
-                    </ul>
-                    
-                    <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Избери план
-                    </button>
-                </div>
+                <?php endforeach; ?>
             </div>
             
             <!-- Additional Info -->
@@ -1199,32 +1085,39 @@
             const monthlyTab = document.getElementById('monthly-tab');
             const yearlyTab = document.getElementById('yearly-tab');
             
-            // Monthly prices
+            // Get pricing data from PHP config
             const monthlyPrices = {
-                starter: '19.99',
-                pro: '39.99',
-                enterprise: '79.99'
+                starter: '<?php echo get_config('plans.starter.monthly_price'); ?>',
+                professional: '<?php echo get_config('plans.professional.monthly_price'); ?>',
+                enterprise: '<?php echo get_config('plans.enterprise.monthly_price'); ?>'
             };
             
-            // Yearly prices (12 months × monthly price)
+            // Yearly prices from config
             const yearlyPrices = {
-                starter: '239.88',
-                pro: '479.88',
-                enterprise: '959.88'
+                starter: '<?php echo get_config('plans.starter.yearly_price'); ?>',
+                professional: '<?php echo get_config('plans.professional.yearly_price'); ?>',
+                enterprise: '<?php echo get_config('plans.enterprise.yearly_price'); ?>'
             };
             
-            // Monthly periods
+            // Yearly monthly prices (discounted monthly rate when paying yearly)
+            const yearlyMonthlyPrices = {
+                starter: '<?php echo get_config('plans.starter.yearly_monthly_price'); ?>',
+                professional: '<?php echo get_config('plans.professional.yearly_monthly_price'); ?>',
+                enterprise: '<?php echo get_config('plans.enterprise.yearly_monthly_price'); ?>'
+            };
+            
+            // Monthly periods from config
             const monthlyPeriods = {
-                starter: 'лв/месец',
-                pro: 'лв/месец',
-                enterprise: 'лв/месец'
+                starter: '<?php echo get_config('plans.starter.monthly_period'); ?>',
+                professional: '<?php echo get_config('plans.professional.monthly_period'); ?>',
+                enterprise: '<?php echo get_config('plans.enterprise.monthly_period'); ?>'
             };
             
-            // Yearly periods
+            // Yearly periods from config
             const yearlyPeriods = {
-                starter: 'лв/година',
-                pro: 'лв/година',
-                enterprise: 'лв/година'
+                starter: '<?php echo get_config('plans.starter.yearly_period'); ?>',
+                professional: '<?php echo get_config('plans.professional.yearly_period'); ?>',
+                enterprise: '<?php echo get_config('plans.enterprise.yearly_period'); ?>'
             };
             
             function updatePrices(isYearly) {
@@ -1234,7 +1127,7 @@
                 
                 if (isYearly) {
                     // Show yearly prices, hide monthly
-                    monthlyPriceElements.forEach(element => element.classList.remove('hidden'));
+                    monthlyPriceElements.forEach(element => element.classList.add('hidden'));
                     yearlyPriceElements.forEach(element => element.classList.remove('hidden'));
                 } else {
                     // Show monthly prices, hide yearly
