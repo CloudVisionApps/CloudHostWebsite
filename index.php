@@ -158,16 +158,16 @@
     
             
             <!-- Floating Geometric Shapes -->
-            <div class="absolute top-32 left-1/4 w-20 h-20 border border-[#1683ab]/20 rounded-full animate-pulse rotate-12"></div>
-            <div class="absolute top-40 right-1/3 w-16 h-16 border border-[#1e9975]/20 rounded-full animate-pulse -rotate-12" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-40 left-1/3 w-24 h-24 border border-[#1683ab]/15 rounded-full animate-pulse rotate-45" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/3 right-1/4 w-28 h-28 border border-[#1e9975]/15 rounded-full animate-pulse -rotate-45" style="animation-delay: 0.5s;"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-20 h-20 border border-[#1683ab]/15 rounded-full animate-pulse rotate-90" style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-32 left-1/4 w-20 h-20 border border-[#1683ab]/20 rounded-full animate-pulse rotate-12 parallax-element" data-speed="0.3"></div>
+            <div class="absolute top-40 right-1/3 w-16 h-16 border border-[#1e9975]/20 rounded-full animate-pulse -rotate-12 parallax-element" data-speed="0.2" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-1/3 w-24 h-24 border border-[#1683ab]/15 rounded-full animate-pulse rotate-45 parallax-element" data-speed="0.4" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-28 h-28 border border-[#1e9975]/15 rounded-full animate-pulse -rotate-45 parallax-element" data-speed="0.25" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-20 h-20 border border-[#1683ab]/15 rounded-full animate-pulse rotate-90 parallax-element" data-speed="0.35" style="animation-delay: 1.5s;"></div>
             
             <!-- Animated Squares -->
-            <div class="absolute top-24 left-1/2 w-12 h-12 border border-[#1e9975]/25 rotate-45 animate-pulse" style="animation-delay: 0.8s;"></div>
-            <div class="absolute bottom-32 right-1/4 w-16 h-16 border border-[#1683ab]/25 -rotate-45 animate-pulse" style="animation-delay: 2.2s;"></div>
-            <div class="absolute top-1/2 left-1/4 w-10 h-10 border border-[#1e9975]/20 rotate-12 animate-pulse" style="animation-delay: 1.8s;"></div>
+            <div class="absolute top-24 left-1/2 w-12 h-12 border border-[#1e9975]/25 rotate-45 animate-pulse parallax-element" data-speed="0.15" style="animation-delay: 0.8s;"></div>
+            <div class="absolute bottom-32 right-1/4 w-16 h-16 border border-[#1683ab]/25 -rotate-45 animate-pulse parallax-element" data-speed="0.45" style="animation-delay: 2.2s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-10 h-10 border border-[#1e9975]/20 rotate-12 animate-pulse parallax-element" data-speed="0.28" style="animation-delay: 1.8s;"></div>
             
             <!-- Particle Effects -->
             <div class="absolute top-16 right-16 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-ping"></div>
@@ -214,7 +214,7 @@
             <!-- Main Hero Content -->
             <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[80vh]">
                 <!-- Left Side - Enhanced Content -->
-                <div class="space-y-8 lg:space-y-12 text-center lg:text-left">
+                <div class="space-y-8 lg:space-y-12 text-center lg:text-left scroll-fade-in">
                     <!-- Enhanced Headline -->
                     <div class="space-y-6 lg:space-y-8">
                         <h1 class="text-4xl lg:text-6xl xl:text-6xl font-bold leading-tight tracking-tight">
@@ -230,7 +230,7 @@
                     </div>
                     
                     <!-- Enhanced CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start">
+                    <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start scroll-stagger">
                         <button class="px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1e9975]/30 flex items-center justify-center gap-3 group shadow-lg">
                             <span>Започнете сега</span>
                             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300 text-xl"></i>
@@ -242,7 +242,7 @@
                     </div>
                     
                     <!-- Enhanced Trust Indicators -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 pt-6 lg:pt-8">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 pt-6 lg:pt-8 scroll-stagger">
                         <div class="flex items-center space-x-3 group">
                             <div class="w-10 h-10 bg-gradient-to-r from-[#1e9975]/20 to-[#1683ab]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                                 <i class="fas fa-shield-alt text-[#1e9975] text-lg"></i>
@@ -269,7 +269,7 @@
                 </div>
                 
                 <!-- Right Side - Enhanced Domain Search Form -->
-                <div class="relative order-first lg:order-last">
+                <div class="relative order-first lg:order-last scroll-slide-right">
                     <!-- Enhanced Form Container -->
                     <div class="relative">
                         <!-- Complex Background System -->
@@ -455,7 +455,7 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header Section -->
-            <div class="text-center mb-20">
+            <div class="text-center mb-20 scroll-fade-in">
                 <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-2xl">
                     <i class="fas fa-exchange-alt mr-3 text-lg"></i>
                     Безплатна миграция
@@ -472,7 +472,7 @@
             
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <!-- Left Side - Enhanced Content -->
-                <div class="text-center lg:text-left">
+                <div class="text-center lg:text-left scroll-slide-left">
                     <!-- Migration Benefits with Enhanced Icons -->
                     <div class="space-y-6 mb-12">
                         <div class="group flex items-center text-gray-300 hover:text-white transition-all duration-300">
@@ -517,7 +517,7 @@
                     </div>
                     
                     <!-- Enhanced CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-6">
+                    <div class="flex flex-col sm:flex-row gap-6 scroll-stagger">
                         <a href="#contact" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-xl px-10 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-[#1e9975]/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975] to-[#1683ab] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <span class="relative z-10 flex items-center">
@@ -533,7 +533,7 @@
                     
                     <!-- Trust Indicators -->
                     <div class="mt-12 pt-8 border-t border-white/10">
-                        <div class="flex items-center justify-center space-x-8 text-gray-400">
+                        <div class="flex items-center justify-center space-x-8 text-gray-400 scroll-stagger">
                             <div class="flex items-center">
                                 <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
                                 <span>SSL включен</span>
@@ -551,7 +551,7 @@
                 </div>
                 
                 <!-- Right Side - Enhanced Visual -->
-                <div class="relative">
+                <div class="relative scroll-scale-in">
                     <!-- Main Migration Icon with Enhanced Effects -->
                     <div class="relative mx-auto lg:mx-0">
                         <!-- Main Container with Better Design -->
@@ -678,7 +678,7 @@
     <section id="plans" class="py-24">
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-            <div class="text-center mb-20">
+            <div class="text-center mb-20 scroll-fade-in">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
                     <i class="fas fa-tags mr-2"></i>
                     Цени и планове
@@ -705,7 +705,7 @@
                 </div>
             
             <!-- Pricing Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-stagger">
                 <?php foreach (get_config('plans') as $planKey => $plan): ?>
                 <div class="<?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-8 border-2 border-[#1683ab] relative group hover:scale-105 transition-all duration-500' : 'bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105'; ?>">
                     
@@ -794,7 +794,7 @@
 
     
 
-            <div class=" text-center mb-16">
+            <div class=" text-center mb-16 scroll-fade-in">
                 <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-6">
                     <i class="fas fa-star mr-2"></i>
                     Нашите предимства
@@ -808,7 +808,7 @@
             </div>
             
             <!-- Main Features Grid -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="grid md:grid-cols-3 gap-8 mb-16 scroll-stagger">
                 <!-- Performance -->
                 <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                     <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -850,7 +850,7 @@
             </div>
             
             <!-- Additional Features -->
-            <div class="grid md:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-4 gap-6 scroll-stagger">
                 <div class="text-center">
                     <div class="w-12 h-12 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-lg flex items-center justify-center mx-auto mb-3">
                         <i class="fas fa-exchange-alt text-white"></i>
@@ -896,8 +896,8 @@
         </div>
         
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="animate-fade-in-up">
-                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-lg">
+            <div class="scroll-glow-in">
+                <div class="mt-12 inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-lg">
                     <i class="fas fa-rocket mr-3 text-lg"></i>
                     Готови сте за промяна?
                 </div>
@@ -925,7 +925,7 @@
                     </div>
                 </div>
                 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-stagger">
                     <a href="#plans" class="group bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-xl px-12 py-5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center">
                         <span>Започнете днес</span>
                         <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -937,9 +937,9 @@
                 </div>
                 
                 <!-- Additional CTA Info -->
-                <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="mt-12 pt-8 pb-12 border-t border-white/10">
                     <p class="text-sm text-gray-400 mb-4">Няма дългосрочни договори • Отменете по всяко време • 24/7 поддръжка</p>
-                    <div class="flex justify-center items-center space-x-6 text-gray-500">
+                    <div class="flex justify-center items-center space-x-6 text-gray-500 scroll-stagger">
                         <div class="flex items-center">
                             <i class="fas fa-shield-alt text-[#1683ab] mr-2"></i>
                             <span>SSL включен</span>
@@ -973,7 +973,7 @@
         
         <!-- Main Content -->
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-bounce-in">
                 <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-lg">
                     <i class="fas fa-rocket mr-3 text-lg"></i>
                     Ексклузивен достъп
@@ -984,7 +984,7 @@
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
                     Получете ексклузивни оферти, новини за продуктите и експертни съвети
                 </p>
-                <div class="flex items-center justify-center space-x-6 text-gray-400">
+                <div class="flex items-center justify-center space-x-6 text-gray-400 scroll-stagger">
                     <div class="flex items-center">
                         <i class="fas fa-check-circle text-[#1e9975] mr-2"></i>
                         <span>Без спам</span>
@@ -1002,7 +1002,7 @@
             
             <!-- Subscription Form -->
             <div class="max-w-4xl mx-auto">
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden scroll-blur-in">
                     <!-- Form Background Pattern -->
                     <div class="absolute inset-0 opacity-5">
                         <div class="absolute top-0 right-0 w-64 h-64 border border-white/20 rounded-full"></div>
@@ -1054,7 +1054,7 @@
                 </div>
                 
                 <!-- Success Stats -->
-                <div class="mt-12 grid grid-cols-3 gap-8 text-center">
+                <div class="mt-12 grid grid-cols-3 gap-8 text-center scroll-stagger">
                     <div class="group">
                         <div class="text-3xl font-bold text-[#1683ab] mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
                         <div class="text-gray-400">Абонирани читатели</div>
@@ -1207,6 +1207,122 @@
         .animate-dash {
             animation: dash 3s linear infinite;
         }
+
+        /* Scroll Effects CSS */
+        .scroll-fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-fade-in.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-slide-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-slide-left.scroll-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scroll-slide-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-slide-right.scroll-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scroll-scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-scale-in.scroll-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .scroll-rotate-in {
+            opacity: 0;
+            transform: rotate(-10deg) scale(0.9);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-rotate-in.scroll-visible {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+        
+        .scroll-blur-in {
+            opacity: 0;
+            filter: blur(10px);
+            transform: scale(0.95);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-blur-in.scroll-visible {
+            opacity: 1;
+            filter: blur(0px);
+            transform: scale(1);
+        }
+        
+        .parallax-element {
+            transition: transform 0.1s ease-out;
+        }
+        
+        .scroll-stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-stagger.scroll-visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-stagger.scroll-visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .scroll-stagger.scroll-visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .scroll-stagger.scroll-visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .scroll-stagger.scroll-visible > *:nth-child(4) { transition-delay: 0.4s; }
+        .scroll-stagger.scroll-visible > *:nth-child(5) { transition-delay: 0.5s; }
+        .scroll-stagger.scroll-visible > *:nth-child(6) { transition-delay: 0.6s; }
+        
+        /* Enhanced scroll-triggered animations */
+        .scroll-glow-in {
+            opacity: 0;
+            transform: scale(0.9);
+            box-shadow: 0 0 0 rgba(30, 153, 117, 0);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-glow-in.scroll-visible {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 0 30px rgba(30, 153, 117, 0.3);
+        }
+        
+        .scroll-bounce-in {
+            opacity: 0;
+            transform: translateY(100px) scale(0.8);
+            transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .scroll-bounce-in.scroll-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     </style>
     
     <!-- Pricing Tabs JavaScript -->
@@ -1259,9 +1375,106 @@
             
             // Initialize with monthly pricing
             updatePrices(false);
+        });
+    </script>
+
+    <!-- Scroll Effects JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll effect observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all scroll effect elements
+            const scrollElements = document.querySelectorAll(`
+                .scroll-fade-in,
+                .scroll-slide-left,
+                .scroll-slide-right,
+                .scroll-scale-in,
+                .scroll-rotate-in,
+                .scroll-blur-in,
+                .scroll-glow-in,
+                .scroll-bounce-in,
+                .scroll-stagger
+            `);
+
+            scrollElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Parallax effect for background elements
+            let ticking = false;
             
-            // Simple fixed width approach - more reliable
-            // The sliding indicator now uses w-32 (128px) which should cover both buttons
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax-element');
+                
+                parallaxElements.forEach(element => {
+                    const speed = element.dataset.speed || 0.5;
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+                
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick);
+
+            // Enhanced scroll-triggered animations
+            function handleScrollAnimations() {
+                const scrolled = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                
+                // Add parallax effect to floating elements
+                const floatingElements = document.querySelectorAll('.absolute.top-32, .absolute.top-40, .absolute.bottom-40, .absolute.top-1\\/3, .absolute.bottom-1\\/3');
+                
+                floatingElements.forEach((element, index) => {
+                    const speed = 0.1 + (index * 0.05);
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+            }
+
+            window.addEventListener('scroll', handleScrollAnimations);
+            
+            // Smooth reveal for staggered elements
+            function revealStaggeredElements() {
+                const staggeredContainers = document.querySelectorAll('.scroll-stagger');
+                
+                staggeredContainers.forEach(container => {
+                    const items = container.children;
+                    const containerTop = container.offsetTop;
+                    const containerHeight = container.offsetHeight;
+                    const scrollTop = window.pageYOffset;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (scrollTop + windowHeight > containerTop && scrollTop < containerTop + containerHeight) {
+                        container.classList.add('scroll-visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', revealStaggeredElements);
+            
+            // Initialize on page load
+            revealStaggeredElements();
         });
     </script>
 </body>
