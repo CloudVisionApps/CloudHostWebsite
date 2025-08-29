@@ -89,10 +89,10 @@ $config = [
     
     // SEO Settings
     'seo' => [
-        'title' => 'CloudHost Pro - Премиум Cloud Хостинг Решения',
+        'title' => 'CloudHost.bg - Премиум Cloud Хостинг Решения',
         'description' => 'Изживейте светкавична производителност, 99.9% гарантирана работа и корпоративна сигурност с нашите cloud хостинг решения.',
         'keywords' => 'cloud хостинг, уеб хостинг, VPS, сървъри, cloud решения',
-        'author' => 'CloudHost Pro'
+        'author' => 'CloudHost.bg'
     ]
 ];
 
