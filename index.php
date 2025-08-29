@@ -624,7 +624,7 @@
                                         <span class="text-gray-400 ml-2"><?php echo $plan['monthly_period']; ?></span>
                                     </div>
                                     
-                                    <div class="text-xl text-gray-300"><?php echo $plan['yearly_price']; ?> лв/година</div>
+                                    <div class="text-3xl text-gray-300"><?php echo $plan['yearly_price']; ?> лв/година</div>
 
                                     <div class="inline-flex items-center px-3 py-1 bg-[#1e9975] text-white text-sm font-semibold rounded-full">
                                         <?php echo $plan['yearly_discount']; ?> отстъпка
