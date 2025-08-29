@@ -584,18 +584,18 @@
                 </p>
             </div>
             
-              <!-- Pricing Tabs -->
-              <div class="flex justify-center mb-12">
-                <div class="bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a]">
-                    <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
-                        Месечно
-                    </button>
-                    <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white">
-                        Годишно
-                        <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">-20%</span>
-                    </button>
+                              <!-- Simple Pricing Tabs -->
+                <div class="flex justify-center mb-12">
+                    <div class="bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a]">
+                        <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
+                            Месечно
+                        </button>
+                        <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2">
+                            Годишно
+                            <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">-20%</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
             
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1214,13 +1214,23 @@
             
             function switchToMonthly() {
                 monthlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
-                yearlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white';
+                yearlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2';
+                
+                // Update yearly badge to gray when inactive
+                const yearlyBadge = yearlyTab.querySelector('span');
+                yearlyBadge.className = 'ml-2 px-2 py-1 text-xs bg-gray-500 text-white rounded-full';
+                
                 updatePrices(false);
             }
             
             function switchToYearly() {
                 yearlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
-                monthlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white';
+                monthlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2';
+                
+                // Update yearly badge to white when active
+                const yearlyBadge = yearlyTab.querySelector('span');
+                yearlyBadge.className = 'ml-2 px-2 py-1 text-xs bg-white text-[#1e9975] rounded-full';
+                
                 updatePrices(true);
             }
             
@@ -1229,6 +1239,9 @@
             
             // Initialize with monthly pricing
             updatePrices(false);
+            
+            // Simple fixed width approach - more reliable
+            // The sliding indicator now uses w-32 (128px) which should cover both buttons
         });
     </script>
 </body>
