@@ -754,10 +754,10 @@
                 
                 <div class="text-center">
                     <div class="w-12 h-12 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-cogs text-white"></i>
+                        <i class="fas fa-bolt text-white"></i>
                     </div>
-                    <h4 class="font-semibold text-white mb-2">cPanel</h4>
-                    <p class="text-sm text-gray-300">Лесно управление</p>
+                    <h4 class="font-semibold text-white mb-2">adminbolt</h4>
+                    <p class="text-sm text-gray-300">Иновативен контролен панел</p>
                 </div>
                 
                 <div class="text-center">

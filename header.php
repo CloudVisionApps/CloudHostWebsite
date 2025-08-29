@@ -19,7 +19,20 @@
             <!-- Right Side Actions -->
             <div class="flex items-center space-x-4">
                 <!-- Sign In Button -->
-                <a href="#login" class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-medium transition-all duration-200 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Вход</a>
+                <a href="#login" class="hidden md:block group relative px-8 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold transition-all duration-300 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-[#1e9975]/30 transform hover:-translate-y-1 hover:scale-105 overflow-hidden">
+                    <!-- Animated Background Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975] to-[#1683ab] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <!-- Button Content -->
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        <i class="fas fa-sign-in-alt text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                        <span>Вход</span>
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </span>
+                    
+                    <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 -top-full bg-gradient-to-b from-transparent via-white/20 to-transparent group-hover:top-full transition-all duration-700"></div>
+                </a>
                 
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" id="mobile-menu-btn" aria-label="Toggle mobile menu">
