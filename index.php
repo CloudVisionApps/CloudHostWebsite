@@ -584,86 +584,165 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Starter Plan -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            <?php echo_config('plans.starter.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1683ab]"><?php echo_config('plans.starter.price'); ?> <?php echo_config('plans.starter.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.starter.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.starter.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Professional Plan -->
-                <div class="group relative bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-[#1683ab]/50 hover:border-[#1683ab] scale-105">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
-                            <i class="fas fa-star mr-2"></i>
-                            Препоръчан
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-4">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1683ab] transition-colors duration-300">
-                            <?php echo_config('plans.professional.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.professional.price'); ?> <?php echo_config('plans.professional.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.professional.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.professional.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1e9975] to-[#1683ab] hover:from-[#1a8a6a] hover:to-[#147a9a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/10 hover:border-white/20">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-[#1e9975] transition-colors duration-300">
-                            <?php echo_config('plans.enterprise.name'); ?>
-                        </h3>
-                        <div class="text-4xl font-bold mb-2 text-[#1e9975]"><?php echo_config('plans.enterprise.price'); ?> <?php echo_config('plans.enterprise.currency'); ?></div>
-                        <div class="text-lg text-gray-300 mb-6"><?php echo_config('plans.enterprise.period'); ?></div>
-                        
-                        <ul class="space-y-3 mb-8 text-left">
-                            <?php foreach (get_config('plans.enterprise.features') as $feature): ?>
-                                <li class="flex items-center text-gray-300">
-                                    <i class="fas fa-check text-[#1e9975] mr-3"></i>
-                                    <?php echo $feature; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white text-lg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Започнете
-                        </button>
-                    </div>
+              <!-- Pricing Tabs -->
+              <div class="flex justify-center mb-12">
+                <div class="bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a]">
+                    <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
+                        Месечно
+                    </button>
+                    <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white">
+                        Годишно
+                        <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">-20%</span>
+                    </button>
                 </div>
             </div>
+            
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Starter Plan -->
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-white" id="starter-price">19.99</span>
+                            <span class="text-gray-400 ml-2" id="starter-period">лв/месец</span>
+                        </div>
+                        <p class="text-gray-400">Идеален за малки сайтове и блогове</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            10 GB SSD пространство
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            Безлимитна трафик
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            5 бази данни
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            SSL сертификат
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            24/7 поддръжка
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Избери план
+                    </button>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-8 border-2 border-[#1683ab] relative group hover:scale-105 transition-all duration-500">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white px-6 py-2 rounded-full text-sm font-semibold">
+                            Най-популярен
+                        </span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-white" id="pro-price">39.99</span>
+                            <span class="text-gray-400 ml-2" id="pro-period">лв/месец</span>
+                        </div>
+                        <p class="text-gray-400">За растещи бизнеси и e-commerce</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            50 GB SSD пространство
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            Безлимитна трафик
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            25 бази данни
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            SSL сертификат
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            CDN включен
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            Приоритетна поддръжка
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Избери план
+                    </button>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-white" id="enterprise-price">79.99</span>
+                            <span class="text-gray-400 ml-2" id="enterprise-period">лв/месец</span>
+                        </div>
+                        <p class="text-gray-400">За големи проекти и корпорации</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            200 GB SSD пространство
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            Безлимитна трафик
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            Безлимитни бази данни
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            SSL сертификат
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            CDN + DDoS защита
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#1e9975] mr-3"></i>
+                            VIP поддръжка
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Избери план
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="text-center mt-12">
+                <p class="text-gray-400 mb-4">Всички планове включват безплатна миграция и 30-дневна гаранция</p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <span><i class="fas fa-shield-alt mr-2"></i>99.9% uptime гаранция</span>
+                    <span><i class="fas fa-clock mr-2"></i>24/7 поддръжка</span>
+                    <span><i class="fas fa-sync mr-2"></i>Безплатна миграция</span>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 
@@ -948,6 +1027,7 @@
             </div>
         </div>
     </section>
+    
 
     <?php include 'footer.php'; ?>
 
@@ -1084,5 +1164,72 @@
             animation: dash 3s linear infinite;
         }
     </style>
+    
+    <!-- Pricing Tabs JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthlyTab = document.getElementById('monthly-tab');
+            const yearlyTab = document.getElementById('yearly-tab');
+            
+            // Monthly prices
+            const monthlyPrices = {
+                starter: '19.99',
+                pro: '39.99',
+                enterprise: '79.99'
+            };
+            
+            // Yearly prices (20% discount)
+            const yearlyPrices = {
+                starter: '15.99',
+                pro: '31.99',
+                enterprise: '63.99'
+            };
+            
+            // Monthly periods
+            const monthlyPeriods = {
+                starter: 'лв/месец',
+                pro: 'лв/месец',
+                enterprise: 'лв/месец'
+            };
+            
+            // Yearly periods
+            const yearlyPeriods = {
+                starter: 'лв/месец',
+                pro: 'лв/месец',
+                enterprise: 'лв/месец'
+            };
+            
+            function updatePrices(isYearly) {
+                const prices = isYearly ? yearlyPrices : monthlyPrices;
+                const periods = isYearly ? yearlyPeriods : monthlyPeriods;
+                
+                document.getElementById('starter-price').textContent = prices.starter;
+                document.getElementById('pro-price').textContent = prices.pro;
+                document.getElementById('enterprise-price').textContent = prices.enterprise;
+                
+                document.getElementById('starter-period').textContent = periods.starter;
+                document.getElementById('pro-period').textContent = periods.pro;
+                document.getElementById('enterprise-period').textContent = periods.enterprise;
+            }
+            
+            function switchToMonthly() {
+                monthlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
+                yearlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white';
+                updatePrices(false);
+            }
+            
+            function switchToYearly() {
+                yearlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
+                monthlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white';
+                updatePrices(true);
+            }
+            
+            monthlyTab.addEventListener('click', switchToMonthly);
+            yearlyTab.addEventListener('click', switchToYearly);
+            
+            // Initialize with monthly pricing
+            updatePrices(false);
+        });
+    </script>
 </body>
 </html>
