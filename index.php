@@ -228,6 +228,33 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.org</div>
+                                                <div class="text-xs text-white/70 mt-0.5">20лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1683ab]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1683ab]">.eu</div>
+                                                <div class="text-xs text-white/70 mt-0.5">16лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="bg-white/8 hover:bg-white/15 rounded-lg p-2 text-center transition-all duration-300 hover:scale-105 hover:shadow-md border border-white/15 relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#1e9975]/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div class="relative z-10">
+                                                <div class="text-base font-bold text-white group-hover:text-[#1e9975]">.info</div>
+                                                <div class="text-xs text-white/70 mt-0.5">14лв/година</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
