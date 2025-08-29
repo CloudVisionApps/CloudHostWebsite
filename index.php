@@ -703,7 +703,7 @@
             <!-- Main Features Grid -->
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <!-- Performance -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                     <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
@@ -716,7 +716,7 @@
                 </div>
                 
                 <!-- Security -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                     <div class="w-16 h-16 bg-gradient-to-r from-[#1e9975] to-[#1683ab] rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
@@ -729,7 +729,7 @@
                 </div>
                 
                 <!-- Support -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                     <div class="w-16 h-16 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-headset text-white text-2xl"></i>
                     </div>
