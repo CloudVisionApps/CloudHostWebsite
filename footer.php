@@ -22,19 +22,19 @@
                         Последвайте ни
                     </h5>
                     <div class="flex space-x-4">
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
+                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-facebook-f text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
+                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-twitter text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
+                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-linkedin-in text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
+                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-instagram text-lg relative z-10"></i>
                         </a>

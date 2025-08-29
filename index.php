@@ -62,6 +62,77 @@
             background-size: 200% 200%;
             animation: gradient-x 3s ease infinite;
         }
+        
+        /* Enhanced Rotation Animations */
+        @keyframes rotate-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes rotate-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        
+        .animate-rotate-slow {
+            animation: rotate-slow 20s linear infinite;
+        }
+        
+        .animate-rotate-reverse {
+            animation: rotate-reverse 25s linear infinite;
+        }
+        
+        /* Scale and Glow Animations */
+        @keyframes scale-glow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+        
+        .animate-scale-glow {
+            animation: scale-glow 4s ease-in-out infinite;
+        }
+        
+        /* Floating Particles */
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+            25% { transform: translateY(-15px) translateX(10px) scale(1.2); }
+            50% { transform: translateY(-25px) translateX(-5px) scale(0.8); }
+            75% { transform: translateY(-10px) translateX(15px) scale(1.1); }
+        }
+        
+        .animate-float-particle {
+            animation: float-particle 6s ease-in-out infinite;
+        }
+        
+        /* Interactive Hover Effects */
+        .hero-bg-element {
+            transition: all 0.3s ease;
+        }
+        
+        .hero-bg-element:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: brightness(1.2);
+        }
+        
+        /* Subtle Parallax Effect */
+        @keyframes parallax-slow {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-10px) translateX(5px); }
+        }
+        
+        .animate-parallax-slow {
+            animation: parallax-slow 12s ease-in-out infinite;
+        }
+        
+        /* Glowing Border Effect */
+        @keyframes glow-border {
+            0%, 100% { box-shadow: 0 0 5px rgba(22, 131, 171, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(30, 153, 117, 0.5); }
+        }
+        
+        .animate-glow-border {
+            animation: glow-border 4s ease-in-out infinite;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -76,6 +147,63 @@
             <div class="animation animation-black"></div>
             <div class="animation animation-gray"></div>
             <div class="animation animation-blue"></div>
+        </div>
+        
+        <!-- Enhanced Background Icons and Animations -->
+        <div class="absolute inset-0 pointer-events-none z-10">
+         
+        
+            
+         
+    
+            
+            <!-- Floating Geometric Shapes -->
+            <div class="absolute top-32 left-1/4 w-20 h-20 border border-[#1683ab]/20 rounded-full animate-pulse rotate-12"></div>
+            <div class="absolute top-40 right-1/3 w-16 h-16 border border-[#1e9975]/20 rounded-full animate-pulse -rotate-12" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-1/3 w-24 h-24 border border-[#1683ab]/15 rounded-full animate-pulse rotate-45" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-28 h-28 border border-[#1e9975]/15 rounded-full animate-pulse -rotate-45" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-20 h-20 border border-[#1683ab]/15 rounded-full animate-pulse rotate-90" style="animation-delay: 1.5s;"></div>
+            
+            <!-- Animated Squares -->
+            <div class="absolute top-24 left-1/2 w-12 h-12 border border-[#1e9975]/25 rotate-45 animate-pulse" style="animation-delay: 0.8s;"></div>
+            <div class="absolute bottom-32 right-1/4 w-16 h-16 border border-[#1683ab]/25 -rotate-45 animate-pulse" style="animation-delay: 2.2s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-10 h-10 border border-[#1e9975]/20 rotate-12 animate-pulse" style="animation-delay: 1.8s;"></div>
+            
+            <!-- Particle Effects -->
+            <div class="absolute top-16 right-16 w-2 h-2 bg-[#1683ab]/40 rounded-full animate-ping"></div>
+            <div class="absolute top-28 left-1/3 w-1.5 h-1.5 bg-[#1e9975]/40 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-24 right-1/3 w-3 h-3 bg-[#1683ab]/30 rounded-full animate-ping" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 right-1/2 w-1 h-1 bg-[#1e9975]/50 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-2.5 h-2.5 bg-[#1683ab]/35 rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
+            
+            <!-- Animated Lines -->
+            <div class="absolute top-20 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#1683ab]/30 to-transparent animate-pulse"></div>
+            <div class="absolute bottom-32 right-32 w-24 h-px bg-gradient-to-r from-transparent via-[#1e9975]/30 to-transparent animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-28 h-px bg-gradient-to-r from-transparent via-[#1683ab]/25 to-transparent animate-pulse" style="animation-delay: 2s;"></div>
+            
+            <!-- Glowing Orbs -->
+            <div class="absolute top-1/4 right-1/4 w-4 h-4 bg-[#1683ab]/20 rounded-full blur-sm animate-pulse"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-6 h-6 bg-[#1e9975]/20 rounded-full blur-sm animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/3 left-1/2 w-3 h-3 bg-[#1683ab]/15 rounded-full blur-sm animate-pulse" style="animation-delay: 2s;"></div>
+            
+          
+            
+            <!-- Enhanced Particle System -->
+            <div class="absolute top-12 right-1/3 w-1.5 h-1.5 bg-[#1683ab]/50 rounded-full animate-float-particle"></div>
+            <div class="absolute top-36 left-1/4 w-2 h-2 bg-[#1e9975]/40 rounded-full animate-float-particle" style="animation-delay: 1.2s;"></div>
+            <div class="absolute bottom-16 right-1/3 w-1 h-1 bg-[#1683ab]/60 rounded-full animate-float-particle" style="animation-delay: 2.8s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-2.5 h-2.5 bg-[#1e9975]/35 rounded-full animate-float-particle" style="animation-delay: 0.4s;"></div>
+            <div class="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-[#1683ab]/45 rounded-full animate-float-particle" style="animation-delay: 1.6s;"></div>
+            
+            <!-- Animated Dots Grid -->
+            <div class="absolute top-24 right-16 w-1 h-1 bg-[#1e9975]/30 rounded-full animate-ping"></div>
+            <div class="absolute top-28 right-20 w-1 h-1 bg-[#1683ab]/25 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+            <div class="absolute top-32 right-24 w-1 h-1 bg-[#1e9975]/20 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            
+            <!-- Floating Data Stream Effect -->
+            <div class="absolute top-1/3 right-16 w-20 h-px bg-gradient-to-r from-transparent via-[#1683ab]/20 to-transparent animate-pulse"></div>
+            <div class="absolute top-1/3 right-20 w-16 h-px bg-gradient-to-r from-transparent via-[#1e9975]/15 to-transparent animate-pulse" style="animation-delay: 0.8s;"></div>
+            <div class="absolute top-1/3 right-24 w-12 h-px bg-gradient-to-r from-transparent via-[#1683ab]/10 to-transparent animate-pulse" style="animation-delay: 1.6s;"></div>
         </div>
         
         <!-- Overlay -->
