@@ -85,7 +85,7 @@
                
                     <!-- Enhanced Headline -->
                     <div class="space-y-8">
-                        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                        <h1 class="text-4xl lg:text-6xl xl:text-6xl font-bold leading-tight tracking-tight">
                             <span class="text-white drop-shadow-lg">Най-доброто</span>
                             <br>
                             <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent drop-shadow-lg">хостинг решение</span>
@@ -144,7 +144,7 @@
                         </div>
                         
                         <!-- Main Form Container -->
-                        <div class="relative rounded-[2.5rem] p-[4px] animate-border-gradient overflow-hidden shadow-2xl">
+                        <div class="relative rounded-[2.5rem] p-[2px] animate-border-gradient overflow-hidden shadow-2xl">
                             <!-- Inner Content Box -->
                             <div class="relative bg-gradient-to-br from-[#0a0a0a]/95 to-[#1a1a1a]/95 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
                             <!-- Enhanced Background Pattern -->
@@ -934,14 +934,14 @@
                 background-position: 0% 100%;
             }
             100% {
-                background-position: 0% 0%; 
+                background-position: 0% 0%;
             }
         }
         
         .animate-border-gradient {
-            background: linear-gradient(45deg, rgb(9, 36, 46), rgb(6, 28, 21), #1683ab, #1e9975, rgb(9, 36, 46), rgb(6, 28, 21));
-            background-size: 400% 400%;
-            animation: border-gradient 6s linear infinite;
+            background: conic-gradient(from 0deg, rgba(9, 36, 46, 0.46), rgba(6, 28, 21, 0.55),rgb(5, 29, 37),rgb(10, 63, 47), rgb(9, 36, 46));
+            background-size: 200% 200%;
+            animation: border-gradient 8s linear infinite;
         }
     </style>
 </body>
