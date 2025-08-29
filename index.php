@@ -1303,14 +1303,12 @@
         .scroll-glow-in {
             opacity: 0;
             transform: scale(0.9);
-            box-shadow: 0 0 0 rgba(30, 153, 117, 0);
             transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .scroll-glow-in.scroll-visible {
             opacity: 1;
             transform: scale(1);
-            box-shadow: 0 0 30px rgba(30, 153, 117, 0.3);
         }
         
         .scroll-bounce-in {
