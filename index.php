@@ -144,11 +144,9 @@
                         </div>
                         
                         <!-- Main Form Container -->
-                        <div class="relative bg-gradient-to-br from-[#0a0a0a]/95 to-[#1a1a1a]/95 backdrop-blur-xl rounded-[2.5rem] p-10 overflow-hidden shadow-2xl">
-                            <!-- Animated Border Gradient -->
-                            <div class="absolute inset-0 rounded-[2.5rem] p-[2px] bg-gradient-to-r from-[#1683ab] via-[#1e9975] to-[#1683ab] animate-border-gradient">
-                                <div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#0a0a0a]/95 to-[#1a1a1a]/95"></div>
-                            </div>
+                        <div class="relative rounded-[2.5rem] p-[4px] animate-border-gradient overflow-hidden shadow-2xl">
+                            <!-- Inner Content Box -->
+                            <div class="relative bg-gradient-to-br from-[#0a0a0a]/95 to-[#1a1a1a]/95 backdrop-blur-xl rounded-[2.4rem] p-10 overflow-hidden">
                             <!-- Enhanced Background Pattern -->
                             <div class="absolute inset-0 opacity-20">
                                 <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-r from-[#1683ab]/30 to-[#1e9975]/30 rounded-full blur-xl"></div>
@@ -253,6 +251,7 @@
                                 </div>
                             </div>
                         </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -923,19 +922,26 @@
         /* Moving Border Gradient Animation */
         @keyframes border-gradient {
             0% {
-                background-position: 0% 50%;
+                background-position: 0% 0%;
+            }
+            25% {
+                background-position: 100% 0%;
             }
             50% {
-                background-position: 100% 50%;
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
             }
             100% {
-                background-position: 0% 50%;
+                background-position: 0% 0%; 
             }
         }
         
         .animate-border-gradient {
-            background-size: 200% 200%;
-            animation: border-gradient 3s ease infinite;
+            background: linear-gradient(45deg, rgb(9, 36, 46), rgb(6, 28, 21), #1683ab, #1e9975, rgb(9, 36, 46), rgb(6, 28, 21));
+            background-size: 400% 400%;
+            animation: border-gradient 6s linear infinite;
         }
     </style>
 </body>
