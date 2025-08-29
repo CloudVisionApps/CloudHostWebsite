@@ -354,7 +354,8 @@
                     Безплатна миграция
                 </div>
                 <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                    Преместете сайта си <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">безплатно</span> при нас
+                    Преместете сайта си <br />
+                    <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">безплатно</span> при нас
                 </h2>
                 <p class="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                     Нашият експертен екип ще премести вашия сайт от текущия хостинг безплатно. 
@@ -983,7 +984,7 @@
         
         .header-animation .animation-orange {
             opacity: 1;
-            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%,rgb(11, 59, 77) 0, transparent 100%);
+            background: radial-gradient(112.01% 306.85% at 116.95% -15.43%,rgb(6, 32, 42) 0, transparent 100%);
             animation: orangeAnimation 16s linear infinite;
         }
         
