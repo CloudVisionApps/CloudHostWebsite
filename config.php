@@ -41,13 +41,18 @@ $config = [
     'plans' => [
         'starter' => [
             'name' => 'Стартер',
-            'price' => '9.99',
+            'description' => 'Идеален за малки сайтове, блогове и лични проекти',
+            'monthly_price' => '19.99',
+            'yearly_price' => '167.92',
+            'yearly_monthly_price' => '13.99',
             'currency' => 'лв.',
-            'period' => '/месец',
+            'monthly_period' => '/месец',
+            'yearly_period' => '/година',
+            'yearly_discount' => '30%',
             'features' => [
                 '10 GB SSD Хранилище',
                 'Неограничен Трафик',
-                '5 Имейл Акаунта',
+                '5 Бази Данни',
                 'Безплатен SSL Сертификат',
                 '24/7 Поддръжка'
             ],
@@ -55,33 +60,42 @@ $config = [
         ],
         'professional' => [
             'name' => 'Професионален',
-            'price' => '19.99',
+            'description' => 'За растещи бизнеси, e-commerce сайтове и корпоративни приложения',
+            'monthly_price' => '39.99',
+            'yearly_price' => '335.92',
+            'yearly_monthly_price' => '27.99',
             'currency' => 'лв.',
-            'period' => '/месец',
+            'monthly_period' => '/месец',
+            'yearly_period' => '/година',
+            'yearly_discount' => '30%',
             'popular' => true,
             'features' => [
                 '50 GB SSD Хранилище',
                 'Неограничен Трафик',
-                '25 Имейл Акаунта',
+                '25 Бази Данни',
                 'Безплатен SSL Сертификат',
-                'Ежедневни Резервни Копия',
+                'CDN Включен',
                 'Приоритетна Поддръжка'
             ],
             'color' => 'purple'
         ],
         'enterprise' => [
             'name' => 'Корпоративен',
-            'price' => '39.99',
+            'description' => 'За големи проекти, корпорации и високонатоварени приложения',
+            'monthly_price' => '79.99',
+            'yearly_price' => '671.92',
+            'yearly_monthly_price' => '55.99',
             'currency' => 'лв.',
-            'period' => '/месец',
+            'monthly_period' => '/месец',
+            'yearly_period' => '/година',
+            'yearly_discount' => '30%',
             'features' => [
                 '200 GB SSD Хранилище',
                 'Неограничен Трафик',
-                'Неограничени Имейл Акаунти',
+                'Неограничени Бази Данни',
                 'Безплатен SSL Сертификат',
-                'Почасови Резервни Копия',
-                'DDoS Защита',
-                'Отделен IP Адрес'
+                'CDN + DDoS Защита',
+                'VIP Поддръжка'
             ],
             'color' => 'green'
         ]
