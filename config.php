@@ -47,7 +47,7 @@ $config = [
             'yearly_monthly_price' => '13.99',
             'currency' => 'лв.',
             'monthly_period' => '/месец',
-            'yearly_period' => '/година',
+            'yearly_period' => '/годишно',
             'yearly_discount' => '30%',
             'features' => [
                 '10 GB SSD Хранилище',
@@ -116,7 +116,7 @@ $config = [
             'yearly_monthly_price' => '27.99',
             'currency' => 'лв.',
             'monthly_period' => '/месец',
-            'yearly_period' => '/година',
+            'yearly_period' => '/годишно',
             'yearly_discount' => '30%',
             'popular' => true,
             'features' => [
@@ -187,7 +187,7 @@ $config = [
             'yearly_monthly_price' => '55.99',
             'currency' => 'лв.',
             'monthly_period' => '/месец',
-            'yearly_period' => '/година',
+            'yearly_period' => '/годишно',
             'yearly_discount' => '30%',
             'features' => [
                 '200 GB SSD Хранилище',
