@@ -56,7 +56,57 @@ $config = [
                 'Безплатен SSL Сертификат',
                 '24/7 Поддръжка'
             ],
-            'color' => 'blue'
+            'color' => 'blue',
+            'detailed_specs' => [
+                'server' => [
+                    'cpu_cores' => '1 vCPU Core',
+                    'ram' => '1 GB RAM',
+                    'storage_type' => 'SSD NVMe',
+                    'storage_speed' => 'Up to 3,500 MB/s',
+                    'bandwidth' => 'Unlimited',
+                    'transfer_speed' => '1 Gbps'
+                ],
+                'performance' => [
+                    'uptime_guarantee' => '99.9%',
+                    'load_time' => '< 2 seconds',
+                    'concurrent_users' => 'Up to 100',
+                    'daily_visitors' => 'Up to 1,000',
+                    'cache_system' => 'LiteSpeed Cache',
+                    'cdn_included' => false
+                ],
+                'security' => [
+                    'ssl_certificate' => 'Let\'s Encrypt Free',
+                    'ddos_protection' => 'Basic (10 Gbps)',
+                    'firewall' => 'Basic Web Application Firewall',
+                    'malware_scanning' => 'Weekly',
+                    'backup_frequency' => 'Daily',
+                    'backup_retention' => '7 days',
+                    'ip_whitelisting' => false
+                ],
+                'development' => [
+                    'php_versions' => '7.4, 8.0, 8.1, 8.2',
+                    'node_js' => 'v16, v18',
+                    'python' => '3.8, 3.9, 3.10',
+                    'git_deployment' => true,
+                    'ssh_access' => false,
+                    'cron_jobs' => '5 jobs',
+                    'composer' => true
+                ],
+                'databases' => [
+                    'mysql_version' => '8.0',
+                    'max_connections' => '50',
+                    'max_size' => '1 GB',
+                    'phpmyadmin' => true,
+                    'backup_frequency' => 'Daily'
+                ],
+                'email' => [
+                    'email_accounts' => '5 accounts',
+                    'email_storage' => '1 GB per account',
+                    'spam_protection' => 'Basic',
+                    'webmail' => true,
+                    'smtp' => true
+                ]
+            ]
         ],
         'professional' => [
             'name' => 'Професионален',
@@ -77,7 +127,57 @@ $config = [
                 'CDN Включен',
                 'Приоритетна Поддръжка'
             ],
-            'color' => 'purple'
+            'color' => 'purple',
+            'detailed_specs' => [
+                'server' => [
+                    'cpu_cores' => '2 vCPU Cores',
+                    'ram' => '4 GB RAM',
+                    'storage_type' => 'SSD NVMe',
+                    'storage_speed' => 'Up to 7,000 MB/s',
+                    'bandwidth' => 'Unlimited',
+                    'transfer_speed' => '2.5 Gbps'
+                ],
+                'performance' => [
+                    'uptime_guarantee' => '99.95%',
+                    'load_time' => '< 1.5 seconds',
+                    'concurrent_users' => 'Up to 500',
+                    'daily_visitors' => 'Up to 10,000',
+                    'cache_system' => 'LiteSpeed Cache + Redis',
+                    'cdn_included' => true
+                ],
+                'security' => [
+                    'ssl_certificate' => 'Let\'s Encrypt Free + Wildcard',
+                    'ddos_protection' => 'Advanced (50 Gbps)',
+                    'firewall' => 'Advanced Web Application Firewall',
+                    'malware_scanning' => 'Daily',
+                    'backup_frequency' => 'Every 6 hours',
+                    'backup_retention' => '30 days',
+                    'ip_whitelisting' => true
+                ],
+                'development' => [
+                    'php_versions' => '7.4, 8.0, 8.1, 8.2, 8.3',
+                    'node_js' => 'v16, v18, v20',
+                    'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
+                    'git_deployment' => true,
+                    'ssh_access' => true,
+                    'cron_jobs' => 'Unlimited',
+                    'composer' => true
+                ],
+                'databases' => [
+                    'mysql_version' => '8.0',
+                    'max_connections' => '200',
+                    'max_size' => '5 GB',
+                    'phpmyadmin' => true,
+                    'backup_frequency' => 'Every 6 hours'
+                ],
+                'email' => [
+                    'email_accounts' => '25 accounts',
+                    'email_storage' => '5 GB per account',
+                    'spam_protection' => 'Advanced',
+                    'webmail' => true,
+                    'smtp' => true
+                ]
+            ]
         ],
         'enterprise' => [
             'name' => 'Корпоративен',
@@ -97,7 +197,57 @@ $config = [
                 'CDN + DDoS Защита',
                 'VIP Поддръжка'
             ],
-            'color' => 'green'
+            'color' => 'green',
+            'detailed_specs' => [
+                'server' => [
+                    'cpu_cores' => '4 vCPU Cores',
+                    'ram' => '8 GB RAM',
+                    'storage_type' => 'SSD NVMe',
+                    'storage_speed' => 'Up to 7,000 MB/s',
+                    'bandwidth' => 'Unlimited',
+                    'transfer_speed' => '5 Gbps'
+                ],
+                'performance' => [
+                    'uptime_guarantee' => '99.99%',
+                    'load_time' => '< 1 second',
+                    'concurrent_users' => 'Up to 2,000',
+                    'daily_visitors' => 'Up to 100,000',
+                    'cache_system' => 'LiteSpeed Cache + Redis + Varnish',
+                    'cdn_included' => true
+                ],
+                'security' => [
+                    'ssl_certificate' => 'Let\'s Encrypt Free + Wildcard + EV SSL',
+                    'ddos_protection' => 'Enterprise (100 Gbps)',
+                    'firewall' => 'Enterprise Web Application Firewall',
+                    'malware_scanning' => 'Real-time',
+                    'backup_frequency' => 'Every hour',
+                    'backup_retention' => '90 days',
+                    'ip_whitelisting' => true
+                ],
+                'development' => [
+                    'php_versions' => '7.4, 8.0, 8.1, 8.2, 8.3',
+                    'node_js' => 'v16, v18, v20, v21',
+                    'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
+                    'git_deployment' => true,
+                    'ssh_access' => true,
+                    'cron_jobs' => 'Unlimited',
+                    'composer' => true
+                ],
+                'databases' => [
+                    'mysql_version' => '8.0',
+                    'max_connections' => '500',
+                    'max_size' => 'Unlimited',
+                    'phpmyadmin' => true,
+                    'backup_frequency' => 'Every hour'
+                ],
+                'email' => [
+                    'email_accounts' => 'Unlimited',
+                    'email_storage' => '10 GB per account',
+                    'spam_protection' => 'Enterprise',
+                    'webmail' => true,
+                    'smtp' => true
+                ]
+            ]
         ]
     ],
     
