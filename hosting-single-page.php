@@ -163,17 +163,7 @@
                 </p>
             </div>
             
-            <!-- CTA Buttons -->
-            <div class="mb-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#pricing" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
-                    <span>Вижте Хостинг Планове</span>
-                    <i class="fas fa-arrow-down ml-3 text-xl"></i>
-                </a>
-                <a href="#detailed-pricing" class="inline-flex items-center px-8 py-4 border-2 border-white/20 text-white font-semibold text-lg rounded-xl transition-all duration-300 hover:border-[#1683ab]/50 hover:bg-white/5 backdrop-blur-sm">
-                    <span>Детайлни Спецификации</span>
-                    <i class="fas fa-server ml-3 text-xl"></i>
-                </a>
-            </div>
+    
             
             <!-- Compact Trust Indicators -->
             <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
@@ -194,82 +184,11 @@
     </section>
 
     <!-- Pricing Section - MAIN FOCUS -->
-    <section id="pricing" class="py-24 bg-gray-900 relative">
+    <section id="pricing" class="pb-20 relative">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-20 scroll-fade-in">
-                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-2xl">
-                    <i class="fas fa-tags mr-3 text-lg"></i>
-                    Цени и Планове
-                </div>
-                <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                    Изберете Вашия Перфектен <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Хостинг План</span>
-                </h2>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12">
-                    Започнете с нашия достъпен стартер план и мащабирайте нагоре, докато вашият бизнес расте. 
-                    Всички планове включват корпоративна сигурност и 24/7 поддръжка.
-                </p>
-                
-                <!-- Pricing Toggle -->
-                <div class="flex justify-center items-center bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a] max-w-md mx-auto">
-                    <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
-                        Месечно
-                    </button>
-                    <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2">
-                        Годишно
-                        <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">Спестете 20%</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="grid lg:grid-cols-3 gap-10 max-w-7xl mx-auto scroll-stagger">
-                <?php foreach (get_config('plans') as $planKey => $plan): ?>
-                <div class="<?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-10 border-2 border-[#1683ab] relative transform scale-110 group hover:scale-105 transition-all duration-500' : 'bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-10 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105'; ?>">
-                    
-                    <?php if (isset($plan['popular']) && $plan['popular']): ?>
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white px-8 py-3 rounded-full text-base font-semibold">
-                            Най-Популярен
-                        </span>
-                    </div>
-                    <?php endif; ?>
-                    
-                    <div class="text-center mb-10">
-                        <h3 class="text-3xl font-bold text-white mb-4"><?php echo $plan['name']; ?></h3>
-                        <p class="text-gray-400 mb-8 text-lg"><?php echo $plan['description']; ?></p>
-                        
-                        <!-- Monthly Price -->
-                        <div class="monthly-price">
-                                                            <div class="text-5xl font-bold text-white mb-3">
-                                    <?php echo $plan['monthly_price']; ?> <?php echo $plan['currency']; ?>
-                                    <span class="text-xl text-gray-400 font-normal"><?php echo $plan['monthly_period']; ?></span>
-                                </div>
-                        </div>
-                        
-                        <!-- Yearly Price -->
-                        <div class="yearly-price hidden">
-                            <div class="text-5xl font-bold text-white mb-3">
-                                <?php echo $plan['yearly_monthly_price']; ?> <?php echo $plan['currency']; ?>
-                                <span class="text-xl text-gray-400 font-normal"><?php echo $plan['monthly_period']; ?></span>
-                            </div>
-                            <div class="text-lg text-green-400 font-semibold">Платено годишно (<?php echo $plan['yearly_price']; ?> <?php echo $plan['currency']; ?>)</div>
-                        </div>
-                    </div>
-                    
-                    <ul class="space-y-5 mb-10 text-lg">
-                        <?php foreach ($plan['features'] as $feature): ?>
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-[#1e9975] mr-4 text-xl"></i>
-                            <?php echo $feature; ?>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    
-                    <button class="w-full py-5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-semibold rounded-2xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
-                        Започнете
-                    </button>
-                </div>
-                <?php endforeach; ?>
-            </div>
+    
+    
+            <?php include 'parts/pricing-plans-tabs.php'; ?>
             
             <!-- Additional Features -->
             <div class="mt-20 text-center scroll-fade-in">
@@ -285,7 +204,7 @@
                     </div>
                     <div class="flex items-center justify-center text-gray-400 text-lg">
                         <i class="fas fa-database text-purple-500 mr-4 text-2xl"></i>
-                        <span>Дневни Резервни Копия</span>
+                        <span>Дневни Копия</span>
                     </div>
                     <div class="flex items-center justify-center text-gray-400 text-lg">
                         <i class="fas fa-headset text-orange-500 mr-4 text-2xl"></i>
@@ -531,116 +450,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-gray-900/50 relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-fade-in">
-                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-sm font-medium rounded-full mb-8 shadow-2xl">
-                    <i class="fas fa-star mr-3 text-lg"></i>
-                    Нашите Предимства
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                    Защо Да Изберете <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Нашия Хостинг</span>?
-                </h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Ние предоставяме основата, която вашият уебсайт се нуждае, за да успее в днешния дигитален пейзаж
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-stagger">
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Lightning Fast</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        SSD-powered servers with global CDN ensure your website loads in milliseconds, 
-                        providing an exceptional user experience.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-alt text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Enterprise Security</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        DDoS protection, SSL certificates, and daily backups keep your website 
-                        secure and protected from threats.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-headset text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">24/7 Support</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Our expert support team is available around the clock to help you 
-                        with any hosting-related questions or issues.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-server text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">99.9% Uptime</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Guaranteed uptime ensures your website is always accessible to your 
-                        customers, maximizing your business potential.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-mobile-alt text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Mobile Optimized</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        All our hosting plans are optimized for mobile devices, ensuring 
-                        your website looks great on any screen size.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Analytics & Insights</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Built-in analytics and performance monitoring help you understand 
-                        your website's performance and optimize accordingly.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800 relative">
-        <div class="container mx-auto px-4 text-center scroll-fade-in">
-            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-[#1683ab]/30 text-white text-sm font-medium rounded-full mb-8 backdrop-blur-sm">
-                <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 animate-pulse"></div>
-                Готови сте да започнете?
-            </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Готови ли сте да <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Трансформирате</span> Вашия Бизнес?
-            </h2>
-            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Присъединете се към доволните клиенти, които се доверяват на нас за своите хостинг нужди. 
-                Започнете днес и изживейте разликата.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#pricing" class="px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1e9975]/25">
-                    Изберете Вашия План
-                </a>
-                <a href="#" class="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-2xl transition-all duration-300 hover:border-[#1683ab]/50 hover:bg-white/5 backdrop-blur-sm">
-                    Свържете се с Продажбите
-                </a>
-            </div>
-        </div>
-    </section>
+    <?php include 'parts/cta-section.php'; ?>
 
     <?php include 'footer.php'; ?>
 </body>
