@@ -1,23 +1,23 @@
 
     <!-- Advanced Detailed Pricing Tables Section -->
-    <section id="detailed-pricing" class="pt-12 pb-20 relative">
+    <section id="detailed-pricing" class="pb-20">
         <div class="container mx-auto px-4">
 
             <!-- Simple Pricing Tabs -->
-            <div class="flex justify-center mb-12">
-                    <div class="bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a]">
-                        <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
-                            Месечно
-                        </button>
-                        <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2">
-                            Годишно
-                            <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">-20%</span>
-                        </button>
-                    </div>
+            <div class="flex justify-center mb-24">
+                <div class="bg-[#1a1a1a] rounded-2xl p-2 border border-[#2a2a2a]">
+                    <button id="monthly-tab" class="px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg">
+                        Месечно
+                    </button>
+                    <button id="yearly-tab" class="px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2">
+                        Годишно
+                        <span class="ml-2 px-2 py-1 text-xs bg-[#1e9975] text-white rounded-full">-20%</span>
+                    </button>
                 </div>
+            </div>
          
             <!-- Visual Comparison Cards -->
-            <div class="grid lg:grid-cols-3 gap-8 mb-16 scroll-fade-in">
+            <div class="grid lg:grid-cols-3 gap-8 mb-16 mt-10  scroll-fade-in">
                 <?php foreach (get_config('plans') as $planKey => $plan): ?>
                 <div class="<?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 border-2 border-[#1683ab] transform scale-105' : 'bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a]'; ?> rounded-3xl p-8 hover:border-[#1683ab]/50 transition-all duration-500">
                     
