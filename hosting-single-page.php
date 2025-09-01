@@ -412,39 +412,447 @@
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Feature Rows -->
-                    <?php
-                    $features = [
-                        'ssl' => ['SSL Сертификат', 'ssl_certificate', 'security'],
-                        'ddos' => ['DDoS Защита', 'ddos_protection', 'security'],
-                        'backup' => ['Резервни Копия', 'backup_frequency', 'security'],
-                        'cdn' => ['CDN Включен', 'cdn_included', 'performance'],
-                        'ssh' => ['SSH Достъп', 'ssh_access', 'development'],
-                        'git' => ['Git Deployment', 'git_deployment', 'development'],
-                        'email' => ['Имейл Акаунти', 'email_accounts', 'email'],
-                        'db_size' => ['Размер на БД', 'max_size', 'databases']
-                    ];
-                    
-                    foreach ($features as $key => $feature):
-                    ?>
+                    <!-- Server Specifications -->
                     <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
                         <div class="p-4 bg-[#0f0f0f] flex items-center">
-                            <span class="text-gray-300"><?php echo $feature[0]; ?></span>
+                            <span class="text-gray-300 font-semibold text-blue-400">🖥️ Сървър</span>
                         </div>
                         <?php foreach (get_config('plans') as $planKey => $plan): ?>
                         <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
-                            <?php
-                            $value = $plan['detailed_specs'][$feature[2]][$feature[1]];
-                            if (is_bool($value)) {
-                                echo '<span class="' . ($value ? 'text-green-400' : 'text-red-400') . ' font-bold text-xl">' . ($value ? '✓' : '✗') . '</span>';
-                            } else {
-                                echo '<span class="text-white font-medium">' . $value . '</span>';
-                            }
-                            ?>
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['server']['cpu_cores']; ?></span>
                         </div>
                         <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">RAM</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['server']['ram']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Хранилище</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['server']['storage_type']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Скорост на трансфер</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['server']['transfer_speed']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Performance Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-green-400">⚡ Производителност</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['performance']['uptime_guarantee']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Време за зареждане</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['performance']['load_time']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Едновременни потребители</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['performance']['concurrent_users']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Дневни посетители</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['performance']['daily_visitors']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Кеш система</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['performance']['cache_system']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">CDN Включен</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['performance']['cdn_included'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['performance']['cdn_included'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Security Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-red-400">🛡️ Сигурност</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['security']['ssl_certificate']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">DDoS Защита</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['security']['ddos_protection']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Firewall</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['security']['firewall']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Сканиране за зловреден код</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['security']['malware_scanning']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Честота на резервни копия</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['security']['backup_frequency']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Запазване на резервни копия</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['security']['backup_retention']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">IP Whitelisting</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['security']['ip_whitelisting'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['security']['ip_whitelisting'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Development Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-purple-400">💻 Разработка</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['development']['php_versions']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Node.js Версии</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['development']['node_js']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Python Версии</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium text-xs"><?php echo $plan['detailed_specs']['development']['python']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Git Deployment</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['development']['git_deployment'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['development']['git_deployment'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">SSH Достъп</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['development']['ssh_access'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['development']['ssh_access'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Cron Jobs</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['development']['cron_jobs']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Composer</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['development']['composer'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['development']['composer'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Database Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-blue-400">🗄️ Бази Данни</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['databases']['mysql_version']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Макс. връзки</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['databases']['max_connections']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Макс. размер</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['databases']['max_size']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">phpMyAdmin</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['databases']['phpmyadmin'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['databases']['phpmyadmin'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Резервни копия БД</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['databases']['backup_frequency']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Email Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-orange-400">📧 Имейл</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['email']['email_accounts']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Имейл хранилище</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['email']['email_storage']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Защита от спам</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium"><?php echo $plan['detailed_specs']['email']['spam_protection']; ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Webmail</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['email']['webmail'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['email']['webmail'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">SMTP</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="<?php echo $plan['detailed_specs']['email']['smtp'] ? 'text-green-400' : 'text-red-400'; ?> font-bold text-xl">
+                                <?php echo $plan['detailed_specs']['email']['smtp'] ? '✓' : '✗'; ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Additional Features -->
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300 font-semibold text-yellow-400">⭐ Допълнително</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium">-</span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Поддръжка</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium">
+                                <?php 
+                                if ($planKey === 'starter') echo '24/7';
+                                elseif ($planKey === 'professional') echo 'Приоритетна';
+                                else echo 'VIP';
+                                ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
+                        <div class="p-4 bg-[#0f0f0f] flex items-center">
+                            <span class="text-gray-300">Време за отговор</span>
+                        </div>
+                        <?php foreach (get_config('plans') as $planKey => $plan): ?>
+                        <div class="p-4 text-center <?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5]' : 'bg-[#1a1a1a]'; ?>">
+                            <span class="text-white font-medium">
+                                <?php 
+                                if ($planKey === 'starter') echo '< 4 часа';
+                                elseif ($planKey === 'professional') echo '< 2 часа';
+                                else echo '< 1 час';
+                                ?>
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
