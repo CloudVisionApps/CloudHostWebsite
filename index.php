@@ -1201,58 +1201,7 @@
         }
     </style>
     
-    <!-- Pricing Tabs JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthlyTab = document.getElementById('monthly-tab');
-            const yearlyTab = document.getElementById('yearly-tab');
-        
-            
-            function updatePrices(isYearly) {
-                // Show/hide monthly vs yearly price sections
-                const monthlyPriceElements = document.querySelectorAll('.monthly-price');
-                const yearlyPriceElements = document.querySelectorAll('.yearly-price');
-                
-                if (isYearly) {
-                    // Show yearly prices, hide monthly
-                    monthlyPriceElements.forEach(element => element.classList.add('hidden'));
-                    yearlyPriceElements.forEach(element => element.classList.remove('hidden'));
-                } else {
-                    // Show monthly prices, hide yearly
-                    monthlyPriceElements.forEach(element => element.classList.remove('hidden'));
-                    yearlyPriceElements.forEach(element => element.classList.add('hidden'));
-                }
-            }
-            
-            function switchToMonthly() {
-                monthlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
-                yearlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2';
-                
-                // Update yearly badge to gray when inactive
-                const yearlyBadge = yearlyTab.querySelector('span');
-                yearlyBadge.className = 'ml-2 px-2 py-1 text-xs bg-gray-500 text-white rounded-full';
-                
-                updatePrices(false);
-            }
-            
-            function switchToYearly() {
-                yearlyTab.className = 'px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 bg-gradient-to-r from-[#1683ab] to-[#1e9975] shadow-lg';
-                monthlyTab.className = 'px-8 py-3 rounded-xl text-gray-400 font-semibold transition-all duration-300 hover:text-white ml-2';
-                
-                // Update yearly badge to white when active
-                const yearlyBadge = yearlyTab.querySelector('span');
-                yearlyBadge.className = 'ml-2 px-2 py-1 text-xs bg-white text-[#1e9975] rounded-full';
-                
-                updatePrices(true);
-            }
-            
-            monthlyTab.addEventListener('click', switchToMonthly);
-            yearlyTab.addEventListener('click', switchToYearly);
-            
-            // Initialize with monthly pricing
-            updatePrices(false);
-        });
-    </script>
+
 
     <!-- Scroll Effects JavaScript -->
     <script>
