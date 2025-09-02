@@ -240,12 +240,9 @@
     </section>
 
     <!-- Pricing Plans Overview -->
-    <section class="relative py-12">
+    <section class="relative ">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12 scroll-fade-in">
-                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4 scroll-scale-in">Изберете вашия план</h2>
-                <p class="text-gray-400 scroll-slide-left">Сравнете функциите и изберете най-подходящия план за вашия WordPress сайт</p>
-            </div>
+        
 
             <!-- Pricing Toggle -->
             <div class="flex justify-center mb-20 scroll-fade-in">
@@ -463,7 +460,9 @@
                             <p class="text-gray-300 leading-relaxed mb-4"><?php echo htmlspecialchars($service['description']); ?></p>
                             
                             <!-- Plan Inclusion -->
-                            <div class="flex flex-wrap gap-2">
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-400 mb-2">Услугата е включена в плановете:</p>
+                                <div class="flex flex-wrap gap-2">
                                 <?php 
                                 $includedPlans = [];
                                 foreach ($plans as $planKey => $plan) {
@@ -492,6 +491,7 @@
                                     <?php echo $planName; ?>
                                 </span>
                                 <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
