@@ -161,6 +161,27 @@
         .popular-badge {
             background: linear-gradient(135deg, #1e9975 0%, #1683ab 100%);
         }
+
+        /* Pricing Toggle Styles */
+        .pricing-toggle {
+            color: #9ca3af;
+            background: transparent;
+        }
+
+        .pricing-toggle.active {
+            color: #ffffff;
+            background: linear-gradient(135deg, #1683ab 0%, #1e9975 100%);
+        }
+
+        .pricing-toggle:hover:not(.active) {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-toggle.active span {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #ffffff !important;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -196,6 +217,21 @@
                 <p class="text-gray-400 scroll-slide-left">Сравнете функциите и изберете най-подходящия план за вашия WordPress сайт</p>
             </div>
 
+            <!-- Pricing Toggle -->
+            <div class="flex justify-center mb-8 scroll-fade-in">
+                <div class="bg-white/[0.05] rounded-2xl p-2 backdrop-blur-sm">
+                    <div class="flex">
+                        <button id="monthly-toggle" class="pricing-toggle active px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+                            Месечно
+                        </button>
+                        <button id="yearly-toggle" class="pricing-toggle px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+                            Годишно
+                            <span class="ml-2 bg-[#1e9975] text-white text-xs px-2 py-1 rounded-full">-17%</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <?php 
                 $plans = get_config('wordpress_support', []);
@@ -222,13 +258,24 @@
                         <p class="text-gray-400 mb-6"><?php echo htmlspecialchars($plan['description']); ?></p>
                         
                         <div class="mb-6">
-                            <div class="flex items-baseline justify-center gap-2">
-                                <span class="text-4xl font-bold text-white"><?php echo htmlspecialchars($plan['yearly_monthly_price']); ?></span>
-                                <span class="text-gray-400"><?php echo htmlspecialchars($plan['currency'] . $plan['monthly_period']); ?></span>
+                            <!-- Monthly Price -->
+                            <div class="monthly-price">
+                                <div class="flex items-baseline justify-center gap-2">
+                                    <span class="text-4xl font-bold text-white"><?php echo htmlspecialchars($plan['monthly_price']); ?></span>
+                                    <span class="text-gray-400"><?php echo htmlspecialchars($plan['currency'] . $plan['monthly_period']); ?></span>
+                                </div>
                             </div>
-                            <div class="text-sm text-gray-500 mt-2">
-                                <span class="line-through"><?php echo htmlspecialchars($plan['monthly_price'] . $plan['currency']); ?></span>
-                                <span class="text-[#1e9975] ml-2"><?php echo htmlspecialchars($plan['yearly_discount']); ?> отстъпка</span>
+                            
+                            <!-- Yearly Price -->
+                            <div class="yearly-price hidden">
+                                <div class="flex items-baseline justify-center gap-2">
+                                    <span class="text-4xl font-bold text-white"><?php echo htmlspecialchars($plan['yearly_monthly_price']); ?></span>
+                                    <span class="text-gray-400"><?php echo htmlspecialchars($plan['currency'] . $plan['yearly_period']); ?></span>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-2">
+                                    <span class="line-through"><?php echo htmlspecialchars($plan['monthly_price'] . $plan['currency']); ?></span>
+                                    <span class="text-[#1e9975] ml-2"><?php echo htmlspecialchars($plan['yearly_discount']); ?> отстъпка</span>
+                                </div>
                             </div>
                         </div>
                         
@@ -259,7 +306,7 @@
                                 <?php foreach ($plans as $key => $plan) { ?>
                                 <th class="px-6 py-4 text-center text-sm font-semibold text-white">
                                     <?php echo htmlspecialchars($plan['name']); ?>
-                                    <?php if ($plan['popular']) { ?>
+                                    <?php if (isset($plan['popular']) && $plan['popular']) { ?>
                                     <div class="text-xs text-[#1e9975] mt-1">Най-популярен</div>
                                     <?php } ?>
                                 </th>
@@ -376,6 +423,36 @@
     </section>
 
     <?php include 'footer.php'; ?>
+
+    <script>
+        // Pricing Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthlyToggle = document.getElementById('monthly-toggle');
+            const yearlyToggle = document.getElementById('yearly-toggle');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const yearlyPrices = document.querySelectorAll('.yearly-price');
+
+            function showMonthly() {
+                monthlyToggle.classList.add('active');
+                yearlyToggle.classList.remove('active');
+                monthlyPrices.forEach(price => price.classList.remove('hidden'));
+                yearlyPrices.forEach(price => price.classList.add('hidden'));
+            }
+
+            function showYearly() {
+                yearlyToggle.classList.add('active');
+                monthlyToggle.classList.remove('active');
+                monthlyPrices.forEach(price => price.classList.add('hidden'));
+                yearlyPrices.forEach(price => price.classList.remove('hidden'));
+            }
+
+            monthlyToggle.addEventListener('click', showMonthly);
+            yearlyToggle.addEventListener('click', showYearly);
+
+            // Initialize with monthly pricing
+            showMonthly();
+        });
+    </script>
 
 </body>
 </html>
