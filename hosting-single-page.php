@@ -185,10 +185,11 @@
 
     <?php include 'parts/detailed-pricing.php'; ?>
 
-
     <?php include 'parts/features-section.php'; ?>
 
     <?php include 'parts/cta-section.php'; ?>
+
+    <?php include 'parts/faq-section.php'; ?>
 
     <?php include 'footer.php'; ?>
 </body>

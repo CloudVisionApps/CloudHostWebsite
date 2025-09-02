@@ -1,0 +1,187 @@
+  <!-- FAQ Section -->
+  <section class="py-32 relative overflow-hidden bg-gradient-to-br from-[#121819] via-[#11272a] to-[#112627]">
+        <!-- Enhanced Background with Modern Pattern -->
+        <div class="absolute inset-0">
+          
+            <!-- Modern Geometric Pattern -->
+            <div class="absolute inset-0 opacity-30">
+                <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);"></div>
+            </div>
+            
+            <!-- Floating Elements with Modern Animation -->
+            <div class="absolute top-20 left-20 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+            <div class="absolute top-40 right-32 w-3 h-3 bg-blue-400 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-ping" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 right-1/4 w-4 h-4 bg-blue-400 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+            
+            <!-- Modern Grid Lines -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-emerald-400 to-transparent"></div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header Section -->
+            <div class="text-center mb-20 scroll-fade-in">
+                <!-- Modern Badge -->
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/40 text-white text-sm font-medium rounded-full mb-8 backdrop-blur-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+                    Често задавани въпроси
+                </div>
+                
+                <!-- Modern Typography -->
+                <h2 class="text-5xl lg:text-5xl xl:text-5xl font-bold text-white mb-8 leading-tight">
+                    Отговори на
+                    <span class="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+                        вашите въпроси
+                    </span>
+                </h2>
+                
+                <p class="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    Намерете отговори на най-често задаваните въпроси за нашите хостинг услуги
+                </p>
+            </div>
+            
+            <!-- FAQ Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16" id="faq-container">
+                <?php
+                // Get FAQ data from config
+                $faqs = get_config('faq', []);
+                foreach ($faqs as $index => $faq) {
+                    $isEven = $index % 2 == 0;
+                    $slideClass = $isEven ? 'scroll-slide-left' : 'scroll-slide-right';
+                    $hoverColor = $isEven ? 'emerald' : 'blue';
+                    $iconColor = $isEven ? 'emerald-300' : 'blue-300';
+                    $bgGradient = $isEven ? 'from-emerald-500/30 to-blue-500/30' : 'from-blue-500/30 to-emerald-500/30';
+                    $hoverBorder = $isEven ? 'hover:border-emerald-400/50' : 'hover:border-blue-400/50';
+                    $hoverShadow = $isEven ? 'hover:shadow-emerald-500/10' : 'hover:shadow-blue-500/10';
+                    $hoverText = $isEven ? 'group-hover:text-emerald-300' : 'group-hover:text-blue-300';
+                ?>
+                <div class="group <?php echo $slideClass; ?>" data-faq-index="<?php echo $index; ?>">
+                    <div class="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 <?php echo $hoverBorder; ?> transition-all duration-300 hover:bg-white/15 hover:shadow-2xl <?php echo $hoverShadow; ?> cursor-pointer" onclick="toggleFAQ(<?php echo $index; ?>)">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white <?php echo $hoverText; ?> transition-colors duration-300">
+                                <?php echo htmlspecialchars($faq['question']); ?>
+                            </h3>
+                            <div class="w-8 h-8 bg-gradient-to-r <?php echo $bgGradient; ?> rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-plus text-<?php echo $iconColor; ?> text-lg faq-icon" id="faq-icon-<?php echo $index; ?>"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer hidden" id="faq-answer-<?php echo $index; ?>">
+                            <p class="text-gray-200 leading-relaxed">
+                                <?php echo htmlspecialchars($faq['answer']); ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="text-center scroll-fade-in">
+                <div class="bg-gradient-to-br from-white/10 to-white/15 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
+                    <h3 class="text-3xl font-bold text-white mb-6">
+                        Не намерихте отговора, който търсите?
+                    </h3>
+                    <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                        Нашият екип е тук, за да помогне! Свържете се с нас и ще получите персонализиран отговор.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-blue-500 text-white text-xl px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <span class="relative z-10 flex items-center">
+                                <i class="fas fa-headset mr-4 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                                Свържете се с нас
+                            </span>
+                        </a>
+                        <a href="#plans" class="group relative overflow-hidden border-2 border-white/30 text-white text-xl px-12 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:border-emerald-400/50 hover:bg-white/10">
+                            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <span class="relative z-10 flex items-center">
+                                <i class="fas fa-rocket mr-4 text-2xl group-hover:animate-bounce"></i>
+                                Вижте плановете
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // FAQ Toggle Functionality
+    function toggleFAQ(index) {
+        const answer = document.getElementById(`faq-answer-${index}`);
+        const icon = document.getElementById(`faq-icon-${index}`);
+        const faqItem = document.querySelector(`[data-faq-index="${index}"]`);
+        
+        // Close all other FAQ items
+        const allAnswers = document.querySelectorAll('.faq-answer');
+        const allIcons = document.querySelectorAll('.faq-icon');
+        const allFaqItems = document.querySelectorAll('[data-faq-index]');
+        
+        allAnswers.forEach((ans, i) => {
+            if (i !== index) {
+                ans.classList.add('hidden');
+                allIcons[i].classList.remove('fa-minus');
+                allIcons[i].classList.add('fa-plus');
+                allFaqItems[i].classList.remove('faq-active');
+            }
+        });
+        
+        // Toggle current FAQ item
+        if (answer.classList.contains('hidden')) {
+            // Open FAQ
+            answer.classList.remove('hidden');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            faqItem.classList.add('faq-active');
+            
+            // Add smooth animation
+            answer.style.transition = 'max-height 0.3s ease-in-out';
+            setTimeout(() => {
+                answer.style.maxHeight = 'none';
+            }, 300);
+        } else {
+            // Close FAQ
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            setTimeout(() => {
+                answer.style.maxHeight = '0px';
+                setTimeout(() => {
+                    answer.classList.add('hidden');
+                    answer.style.maxHeight = '';
+                }, 300);
+            }, 10);
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            faqItem.classList.remove('faq-active');
+        }
+    }
+    
+    // Initialize FAQ functionality when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add smooth transitions to FAQ answers
+        const faqAnswers = document.querySelectorAll('.faq-answer');
+        faqAnswers.forEach(answer => {
+            answer.style.transition = 'max-height 0.3s ease-in-out';
+            answer.style.overflow = 'hidden';
+        });
+        
+        // Add click event listeners for better accessibility
+        const faqItems = document.querySelectorAll('[data-faq-index]');
+        faqItems.forEach((item, index) => {
+            item.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFAQ(index);
+                }
+            });
+            
+            // Make items focusable
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            item.setAttribute('aria-expanded', 'false');
+            item.setAttribute('aria-controls', `faq-answer-${index}`);
+        });
+    });
+    </script>
