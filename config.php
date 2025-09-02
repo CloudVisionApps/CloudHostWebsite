@@ -13,6 +13,130 @@ $config = [
         'website' => 'https://cloudhost.bg'
     ],
     
+    // Domain TLD Pricing
+    'tlds' => [
+        '.com' => [
+            'label' => '.com',
+            'monthly_price' => '2.99',
+            'yearly_price' => '11.99',
+            'renew_yearly_price' => '13.99',
+            'transfer_yearly_price' => '11.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => 'Popular'
+        ],
+        '.net' => [
+            'label' => '.net',
+            'monthly_price' => '2.79',
+            'yearly_price' => '10.99',
+            'renew_yearly_price' => '12.99',
+            'transfer_yearly_price' => '10.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.org' => [
+            'label' => '.org',
+            'monthly_price' => '2.49',
+            'yearly_price' => '9.99',
+            'renew_yearly_price' => '11.99',
+            'transfer_yearly_price' => '9.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.bg' => [
+            'label' => '.bg',
+            'monthly_price' => '5.49',
+            'yearly_price' => '19.99',
+            'renew_yearly_price' => '22.99',
+            'transfer_yearly_price' => '19.49',
+            'currency' => 'лв.',
+            'privacy' => false,
+            'promo' => 'Local favorite'
+        ],
+        '.eu' => [
+            'label' => '.eu',
+            'monthly_price' => '2.19',
+            'yearly_price' => '8.49',
+            'renew_yearly_price' => '9.99',
+            'transfer_yearly_price' => '7.99',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.io' => [
+            'label' => '.io',
+            'monthly_price' => '6.99',
+            'yearly_price' => '29.99',
+            'renew_yearly_price' => '34.99',
+            'transfer_yearly_price' => '28.99',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => 'Startup'
+        ],
+        '.dev' => [
+            'label' => '.dev',
+            'monthly_price' => '3.49',
+            'yearly_price' => '13.99',
+            'renew_yearly_price' => '15.99',
+            'transfer_yearly_price' => '12.99',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.shop' => [
+            'label' => '.shop',
+            'monthly_price' => '3.99',
+            'yearly_price' => '15.99',
+            'renew_yearly_price' => '18.99',
+            'transfer_yearly_price' => '14.99',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => 'E‑commerce'
+        ],
+        '.info' => [
+            'label' => '.info',
+            'monthly_price' => '1.99',
+            'yearly_price' => '7.99',
+            'renew_yearly_price' => '9.49',
+            'transfer_yearly_price' => '7.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.me' => [
+            'label' => '.me',
+            'monthly_price' => '2.29',
+            'yearly_price' => '8.99',
+            'renew_yearly_price' => '10.49',
+            'transfer_yearly_price' => '8.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ],
+        '.xyz' => [
+            'label' => '.xyz',
+            'monthly_price' => '0.99',
+            'yearly_price' => '3.99',
+            'renew_yearly_price' => '7.99',
+            'transfer_yearly_price' => '3.49',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => 'Promo'
+        ],
+        '.tech' => [
+            'label' => '.tech',
+            'monthly_price' => '4.49',
+            'yearly_price' => '17.99',
+            'renew_yearly_price' => '19.99',
+            'transfer_yearly_price' => '16.99',
+            'currency' => 'лв.',
+            'privacy' => true,
+            'promo' => null
+        ]
+    ],
+    
     // Social Media Links
     'social' => [
         'facebook' => '#',
