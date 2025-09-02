@@ -433,70 +433,109 @@
     </section>
 
     <!-- Service Details Section -->
-    <section class="relative py-16">
+    <section class="relative py-20 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12 scroll-fade-in">
-                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4 scroll-scale-in">Описание на услугите</h2>
-                <p class="text-gray-400 scroll-slide-left">Детайлно описание на всички WordPress поддържащи услуги, които предлагаме</p>
+            <div class="text-center mb-16 scroll-fade-in">
+                <div class="inline-flex items-center gap-2 bg-[#1683ab]/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fa-solid fa-cogs text-[#1683ab]"></i>
+                    <span class="text-sm font-medium text-[#1683ab]">Детайлни услуги</span>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 scroll-scale-in">
+                    <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">
+                        Описание на услугите
+                    </span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto scroll-slide-left">
+                    Детайлно описание на всички WordPress поддържащи услуги, които предлагаме
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 scroll-fade-in">
-                <?php 
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 scroll-fade-in">
+                <?php
                 $serviceDetails = get_config('wordpress_service_details', []);
                 $serviceCount = 0;
-                
-                foreach ($serviceDetails as $key => $service) { 
+
+                foreach ($serviceDetails as $key => $service) {
                     $serviceCount++;
-                    $animationClass = $serviceCount % 2 == 1 ? 'scroll-slide-left' : 'scroll-slide-right';
                     $iconClass = $service['icon'] ?? 'fa-cog';
+                    
+                    // Determine which plans include this service
+                    $includedPlans = [];
+                    foreach ($plans as $planKey => $plan) {
+                        if (in_array($key, $plan['features'])) {
+                            $includedPlans[] = $planKey;
+                        }
+                    }
                 ?>
-                <div class="service-card bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1683ab]/30 transition-all duration-300 <?php echo $animationClass; ?>">
-                    <div class="flex items-start gap-4">
-                        <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid <?php echo $iconClass; ?> text-white text-lg"></i>
+                <div class="group relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl p-6 hover:border-[#1683ab]/40 hover:shadow-2xl hover:shadow-[#1683ab]/10 transition-all duration-500 hover:-translate-y-2 scroll-bounce-in">
+                    <!-- Icon Container -->
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#1683ab]/20 to-[#1e9975]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid <?php echo $iconClass; ?> text-[#1683ab] text-xl group-hover:text-[#1e9975] transition-colors duration-300"></i>
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white mb-3"><?php echo htmlspecialchars($service['title']); ?></h3>
-                            <p class="text-gray-300 leading-relaxed mb-4"><?php echo htmlspecialchars($service['description']); ?></p>
-                            
-                            <!-- Plan Inclusion -->
-                            <div class="mt-4">
-                                <p class="text-sm text-gray-400 mb-2">Услугата е включена в плановете:</p>
-                                <div class="flex flex-wrap gap-2">
+                        <!-- Decorative element -->
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-[#1e9975] to-[#1683ab] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                            <?php echo htmlspecialchars($service['title']); ?>
+                        </h3>
+                        
+                        <p class="text-gray-300 leading-relaxed text-sm line-clamp-3">
+                            <?php echo htmlspecialchars($service['description']); ?>
+                        </p>
+
+                        <!-- Plan Badges -->
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-400 mb-3 font-medium">Включена в:</p>
+                            <div class="flex flex-wrap gap-2">
                                 <?php 
-                                $includedPlans = [];
-                                foreach ($plans as $planKey => $plan) {
-                                    if (in_array($key, $plan['features'])) {
-                                        $includedPlans[] = $planKey;
-                                    }
-                                }
-                                
                                 $planColors = [
-                                    'basic' => 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-                                    'professional' => 'bg-purple-500/20 text-purple-300 border-purple-500/30',
-                                    'enterprise' => 'bg-green-500/20 text-green-300 border-green-500/30'
+                                    'basic' => 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10',
+                                    'professional' => 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10',
+                                    'enterprise' => 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10'
                                 ];
-                                
+
                                 $planNames = [
                                     'basic' => 'Основен',
-                                    'professional' => 'Професионален', 
+                                    'professional' => 'Професионален',
                                     'enterprise' => 'Корпоративен'
                                 ];
-                                
+
                                 foreach ($includedPlans as $planKey) {
                                     $colorClass = $planColors[$planKey] ?? 'bg-gray-500/20 text-gray-300 border-gray-500/30';
                                     $planName = $planNames[$planKey] ?? ucfirst($planKey);
                                 ?>
-                                <span class="plan-badge px-3 py-1 text-xs font-medium rounded-full border <?php echo $colorClass; ?>">
+                                <span class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 <?php echo $colorClass; ?>">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-current"></div>
                                     <?php echo $planName; ?>
                                 </span>
                                 <?php } ?>
-                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Hover Effect Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#1683ab]/5 to-[#1e9975]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
                 <?php } ?>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-16 scroll-fade-in">
+                <div class="inline-flex items-center gap-4 bg-gradient-to-r from-[#1683ab]/10 to-[#1e9975]/10 rounded-2xl px-8 py-4 border border-white/10">
+                    <i class="fa-solid fa-question-circle text-[#1683ab] text-xl"></i>
+                    <div class="text-left">
+                        <p class="text-white font-medium">Имате въпроси за услугите?</p>
+                        <p class="text-gray-400 text-sm">Свържете се с нашия екип за персонализирана консултация</p>
+                    </div>
+                    <button class="ml-4 px-6 py-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-medium rounded-xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105">
+                        Свържи се
+                    </button>
+                </div>
             </div>
         </div>
     </section>
