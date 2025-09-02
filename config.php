@@ -436,15 +436,13 @@ $config = [
                 'php_settings',
                 'admin_access',
                 'page_loading',
-                'updates',
                 'domain_change',
                 'site_monitoring',
                 'admin_help',
                 'error_500',
                 'dev_environment',
                 'performance_audit',
-                'woocommerce_settings',
-                'site_optimization'
+                'woocommerce_settings'
             ],
             'support_hours' => '8:00 - 20:00 (Пн-Пт), 10:00 - 16:00 (Сб)',
             'response_time' => '4 часа',
