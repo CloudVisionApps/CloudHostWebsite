@@ -202,6 +202,16 @@
             transform: scale(1.1) rotate(5deg);
             box-shadow: 0 10px 20px rgba(22, 131, 171, 0.3);
         }
+
+        /* Plan Badge Styling */
+        .plan-badge {
+            transition: all 0.3s ease;
+        }
+
+        .plan-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -392,6 +402,7 @@
                             
                             <!-- Features -->
                             <?php 
+                            $serviceDetails = get_config('wordpress_service_details', []);
                             $allFeatures = [];
                             foreach ($plans as $plan) {
                                 foreach ($plan['features'] as $feature) {
@@ -401,9 +412,11 @@
                                 }
                             }
                             
-                            foreach ($allFeatures as $feature) { ?>
+                            foreach ($allFeatures as $feature) { 
+                                $serviceTitle = isset($serviceDetails[$feature]) ? $serviceDetails[$feature]['title'] : $feature;
+                            ?>
                             <tr class="feature-row border-b border-white/10">
-                                <td class="px-6 py-4 text-sm text-gray-300 font-medium"><?php echo htmlspecialchars($feature); ?></td>
+                                <td class="px-6 py-4 text-sm text-gray-300 font-medium"><?php echo htmlspecialchars($serviceTitle); ?></td>
                                 <?php foreach ($plans as $key => $plan) { ?>
                                 <td class="px-6 py-4 text-center">
                                     <?php if (in_array($feature, $plan['features'])) { ?>
@@ -447,7 +460,39 @@
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold text-white mb-3"><?php echo htmlspecialchars($service['title']); ?></h3>
-                            <p class="text-gray-300 leading-relaxed"><?php echo htmlspecialchars($service['description']); ?></p>
+                            <p class="text-gray-300 leading-relaxed mb-4"><?php echo htmlspecialchars($service['description']); ?></p>
+                            
+                            <!-- Plan Inclusion -->
+                            <div class="flex flex-wrap gap-2">
+                                <?php 
+                                $includedPlans = [];
+                                foreach ($plans as $planKey => $plan) {
+                                    if (in_array($key, $plan['features'])) {
+                                        $includedPlans[] = $planKey;
+                                    }
+                                }
+                                
+                                $planColors = [
+                                    'basic' => 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+                                    'professional' => 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+                                    'enterprise' => 'bg-green-500/20 text-green-300 border-green-500/30'
+                                ];
+                                
+                                $planNames = [
+                                    'basic' => 'Основен',
+                                    'professional' => 'Професионален', 
+                                    'enterprise' => 'Корпоративен'
+                                ];
+                                
+                                foreach ($includedPlans as $planKey) {
+                                    $colorClass = $planColors[$planKey] ?? 'bg-gray-500/20 text-gray-300 border-gray-500/30';
+                                    $planName = $planNames[$planKey] ?? ucfirst($planKey);
+                                ?>
+                                <span class="plan-badge px-3 py-1 text-xs font-medium rounded-full border <?php echo $colorClass; ?>">
+                                    <?php echo $planName; ?>
+                                </span>
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
