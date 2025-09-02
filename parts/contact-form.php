@@ -3,19 +3,19 @@
 // Usage: include 'parts/contact-form.php';
 ?>
 
-<div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8">
+<div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 scroll-fade-in">
     <form id="contact-form" class="space-y-6" action="contact-handler.php" method="POST">
         <input type="hidden" id="selected-department" name="department" value="">
         
         <!-- Name and Email Row -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-stagger">
+            <div class="scroll-slide-left">
                 <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Име *</label>
                 <input type="text" id="name" name="name" required 
                        class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50"
                        placeholder="Вашето име">
             </div>
-            <div>
+            <div class="scroll-slide-right">
                 <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Имейл *</label>
                 <input type="email" id="email" name="email" required 
                        class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50"
@@ -24,14 +24,14 @@
         </div>
 
         <!-- Phone and Company Row -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-stagger">
+            <div class="scroll-slide-left">
                 <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Телефон</label>
                 <input type="tel" id="phone" name="phone" 
                        class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50"
                        placeholder="+359 888 123 456">
             </div>
-            <div>
+            <div class="scroll-slide-right">
                 <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Компания</label>
                 <input type="text" id="company" name="company" 
                        class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50"
@@ -40,7 +40,7 @@
         </div>
 
         <!-- Subject -->
-        <div>
+        <div class="scroll-scale-in">
             <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Тема *</label>
             <input type="text" id="subject" name="subject" required 
                    class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50"
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Priority (Support only) -->
-        <div id="priority-field" class="hidden">
+        <div id="priority-field" class="hidden scroll-rotate-in">
             <label for="priority" class="block text-sm font-medium text-gray-300 mb-2">Приоритет</label>
             <select id="priority" name="priority" 
                     class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Service Type (Sales only) -->
-        <div id="service-field" class="hidden">
+        <div id="service-field" class="hidden scroll-rotate-in">
             <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Тип услуга</label>
             <select id="service" name="service" 
                     class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Message -->
-        <div>
+        <div class="scroll-blur-in">
             <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Съобщение *</label>
             <textarea id="message" name="message" rows="5" required 
                       class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50 resize-none"
@@ -82,7 +82,7 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="flex justify-center">
+        <div class="flex justify-center scroll-bounce-in">
             <button type="submit" 
                     class="px-8 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white font-medium rounded-xl hover:from-[#1e9975] hover:to-[#1683ab] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50">
                 <i class="fa-solid fa-paper-plane mr-2"></i>
@@ -176,5 +176,32 @@
 
     // Expose updateFormFields function globally
     window.updateContactFormFields = updateFormFields;
+
+    // Check for hash on page load (for standalone contact form page)
+    function checkHashOnLoad() {
+        const hash = window.location.hash;
+        if (hash && hash.includes('department=')) {
+            const department = hash.split('department=')[1];
+            if (department === 'support' || department === 'sales') {
+                selectedDepartment.value = department;
+                updateFormFields(department);
+            }
+        }
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash;
+        if (hash && hash.includes('department=')) {
+            const department = hash.split('department=')[1];
+            if (department === 'support' || department === 'sales') {
+                selectedDepartment.value = department;
+                updateFormFields(department);
+            }
+        }
+    });
+
+    // Initialize on page load
+    checkHashOnLoad();
 })();
 </script>

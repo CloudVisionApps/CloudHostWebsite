@@ -185,15 +185,15 @@
     <!-- Department Selection -->
     <section class="relative py-12">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">Изберете отдел</h2>
-                <p class="text-gray-400">Изберете най-подходящия отдел за вашия въпрос</p>
+            <div class="text-center mb-12 scroll-fade-in">
+                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4 scroll-scale-in">Изберете отдел</h2>
+                <p class="text-gray-400 scroll-slide-left">Изберете най-подходящия отдел за вашия въпрос</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <!-- Support Department -->
-                <div class="department-card group cursor-pointer" data-department="support">
-                    <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="department-card group cursor-pointer scroll-stagger" data-department="support">
+                    <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1 scroll-slide-left">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-xl bg-[#1683ab]/15 text-[#1fb6ff] flex items-center justify-center ring-1 ring-[#1683ab]/30 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-headset text-2xl"></i>
@@ -222,8 +222,8 @@
                 </div>
 
                 <!-- Sales Department -->
-                <div class="department-card group cursor-pointer" data-department="sales">
-                    <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="department-card group cursor-pointer scroll-stagger" data-department="sales">
+                    <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1 scroll-slide-right">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-xl bg-[#1e9975]/15 text-[#1e9975] flex items-center justify-center ring-1 ring-[#1e9975]/30 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-handshake text-2xl"></i>
@@ -345,14 +345,14 @@
     <!-- Contact Information -->
     <section class="relative py-12">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">Други начини за връзка</h2>
-                <p class="text-gray-400">Свържете се с нас по удобен за вас начин</p>
+            <div class="text-center mb-12 scroll-fade-in">
+                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4 scroll-scale-in">Други начини за връзка</h2>
+                <p class="text-gray-400 scroll-slide-left">Свържете се с нас по удобен за вас начин</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-stagger">
                 <!-- Email -->
-                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1 scroll-fade-in">
                     <div class="w-12 h-12 rounded-xl bg-[#1683ab]/15 text-[#1fb6ff] flex items-center justify-center mx-auto mb-4 ring-1 ring-[#1683ab]/30">
                         <i class="fa-solid fa-envelope text-xl"></i>
                     </div>
@@ -362,7 +362,7 @@
                 </div>
 
                 <!-- Phone -->
-                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1 scroll-fade-in">
                     <div class="w-12 h-12 rounded-xl bg-[#1e9975]/15 text-[#1e9975] flex items-center justify-center mx-auto mb-4 ring-1 ring-[#1e9975]/30">
                         <i class="fa-solid fa-phone text-xl"></i>
                     </div>
@@ -372,7 +372,7 @@
                 </div>
 
                 <!-- Live Chat -->
-                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1683ab]/40 transition-all duration-300 hover:-translate-y-1 scroll-fade-in">
                     <div class="w-12 h-12 rounded-xl bg-[#1683ab]/15 text-[#1fb6ff] flex items-center justify-center mx-auto mb-4 ring-1 ring-[#1683ab]/30">
                         <i class="fa-solid fa-comments text-xl"></i>
                     </div>
@@ -382,7 +382,7 @@
                 </div>
 
                 <!-- Ticket System -->
-                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-6 text-center hover:border-[#1e9975]/40 transition-all duration-300 hover:-translate-y-1 scroll-fade-in">
                     <div class="w-12 h-12 rounded-xl bg-[#1e9975]/15 text-[#1e9975] flex items-center justify-center mx-auto mb-4 ring-1 ring-[#1e9975]/30">
                         <i class="fa-solid fa-ticket text-xl"></i>
                     </div>
@@ -393,15 +393,15 @@
             </div>
 
             <!-- Business Hours -->
-            <div class="mt-12 bg-gradient-to-r from-[#1683ab]/10 via-transparent to-[#1e9975]/10 border border-white/10 rounded-2xl p-8">
+            <div class="mt-12 bg-gradient-to-r from-[#1683ab]/10 via-transparent to-[#1e9975]/10 border border-white/10 rounded-2xl p-8 scroll-glow-in">
                 <div class="text-center">
-                    <h3 class="text-xl font-semibold text-white mb-4">Работно време</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                        <div>
+                    <h3 class="text-xl font-semibold text-white mb-4 scroll-scale-in">Работно време</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto scroll-stagger">
+                        <div class="scroll-slide-left">
                             <h4 class="text-lg font-medium text-[#1683ab] mb-2">Техническа поддръжка</h4>
                             <p class="text-gray-300">24/7 - 365 дни в годината</p>
                         </div>
-                        <div>
+                        <div class="scroll-slide-right">
                             <h4 class="text-lg font-medium text-[#1e9975] mb-2">Продажби</h4>
                             <p class="text-gray-300">Понеделник - Петък: 9:00 - 18:00</p>
                             <p class="text-gray-300">Събота: 10:00 - 14:00</p>
@@ -431,12 +431,16 @@
                 card.addEventListener('click', () => {
                     const department = card.getAttribute('data-department');
                     showContactForm(department);
+                    // Save department in URL hash
+                    window.location.hash = `department=${department}`;
                 });
             });
 
             // Back to departments
             backButton.addEventListener('click', () => {
                 hideContactForm();
+                // Remove hash from URL
+                window.history.replaceState(null, null, window.location.pathname);
             });
 
             function showContactForm(department) {
@@ -503,6 +507,36 @@
                     submitButton.disabled = false;
                 }, 2000);
             });
+
+            // Check for hash on page load
+            function checkHashOnLoad() {
+                const hash = window.location.hash;
+                if (hash && hash.includes('department=')) {
+                    const department = hash.split('department=')[1];
+                    if (department === 'support' || department === 'sales') {
+                        // Small delay to ensure page is fully loaded
+                        setTimeout(() => {
+                            showContactForm(department);
+                        }, 100);
+                    }
+                }
+            }
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', () => {
+                const hash = window.location.hash;
+                if (hash && hash.includes('department=')) {
+                    const department = hash.split('department=')[1];
+                    if (department === 'support' || department === 'sales') {
+                        showContactForm(department);
+                    }
+                } else if (!hash) {
+                    hideContactForm();
+                }
+            });
+
+            // Initialize on page load
+            checkHashOnLoad();
         })();
     </script>
 
