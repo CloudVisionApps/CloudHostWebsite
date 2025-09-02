@@ -218,7 +218,7 @@
             </div>
 
             <!-- Pricing Toggle -->
-            <div class="flex justify-center mb-8 scroll-fade-in">
+            <div class="flex justify-center mb-20 scroll-fade-in">
                 <div class="bg-white/[0.05] rounded-2xl p-2 backdrop-blur-sm">
                     <div class="flex">
                         <button id="monthly-toggle" class="pricing-toggle active px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
