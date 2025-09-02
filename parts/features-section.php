@@ -41,7 +41,7 @@
                 </p>
             </div>
             
-            <!-- Main Features Grid - Optimized -->
+            <!-- Main Features Grid - New Design -->
             <div class="grid lg:grid-cols-3 gap-12 mb-24 scroll-stagger">
                 <?php
                 $mainFeatures = [
@@ -51,14 +51,8 @@
                         'description' => 'Нашата инфраструктура използва най-новите NVMe технологии и глобална CDN мрежа за невероятна скорост.',
                         'stat' => '99.9%',
                         'statLabel' => 'Гарантирана работа',
-                        'statColor' => 'text-[#1683ab]',
-                        'borderColor' => 'hover:border-[#1683ab]/50',
-                        'titleHoverColor' => 'group-hover:text-[#1683ab]',
-                        'gradient' => 'from-[#1683ab] to-[#1e9975]',
-                        'cardBg' => 'from-[#0a0a0a]/95 to-[#1a1a1a]/50',
-                        'glowColor' => 'from-[#1683ab]/25 to-[#1e9975]/15',
-                        'iconBg' => 'from-[#1683ab] to-[#1e9975]',
-                        'cardBorder' => 'border-[#1683ab]/20',
+                        'primaryColor' => '#1683ab',
+                        'secondaryColor' => '#1e9975',
                         'features' => [
                             'NVMe SSD дискове',
                             'Глобална CDN мрежа',
@@ -71,14 +65,8 @@
                         'description' => 'Вашите данни са защитени с най-новите технологии за сигурност и автоматични резервни копия.',
                         'stat' => '256-bit',
                         'statLabel' => 'SSL Криптиране',
-                        'statColor' => 'text-[#1e9975]',
-                        'borderColor' => 'hover:border-[#1e9975]/50',
-                        'titleHoverColor' => 'group-hover:text-[#1e9975]',
-                        'gradient' => 'from-[#1e9975] to-[#1683ab]',
-                        'cardBg' => 'from-[#0a0a0a]/95 to-[#1a1a1a]/50',
-                        'glowColor' => 'from-[#1e9975]/25 to-[#1683ab]/15',
-                        'iconBg' => 'from-[#1e9975] to-[#1683ab]',
-                        'cardBorder' => 'border-[#1e9975]/20',
+                        'primaryColor' => '#1e9975',
+                        'secondaryColor' => '#1683ab',
                         'features' => [
                             'Автоматична DDoS защита',
                             'Резервни копия на 6 часа',
@@ -91,14 +79,8 @@
                         'description' => 'Нашият екип от специалисти е на разположение 24/7 за решаване на всеки проблем.',
                         'stat' => '&lt;2мин',
                         'statLabel' => 'Време за отговор',
-                        'statColor' => 'text-[#1683ab]',
-                        'borderColor' => 'hover:border-[#1683ab]/50',
-                        'titleHoverColor' => 'group-hover:text-[#1683ab]',
-                        'gradient' => 'from-[#1683ab] to-[#1e9975]',
-                        'cardBg' => 'from-[#0a0a0a]/95 to-[#1a1a1a]/50',
-                        'glowColor' => 'from-[#1683ab]/25 to-[#1e9975]/15',
-                        'iconBg' => 'from-[#1683ab] to-[#1e9975]',
-                        'cardBorder' => 'border-[#1683ab]/20',
+                        'primaryColor' => '#1683ab',
+                        'secondaryColor' => '#1e9975',
                         'features' => [
                             'Инсталтация на приложения',
                             'Конфигурация на домейни',
@@ -110,40 +92,88 @@
                 foreach ($mainFeatures as $feature):
                 ?>
                 <div class="group relative">
-                    <!-- Background Glow Effect -->
-                    <div class="absolute inset-0 bg-gradient-to-br <?php echo $feature['glowColor']; ?> rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-                    
-                    <!-- Main Card -->
-                    <div class="relative bg-gradient-to-br <?php echo $feature['cardBg']; ?> backdrop-blur-xl rounded-3xl p-10 border <?php echo $feature['cardBorder']; ?> <?php echo $feature['borderColor']; ?> transition-all duration-500 transform group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-[#1683ab]/20">
-                        <!-- Icon Container -->
-                        <div class="relative mb-8">
-                            <div class="w-20 h-20 bg-gradient-to-r <?php echo $feature['iconBg']; ?> rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-500 shadow-2xl group-hover:shadow-[#1683ab]/30">
-                                <i class="<?php echo $feature['icon']; ?> text-white text-3xl group-hover:animate-bounce"></i>
+                    <!-- Enhanced Card Design -->
+                    <div class="relative bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[<?php echo $feature['primaryColor']; ?>]/60 transition-all duration-700 transform group-hover:scale-105 group-hover:-translate-y-3 overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-[<?php echo $feature['primaryColor']; ?>]/20">
+                        
+                        <!-- Enhanced Background Pattern -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[<?php echo $feature['primaryColor']; ?>] to-[<?php echo $feature['secondaryColor']; ?>] rounded-full blur-3xl animate-pulse"></div>
+                            <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[<?php echo $feature['secondaryColor']; ?>] to-[<?php echo $feature['primaryColor']; ?>] rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                            <div class="absolute top-1/2 left-1/2 w-20 h-20 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>] to-[<?php echo $feature['secondaryColor']; ?>] rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+                        </div>
+                        
+                        <!-- Enhanced Header Section -->
+                        <div class="relative z-10 mb-10">
+                            <!-- Header Top Row with Icon and Stats -->
+                            <div class="flex items-center justify-center mb-8">
+                                <!-- Enhanced Icon with Better Design -->
+                                <div class="relative">
+                                    <div class="w-24 h-24 bg-gradient-to-br from-[<?php echo $feature['primaryColor']; ?>] to-[<?php echo $feature['secondaryColor']; ?>] rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-[<?php echo $feature['primaryColor']; ?>]/40 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                                        <i class="<?php echo $feature['icon']; ?> text-white text-4xl relative z-10"></i>
+                                        <!-- Enhanced Icon Background Glow -->
+                                        <div class="absolute inset-0 bg-gradient-to-br from-[<?php echo $feature['primaryColor']; ?>]/40 to-[<?php echo $feature['secondaryColor']; ?>]/40 rounded-3xl blur-sm group-hover:blur-md transition-all duration-500"></div>
+                                        <!-- Icon Inner Shadow -->
+                                        <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
+                                    </div>
+                                  
+                                </div>
+                                
+                              
                             </div>
-                            <!-- Floating Particles -->
-                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-[#1e9975] rounded-full animate-ping"></div>
-                            <div class="absolute -bottom-2 -left-2 w-3 h-3 bg-[#1683ab] rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                            
+                            <!-- Enhanced Title Section -->
+                            <div class="text-center mb-8">
+                                <div class="inline-block relative">
+                                    <!-- Title Background Glow -->
+                                    <div class="absolute inset-0 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>]/20 to-[<?php echo $feature['secondaryColor']; ?>]/20 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-full"></div>
+                                    
+                                    <!-- Enhanced Title with Better Typography -->
+                                    <h3 class="relative z-10 text-3xl font-black text-white mb-4 group-hover:text-[<?php echo $feature['primaryColor']; ?>] transition-all duration-500 leading-tight tracking-tight">
+                                        <?php echo $feature['title']; ?>
+                                    </h3>
+                                    
+                                    <!-- Title Underline -->
+                                    <div class="h-1 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>] to-[<?php echo $feature['secondaryColor']; ?>] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"></div>
+                                </div>
+                                
+                                <!-- Enhanced Description with Better Layout -->
+                                <div class="mt-6 max-w-md mx-auto">
+                                    <p class="text-gray-300 leading-relaxed text-lg font-medium">
+                                        <?php echo $feature['description']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Header Bottom Accent -->
+                            <div class="flex justify-center">
+                                <div class="w-20 h-1 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>] to-[<?php echo $feature['secondaryColor']; ?>] rounded-full opacity-50 group-hover:opacity-100 transition-all duration-500"></div>
+                            </div>
                         </div>
                         
-                        <!-- Content -->
-                        <h3 class="text-2xl font-bold text-white mb-6 text-center <?php echo $feature['titleHoverColor']; ?> transition-colors duration-500"><?php echo $feature['title']; ?></h3>
-                        <p class="text-gray-300 leading-relaxed mb-8 text-center text-lg"><?php echo $feature['description']; ?></p>
-                        
-                        <!-- Stats Display -->
-                        <div class="text-center mb-6">
-                            <div class="text-4xl font-bold <?php echo $feature['statColor']; ?> mb-2 group-hover:scale-110 transition-transform duration-300"><?php echo $feature['stat']; ?></div>
-                            <div class="text-sm text-gray-400 uppercase tracking-wider"><?php echo $feature['statLabel']; ?></div>
+                        <!-- Enhanced Features List -->
+                        <div class="relative z-10 mb-6">
+                            <div class="space-y-4">
+                                <?php foreach ($feature['features'] as $index => $item): ?>
+                                <div class="flex items-center group/item p-3 rounded-2xl hover:bg-gradient-to-r hover:from-[<?php echo $feature['primaryColor']; ?>]/10 hover:to-[<?php echo $feature['secondaryColor']; ?>]/10 transition-all duration-300">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>]/30 to-[<?php echo $feature['secondaryColor']; ?>]/30 rounded-xl flex items-center justify-center mr-4 group-hover/item:scale-110 group-hover/item:bg-gradient-to-r group-hover/item:from-[<?php echo $feature['primaryColor']; ?>]/50 group-hover/item:to-[<?php echo $feature['secondaryColor']; ?>]/50 transition-all duration-300 shadow-lg">
+                                        <i class="fas fa-check text-[<?php echo $feature['primaryColor']; ?>] text-sm font-bold"></i>
+                                    </div>
+                                    <span class="text-gray-300 group-hover/item:text-white transition-all duration-300 text-base font-medium"><?php echo $item; ?></span>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                         
-                        <!-- Feature List -->
-                        <ul class="space-y-3 text-gray-300">
-                            <?php foreach ($feature['features'] as $item): ?>
-                            <li class="flex items-center group/item">
-                                <i class="fas fa-check text-[#1e9975] mr-3 group-hover/item:scale-110 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-white transition-colors duration-300"><?php echo $item; ?></span>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <!-- Enhanced Bottom Accent Line -->
+                        <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[<?php echo $feature['primaryColor']; ?>] via-[<?php echo $feature['secondaryColor']; ?>] to-[<?php echo $feature['primaryColor']; ?>] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-full"></div>
+                        
+                   
+                        <!-- Additional Decorative Elements -->
+                        <div class="absolute top-4 left-4 w-2 h-2 bg-[<?php echo $feature['secondaryColor']; ?>] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                        <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-[<?php echo $feature['primaryColor']; ?>] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style="animation-delay: 0.5s;"></div>
+                        
+                        <!-- Hover Overlay Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-[<?php echo $feature['primaryColor']; ?>]/5 to-[<?php echo $feature['secondaryColor']; ?>]/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl"></div>
                     </div>
                 </div>
                 <?php endforeach; ?>
