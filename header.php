@@ -4,12 +4,14 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo Section -->
             <div class="flex items-center space-x-4">
+                <a href="index.php">
             <img src="assets/img/logo-on-dark.svg" alt="Logo" class="h-10">
+            </a>
             </div>
 
             <!-- Center Navigation Menu -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="#home" class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl hover:scale-105 transform relative group">
+                <a href="index.php" class="text-gray-200 hover:text-white font-medium transition-all duration-300 px-3 py-2 rounded-2xl hover:scale-105 transform relative group">
                     <span class="relative z-10">Начало</span>
                     <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1683ab] to-[#1e9975] transition-all duration-300 group-hover:w-full"></div>
                 </a>
