@@ -484,7 +484,7 @@
                             <?php echo htmlspecialchars($service['title']); ?>
                         </h3>
                         
-                        <p class="text-gray-300 leading-relaxed text-sm line-clamp-3">
+                        <p class="text-gray-300 leading-relaxed text-sm">
                             <?php echo htmlspecialchars($service['description']); ?>
                         </p>
 

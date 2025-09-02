@@ -399,7 +399,6 @@ $config = [
             'color' => 'blue',
             'features' => [
                 'cache_plugin',
-                'ssl_monitoring',
                 'database_connection',
                 'security_settings',
                 'php_settings',
@@ -408,7 +407,6 @@ $config = [
                 'updates',
                 'domain_change',
                 'site_monitoring',
-                'updates',
                 'admin_help',
                 'error_500',
                 'dev_environment',
@@ -438,7 +436,6 @@ $config = [
             'color' => 'purple',
             'features' => [
                 'cache_plugin',
-                'ssl_monitoring',
                 'database_connection',
                 'security_settings',
                 'php_settings',
@@ -452,21 +449,7 @@ $config = [
                 'dev_environment',
                 'performance_audit',
                 'woocommerce_settings',
-                'site_optimization',
-                'priority_support',
-                'daily_backups',
-                'advanced_security',
-                'performance_optimization',
-                'seo_optimization',
-                'cdn_setup',
-                'uptime_monitoring',
-                'auto_updates',
-                'woocommerce_support',
-                'third_party_integration',
-                'email_marketing',
-                'traffic_analysis',
-                'expansion_consultation',
-                'express_fixes'
+                'site_optimization'
             ],
             'support_hours' => '8:00 - 20:00 (Пн-Пт), 10:00 - 16:00 (Сб)',
             'response_time' => '4 часа',
@@ -490,7 +473,6 @@ $config = [
             'color' => 'green',
             'features' => [
                 'cache_plugin',
-                'ssl_monitoring',
                 'database_connection',
                 'security_settings',
                 'php_settings',
@@ -504,38 +486,7 @@ $config = [
                 'dev_environment',
                 'performance_audit',
                 'woocommerce_settings',
-                'site_optimization',
-                'priority_support',
-                'daily_backups',
-                'advanced_security',
-                'performance_optimization',
-                'seo_optimization',
-                'cdn_setup',
-                'uptime_monitoring',
-                'auto_updates',
-                'woocommerce_support',
-                'third_party_integration',
-                'email_marketing',
-                'traffic_analysis',
-                'expansion_consultation',
-                'express_fixes',
-                'vip_support',
-                'instant_backups',
-                'enterprise_security',
-                'maximum_optimization',
-                'custom_solutions',
-                'dedicated_manager',
-                'free_consultations',
-                'incident_priority',
-                'multiple_sites',
-                'custom_development',
-                'enterprise_integration',
-                'realtime_monitoring',
-                'auto_recovery',
-                'sla_guarantees',
-                'unlimited_sites',
-                'express_fixes_30min',
-                'monthly_reports'
+                'site_optimization'
             ],
             'support_hours' => '24/7',
             'response_time' => '30 минути',
@@ -551,22 +502,22 @@ $config = [
     'wordpress_service_details' => [
         'admin_access' => [
             'title' => 'Невъзможност за достъп до админ панел',
-            'description' => 'Възстановяваме достъпа до административния панел на WordPress или WooCommerce магазина. Включва смяна на парола, email адрес или създаване на нов административен потребител. Услугата се предоставя при проблеми, които не са свързани с нашата хостинг система.',
+            'description' => 'Възстановяваме достъпа до административния панел на WordPress или WooCommerce магазина. Включва смяна на парола, email адрес или създаване на нов административен потребител.',
             'icon' => 'fa-user-shield'
         ],
         'page_loading' => [
             'title' => 'Невъзможност за зареждане на страница',
-            'description' => 'Решаваме проблеми с зареждането на страници - бял екран, Error 500, Error 501 или други критични грешки. Диагностицираме причината и прилагаме подходящото решение за възстановяване на нормалното функциониране на сайта.',
+            'description' => 'Решаваме проблеми с зареждането на страници - бял екран, Error 500, Error 501 или други критични грешки. Диагностицираме причината и прилагаме подходящото решение.',
             'icon' => 'fa-exclamation-triangle'
         ],
         'php_settings' => [
             'title' => 'Настройки на PHP',
-            'description' => 'Конфигурираме PHP параметри за оптимална производителност - лимити за качване на файлове, памет, време за изпълнение и други настройки. Осигуряваме съвместимост с всички WordPress плъгини и теми.',
+            'description' => 'Конфигурираме PHP параметри за оптимална производителност - лимити за качване на файлове, памет, време за изпълнение и други настройки.',
             'icon' => 'fa-code'
         ],
         'domain_change' => [
             'title' => 'Смяна на основен домейн',
-            'description' => 'Извършваме професионална смяна на основния домейн на WordPress сайт или WooCommerce магазин. Включва настройка на DNS записи, SSL сертификати и пренасочване на трафика без прекъсване на услугата.',
+            'description' => 'Извършваме професионална смяна на основния домейн на WordPress сайт или WooCommerce магазин. Включва настройка на DNS записи, SSL сертификати и пренасочване на трафика.',
             'icon' => 'fa-globe'
         ],
         'database_connection' => [
@@ -574,34 +525,14 @@ $config = [
             'description' => 'Помагаме с конфигурирането на връзката с MySQL базата данни. Включва настройка на потребител, парола, име на базата данни и други параметри в wp-config.php файла.',
             'icon' => 'fa-database'
         ],
-        'performance_audit' => [
-            'title' => 'Одит при бавен сайт',
-            'description' => 'Извършваме детайлен анализ на производителността на бавно зареждащи се сайтове. Предоставяме препоръки за оптимизация и прилагаме решения за подобряване на скоростта. Включено е 1 одит месечно.',
-            'icon' => 'fa-tachometer-alt'
-        ],
-        'admin_help' => [
-            'title' => 'Помощ при работа с админ панела',
-            'description' => 'Предоставяме експертна помощ за навигация и използване на WordPress административния панел. Помагаме с намирането на функции, настройки и опции, както и с тяхното правилно използване.',
-            'icon' => 'fa-question-circle'
-        ],
-        'error_500' => [
-            'title' => 'Съдействие при Error 500',
-            'description' => 'Диагностицираме и решаваме критични грешки като Error 500. Локализираме причината за проблема и прилагаме подходящото решение за възстановяване на функционалността на сайта.',
-            'icon' => 'fa-bug'
-        ],
-        'dev_environment' => [
-            'title' => 'Създаване на Dev среда',
-            'description' => 'Създаваме тестова среда за безопасно тестване на нови функционалности, плъгини и теми. Включва отделна база данни и файлова система. Предоставяме 1 Dev среда месечно.',
-            'icon' => 'fa-code-branch'
-        ],
         'security_settings' => [
             'title' => 'Настройки за сигурност',
-            'description' => 'Прилагаме допълнителни мерки за сигурност за защита на WordPress сайтове и WooCommerce магазини. Включва защита срещу brute force атаки, скриване на версията на WordPress и други сигурностни настройки.',
+            'description' => 'Прилагаме допълнителни мерки за сигурност за защита на WordPress сайтове и WooCommerce магазини. Включва защита срещу brute force атаки и други сигурностни настройки.',
             'icon' => 'fa-shield-alt'
         ],
         'updates' => [
             'title' => 'Обновяване на плъгини, теми и WordPress ядро',
-            'description' => 'Извършваме месечни обновления на WordPress ядрото, плъгини и теми. Преди всяка актуализация създаваме резервно копие за безопасност. Ограничение: разликата между версиите не трябва да надвишава 2 Major версии.',
+            'description' => 'Извършваме месечни обновления на WordPress ядрото, плъгини и теми. Преди всяка актуализация създаваме резервно копие за безопасност.',
             'icon' => 'fa-sync-alt'
         ],
         'woocommerce_settings' => [
@@ -611,178 +542,43 @@ $config = [
         ],
         'cache_plugin' => [
             'title' => 'Конфигуриране на cache плъгин',
-            'description' => 'Настройваме и оптимизираме кеширащи плъгини за максимална производителност. Включва конфигуриране на LiteSpeed Cache или други подходящи решения за значително подобряване на скоростта на зареждане.',
+            'description' => 'Настройваме и оптимизираме кеширащи плъгини за максимална производителност. Включва конфигуриране на LiteSpeed Cache или други подходящи решения.',
             'icon' => 'fa-rocket'
         ],
         'site_optimization' => [
             'title' => 'Оптимизация на сайт',
-            'description' => 'Извършваме комплексна оптимизация на WordPress сайтове и WooCommerce магазини. Включва анализ на производителността, препоръки за подобрения и прилагане на решения в рамките на нашите компетенции. Предоставяме 1 одит месечно.',
+            'description' => 'Извършваме комплексна оптимизация на WordPress сайтове и WooCommerce магазини. Включва анализ на производителността и препоръки за подобрения.',
             'icon' => 'fa-chart-line'
         ],
         'site_monitoring' => [
             'title' => 'Мониторинг на сайт',
-            'description' => 'Следим за коректното функциониране на началната страница на сайта. При възникване на проблеми ви уведомяваме незабавно за бързо отстраняване и минимално прекъсване на услугата.',
+            'description' => 'Следим за коректното функциониране на началната страница на сайта. При възникване на проблеми ви уведомяваме незабавно за бързо отстраняване.',
             'icon' => 'fa-eye'
+        ],
+        'error_500' => [
+            'title' => 'Съдействие при Error 500',
+            'description' => 'Диагностицираме и решаваме критични грешки като Error 500. Локализираме причината за проблема и прилагаме подходящото решение.',
+            'icon' => 'fa-bug'
+        ],
+        'admin_help' => [
+            'title' => 'Помощ при работа с админ панела',
+            'description' => 'Предоставяме експертна помощ за навигация и използване на WordPress административния панел. Помагаме с намирането на функции и настройки.',
+            'icon' => 'fa-question-circle'
+        ],
+        'dev_environment' => [
+            'title' => 'Създаване на Dev среда',
+            'description' => 'Създаваме тестова среда за безопасно тестване на нови функционалности, плъгини и теми. Включва отделна база данни и файлова система.',
+            'icon' => 'fa-code-branch'
+        ],
+        'performance_audit' => [
+            'title' => 'Одит при бавен сайт',
+            'description' => 'Извършваме детайлен анализ на производителността на бавно зареждащи се сайтове. Предоставяме препоръки за оптимизация и прилагаме решения.',
+            'icon' => 'fa-tachometer-alt'
         ],
         'other' => [
             'title' => 'Друго?',
             'description' => 'За всички други WordPress и WooCommerce свързани услуги, които не са описани по-горе, моля свържете се с нас за персонализирана консултация.',
             'icon' => 'fa-ellipsis-h'
-        ],
-        'priority_support' => [
-            'title' => 'Приоритетна поддръжка',
-            'description' => 'Приоритетен ред за обработка на заявки с по-бърз отговор и специализирана помощ от senior експерти.',
-            'icon' => 'fa-star'
-        ],
-        'daily_backups' => [
-            'title' => 'Ежедневни резервни копия',
-            'description' => 'Автоматични ежедневни резервни копия с възможност за възстановяване до 30 дни назад.',
-            'icon' => 'fa-save'
-        ],
-        'advanced_security' => [
-            'title' => 'Разширен мониторинг на сигурността',
-            'description' => '24/7 мониторинг за malware, подозрителна активност и автоматично блокиране на заплахи.',
-            'icon' => 'fa-shield-virus'
-        ],
-        'performance_optimization' => [
-            'title' => 'Оптимизация на производителността',
-            'description' => 'Комплексна оптимизация на скоростта, включително изображения, CSS, JavaScript и база данни.',
-            'icon' => 'fa-tachometer-alt'
-        ],
-        'seo_optimization' => [
-            'title' => 'SEO оптимизация',
-            'description' => 'Техническа SEO оптимизация, настройка на meta данни, sitemap и структурирани данни.',
-            'icon' => 'fa-search'
-        ],
-        'cdn_setup' => [
-            'title' => 'Настройка на CDN',
-            'description' => 'Интеграция и настройка на Content Delivery Network за глобално разпространение на съдържанието.',
-            'icon' => 'fa-globe-americas'
-        ],
-        'uptime_monitoring' => [
-            'title' => 'Мониторинг на uptime',
-            'description' => 'Непрекъснат мониторинг на наличността на сайта с незабавни уведомления при проблеми.',
-            'icon' => 'fa-heartbeat'
-        ],
-        'auto_updates' => [
-            'title' => 'Автоматични обновления',
-            'description' => 'Автоматично обновяване на WordPress ядрото, плъгини и теми с предварителни тестове.',
-            'icon' => 'fa-sync'
-        ],
-        'woocommerce_support' => [
-            'title' => 'Специализирана WooCommerce поддръжка',
-            'description' => 'Експертна поддръжка за WooCommerce магазини, включително настройки, плащания и доставки.',
-            'icon' => 'fa-shopping-bag'
-        ],
-        'third_party_integration' => [
-            'title' => 'Интеграция с трети страни',
-            'description' => 'Настройка и интеграция с външни услуги, API и платформи за разширяване на функционалността.',
-            'icon' => 'fa-plug'
-        ],
-        'email_marketing' => [
-            'title' => 'Настройка на email маркетинг',
-            'description' => 'Конфигуриране на email маркетинг системи и автоматизация на маркетингови кампании.',
-            'icon' => 'fa-envelope'
-        ],
-        'traffic_analysis' => [
-            'title' => 'Анализ на трафика',
-            'description' => 'Детайлен анализ на уебсайт трафика, поведение на потребителите и конверсионни метрики.',
-            'icon' => 'fa-chart-bar'
-        ],
-        'expansion_consultation' => [
-            'title' => 'Консултации за разширяване',
-            'description' => 'Стратегически консултации за разширяване на бизнеса и подобряване на онлайн присъствието.',
-            'icon' => 'fa-lightbulb'
-        ],
-        'express_fixes' => [
-            'title' => 'Експресни поправки',
-            'description' => 'Бързо решаване на критични проблеми в рамките на 2 часа за професионален план.',
-            'icon' => 'fa-bolt'
-        ],
-        'vip_support' => [
-            'title' => 'VIP поддръжка 24/7',
-            'description' => 'Персонализирана поддръжка 24/7 с директен достъп до senior WordPress експерти.',
-            'icon' => 'fa-crown'
-        ],
-        'instant_backups' => [
-            'title' => 'Моментални резервни копия',
-            'description' => 'Автоматични резервни копия при всяка промяна с възможност за моментално възстановяване.',
-            'icon' => 'fa-clock'
-        ],
-        'enterprise_security' => [
-            'title' => 'Enterprise сигурност',
-            'description' => 'Корпоративна сигурност с advanced threat detection, WAF и compliance с GDPR/ISO стандарти.',
-            'icon' => 'fa-shield-alt'
-        ],
-        'maximum_optimization' => [
-            'title' => 'Максимална оптимизация',
-            'description' => 'Най-високо ниво на оптимизация за максимална производителност и скорост на сайта.',
-            'icon' => 'fa-rocket'
-        ],
-        'custom_solutions' => [
-            'title' => 'Персонализирани решения',
-            'description' => 'Разработка на персонализирани решения и функционалности според специфичните бизнес нужди.',
-            'icon' => 'fa-cogs'
-        ],
-        'dedicated_manager' => [
-            'title' => 'Dedicated account manager',
-            'description' => 'Персонализиран account manager за вашия проект с директен достъп и стратегически консултации.',
-            'icon' => 'fa-user-tie'
-        ],
-        'free_consultations' => [
-            'title' => 'Безплатни консултации',
-            'description' => 'Регулярни безплатни консултации за стратегия, оптимизация и развитие на онлайн присъствието.',
-            'icon' => 'fa-comments'
-        ],
-        'incident_priority' => [
-            'title' => 'Приоритет при инциденти',
-            'description' => 'Най-висок приоритет при критични инциденти с незабавно реагиране и решение.',
-            'icon' => 'fa-exclamation-triangle'
-        ],
-        'multiple_sites' => [
-            'title' => 'Множество сайтове',
-            'description' => 'Поддръжка на множество WordPress сайтове под един абонамент.',
-            'icon' => 'fa-sitemap'
-        ],
-        'custom_development' => [
-            'title' => 'Custom разработки',
-            'description' => 'Персонализирани WordPress разработки, custom плъгини и теми според вашите бизнес нужди.',
-            'icon' => 'fa-code'
-        ],
-        'enterprise_integration' => [
-            'title' => 'Интеграция с корпоративни системи',
-            'description' => 'Интеграция с корпоративни ERP, CRM и други бизнес системи.',
-            'icon' => 'fa-network-wired'
-        ],
-        'realtime_monitoring' => [
-            'title' => 'Мониторинг в реално време',
-            'description' => '24/7 мониторинг в реално време с моментални уведомления и автоматични реакции.',
-            'icon' => 'fa-eye'
-        ],
-        'auto_recovery' => [
-            'title' => 'Автоматично възстановяване',
-            'description' => 'Автоматично възстановяване при сривове и проблеми с минимално прекъсване на услугата.',
-            'icon' => 'fa-redo'
-        ],
-        'sla_guarantees' => [
-            'title' => 'SLA гаранции',
-            'description' => 'Service Level Agreement с гарантирано време за отговор и възстановяване на услуги.',
-            'icon' => 'fa-handshake'
-        ],
-        'unlimited_sites' => [
-            'title' => 'Неограничени сайтове',
-            'description' => 'Поддръжка на неограничен брой WordPress сайтове под един абонамент.',
-            'icon' => 'fa-infinity'
-        ],
-        'express_fixes_30min' => [
-            'title' => 'Експресни поправки (30 мин)',
-            'description' => 'Критични проблеми се решават в рамките на 30 минути с най-висок приоритет.',
-            'icon' => 'fa-stopwatch'
-        ],
-        'monthly_reports' => [
-            'title' => 'Месечни отчети и анализи',
-            'description' => 'Детайлни месечни отчети за производителност, сигурност и препоръки за подобрения.',
-            'icon' => 'fa-chart-line'
         ]
     ],
 
