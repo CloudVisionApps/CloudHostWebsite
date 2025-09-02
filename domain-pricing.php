@@ -133,6 +133,28 @@
         .animate-glow-border {
             animation: glow-border 4s ease-in-out infinite;
         }
+        
+        /* Toggle Switch Animation - Tailwind compatible */
+        .toggle-track::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1e9975 0%, #1683ab 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 24px;
+        }
+        
+        #show-all-toggle:checked + .toggle-track::before {
+            opacity: 1;
+        }
+        
+        #show-all-toggle:checked + .toggle-track .toggle-thumb {
+            transform: translateX(28px);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -173,6 +195,7 @@
                             <input id="tld-search" type="text" placeholder="Търсене на TLD (напр. .com, .bg, .io)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
                         </div>
                     </div>
+
                     
                 </div>
             </div>
@@ -250,6 +273,25 @@
                 </div>
                 <?php } ?>
             </div>
+            
+            <!-- Show All Toggle - Bottom -->
+            <div class="flex flex-col items-center gap-4 mt-8">
+                <div class="text-sm text-gray-400">
+                    Показване на <span id="visible-count">10</span> от <span id="total-count"><?php echo count(get_config('tlds', [])); ?></span> домейна
+                </div>
+                <label for="show-all-toggle" class="inline-flex items-center gap-4 cursor-pointer group bg-white/[0.03] rounded-2xl px-5 py-3 backdrop-blur-sm hover:bg-[#1e9975]/10 hover:-translate-y-0.5 transition-all duration-300">
+                    <div class="relative bg-white/[0.05] rounded-full p-1.5 transition-all duration-300 group-hover:bg-[#1e9975]/10">
+                        <input id="show-all-toggle" type="checkbox" class="sr-only">
+                        <div class="toggle-track w-16 h-8 bg-gray-600 rounded-full relative transition-all duration-400 overflow-hidden">
+                            <div class="toggle-thumb w-6 h-6 bg-white rounded-full absolute top-1 left-1 transition-all duration-400 shadow-lg z-10"></div>
+                        </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors select-none">
+                        <i class="fa-solid fa-globe mr-2 text-[#1683ab] group-hover:text-[#1e9975] group-hover:scale-110 transition-all duration-300"></i>
+                        Покажи всички домейни
+                    </span>
+                </label>
+            </div>
         </div>
     </section>
 
@@ -279,20 +321,63 @@
     <script>
         (function() {
             const input = document.getElementById('tld-search');
+            const toggle = document.getElementById('show-all-toggle');
             const cards = Array.from(document.querySelectorAll('.tld-card'));
 
-            function filterCards(query) {
-                const q = query.trim().toLowerCase();
-                cards.forEach(card => {
+            console.log('Toggle element:', toggle);
+            console.log('Cards found:', cards.length);
+
+            function applyFilter() {
+                const showAll = !!(toggle && toggle.checked);
+                const visibleCountElement = document.getElementById('visible-count');
+                console.log('Show all:', showAll);
+                
+                if (showAll) {
+                    // Show all domains when toggle is enabled
+                    cards.forEach(card => { card.style.display = ''; });
+                    if (input) { input.value = ''; }
+                    if (visibleCountElement) {
+                        visibleCountElement.textContent = cards.length;
+                    }
+                    return;
+                }
+                
+                // When toggle is disabled, limit to 10 domains and apply search filter
+                const q = (input?.value || '').trim().toLowerCase();
+                let visibleCount = 0;
+                const maxVisible = 10;
+                
+                cards.forEach((card, index) => {
                     const tld = card.getAttribute('data-tld')?.toLowerCase() || '';
-                    const match = tld.includes(q);
-                    card.style.display = match ? '' : 'none';
+                    const match = q === '' || tld.includes(q);
+                    
+                    if (match && visibleCount < maxVisible) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
+                
+                if (visibleCountElement) {
+                    visibleCountElement.textContent = visibleCount;
+                }
             }
 
             if (input) {
-                input.addEventListener('input', (e) => filterCards(e.target.value));
+                input.addEventListener('input', () => applyFilter());
             }
+            if (toggle) {
+                toggle.addEventListener('change', (e) => {
+                    console.log('Toggle changed:', e.target.checked);
+                    if (input) { input.disabled = toggle.checked; }
+                    applyFilter();
+                });
+            }
+
+            // Initial state
+            if (input) { input.disabled = !!(toggle && toggle.checked); }
+            applyFilter();
         })();
     </script>
 </body>
