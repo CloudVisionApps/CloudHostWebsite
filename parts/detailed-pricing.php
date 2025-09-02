@@ -650,67 +650,67 @@
 
                  <!-- Additional Features -->
             <div class="mt-20 text-center scroll-fade-in">
-                <h3 class="text-3xl font-bold text-white mb-4">Всички Планове Включват</h3>
-                <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Насладете се на професионални функции, които са включени във всеки план без допълнителни такси</p>
+                <h3 class="text-3xl font-bold text-white mb-4 scroll-scale-in">Всички Планове Включват</h3>
+                <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto scroll-slide-left">Насладете се на професионални функции, които са включени във всеки план без допълнителни такси</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#1683ab]/50 hover:from-[#1683ab]/5 hover:to-[#1e9975]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#1683ab]/50 hover:from-[#1683ab]/5 hover:to-[#1e9975]/5 transition-all duration-300 transform hover:scale-105 scroll-slide-left">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300 scroll-rotate-in">
                                 <i class="fas fa-rocket text-blue-400 text-2xl group-hover:text-blue-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Оптимизиран LiteSpeed сървър</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Световно най-бързият уеб сървър за максимална производителност</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Оптимизиран LiteSpeed сървър</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Световно най-бързият уеб сървър за максимална производителност</p>
                         </div>
                     </div>
                     
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#1e9975]/50 hover:from-[#1e9975]/5 hover:to-[#1683ab]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#1e9975]/50 hover:from-[#1e9975]/5 hover:to-[#1683ab]/5 transition-all duration-300 transform hover:scale-105 scroll-scale-in">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300 scroll-bounce-in">
                                 <i class="fas fa-shield-alt text-green-400 text-2xl group-hover:text-green-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Безплатни SSL сертификати</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Защитете вашия сайт с безплатни SSL сертификати за всички домейни</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Безплатни SSL сертификати</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Защитете вашия сайт с безплатни SSL сертификати за всички домейни</p>
                         </div>
                     </div>
                     
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#9b59b6]/50 hover:from-[#9b59b6]/5 hover:to-[#8e44ad]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#9b59b6]/50 hover:from-[#9b59b6]/5 hover:to-[#8e44ad]/5 transition-all duration-300 transform hover:scale-105 scroll-slide-right">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-purple-500/30 group-hover:to-purple-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-purple-500/30 group-hover:to-purple-600/30 transition-all duration-300 scroll-rotate-in">
                                 <i class="fas fa-folder text-purple-400 text-2xl group-hover:text-purple-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Неограничен брой inodes</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Създавайте колкото файлове и директории желаете без ограничения</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Неограничен брой inodes</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Създавайте колкото файлове и директории желаете без ограничения</p>
                         </div>
                     </div>
                     
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#f39c12]/50 hover:from-[#f39c12]/5 hover:to-[#e67e22]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#f39c12]/50 hover:from-[#f39c12]/5 hover:to-[#e67e22]/5 transition-all duration-300 transform hover:scale-105 scroll-slide-left">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-orange-500/30 group-hover:to-orange-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-orange-500/30 group-hover:to-orange-600/30 transition-all duration-300 scroll-bounce-in">
                                 <i class="fas fa-tachometer-alt text-orange-400 text-2xl group-hover:text-orange-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Неограничен трафик</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Приемете неограничен брой посетители без допълнителни такси</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Неограничен трафик</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Приемете неограничен брой посетители без допълнителни такси</p>
                         </div>
                     </div>
                     
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#e74c3c]/50 hover:from-[#e74c3c]/5 hover:to-[#c0392b]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#e74c3c]/50 hover:from-[#e74c3c]/5 hover:to-[#c0392b]/5 transition-all duration-300 transform hover:scale-105 scroll-scale-in">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-300 scroll-rotate-in">
                                 <i class="fas fa-exchange-alt text-red-400 text-2xl group-hover:text-red-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Безплатно преместване</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Преместете се от друг хостинг доставчик безплатно и лесно</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Безплатно преместване</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Преместете се от друг хостинг доставчик безплатно и лесно</p>
                         </div>
                     </div>
                     
-                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#f1c40f]/50 hover:from-[#f1c40f]/5 hover:to-[#f39c12]/5 transition-all duration-300 transform hover:scale-105">
+                    <div class="group bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#f1c40f]/50 hover:from-[#f1c40f]/5 hover:to-[#f39c12]/5 transition-all duration-300 transform hover:scale-105 scroll-slide-right">
                         <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-yellow-500/30 group-hover:to-yellow-600/30 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-2xl flex items-center justify-center mb-4 group-hover:from-yellow-500/30 group-hover:to-yellow-600/30 transition-all duration-300 scroll-bounce-in">
                                 <i class="fas fa-clock text-yellow-400 text-2xl group-hover:text-yellow-300 transition-colors duration-300"></i>
                             </div>
-                            <h4 class="text-white font-semibold text-lg mb-2">Компенсиране за времето</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Получете компенсация за оставащото предплатено време от другия доставчик</p>
+                            <h4 class="text-white font-semibold text-lg mb-2 scroll-glow-in">Компенсиране за времето</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed scroll-blur-in">Получете компенсация за оставащото предплатено време от другия доставчик</p>
                         </div>
                     </div>
                 </div>
