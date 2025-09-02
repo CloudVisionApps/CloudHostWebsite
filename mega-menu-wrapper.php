@@ -78,10 +78,10 @@ function render_hosting_mega_menu() {
                 'icon_gradient_end' => '[#1e9975]',
                 'title' => 'Хостинг',
                 'links' => [
-                    ['url' => '#starter', 'text' => 'Starter план'],
-                    ['url' => '#professional', 'text' => 'Professional план'],
-                    ['url' => '#enterprise', 'text' => 'Enterprise план'],
-                    ['url' => '#comparison', 'text' => 'Сравнение']
+                    ['url' => 'hosting-single-page.php?plan=starter', 'text' => 'Starter план'],
+                    ['url' => 'hosting-single-page.php?plan=professional', 'text' => 'Professional план'],
+                    ['url' => 'hosting-single-page.php?plan=enterprise', 'text' => 'Enterprise план'],
+                    ['url' => 'hosting-single-page.php?plan=comparison', 'text' => 'Сравнение']
                 ]
             ],
             [
@@ -90,10 +90,10 @@ function render_hosting_mega_menu() {
                 'icon_gradient_end' => '[#1683ab]',
                 'title' => 'Cloud Решения',
                 'links' => [
-                    ['url' => '#vps', 'text' => 'VPS Хостинг'],
-                    ['url' => '#dedicated', 'text' => 'Dedicated сървъри'],
-                    ['url' => '#cloud', 'text' => 'Cloud Хостинг'],
-                    ['url' => '#backup', 'text' => 'Backup Решения']
+                    ['url' => 'hosting-single-page.php?plan=vps', 'text' => 'VPS Хостинг'],
+                    ['url' => 'hosting-single-page.php?plan=dedicated', 'text' => 'Dedicated сървъри'],
+                    ['url' => 'hosting-single-page.php?plan=cloud', 'text' => 'Cloud Хостинг'],
+                    ['url' => 'hosting-single-page.php?plan=backup', 'text' => 'Backup Решения']
                 ]
             ],
             [
@@ -102,16 +102,16 @@ function render_hosting_mega_menu() {
                 'icon_gradient_end' => '[#1e9975]',
                 'title' => 'Функции',
                 'links' => [
-                    ['url' => '#migration', 'text' => 'Безплатна Миграция'],
-                    ['url' => '#ssl', 'text' => 'SSL Сертификати'],
-                    ['url' => '#cdn', 'text' => 'CDN Мрежа'],
-                    ['url' => '#support', 'text' => '24/7 Поддръжка']
+                    ['url' => 'hosting-single-page.php?plan=migration', 'text' => 'Безплатна Миграция'],
+                    ['url' => 'hosting-single-page.php?plan=ssl', 'text' => 'SSL Сертификати'],
+                    ['url' => 'hosting-single-page.php?plan=cdn', 'text' => 'CDN Мрежа'],
+                    ['url' => 'hosting-single-page.php?plan=support', 'text' => '24/7 Поддръжка']
                 ]
             ]
         ],
         'show_bottom_cta' => true,
         'bottom_cta_text' => 'Виж всички хостинг решения',
-        'bottom_cta_url' => '#hosting'
+        'bottom_cta_url' => 'hosting-single-page.php'
     ];
     
     render_mega_menu($hosting_menu);
@@ -174,7 +174,7 @@ function render_solutions_mega_menu() {
         ],
         'show_bottom_cta' => true,
         'bottom_cta_text' => 'Виж всички решения',
-        'bottom_cta_url' => '#solutions'
+        'bottom_cta_url' => 'solutions-single-page.php'
     ];
     
     render_mega_menu($solutions_menu);
