@@ -153,11 +153,11 @@
         <!-- Content Container --> 
         <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
             <!-- Compact Headline -->
-            <div class="mb-8">
-                <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+            <div class="mb-8 scroll-fade-in">
+                <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 scroll-scale-in">
                     Професионален <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Уеб Хостинг</span>
                 </h1>
-                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto scroll-slide-left">
                     Изберете от нашите внимателно изработени хостинг планове, предназначени за бизнеси от всякакъв размер. 
                     Изживейте светкавична производителност с 99.9% гарантирана работа.
                 </p>
@@ -166,16 +166,16 @@
     
             
             <!-- Compact Trust Indicators -->
-            <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
-                <div class="flex items-center">
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400 scroll-stagger">
+                <div class="flex items-center scroll-bounce-in">
                     <i class="fas fa-shield-alt text-[#1e9975] mr-2"></i>
                     <span>SSL Защита</span>
                 </div>
-                <div class="flex items-center">
+                <div class="flex items-center scroll-bounce-in">
                     <i class="fas fa-database text-[#1683ab] mr-2"></i>
                     <span>SSD Хранилище</span>
                 </div>
-                <div class="flex items-center">
+                <div class="flex items-center scroll-bounce-in">
                     <i class="fas fa-globe text-[#1e9975] mr-2"></i>
                     <span>CDN Включен</span>
                 </div>
