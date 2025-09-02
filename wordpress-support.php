@@ -182,6 +182,26 @@
             background: rgba(255, 255, 255, 0.2) !important;
             color: #ffffff !important;
         }
+
+        /* Service Details Styling */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(22, 131, 171, 0.1);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #1683ab 0%, #1e9975 100%);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(22, 131, 171, 0.3);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -398,6 +418,40 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="relative py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 scroll-fade-in">
+                <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4 scroll-scale-in">Описание на услугите</h2>
+                <p class="text-gray-400 scroll-slide-left">Детайлно описание на всички WordPress поддържащи услуги, които предлагаме</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 scroll-fade-in">
+                <?php 
+                $serviceDetails = get_config('wordpress_service_details', []);
+                $serviceCount = 0;
+                
+                foreach ($serviceDetails as $key => $service) { 
+                    $serviceCount++;
+                    $animationClass = $serviceCount % 2 == 1 ? 'scroll-slide-left' : 'scroll-slide-right';
+                    $iconClass = $service['icon'] ?? 'fa-cog';
+                ?>
+                <div class="service-card bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 hover:border-[#1683ab]/30 transition-all duration-300 <?php echo $animationClass; ?>">
+                    <div class="flex items-start gap-4">
+                        <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid <?php echo $iconClass; ?> text-white text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-3"><?php echo htmlspecialchars($service['title']); ?></h3>
+                            <p class="text-gray-300 leading-relaxed"><?php echo htmlspecialchars($service['description']); ?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
