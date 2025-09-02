@@ -400,19 +400,14 @@ $config = [
             'features' => [
                 'cache_plugin',
                 'database_connection',
-                'security_settings',
                 'php_settings',
                 'admin_access',
                 'page_loading',
-                'updates',
                 'domain_change',
-                'site_monitoring',
                 'admin_help',
                 'error_500',
-                'dev_environment',
                 'performance_audit',
-                'woocommerce_settings',
-                'site_optimization'
+                'woocommerce_settings'
             ],
             'support_hours' => '9:00 - 18:00 (Пн-Пт)',
             'response_time' => '24 часа',
