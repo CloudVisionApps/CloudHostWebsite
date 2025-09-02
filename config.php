@@ -85,8 +85,8 @@ $config = [
                 ],
                 'development' => [
                     'php_versions' => '7.4, 8.0, 8.1, 8.2',
-                    'node_js' => 'v16, v18',
-                    'python' => '3.8, 3.9, 3.10',
+                    // 'node_js' => 'v16, v18',
+                    // 'python' => '3.8, 3.9, 3.10',
                     'git_deployment' => true,
                     'ssh_access' => false,
                     'cron_jobs' => '5 jobs',
@@ -156,8 +156,8 @@ $config = [
                 ],
                 'development' => [
                     'php_versions' => '7.4, 8.0, 8.1, 8.2, 8.3',
-                    'node_js' => 'v16, v18, v20',
-                    'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
+                    // 'node_js' => 'v16, v18, v20',
+                    // 'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
                     'git_deployment' => true,
                     'ssh_access' => true,
                     'cron_jobs' => 'Unlimited',
@@ -226,8 +226,8 @@ $config = [
                 ],
                 'development' => [
                     'php_versions' => '7.4, 8.0, 8.1, 8.2, 8.3',
-                    'node_js' => 'v16, v18, v20, v21',
-                    'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
+                    // 'node_js' => 'v16, v18, v20, v21',
+                    // 'python' => '3.8, 3.9, 3.10, 3.11, 3.12',
                     'git_deployment' => true,
                     'ssh_access' => true,
                     'cron_jobs' => 'Unlimited',

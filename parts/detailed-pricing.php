@@ -411,6 +411,7 @@
                         <?php endforeach; ?>
                     </div>
 
+                    <?php if (isset(get_config('plans')['professional']['detailed_specs']['development']['node_js'])): ?>
                     <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
                         <div class="p-4 bg-[#0f0f0f] flex items-center">
                             <span class="text-gray-300">Node.js Версии</span>
@@ -421,7 +422,9 @@
                         </div>
                         <?php endforeach; ?>
                     </div>
+                    <?php endif; ?>
 
+                    <?php if (isset(get_config('plans')['professional']['detailed_specs']['development']['python'])): ?>
                     <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
                         <div class="p-4 bg-[#0f0f0f] flex items-center">
                             <span class="text-gray-300">Python Версии</span>
@@ -432,6 +435,8 @@
                         </div>
                         <?php endforeach; ?>
                     </div>
+                    <?php endif; ?>
+                 
 
                     <div class="grid grid-cols-4 divide-x divide-[#2a2a2a] border-t border-[#2a2a2a]">
                         <div class="p-4 bg-[#0f0f0f] flex items-center">

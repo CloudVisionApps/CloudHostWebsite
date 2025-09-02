@@ -22,17 +22,17 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header Section -->
-            <div class="text-center mb-20 scroll-fade-in">
+            <div class="text-center mb-24 scroll-fade-in">
                 <!-- Modern Badge -->
-                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/40 text-white text-sm font-medium rounded-full mb-8 backdrop-blur-sm">
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/40 text-white text-sm font-medium rounded-full mb-8 backdrop-blur-sm shadow-lg">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
                     Често задавани въпроси
                 </div>
                 
                 <!-- Modern Typography -->
-                <h2 class="text-5xl lg:text-5xl xl:text-5xl font-bold text-white mb-8 leading-tight">
+                <h2 class="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight">
                     Отговори на
-                    <span class="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+                    <span class="block bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                         вашите въпроси
                     </span>
                 </h2>
@@ -40,10 +40,17 @@
                 <p class="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
                     Намерете отговори на най-често задаваните въпроси за нашите хостинг услуги
                 </p>
+                
+                <!-- Decorative Elements -->
+                <div class="flex justify-center items-center space-x-4 mt-12">
+                    <div class="w-16 h-px bg-gradient-to-r from-transparent to-emerald-400"></div>
+                    <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <div class="w-16 h-px bg-gradient-to-l from-transparent to-blue-400"></div>
+                </div>
             </div>
             
             <!-- FAQ Grid -->
-            <div class="grid lg:grid-cols-2 gap-8 mb-16" id="faq-container">
+            <div class="grid lg:grid-cols-2 gap-8 mb-20" id="faq-container">
                 <?php
                 // Get FAQ data from config
                 $faqs = get_config('faq', []);
@@ -54,53 +61,103 @@
                     $iconColor = $isEven ? 'emerald-300' : 'blue-300';
                     $bgGradient = $isEven ? 'from-emerald-500/30 to-blue-500/30' : 'from-blue-500/30 to-emerald-500/30';
                     $hoverBorder = $isEven ? 'hover:border-emerald-400/50' : 'hover:border-blue-400/50';
-                    $hoverShadow = $isEven ? 'hover:shadow-emerald-500/10' : 'hover:shadow-blue-500/10';
+                    $hoverShadow = $isEven ? 'hover:shadow-emerald-500/20' : 'hover:shadow-blue-500/20';
                     $hoverText = $isEven ? 'group-hover:text-emerald-300' : 'group-hover:text-blue-300';
+                    $accentColor = $isEven ? 'emerald' : 'blue';
                 ?>
-                <div class="group <?php echo $slideClass; ?>" data-faq-index="<?php echo $index; ?>">
-                    <div class="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 <?php echo $hoverBorder; ?> transition-all duration-300 hover:bg-white/15 hover:shadow-2xl <?php echo $hoverShadow; ?> cursor-pointer" onclick="toggleFAQ(<?php echo $index; ?>)">
-                        <div class="flex items-start justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white <?php echo $hoverText; ?> transition-colors duration-300">
-                                <?php echo htmlspecialchars($faq['question']); ?>
-                            </h3>
-                            <div class="w-8 h-8 bg-gradient-to-r <?php echo $bgGradient; ?> rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-plus text-<?php echo $iconColor; ?> text-lg faq-icon" id="faq-icon-<?php echo $index; ?>"></i>
+                <div class="group <?php echo $slideClass; ?> transform transition-all duration-500 hover:scale-[1.02]" data-faq-index="<?php echo $index; ?>">
+                    <div class="relative bg-gradient-to-br from-white/8 to-white/12 backdrop-blur-xl rounded-3xl p-8 border border-white/20 <?php echo $hoverBorder; ?> transition-all duration-500 hover:bg-white/20 hover:shadow-2xl <?php echo $hoverShadow; ?> cursor-pointer overflow-hidden" onclick="toggleFAQ(<?php echo $index; ?>)">
+                        
+                        <!-- Background Glow Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-<?php echo $accentColor; ?>-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <!-- Top Accent Line -->
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-<?php echo $accentColor; ?>-400 to-<?php echo $accentColor; ?>-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                        
+                        <!-- Question Header -->
+                        <div class="relative z-10 flex items-start justify-between mb-6">
+                            <div class="flex-1 pr-4">
+                                <h3 class="text-xl font-bold text-white <?php echo $hoverText; ?> transition-colors duration-300 leading-tight group-hover:leading-snug">
+                                    <?php echo htmlspecialchars($faq['question']); ?>
+                                </h3>
+                            </div>
+                            
+                            <!-- Enhanced Icon Container -->
+                            <div class="relative">
+                                <div class="w-12 h-12 bg-gradient-to-r <?php echo $bgGradient; ?> rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                                    <i class="fas fa-plus text-<?php echo $iconColor; ?> text-lg faq-icon transition-all duration-300" id="faq-icon-<?php echo $index; ?>"></i>
+                                </div>
+                                
+                                <!-- Icon Glow Effect -->
+                                <div class="absolute inset-0 bg-<?php echo $accentColor; ?>-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                             </div>
                         </div>
+                        
+                        <!-- Answer Section -->
                         <div class="faq-answer hidden" id="faq-answer-<?php echo $index; ?>">
-                            <p class="text-gray-200 leading-relaxed">
-                                <?php echo htmlspecialchars($faq['answer']); ?>
-                            </p>
+                            <div class="relative z-10">
+                                <!-- Answer Divider -->
+                                <div class="w-full h-px bg-gradient-to-r from-<?php echo $accentColor; ?>-400/30 via-<?php echo $accentColor; ?>-400/20 to-transparent mb-6"></div>
+                                
+                                <p class="text-gray-200 leading-relaxed text-lg">
+                                    <?php echo htmlspecialchars($faq['answer']); ?>
+                                </p>
+                                
+                                <!-- Bottom Accent -->
+                                <div class="flex items-center mt-6 pt-4 border-t border-white/10">
+                                    <div class="w-2 h-2 bg-<?php echo $accentColor; ?>-400 rounded-full mr-3 animate-pulse"></div>
+                                    <span class="text-sm text-<?php echo $accentColor; ?>-300 font-medium">Полезна информация</span>
+                                </div>
+                            </div>
                         </div>
+                        
+                        <!-- Hover Border Effect -->
+                        <div class="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-<?php echo $accentColor; ?>-400/20 transition-all duration-500"></div>
                     </div>
                 </div>
                 <?php } ?>
             </div>
             
-            <!-- CTA Section -->
+            <!-- Enhanced CTA Section -->
             <div class="text-center scroll-fade-in">
-                <div class="bg-gradient-to-br from-white/10 to-white/15 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-                    <h3 class="text-3xl font-bold text-white mb-6">
-                        Не намерихте отговора, който търсите?
-                    </h3>
-                    <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                        Нашият екип е тук, за да помогне! Свържете се с нас и ще получите персонализиран отговор.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-blue-500 text-white text-xl px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <span class="relative z-10 flex items-center">
-                                <i class="fas fa-headset mr-4 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
-                                Свържете се с нас
-                            </span>
-                        </a>
-                        <a href="#plans" class="group relative overflow-hidden border-2 border-white/30 text-white text-xl px-12 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:border-emerald-400/50 hover:bg-white/10">
-                            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <span class="relative z-10 flex items-center">
-                                <i class="fas fa-rocket mr-4 text-2xl group-hover:animate-bounce"></i>
-                                Вижте плановете
-                            </span>
-                        </a>
+                <div class="relative bg-gradient-to-br from-white/10 to-white/15 backdrop-blur-xl rounded-3xl p-16 border border-white/20 overflow-hidden">
+                    
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-emerald-500/30 to-blue-500/30 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-r from-blue-500/30 to-emerald-500/30 rounded-full blur-3xl"></div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/30 text-emerald-300 text-sm font-medium rounded-full mb-6 backdrop-blur-sm">
+                            <i class="fas fa-question-circle mr-2"></i>
+                            Още въпроси?
+                        </div>
+                        
+                        <h3 class="text-4xl font-bold text-white mb-6">
+                            Не намерихте отговора, който търсите?
+                        </h3>
+                        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                            Нашият екип е тук, за да помогне! Свържете се с нас и ще получите персонализиран отговор.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-blue-500 text-white text-xl px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <span class="relative z-10 flex items-center">
+                                    <i class="fas fa-headset mr-4 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                                    Свържете се с нас
+                                </span>
+                            </a>
+                            <a href="#plans" class="group relative overflow-hidden border-2 border-white/30 text-white text-xl px-12 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:border-emerald-400/50 hover:bg-white/10">
+                                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <span class="relative z-10 flex items-center">
+                                    <i class="fas fa-rocket mr-4 text-2xl group-hover:animate-bounce"></i>
+                                    Вижте плановете
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,10 +195,10 @@
             faqItem.classList.add('faq-active');
             
             // Add smooth animation
-            answer.style.transition = 'max-height 0.3s ease-in-out';
+            answer.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
             setTimeout(() => {
                 answer.style.maxHeight = 'none';
-            }, 300);
+            }, 400);
         } else {
             // Close FAQ
             answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -150,7 +207,7 @@
                 setTimeout(() => {
                     answer.classList.add('hidden');
                     answer.style.maxHeight = '';
-                }, 300);
+                }, 400);
             }, 10);
             icon.classList.remove('fa-minus');
             icon.classList.add('fa-plus');
@@ -163,7 +220,7 @@
         // Add smooth transitions to FAQ answers
         const faqAnswers = document.querySelectorAll('.faq-answer');
         faqAnswers.forEach(answer => {
-            answer.style.transition = 'max-height 0.3s ease-in-out';
+            answer.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
             answer.style.overflow = 'hidden';
         });
         
@@ -182,6 +239,25 @@
             item.setAttribute('role', 'button');
             item.setAttribute('aria-expanded', 'false');
             item.setAttribute('aria-controls', `faq-answer-${index}`);
+        });
+        
+        // Add stagger animation for FAQ items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${index * 0.1}s`;
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        faqItems.forEach(item => {
+            observer.observe(item);
         });
     });
     </script>
