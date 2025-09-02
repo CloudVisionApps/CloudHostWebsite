@@ -2,9 +2,7 @@
   <section class="py-32 relative overflow-hidden">
         <!-- Enhanced Background with Modern Pattern -->
         <div class="absolute inset-0">
-            <!-- Gradient Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#0f0f0f]"></div>
-            
+          
             <!-- Modern Geometric Pattern -->
             <div class="absolute inset-0 opacity-20">
                 <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, rgba(22, 131, 171, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(30, 153, 117, 0.1) 0%, transparent 50%);"></div>
@@ -19,7 +17,6 @@
             <!-- Modern Grid Lines -->
             <div class="absolute inset-0 opacity-10">
                 <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#1683ab] to-transparent"></div>
-                <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#1e9975] to-transparent"></div>
             </div>
         </div>
         
