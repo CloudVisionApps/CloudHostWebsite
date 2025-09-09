@@ -11,34 +11,47 @@
         <div class="grid {{$gridCols}} gap-8">
 
             @foreach($sections as $section)
-            <div class="space-y-5">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-11 h-11 from-[#1683ab] to-[#1e9975] bg-gradient-to-r rounded-xl flex items-center justify-center">
-                        <x-icon class="text-white w-5" :name="$section->icon" />
+            <div class="relative {{ $section->url ? 'cursor-pointer group/section' : '' }} {{ $section->url ? 'hover:bg-gradient-to-br from-white/5 to-white/10 rounded-2xl p-6 -m-6 transition-all duration-500 ease-out' : '' }} {{ $section->url ? 'hover:shadow-xl hover:shadow-black/20' : '' }}">
+                @if($section->url)
+                    <a href="{{$section->url}}" class="block">
+                @endif
+
+                <div class="flex items-start gap-4 mb-5">
+                    <div class="w-12 h-12 from-[#1683ab] to-[#1e9975] bg-gradient-to-br rounded-2xl flex items-center justify-center shadow-lg {{ $section->url ? 'group-hover/section:scale-110 group-hover/section:rotate-3 transition-all duration-500 ease-out' : '' }}">
+                        <x-icon class="text-white w-6 h-6" :name="$section->icon" />
                     </div>
-                    <h3 class="text-white font-semibold text-lg">
-                        {{$section->name}}
-                    </h3>
-                </div>
-                <div>
-                    <p class="text-white text-sm">
-                        {{$section->description}}
-                    </p>
+                    <div class="flex-1">
+                        <h3 class="text-white font-bold text-xl mb-2 {{ $section->url ? 'group-hover/section:text-[#fff] transition-colors duration-500' : '' }}">
+                            {{$section->name}}
+                        </h3>
+                        <p class="text-white/70 text-sm leading-relaxed {{ $section->url ? 'group-hover/section:text-white/90 transition-colors duration-500' : '' }}">
+                            {{$section->description}}
+                        </p>
+                    </div>
                 </div>
 
                 @if(!empty($section->items))
-              <ul class="space-y-3">
-                    @foreach($section->items as $item)
-                    <li>
-                        <a href="{{$item->url}}"
-                           class="text-white/90 hover:text-white transition-colors duration-200 py-1.5 px-2 rounded-lg hover:bg-white/10">
-                            {{$item->name}}
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
+                <div class="ml-16">
+                    <ul class="space-y-2">
+                        @foreach($section->items as $item)
+                        <li>
+                            <a href="{{$item->url}}"
+                               class="text-white/80 hover:text-white transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/10 hover:translate-x-1 flex items-center gap-2 group/item">
+                                <span>{{$item->name}}</span>
+                                <i class="fas fa-arrow-right text-xs opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all duration-300"></i>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
                 @endif
 
+                @if($section->url)
+                    <div class="absolute top-4 right-4 opacity-0 group-hover/section:opacity-100 transition-opacity duration-500">
+                        <i class="fas fa-external-link-alt text-white/60 text-sm"></i>
+                    </div>
+                    </a>
+                @endif
             </div>
             @endforeach
 
