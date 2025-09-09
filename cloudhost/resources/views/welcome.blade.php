@@ -538,6 +538,8 @@
         </div>
     </section>
 
+    @include('parts.features-section')
+    @include('parts.cta-section')
     @include('parts.subscribe-section')
     @include('parts.footer')
 
