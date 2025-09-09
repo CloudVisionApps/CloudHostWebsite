@@ -64,23 +64,39 @@
                             
                             <!-- Right Side - Form -->
                             <div class="space-y-6">
-                                <div class="space-y-4">
+                                <form id="newsletter-form" class="space-y-4">
+                                    @csrf
                                     <div class="relative">
-                                        <input type="email" placeholder="Вашият имейл адрес" class="w-full px-6 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
+                                        <input type="email" 
+                                               name="email" 
+                                               id="email" 
+                                               placeholder="Вашият имейл адрес" 
+                                               required
+                                               class="w-full px-6 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
                                         <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
                                     </div>
                                     
                                     <div class="relative">
-                                        <input type="text" placeholder="Вашето име (по желание)" class="w-full px-4 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
+                                        <input type="text" 
+                                               name="name" 
+                                               id="name" 
+                                               placeholder="Вашето име (по желание)" 
+                                               class="w-full px-4 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#1e9975] focus:ring-4 focus:ring-[#1e9975]/20 transition-all duration-300 pl-12 text-base backdrop-blur-sm">
                                         <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
                                     </div>
-                                </div>
+                                    
+                                    <!-- Success/Error Messages -->
+                                    <div id="form-message" class="hidden p-4 rounded-xl text-center text-sm font-medium"></div>
+                                </form>
                                 
-                                <button class="group w-full px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1e9975]/30 flex items-center justify-center text-base relative overflow-hidden">
+                                <button type="submit" 
+                                        form="newsletter-form"
+                                        id="submit-btn"
+                                        class="group w-full px-8 py-4 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1e9975]/30 flex items-center justify-center text-base relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
                                     <div class="absolute inset-0 bg-gradient-to-r from-[#1e9975] to-[#1683ab] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     <span class="relative z-10 flex items-center">
-                                        <i class="fas fa-paper-plane mr-3 group-hover:animate-bounce"></i>
-                                        Абониране за бюлетина
+                                        <i class="fas fa-paper-plane mr-3 group-hover:animate-bounce" id="submit-icon"></i>
+                                        <span id="submit-text">Абониране за бюлетина</span>
                                     </span>
                                 </button>
                                 
@@ -111,3 +127,93 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('newsletter-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitIcon = document.getElementById('submit-icon');
+            const submitText = document.getElementById('submit-text');
+            const messageDiv = document.getElementById('form-message');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Disable form and show loading state
+                submitBtn.disabled = true;
+                submitIcon.className = 'fas fa-spinner fa-spin mr-3';
+                submitText.textContent = 'Изпращане...';
+                messageDiv.classList.add('hidden');
+
+                try {
+                    const formData = new FormData(form);
+                    
+                    const response = await fetch('{{ route("newsletter.subscribe") }}', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        // Success state
+                        messageDiv.className = 'p-4 rounded-xl text-center text-sm font-medium bg-green-500/20 text-green-300 border border-green-500/30';
+                        messageDiv.textContent = data.message;
+                        messageDiv.classList.remove('hidden');
+                        
+                        // Reset form
+                        form.reset();
+                        
+                        // Update button to success state
+                        submitIcon.className = 'fas fa-check mr-3';
+                        submitText.textContent = 'Успешно!';
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            submitIcon.className = 'fas fa-paper-plane mr-3 group-hover:animate-bounce';
+                            submitText.textContent = 'Абониране за бюлетина';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                        
+                    } else {
+                        // Error state
+                        messageDiv.className = 'p-4 rounded-xl text-center text-sm font-medium bg-red-500/20 text-red-300 border border-red-500/30';
+                        messageDiv.textContent = data.message || 'Възникна грешка. Моля, опитайте отново.';
+                        messageDiv.classList.remove('hidden');
+                        
+                        // Reset button
+                        submitIcon.className = 'fas fa-paper-plane mr-3 group-hover:animate-bounce';
+                        submitText.textContent = 'Абониране за бюлетина';
+                        submitBtn.disabled = false;
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    
+                    // Network error
+                    messageDiv.className = 'p-4 rounded-xl text-center text-sm font-medium bg-red-500/20 text-red-300 border border-red-500/30';
+                    messageDiv.textContent = 'Възникна грешка при връзката. Моля, проверете интернет връзката си и опитайте отново.';
+                    messageDiv.classList.remove('hidden');
+                    
+                    // Reset button
+                    submitIcon.className = 'fas fa-paper-plane mr-3 group-hover:animate-bounce';
+                    submitText.textContent = 'Абониране за бюлетина';
+                    submitBtn.disabled = false;
+                }
+            });
+
+            // Clear message when user starts typing
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (!messageDiv.classList.contains('hidden')) {
+                        messageDiv.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
