@@ -5,6 +5,7 @@ namespace App\Filament\Resources\PlanFeatureGroups\Schemas;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class PlanFeatureGroupForm
 {
@@ -20,7 +21,7 @@ class PlanFeatureGroupForm
                     ->required()
                     ->numeric()
                     ->default(0),
-                TextInput::make('icon'),
+                IconPicker::make('icon'),
                 TextInput::make('icon_color'),
             ]);
     }

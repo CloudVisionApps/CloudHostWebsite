@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Guava\IconPicker\Tables\Columns\IconColumn;
 
 class PlanFeatureGroupsTable
 {
@@ -17,15 +18,15 @@ class PlanFeatureGroupsTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
+                IconColumn::make('icon')
+                    ->searchable(),
+                TextColumn::make('icon_color')
+                    ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
                 TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('icon')
-                    ->searchable(),
-                TextColumn::make('icon_color')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
