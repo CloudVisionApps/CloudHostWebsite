@@ -34,6 +34,21 @@ return new class extends Migration
             $table->json('features')->nullable(); // Additional features as JSON
             $table->integer('sort_order')->default(0);
             $table->integer('group_id')->nullable(); // Foreign key to plan_groups
+            
+            // Plan Properties
+            $table->boolean('popular')->default(false);
+            $table->string('color', 20)->nullable();
+
+
+            // Support & Service Details
+            $table->string('support_hours', 100)->nullable();
+            $table->string('response_time', 50)->nullable();
+            $table->string('backup_frequency', 50)->nullable();
+            $table->string('security_monitoring', 50)->nullable();
+            $table->string('performance_optimization', 50)->nullable();
+            $table->string('priority', 50)->nullable();
+
+
             $table->timestamps();
             $table->softDeletes();
         });
