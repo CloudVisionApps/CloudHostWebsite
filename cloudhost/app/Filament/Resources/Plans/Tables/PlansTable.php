@@ -70,7 +70,7 @@ class PlansTable
                 TrashedFilter::make(),
             ])
             ->recordActions([
-                ViewAction::make(),
+//                ViewAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([

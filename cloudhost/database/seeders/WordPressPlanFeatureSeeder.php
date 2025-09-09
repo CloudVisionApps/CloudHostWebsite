@@ -315,15 +315,17 @@ class WordPressPlanFeatureSeeder extends Seeder
             );
         }
 
-        // Attach WordPress features to existing plans
-        $this->attachWordPressFeaturesToPlans();
+        // WordPress features are now attached by WordPressPlanSeeder
     }
 
     private function attachWordPressFeaturesToPlans()
     {
-        $plans = Plan::all();
+        // Only attach WordPress features to WordPress plans
+        $wordpressPlans = Plan::whereHas('group', function($query) {
+            $query->where('slug', 'wordpress-support');
+        })->get();
 
-        foreach ($plans as $plan) {
+        foreach ($wordpressPlans as $plan) {
             $this->attachWordPressAddonFeatures($plan);
         }
     }

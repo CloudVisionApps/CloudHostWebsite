@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Plan;
 use App\Models\PlanGroup;
+use App\Models\PlanFeature;
 
 class WordPressPlanSeeder extends Seeder
 {
@@ -14,11 +15,11 @@ class WordPressPlanSeeder extends Seeder
      */
     public function run(): void
     {
-        // Get the Wordpress Support plan group
-        $wordpressSupportGroup = PlanGroup::where('name', 'Wordpress Support')->first();
+        // Get the WordPress поддръжка plan group
+        $wordpressSupportGroup = PlanGroup::where('slug', 'wordpress-support')->first();
         
         if (!$wordpressSupportGroup) {
-            $this->command->error('Wordpress Support plan group not found. Please run PlanGroupSeeder first.');
+            $this->command->error('WordPress поддръжка plan group not found. Please run PlanGroupSeeder first.');
             return;
         }
 
@@ -44,18 +45,6 @@ class WordPressPlanSeeder extends Seeder
                 'is_featured' => false,
                 'is_active' => true,
                 'group_id' => $wordpressSupportGroup->id,
-                'features' => [
-                    'cache_plugin',
-                    'database_connection',
-                    'php_settings',
-                    'admin_access',
-                    'page_loading',
-                    'domain_change',
-                    'admin_help',
-                    'error_500',
-                    'performance_audit',
-                    'woocommerce_settings'
-                ],
                 'sort_order' => 4,
             ],
             [
@@ -78,21 +67,6 @@ class WordPressPlanSeeder extends Seeder
                 'is_featured' => true,
                 'is_active' => true,
                 'group_id' => $wordpressSupportGroup->id,
-                'features' => [
-                    'cache_plugin',
-                    'database_connection',
-                    'security_settings',
-                    'php_settings',
-                    'admin_access',
-                    'page_loading',
-                    'domain_change',
-                    'site_monitoring',
-                    'admin_help',
-                    'error_500',
-                    'dev_environment',
-                    'performance_audit',
-                    'woocommerce_settings'
-                ],
                 'sort_order' => 5,
             ],
             [
@@ -115,29 +89,91 @@ class WordPressPlanSeeder extends Seeder
                 'is_featured' => false,
                 'is_active' => true,
                 'group_id' => $wordpressSupportGroup->id,
-                'features' => [
-                    'cache_plugin',
-                    'database_connection',
-                    'security_settings',
-                    'php_settings',
-                    'admin_access',
-                    'page_loading',
-                    'updates',
-                    'domain_change',
-                    'site_monitoring',
-                    'admin_help',
-                    'error_500',
-                    'dev_environment',
-                    'performance_audit',
-                    'woocommerce_settings',
-                    'site_optimization'
-                ],
                 'sort_order' => 6,
             ],
         ];
 
-        foreach ($wordpressPlans as $plan) {
-            Plan::create($plan);
+        foreach ($wordpressPlans as $planData) {
+            $plan = Plan::updateOrCreate(
+                ['slug' => $planData['slug']],
+                $planData
+            );
         }
+
+        // Attach WordPress features to the plans
+        $this->attachWordPressFeaturesToPlans();
+    }
+
+    private function attachWordPressFeaturesToPlans()
+    {
+        // Only attach WordPress features to WordPress plans
+        $wordpressPlans = Plan::whereHas('group', function($query) {
+            $query->where('slug', 'wordpress-support');
+        })->get();
+
+        foreach ($wordpressPlans as $plan) {
+            $this->attachWordPressAddonFeatures($plan);
+        }
+    }
+
+    private function attachWordPressAddonFeatures(Plan $plan)
+    {
+        $wordpressFeatures = PlanFeature::where('group_id', function($query) {
+            $query->select('id')
+                  ->from('plan_feature_groups')
+                  ->where('slug', 'wordpress-support');
+        })->active()->get();
+
+        foreach ($wordpressFeatures as $feature) {
+            // Determine if this is an addon feature or a plan-level feature
+            $isAddon = $feature->is_addon;
+            
+            // Get the appropriate value for plan-level features
+            $value = $this->getWordPressFeatureValueForPlan($plan, $feature);
+            
+            $plan->features()->attach($feature->id, [
+                'value' => $value,
+                'is_included' => !$isAddon, // Plan-level features are included, addons are not
+                'is_available' => $isAddon, // Only addon features are available as upgrades
+                'addon_price' => $isAddon ? $feature->addon_price : null,
+                'sort_order' => $feature->sort_order,
+            ]);
+        }
+    }
+
+    private function getWordPressFeatureValueForPlan(Plan $plan, PlanFeature $feature): ?string
+    {
+        // Map plan attributes to feature values based on plan slug
+        $planFeatureMap = [
+            'wordpress-basic' => [
+                'working-hours' => '9:00 - 18:00 (Пн-Пт)',
+                'response-time' => '24 часа',
+                'included-sites' => '1 сайт',
+                'backup-frequency' => 'Седмично',
+                'security-monitoring' => 'Основно',
+                'performance-optimization' => 'Основно',
+                'priority' => 'Стандартно'
+            ],
+            'wordpress-professional' => [
+                'working-hours' => '8:00 - 20:00 (Пн-Пт), 10:00 - 16:00 (Сб)',
+                'response-time' => '4 часа',
+                'included-sites' => '3 сайта',
+                'backup-frequency' => 'Ежедневно',
+                'security-monitoring' => 'Разширено',
+                'performance-optimization' => 'Разширено',
+                'priority' => 'Високо'
+            ],
+            'wordpress-enterprise' => [
+                'working-hours' => '24/7',
+                'response-time' => '30 минути',
+                'included-sites' => 'Неограничени',
+                'backup-frequency' => 'В реално време',
+                'security-monitoring' => 'Enterprise',
+                'performance-optimization' => 'Максимално',
+                'priority' => 'VIP'
+            ]
+        ];
+
+        return $planFeatureMap[$plan->slug][$feature->slug] ?? null;
     }
 }

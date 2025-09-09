@@ -20,14 +20,14 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         $this->call([
-//            DomainSeeder::class,
-//            WordPressPlanSeeder::class,
-//            FAQSeeder::class,
+           DomainSeeder::class,
+           FAQSeeder::class,
             PlanGroupSeeder::class,
             PlanFeatureGroupSeeder::class,
             PlanFeatureSeeder::class,
             WordPressPlanFeatureSeeder::class,
 //            PlanSeeder::class,
+           WordPressPlanSeeder::class,
         ]);
     }
 }
