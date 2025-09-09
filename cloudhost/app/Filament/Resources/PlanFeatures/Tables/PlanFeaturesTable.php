@@ -24,11 +24,13 @@ class PlanFeaturesTable
                     ->sortable()
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'Core Features' => 'primary',
+                        'Server' => 'primary',
                         'Performance' => 'success',
                         'Security' => 'danger',
                         'Development' => 'warning',
-                        'WordPress Support' => 'info',
+                        'Databases' => 'indigo',
+                        'Email' => 'teal',
+                        'WordPress Support' => 'orange',
                         default => 'gray',
                     }),
                 TextColumn::make('slug')

@@ -51,7 +51,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 3,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'Storage Space',
@@ -63,7 +63,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 4,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'Bandwidth',
@@ -75,7 +75,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 5,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'Domains',
@@ -87,7 +87,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 6,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'Email Accounts',
@@ -99,7 +99,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 7,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
         ];
 
@@ -116,7 +116,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 8,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'CDN Service',
@@ -148,7 +148,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 10,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
             [
                 'name' => 'Dedicated IP',
@@ -161,7 +161,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 11,
-                'group_id' => $groupIds['core-features'],
+                'group_id' => $groupIds['server'],
             ],
         ];
 

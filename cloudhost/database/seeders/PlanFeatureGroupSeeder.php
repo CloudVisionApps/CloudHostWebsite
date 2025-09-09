@@ -17,9 +17,9 @@ class PlanFeatureGroupSeeder extends Seeder
     {
         $planFeatureGroups = [
             [
-                'name' => 'Core Features',
-                'slug' => 'core-features',
-                'description' => 'Essential hosting features included in all plans',
+                'name' => 'Server',
+                'slug' => 'server',
+                'description' => 'Server specifications and hardware features',
                 'icon' => 'server',
                 'icon_color' => 'blue',
                 'sort_order' => 1,
@@ -49,12 +49,28 @@ class PlanFeatureGroupSeeder extends Seeder
                 'sort_order' => 4,
             ],
             [
+                'name' => 'Databases',
+                'slug' => 'databases',
+                'description' => 'Database features and management tools',
+                'icon' => 'database',
+                'icon_color' => 'indigo',
+                'sort_order' => 5,
+            ],
+            [
+                'name' => 'Email',
+                'slug' => 'email',
+                'description' => 'Email hosting and management features',
+                'icon' => 'envelope',
+                'icon_color' => 'teal',
+                'sort_order' => 6,
+            ],
+            [
                 'name' => 'WordPress Support',
                 'slug' => 'wordpress-support',
                 'description' => 'WordPress and WooCommerce support services',
                 'icon' => 'wordpress',
                 'icon_color' => 'orange',
-                'sort_order' => 5,
+                'sort_order' => 7,
             ],
         ];
 
