@@ -673,7 +673,6 @@
         </div>
     </section>
 
-
   
     <?php include 'parts/pricing-plans-section.php'; ?>
 

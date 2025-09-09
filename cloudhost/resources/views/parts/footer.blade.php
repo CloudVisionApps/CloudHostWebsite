@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="overflow-hidden">
-   
-    
+
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20  z-10">
         <!-- Main Footer Content -->
         <div class="grid md:grid-cols-4 gap-16 mb-20">
@@ -9,12 +9,14 @@
             <div class="col-span-2 scroll-fade-in">
                 <div class="flex items-center mb-8 group scroll-scale-in">
                     <div class="mr-6">
-                
-                        <img src="assets/img/logo-on-dark.svg" alt="Logo" class="h-10">
+
+                        <img src="{{asset('img/logo-on-dark.svg')}}" alt="Logo" class="h-10">
                     </div>
                 </div>
-                <p class="text-gray-300 mb-8 text-lg leading-relaxed max-w-md scroll-slide-left"><?php echo_config('seo.description'); ?></p>
-                
+                <p class="text-gray-300 mb-8 text-lg leading-relaxed max-w-md scroll-slide-left">
+                    {{settings('seo_description')}}
+                </p>
+
                 <!-- Enhanced Social Media -->
                 <div class="space-y-4 scroll-stagger">
                     <h5 class="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4 flex items-center scroll-bounce-in">
@@ -40,7 +42,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div class="mt-8 space-y-3 scroll-stagger">
                     <div class="flex items-center text-gray-300 group scroll-slide-right">
@@ -66,25 +68,25 @@
                 </h4>
                 <ul class="space-y-4 scroll-stagger">
                     <li class="scroll-slide-left"><a href="#home" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Начало</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Начало</span>
+                        </a></li>
                     <li class="scroll-slide-left"><a href="#features" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Предимства</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Предимства</span>
+                        </a></li>
                     <li class="scroll-slide-left"><a href="#plans" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Цени</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Цени</span>
+                        </a></li>
                     <li class="scroll-slide-left"><a href="#about" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">За нас</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">За нас</span>
+                        </a></li>
                     <li class="scroll-slide-left"><a href="#contact" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Контакти</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1683ab] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Контакти</span>
+                        </a></li>
                 </ul>
             </div>
 
@@ -96,25 +98,25 @@
                 </h4>
                 <ul class="space-y-4 scroll-stagger">
                     <li class="scroll-slide-right"><a href="#help" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Помощен център</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Помощен център</span>
+                        </a></li>
                     <li class="scroll-slide-right"><a href="#docs" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Документация</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Документация</span>
+                        </a></li>
                     <li class="scroll-slide-right"><a href="#status" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Статус на сървъра</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Статус на сървъра</span>
+                        </a></li>
                     <li class="scroll-slide-right"><a href="#tickets" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:translate-x-1 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Поддръжка</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:translate-x-1 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Поддръжка</span>
+                        </a></li>
                     <li class="scroll-slide-right"><a href="#community" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 flex items-center group">
-                        <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Общност</span>
-                    </a></li>
+                            <div class="w-2 h-2 bg-[#1e9975] rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                            <span class="group-hover:translate-x-1 transition-transform duration-300">Общност</span>
+                        </a></li>
                 </ul>
             </div>
         </div>
@@ -123,7 +125,7 @@
         <div class="border-t border-white/10 pt-8 scroll-glow-in">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-gray-400 text-sm mb-4 md:mb-0 flex items-center scroll-slide-left">
-                    © 2024 <?php echo_config('company.name'); ?>. Всички права запазени.
+                    © 2024-{{date('Y')}} {{settings('company_name')}}. Всички права запазени.
                 </div>
                 <div class="flex space-x-8 text-sm scroll-slide-right">
                     <a href="#privacy" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group">
@@ -132,7 +134,7 @@
                     </a>
                     <a href="#terms" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group>
                         <i class="fas fa-file-contract mr-2 text-xs group-hover:scale-110 transition-transform duration-300"></i>
-                        Условия за ползване
+                    Условия за ползване
                     </a>
                     <a href="#cookies" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group">
                         <i class="fas fa-cookie-bite mr-2 text-xs group-hover:scale-110 transition-transform duration-300"></i>
@@ -144,145 +146,145 @@
     </div>
 </footer>
 
-
+@push('scripts')
 <style>
 
-/* Scroll Effects CSS */
-.scroll-fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    /* Scroll Effects CSS */
+    .scroll-fade-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-fade-in.scroll-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .scroll-fade-in.scroll-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-.scroll-slide-left {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-slide-left {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-slide-left.scroll-visible {
-    opacity: 1;
-    transform: translateX(0);
-}
+    .scroll-slide-left.scroll-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-.scroll-slide-right {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-slide-right {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-slide-right.scroll-visible {
-    opacity: 1;
-    transform: translateX(0);
-}
+    .scroll-slide-right.scroll-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-.scroll-scale-in {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-scale-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-scale-in.scroll-visible {
-    opacity: 1;
-    transform: scale(1);
-}
+    .scroll-scale-in.scroll-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
 
-.scroll-rotate-in {
-    opacity: 0;
-    transform: rotate(-10deg) scale(0.9);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-rotate-in {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-rotate-in.scroll-visible {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-}
+    .scroll-rotate-in.scroll-visible {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
 
-.scroll-blur-in {
-    opacity: 0;
-    filter: blur(10px);
-    transform: scale(0.95);
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-blur-in {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.95);
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-blur-in.scroll-visible {
-    opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
-}
+    .scroll-blur-in.scroll-visible {
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1);
+    }
 
-.parallax-element {
-    transition: transform 0.1s ease-out;
-}
+    .parallax-element {
+        transition: transform 0.1s ease-out;
+    }
 
-.scroll-stagger > * {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .scroll-stagger > * {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-stagger.scroll-visible > * {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .scroll-stagger.scroll-visible > * {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-.scroll-stagger.scroll-visible > *:nth-child(1) { transition-delay: 0.1s; }
-.scroll-stagger.scroll-visible > *:nth-child(2) { transition-delay: 0.2s; }
-.scroll-stagger.scroll-visible > *:nth-child(3) { transition-delay: 0.3s; }
-.scroll-stagger.scroll-visible > *:nth-child(4) { transition-delay: 0.4s; }
-.scroll-stagger.scroll-visible > *:nth-child(5) { transition-delay: 0.5s; }
-.scroll-stagger.scroll-visible > *:nth-child(6) { transition-delay: 0.6s; }
+    .scroll-stagger.scroll-visible > *:nth-child(1) { transition-delay: 0.1s; }
+    .scroll-stagger.scroll-visible > *:nth-child(2) { transition-delay: 0.2s; }
+    .scroll-stagger.scroll-visible > *:nth-child(3) { transition-delay: 0.3s; }
+    .scroll-stagger.scroll-visible > *:nth-child(4) { transition-delay: 0.4s; }
+    .scroll-stagger.scroll-visible > *:nth-child(5) { transition-delay: 0.5s; }
+    .scroll-stagger.scroll-visible > *:nth-child(6) { transition-delay: 0.6s; }
 
-/* Enhanced scroll-triggered animations */
-.scroll-glow-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    /* Enhanced scroll-triggered animations */
+    .scroll-glow-in {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.scroll-glow-in.scroll-visible {
-    opacity: 1;
-    transform: scale(1);
-}
+    .scroll-glow-in.scroll-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
 
-.scroll-bounce-in {
-    opacity: 0;
-    transform: translateY(100px) scale(0.8);
-    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+    .scroll-bounce-in {
+        opacity: 0;
+        transform: translateY(100px) scale(0.8);
+        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-.scroll-bounce-in.scroll-visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
+    .scroll-bounce-in.scroll-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 </style>
 
 
 
-    <!-- Scroll Effects JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll effect observer
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+<!-- Scroll Effects JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll effect observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('scroll-visible');
-                    }
-                });
-            }, observerOptions);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-visible');
+                }
+            });
+        }, observerOptions);
 
-            // Observe all scroll effect elements
-            const scrollElements = document.querySelectorAll(`
+        // Observe all scroll effect elements
+        const scrollElements = document.querySelectorAll(`
                 .scroll-fade-in,
                 .scroll-slide-left,
                 .scroll-slide-right,
@@ -294,72 +296,73 @@
                 .scroll-stagger
             `);
 
-            scrollElements.forEach(element => {
-                observer.observe(element);
+        scrollElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Parallax effect for background elements
+        let ticking = false;
+
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
             });
 
-            // Parallax effect for background elements
-            let ticking = false;
-            
-            function updateParallax() {
-                const scrolled = window.pageYOffset;
-                const parallaxElements = document.querySelectorAll('.parallax-element');
-                
-                parallaxElements.forEach(element => {
-                    const speed = element.dataset.speed || 0.5;
-                    const yPos = -(scrolled * speed);
-                    element.style.transform = `translateY(${yPos}px)`;
-                });
-                
-                ticking = false;
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
             }
+        }
 
-            function requestTick() {
-                if (!ticking) {
-                    requestAnimationFrame(updateParallax);
-                    ticking = true;
-                }
-            }
+        window.addEventListener('scroll', requestTick);
 
-            window.addEventListener('scroll', requestTick);
+        // Enhanced scroll-triggered animations
+        function handleScrollAnimations() {
+            const scrolled = window.pageYOffset;
+            const windowHeight = window.innerHeight;
 
-            // Enhanced scroll-triggered animations
-            function handleScrollAnimations() {
-                const scrolled = window.pageYOffset;
+            // Add parallax effect to floating elements
+            const floatingElements = document.querySelectorAll('.absolute.top-32, .absolute.top-40, .absolute.bottom-40, .absolute.top-1\\/3, .absolute.bottom-1\\/3');
+
+            floatingElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+
+        // Smooth reveal for staggered elements
+        function revealStaggeredElements() {
+            const staggeredContainers = document.querySelectorAll('.scroll-stagger');
+
+            staggeredContainers.forEach(container => {
+                const items = container.children;
+                const containerTop = container.offsetTop;
+                const containerHeight = container.offsetHeight;
+                const scrollTop = window.pageYOffset;
                 const windowHeight = window.innerHeight;
-                
-                // Add parallax effect to floating elements
-                const floatingElements = document.querySelectorAll('.absolute.top-32, .absolute.top-40, .absolute.bottom-40, .absolute.top-1\\/3, .absolute.bottom-1\\/3');
-                
-                floatingElements.forEach((element, index) => {
-                    const speed = 0.1 + (index * 0.05);
-                    const yPos = -(scrolled * speed);
-                    element.style.transform = `translateY(${yPos}px)`;
-                });
-            }
 
-            window.addEventListener('scroll', handleScrollAnimations);
-            
-            // Smooth reveal for staggered elements
-            function revealStaggeredElements() {
-                const staggeredContainers = document.querySelectorAll('.scroll-stagger');
-                
-                staggeredContainers.forEach(container => {
-                    const items = container.children;
-                    const containerTop = container.offsetTop;
-                    const containerHeight = container.offsetHeight;
-                    const scrollTop = window.pageYOffset;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (scrollTop + windowHeight > containerTop && scrollTop < containerTop + containerHeight) {
-                        container.classList.add('scroll-visible');
-                    }
-                });
-            }
+                if (scrollTop + windowHeight > containerTop && scrollTop < containerTop + containerHeight) {
+                    container.classList.add('scroll-visible');
+                }
+            });
+        }
 
-            window.addEventListener('scroll', revealStaggeredElements);
-            
-            // Initialize on page load
-            revealStaggeredElements();
-        });
-    </script>
+        window.addEventListener('scroll', revealStaggeredElements);
+
+        // Initialize on page load
+        revealStaggeredElements();
+    });
+</script>
+@endpush
