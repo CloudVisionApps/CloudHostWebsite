@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('question')->nullable();
             $table->text('answer')->nullable();
-            $table->string('page')->nullable()->default('all'); // e.g., 'home', 'billing', 'technical'
+            $table->string('page')->nullable()->default('general'); // e.g., 'home', 'billing', 'technical'
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);
             $table->timestamps();
