@@ -35,7 +35,7 @@ class PlanFeaturesTable
                     }),
                 TextColumn::make('slug')
                     ->searchable(),
-                TextColumn::make('icon')
+                \Guava\IconPicker\Tables\Columns\IconColumn::make('icon')
                     ->searchable(),
                 TextColumn::make('type')
                     ->searchable(),
