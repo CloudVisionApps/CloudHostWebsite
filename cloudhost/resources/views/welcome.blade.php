@@ -538,6 +538,7 @@
         </div>
     </section>
 
+    @include('parts.subscribe-section')
     @include('parts.footer')
 
     </body>
