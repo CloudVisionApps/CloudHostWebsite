@@ -44,24 +44,18 @@ class PlanForm
                     ->schema([
                         Grid::make(3)
                             ->schema([
-                                TextInput::make('price')
+                                TextInput::make('monthly_price')
                                     ->required()
                                     ->numeric()
                                     ->prefix('$')
                                     ->step(0.01)
                                     ->minValue(0),
-                                Select::make('billing_cycle')
+                                TextInput::make('yearly_price')
                                     ->required()
-                                    ->options([
-                                        'monthly' => 'Monthly',
-                                        'yearly' => 'Yearly',
-                                        'lifetime' => 'Lifetime',
-                                    ])
-                                    ->default('monthly'),
-                                TextInput::make('sort_order')
                                     ->numeric()
-                                    ->default(0)
-                                    ->helperText('Lower numbers appear first'),
+                                    ->prefix('$')
+                                    ->step(0.01)
+                                    ->minValue(0)
                             ]),
                     ]),
 

@@ -14,8 +14,9 @@ class Plan extends Model
         'name',
         'slug',
         'description',
-        'price',
-        'billing_cycle',
+        'monthly_price',
+        'yearly_price',
+        'currency',
         'storage_gb',
         'bandwidth_gb',
         'domains',
@@ -33,7 +34,8 @@ class Plan extends Model
     ];
 
     protected $casts = [
-        'price' => 'decimal:2',
+        'monthly_price' => 'decimal:2',
+        'yearly_price' => 'decimal:2',
         'ssl_certificate' => 'boolean',
         'backup' => 'boolean',
         'support_24_7' => 'boolean',
@@ -42,16 +44,28 @@ class Plan extends Model
         'features' => 'array',
     ];
 
-    protected function price(): Attribute
+    protected function monthlyPrice(): Attribute
     {
         return Attribute::make(
             get: fn (string $value) => number_format($value, 2),
         );
     }
 
-    public function getFormattedPriceAttribute(): string
+    protected function yearlyPrice(): Attribute
     {
-        return '$' . number_format($this->price, 2);
+        return Attribute::make(
+            get: fn (string $value) => $value ? number_format($value, 2) : null,
+        );
+    }
+
+    public function getFormattedMonthlyPriceAttribute(): string
+    {
+        return '$' . number_format($this->monthly_price, 2);
+    }
+
+    public function getFormattedYearlyPriceAttribute(): ?string
+    {
+        return $this->yearly_price ? '$' . number_format($this->yearly_price, 2) : null;
     }
 
     public function scopeActive($query)
@@ -66,6 +80,6 @@ class Plan extends Model
 
     public function scopeOrdered($query)
     {
-        return $query->orderBy('sort_order')->orderBy('price');
+        return $query->orderBy('sort_order')->orderBy('monthly_price');
     }
 }

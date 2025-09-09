@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->decimal('price', 10, 2);
-            $table->string('billing_cycle')->default('monthly'); // monthly, yearly, lifetime
+            $table->decimal('monthly_price', 10, 2);
+            $table->decimal('yearly_price', 10, 2)->nullable();
+            $table->string('currency', 3)->default('USD')->nullable();
             $table->integer('storage_gb')->nullable(); // Storage in GB
             $table->integer('bandwidth_gb')->nullable(); // Bandwidth in GB
             $table->integer('domains')->nullable(); // Number of domains allowed
