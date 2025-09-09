@@ -125,7 +125,7 @@
         <div class="border-t border-white/10 pt-8 scroll-glow-in">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-gray-400 text-sm mb-4 md:mb-0 flex items-center scroll-slide-left">
-                    © 2024-{{date('Y')}} {{settings('company_name')}}. Всички права запазени.
+                    © 2024-{{date('Y')}} {{settings('site_name')}}. Всички права запазени.
                 </div>
                 <div class="flex space-x-8 text-sm scroll-slide-right">
                     <a href="#privacy" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group">
