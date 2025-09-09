@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Plans\Schemas;
 
+use App\Models\PlanFeature;
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -122,7 +124,78 @@ class PlanForm
                             ]),
                     ]),
 
-                Section::make('Additional Features')
+                Section::make('Plan Features')
+                    ->schema([
+                        CheckboxList::make('feature_ids')
+                            ->label('Select Features')
+                            ->options(PlanFeature::active()->ordered()->pluck('name', 'id'))
+                            ->descriptions(PlanFeature::active()->ordered()->pluck('description', 'id'))
+                            ->columns(2)
+                            ->bulkToggleable()
+                            ->searchable()
+                            ->helperText('Select which features are included in this plan')
+                            ->live()
+                            ->afterStateUpdated(function ($state, callable $set) {
+                                // Auto-populate feature_settings when features are selected
+                                $selectedFeatures = collect($state ?? []);
+                                $currentSettings = collect();
+                                
+                                $selectedFeatures->each(function ($featureId) use ($currentSettings) {
+                                    $feature = PlanFeature::find($featureId);
+                                    if ($feature) {
+                                        $currentSettings->push([
+                                            'feature_id' => $featureId,
+                                            'value' => $feature->isNumeric() ? '1' : null,
+                                            'is_included' => true,
+                                            'is_available' => $feature->is_addon,
+                                            'addon_price' => $feature->addon_price,
+                                        ]);
+                                    }
+                                });
+                                
+                                $set('feature_settings', $currentSettings->toArray());
+                            }),
+                    ]),
+
+                Section::make('Feature Values & Settings')
+                    ->schema([
+                        Repeater::make('feature_settings')
+                            ->schema([
+                                Select::make('feature_id')
+                                    ->label('Feature')
+                                    ->options(PlanFeature::active()->ordered()->pluck('name', 'id'))
+                                    ->required()
+                                    ->searchable()
+                                    ->live(),
+                                TextInput::make('value')
+                                    ->label('Value')
+                                    ->placeholder('Feature value (e.g., "100" for 100GB storage)')
+                                    ->helperText('Leave empty for boolean features'),
+                                Toggle::make('is_included')
+                                    ->label('Included in Plan')
+                                    ->default(true)
+                                    ->helperText('Is this feature included in the base plan?'),
+                                Toggle::make('is_available')
+                                    ->label('Available as Addon')
+                                    ->default(false)
+                                    ->helperText('Can customers add this as an upgrade?'),
+                                TextInput::make('addon_price')
+                                    ->label('Addon Price Override')
+                                    ->numeric()
+                                    ->prefix('$')
+                                    ->step(0.01)
+                                    ->minValue(0)
+                                    ->helperText('Override the default addon price for this plan'),
+                            ])
+                            ->columns(2)
+                            ->addActionLabel('Add Feature Setting')
+                            ->collapsible()
+                            ->itemLabel(fn (array $state): ?string => 
+                                $state['feature_id'] ? PlanFeature::find($state['feature_id'])?->name : 'New Feature Setting'
+                            ),
+                    ]),
+
+                Section::make('Legacy Features (JSON)')
                     ->schema([
                         Repeater::make('features')
                             ->schema([
@@ -133,9 +206,10 @@ class PlanForm
                                     ->placeholder('Feature value (optional)'),
                             ])
                             ->columns(2)
-                            ->addActionLabel('Add Feature')
+                            ->addActionLabel('Add Legacy Feature')
                             ->collapsible()
-                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? null),
+                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? null)
+                            ->helperText('Legacy features stored as JSON. Consider using Plan Features above instead.'),
                     ]),
 
                 Section::make('Status')

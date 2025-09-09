@@ -32,6 +32,8 @@ class Plan extends Model
         'is_active',
         'features',
         'sort_order',
+        'feature_ids',
+        'feature_settings',
     ];
 
     protected $casts = [
@@ -43,6 +45,8 @@ class Plan extends Model
         'is_featured' => 'boolean',
         'is_active' => 'boolean',
         'features' => 'array',
+        'feature_ids' => 'array',
+        'feature_settings' => 'array',
     ];
 
     protected function monthlyPrice(): Attribute
@@ -133,5 +137,52 @@ class Plan extends Model
     public function hasAddonAvailable($featureSlug): bool
     {
         return $this->features()->where('slug', $featureSlug)->wherePivot('is_available', true)->exists();
+    }
+
+    /**
+     * Sync features from form data
+     */
+    public function syncFeaturesFromFormData(array $featureIds = [], array $featureSettings = []): void
+    {
+        // Clear existing features
+        $this->features()->detach();
+
+        // Sync features with their settings
+        foreach ($featureIds as $featureId) {
+            $feature = PlanFeature::find($featureId);
+            if (!$feature) continue;
+
+            // Find settings for this feature
+            $settings = collect($featureSettings)->firstWhere('feature_id', $featureId);
+            
+            $pivotData = [
+                'value' => $settings['value'] ?? null,
+                'is_included' => $settings['is_included'] ?? true,
+                'is_available' => $settings['is_available'] ?? false,
+                'addon_price' => $settings['addon_price'] ?? $feature->addon_price,
+                'sort_order' => $feature->sort_order,
+            ];
+
+            $this->features()->attach($featureId, $pivotData);
+        }
+    }
+
+    /**
+     * Get form data for features
+     */
+    public function getFeatureFormData(): array
+    {
+        return [
+            'feature_ids' => $this->features()->pluck('plan_features.id')->toArray(),
+            'feature_settings' => $this->features()->get()->map(function ($feature) {
+                return [
+                    'feature_id' => $feature->id,
+                    'value' => $feature->pivot->value,
+                    'is_included' => $feature->pivot->is_included,
+                    'is_available' => $feature->pivot->is_available,
+                    'addon_price' => $feature->pivot->addon_price,
+                ];
+            })->toArray(),
+        ];
     }
 }

@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
 //            PlanSeeder::class,
 //            DomainSeeder::class,
 //        WordPressPlanSeeder::class,
-        FAQSeeder::class
+//        FAQSeeder::class,
+        PlanFeatureSeeder::class
         ]);
     }
 }
