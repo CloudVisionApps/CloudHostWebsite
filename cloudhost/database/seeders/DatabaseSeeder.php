@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             PlanGroupSeeder::class,
             PlanFeatureGroupSeeder::class,
             PlanFeatureSeeder::class,
+            WordPressPlanFeatureSeeder::class,
 //            PlanSeeder::class,
         ]);
     }
