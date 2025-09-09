@@ -17,14 +17,14 @@ class PlanFeatureSeeder extends Seeder
     {
         // Get feature group IDs
         $groupIds = $this->getFeatureGroupIds();
-        
+
         // Create core features (included in plans)
         $coreFeatures = [
             [
                 'name' => 'SSL Certificate',
                 'slug' => 'ssl-certificate',
                 'description' => 'Free SSL certificate for secure connections',
-                'icon' => 'fas fa-shield-check',
+                'icon' => 'fas-lock',
                 'type' => 'boolean',
                 'is_addon' => false,
                 'is_active' => true,
@@ -35,7 +35,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Daily Backups',
                 'slug' => 'daily-backups',
                 'description' => 'Automated daily backups of your website',
-                'icon' => 'fas fa-cloud-arrow-down',
+                'icon' => 'fas-cloud-arrow-down',
                 'type' => 'boolean',
                 'is_addon' => false,
                 'is_active' => true,
@@ -46,7 +46,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => '24/7 Support',
                 'slug' => '24-7-support',
                 'description' => 'Round-the-clock technical support',
-                'icon' => 'fas fa-comments',
+                'icon' => 'fas-comments',
                 'type' => 'boolean',
                 'is_addon' => false,
                 'is_active' => true,
@@ -57,7 +57,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Storage Space',
                 'slug' => 'storage-space',
                 'description' => 'SSD storage space for your files',
-                'icon' => 'fas fa-server',
+                'icon' => 'fas-server',
                 'type' => 'numeric',
                 'unit' => 'GB',
                 'is_addon' => false,
@@ -69,7 +69,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Bandwidth',
                 'slug' => 'bandwidth',
                 'description' => 'Monthly data transfer allowance',
-                'icon' => 'fas fa-globe',
+                'icon' => 'fas-globe',
                 'type' => 'numeric',
                 'unit' => 'GB',
                 'is_addon' => false,
@@ -81,7 +81,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Domains',
                 'slug' => 'domains',
                 'description' => 'Number of domains you can host',
-                'icon' => 'fas fa-globe-americas',
+                'icon' => 'fas-globe-americas',
                 'type' => 'numeric',
                 'unit' => 'domains',
                 'is_addon' => false,
@@ -93,7 +93,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Email Accounts',
                 'slug' => 'email-accounts',
                 'description' => 'Number of email accounts included',
-                'icon' => 'fas fa-envelope',
+                'icon' => 'fas-envelope',
                 'type' => 'numeric',
                 'unit' => 'accounts',
                 'is_addon' => false,
@@ -109,7 +109,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Priority Support',
                 'slug' => 'priority-support',
                 'description' => 'Faster response times for support tickets',
-                'icon' => 'fas fa-clock',
+                'icon' => 'fas-clock',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 9.99,
@@ -122,7 +122,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'CDN Service',
                 'slug' => 'cdn-service',
                 'description' => 'Content Delivery Network for faster loading',
-                'icon' => 'fas fa-cloud-upload-alt',
+                'icon' => 'fas-cloud-upload-alt',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 4.99,
@@ -135,7 +135,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Extra Storage',
                 'slug' => 'extra-storage',
                 'description' => 'Additional storage space',
-                'icon' => 'fas fa-server',
+                'icon' => 'fas-server',
                 'type' => 'select',
                 'options' => [
                     ['value' => '50', 'label' => '50 GB', 'price' => 2.99],
@@ -154,7 +154,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Dedicated IP',
                 'slug' => 'dedicated-ip',
                 'description' => 'Dedicated IP address for your website',
-                'icon' => 'fas fa-desktop',
+                'icon' => 'fas-desktop',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 3.99,
@@ -171,7 +171,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Невъзможност за достъп до админ панел',
                 'slug' => 'admin-access',
                 'description' => 'Възстановяваме достъпа до административния панел на WordPress или WooCommerce магазина. Включва смяна на парола, email адрес или създаване на нов административен потребител.',
-                'icon' => 'fas fa-user-shield',
+                'icon' => 'fas-user-shield',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 15.00,
@@ -184,7 +184,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Невъзможност за зареждане на страница',
                 'slug' => 'page-loading',
                 'description' => 'Решаваме проблеми с зареждането на страници - бял екран, Error 500, Error 501 или други критични грешки. Диагностицираме причината и прилагаме подходящото решение.',
-                'icon' => 'fas fa-exclamation-triangle',
+                'icon' => 'fas-exclamation-triangle',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 25.00,
@@ -197,7 +197,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Настройки на PHP',
                 'slug' => 'php-settings',
                 'description' => 'Конфигурираме PHP параметри за оптимална производителност - лимити за качване на файлове, памет, време за изпълнение и други настройки.',
-                'icon' => 'fas fa-code',
+                'icon' => 'fas-code',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 20.00,
@@ -210,7 +210,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Смяна на основен домейн',
                 'slug' => 'domain-change',
                 'description' => 'Извършваме професионална смяна на основния домейн на WordPress сайт или WooCommerce магазин. Включва настройка на DNS записи, SSL сертификати и пренасочване на трафика.',
-                'icon' => 'fas fa-globe',
+                'icon' => 'fas-globe',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 30.00,
@@ -223,7 +223,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Настройка за връзка с база от данни',
                 'slug' => 'database-connection',
                 'description' => 'Помагаме с конфигурирането на връзката с MySQL базата данни. Включва настройка на потребител, парола, име на базата данни и други параметри в wp-config.php файла.',
-                'icon' => 'fas fa-database',
+                'icon' => 'fas-database',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 18.00,
@@ -236,7 +236,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Настройки за сигурност',
                 'slug' => 'security-settings',
                 'description' => 'Прилагаме допълнителни мерки за сигурност за защита на WordPress сайтове и WooCommerce магазини. Включва защита срещу brute force атаки и други сигурностни настройки.',
-                'icon' => 'fas fa-shield-alt',
+                'icon' => 'fas-shield-alt',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 22.00,
@@ -249,7 +249,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Обновяване на плъгини, теми и WordPress ядро',
                 'slug' => 'updates',
                 'description' => 'Извършваме месечни обновления на WordPress ядрото, плъгини и теми. Преди всяка актуализация създаваме резервно копие за безопасност.',
-                'icon' => 'fas fa-sync-alt',
+                'icon' => 'fas-sync-alt',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 12.00,
@@ -262,7 +262,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Настройки на WooCommerce',
                 'slug' => 'woocommerce-settings',
                 'description' => 'Предоставяме експертна помощ за настройка на основния WooCommerce плъгин. Помагаме с конфигурирането на магазина, продукти, плащания и доставки.',
-                'icon' => 'fas fa-shopping-cart',
+                'icon' => 'fas-shopping-cart',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 35.00,
@@ -275,7 +275,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Конфигуриране на cache плъгин',
                 'slug' => 'cache-plugin',
                 'description' => 'Настройваме и оптимизираме кеширащи плъгини за максимална производителност. Включва конфигуриране на LiteSpeed Cache или други подходящи решения.',
-                'icon' => 'fas fa-rocket',
+                'icon' => 'fas-rocket',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 20.00,
@@ -288,7 +288,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Оптимизация на сайт',
                 'slug' => 'site-optimization',
                 'description' => 'Извършваме комплексна оптимизация на WordPress сайтове и WooCommerce магазини. Включва анализ на производителността и препоръки за подобрения.',
-                'icon' => 'fas fa-chart-line',
+                'icon' => 'fas-chart-line',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 40.00,
@@ -301,7 +301,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Мониторинг на сайт',
                 'slug' => 'site-monitoring',
                 'description' => 'Следим за коректното функциониране на началната страница на сайта. При възникване на проблеми ви уведомяваме незабавно за бързо отстраняване.',
-                'icon' => 'fas fa-eye',
+                'icon' => 'fas-eye',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 15.00,
@@ -314,7 +314,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Съдействие при Error 500',
                 'slug' => 'error-500',
                 'description' => 'Диагностицираме и решаваме критични грешки като Error 500. Локализираме причината за проблема и прилагаме подходящото решение.',
-                'icon' => 'fas fa-bug',
+                'icon' => 'fas-bug',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 25.00,
@@ -327,7 +327,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Помощ при работа с админ панела',
                 'slug' => 'admin-help',
                 'description' => 'Предоставяме експертна помощ за навигация и използване на WordPress административния панел. Помагаме с намирането на функции и настройки.',
-                'icon' => 'fas fa-question-circle',
+                'icon' => 'fas-question-circle',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 18.00,
@@ -340,7 +340,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Създаване на Dev среда',
                 'slug' => 'dev-environment',
                 'description' => 'Създаваме тестова среда за безопасно тестване на нови функционалности, плъгини и теми. Включва отделна база данни и файлова система.',
-                'icon' => 'fas fa-code-branch',
+                'icon' => 'fas-code-branch',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 30.00,
@@ -353,7 +353,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Одит при бавен сайт',
                 'slug' => 'performance-audit',
                 'description' => 'Извършваме детайлен анализ на производителността на бавно зареждащи се сайтове. Предоставяме препоръки за оптимизация и прилагаме решения.',
-                'icon' => 'fas fa-tachometer-alt',
+                'icon' => 'fas-tachometer-alt',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 35.00,
@@ -366,7 +366,7 @@ class PlanFeatureSeeder extends Seeder
                 'name' => 'Друго?',
                 'slug' => 'other',
                 'description' => 'За всички други WordPress и WooCommerce свързани услуги, които не са описани по-горе, моля свържете се с нас за персонализирана консултация.',
-                'icon' => 'fas fa-ellipsis-h',
+                'icon' => 'fas-ellipsis-h',
                 'type' => 'boolean',
                 'is_addon' => true,
                 'addon_price' => 50.00,
@@ -379,7 +379,7 @@ class PlanFeatureSeeder extends Seeder
 
         // Create all features
         $allFeatures = array_merge($coreFeatures, $addonFeatures, $wordpressSupportFeatures);
-        
+
         foreach ($allFeatures as $featureData) {
             PlanFeature::updateOrCreate(
                 ['slug' => $featureData['slug']],
@@ -394,11 +394,11 @@ class PlanFeatureSeeder extends Seeder
     private function attachFeaturesToPlans()
     {
         $plans = Plan::all();
-        
+
         foreach ($plans as $plan) {
             // Attach core features with appropriate values based on plan
             $this->attachCoreFeatures($plan);
-            
+
             // Attach addon features as available
             $this->attachAddonFeatures($plan);
         }
@@ -407,10 +407,10 @@ class PlanFeatureSeeder extends Seeder
     private function attachCoreFeatures(Plan $plan)
     {
         $coreFeatures = PlanFeature::core()->active()->get();
-        
+
         foreach ($coreFeatures as $feature) {
             $value = $this->getFeatureValueForPlan($plan, $feature);
-            
+
             $plan->features()->attach($feature->id, [
                 'value' => $value,
                 'is_included' => true,
@@ -423,7 +423,7 @@ class PlanFeatureSeeder extends Seeder
     private function attachAddonFeatures(Plan $plan)
     {
         $addonFeatures = PlanFeature::addons()->active()->get();
-        
+
         foreach ($addonFeatures as $feature) {
             $plan->features()->attach($feature->id, [
                 'value' => null,
@@ -455,11 +455,11 @@ class PlanFeatureSeeder extends Seeder
     {
         $groups = PlanFeatureGroup::all();
         $groupIds = [];
-        
+
         foreach ($groups as $group) {
             $groupIds[$group->slug] = $group->id;
         }
-        
+
         return $groupIds;
     }
 }
