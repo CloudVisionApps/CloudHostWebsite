@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Plan;
+use App\Models\PlanGroup;
 
 class PlanSeeder extends Seeder
 {
@@ -13,6 +14,14 @@ class PlanSeeder extends Seeder
      */
     public function run(): void
     {
+        // Get the Shared Hosting plan group
+        $sharedHostingGroup = PlanGroup::where('name', 'Shared Hosting')->first();
+        
+        if (!$sharedHostingGroup) {
+            $this->command->error('Shared Hosting plan group not found. Please run PlanGroupSeeder first.');
+            return;
+        }
+
         // Plans data from config.php
         $plans = [
             [
@@ -34,6 +43,7 @@ class PlanSeeder extends Seeder
                 'support_24_7' => true,
                 'is_featured' => false,
                 'is_active' => true,
+                'group_id' => $sharedHostingGroup->id,
                 'features' => [
                     '10 GB SSD Хранилище',
                     'Неограничен Трафик',
@@ -62,6 +72,7 @@ class PlanSeeder extends Seeder
                 'support_24_7' => true,
                 'is_featured' => true,
                 'is_active' => true,
+                'group_id' => $sharedHostingGroup->id,
                 'features' => [
                     '50 GB SSD Хранилище',
                     'Неограничен Трафик',
@@ -91,6 +102,7 @@ class PlanSeeder extends Seeder
                 'support_24_7' => true,
                 'is_featured' => false,
                 'is_active' => true,
+                'group_id' => $sharedHostingGroup->id,
                 'features' => [
                     '200 GB SSD Хранилище',
                     'Неограничен Трафик',

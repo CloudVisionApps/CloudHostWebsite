@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Plan;
+use App\Models\PlanGroup;
 
 class WordPressPlanSeeder extends Seeder
 {
@@ -13,6 +14,14 @@ class WordPressPlanSeeder extends Seeder
      */
     public function run(): void
     {
+        // Get the Wordpress Support plan group
+        $wordpressSupportGroup = PlanGroup::where('name', 'Wordpress Support')->first();
+        
+        if (!$wordpressSupportGroup) {
+            $this->command->error('Wordpress Support plan group not found. Please run PlanGroupSeeder first.');
+            return;
+        }
+
         // WordPress Support Plans data from config.php
         $wordpressPlans = [
             [
@@ -34,6 +43,7 @@ class WordPressPlanSeeder extends Seeder
                 'support_24_7' => false,
                 'is_featured' => false,
                 'is_active' => true,
+                'group_id' => $wordpressSupportGroup->id,
                 'features' => [
                     'cache_plugin',
                     'database_connection',
@@ -67,6 +77,7 @@ class WordPressPlanSeeder extends Seeder
                 'support_24_7' => false,
                 'is_featured' => true,
                 'is_active' => true,
+                'group_id' => $wordpressSupportGroup->id,
                 'features' => [
                     'cache_plugin',
                     'database_connection',
@@ -103,6 +114,7 @@ class WordPressPlanSeeder extends Seeder
                 'support_24_7' => true,
                 'is_featured' => false,
                 'is_active' => true,
+                'group_id' => $wordpressSupportGroup->id,
                 'features' => [
                     'cache_plugin',
                     'database_connection',

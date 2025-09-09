@@ -34,6 +34,7 @@ class Plan extends Model
         'sort_order',
         'feature_ids',
         'feature_settings',
+        'group_id',
     ];
 
     protected $casts = [
