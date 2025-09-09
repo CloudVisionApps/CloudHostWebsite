@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Grouping\Group;
 
 class PlanFeaturesTable
 {
@@ -17,6 +18,19 @@ class PlanFeaturesTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('group.name')
+                    ->label('Group')
+                    ->searchable()
+                    ->sortable()
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'Core Features' => 'primary',
+                        'Performance' => 'success',
+                        'Security' => 'danger',
+                        'Development' => 'warning',
+                        'WordPress Support' => 'info',
+                        default => 'gray',
+                    }),
                 TextColumn::make('slug')
                     ->searchable(),
                 TextColumn::make('icon')
@@ -49,6 +63,13 @@ class PlanFeaturesTable
             ->filters([
                 //
             ])
+            ->groups([
+                Group::make('group.name')
+                    ->label('Feature Group')
+                    ->collapsible()
+                    ->titlePrefixedWithLabel(false),
+            ])
+            ->defaultGroup('group.name')
             ->recordActions([
                 EditAction::make(),
             ])

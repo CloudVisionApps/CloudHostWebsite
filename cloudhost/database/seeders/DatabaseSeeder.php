@@ -25,9 +25,8 @@ class DatabaseSeeder extends Seeder
 //            FAQSeeder::class,
             PlanGroupSeeder::class,
             PlanFeatureGroupSeeder::class,
+            PlanFeatureSeeder::class,
 //            PlanSeeder::class,
-//            PlanFeatureGroupSeeder::class
-//            PlanFeatureSeeder::class
         ]);
     }
 }

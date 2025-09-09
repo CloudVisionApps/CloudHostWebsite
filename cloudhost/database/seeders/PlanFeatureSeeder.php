@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\PlanFeature;
 use App\Models\Plan;
+use App\Models\PlanFeatureGroup;
 
 class PlanFeatureSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class PlanFeatureSeeder extends Seeder
      */
     public function run(): void
     {
+        // Get feature group IDs
+        $groupIds = $this->getFeatureGroupIds();
+        
         // Create core features (included in plans)
         $coreFeatures = [
             [
@@ -25,6 +29,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 1,
+                'group_id' => $groupIds['security'],
             ],
             [
                 'name' => 'Daily Backups',
@@ -35,6 +40,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 2,
+                'group_id' => $groupIds['security'],
             ],
             [
                 'name' => '24/7 Support',
@@ -45,6 +51,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 3,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'Storage Space',
@@ -56,6 +63,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 4,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'Bandwidth',
@@ -67,6 +75,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 5,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'Domains',
@@ -78,6 +87,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 6,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'Email Accounts',
@@ -89,6 +99,7 @@ class PlanFeatureSeeder extends Seeder
                 'is_addon' => false,
                 'is_active' => true,
                 'sort_order' => 7,
+                'group_id' => $groupIds['core-features'],
             ],
         ];
 
@@ -105,6 +116,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 8,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'CDN Service',
@@ -117,6 +129,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 9,
+                'group_id' => $groupIds['performance'],
             ],
             [
                 'name' => 'Extra Storage',
@@ -135,6 +148,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 10,
+                'group_id' => $groupIds['core-features'],
             ],
             [
                 'name' => 'Dedicated IP',
@@ -147,6 +161,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 11,
+                'group_id' => $groupIds['core-features'],
             ],
         ];
 
@@ -163,6 +178,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 12,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Невъзможност за зареждане на страница',
@@ -175,6 +191,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 13,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Настройки на PHP',
@@ -187,6 +204,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 14,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Смяна на основен домейн',
@@ -199,6 +217,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 15,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Настройка за връзка с база от данни',
@@ -211,6 +230,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 16,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Настройки за сигурност',
@@ -223,6 +243,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 17,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Обновяване на плъгини, теми и WordPress ядро',
@@ -235,6 +256,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 18,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Настройки на WooCommerce',
@@ -247,6 +269,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 19,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Конфигуриране на cache плъгин',
@@ -259,6 +282,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 20,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Оптимизация на сайт',
@@ -271,6 +295,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 21,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Мониторинг на сайт',
@@ -283,6 +308,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 22,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Съдействие при Error 500',
@@ -295,6 +321,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 23,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Помощ при работа с админ панела',
@@ -307,6 +334,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 24,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Създаване на Dev среда',
@@ -319,6 +347,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 25,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Одит при бавен сайт',
@@ -331,6 +360,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 26,
+                'group_id' => $groupIds['wordpress-support'],
             ],
             [
                 'name' => 'Друго?',
@@ -343,6 +373,7 @@ class PlanFeatureSeeder extends Seeder
                 'addon_currency' => 'USD',
                 'is_active' => true,
                 'sort_order' => 27,
+                'group_id' => $groupIds['wordpress-support'],
             ],
         ];
 
@@ -415,5 +446,17 @@ class PlanFeatureSeeder extends Seeder
         ];
 
         return $planFeatureMap[$feature->slug] ?? null;
+    }
+
+    private function getFeatureGroupIds(): array
+    {
+        $groups = PlanFeatureGroup::all();
+        $groupIds = [];
+        
+        foreach ($groups as $group) {
+            $groupIds[$group->slug] = $group->id;
+        }
+        
+        return $groupIds;
     }
 }

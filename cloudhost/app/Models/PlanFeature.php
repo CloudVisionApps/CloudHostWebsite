@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PlanFeature extends Model
 {
@@ -20,6 +21,7 @@ class PlanFeature extends Model
         'addon_currency',
         'is_active',
         'sort_order',
+        'group_id',
     ];
 
     protected $casts = [
@@ -37,6 +39,14 @@ class PlanFeature extends Model
         return $this->belongsToMany(Plan::class, 'plan_plan_feature')
                     ->withPivot(['value', 'is_included', 'is_available', 'addon_price', 'sort_order'])
                     ->withTimestamps();
+    }
+
+    /**
+     * Get the group that this feature belongs to
+     */
+    public function group(): BelongsTo
+    {
+        return $this->belongsTo(PlanFeatureGroup::class, 'group_id');
     }
 
     /**
