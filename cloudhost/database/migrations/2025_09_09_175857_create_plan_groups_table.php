@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('slug')->unique()->nullable(); // URL-friendly identifier
             $table->text('description')->nullable(); // Group description
             $table->integer('sort_order')->default(0); // Order for displaying groups
+
+            $table->string('icon')->nullable(); // Optional icon for the feature group
+            $table->string('icon_color')->nullable(); // Optional icon for the feature group
+
             $table->timestamps();
         });
     }

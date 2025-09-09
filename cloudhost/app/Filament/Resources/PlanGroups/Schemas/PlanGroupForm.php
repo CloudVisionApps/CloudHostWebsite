@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PlanGroups\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class PlanGroupForm
 {
@@ -14,6 +15,7 @@ class PlanGroupForm
                 TextInput::make('name'),
                 TextInput::make('description')->nullable(),
                 TextInput::make('sort_order')->numeric()->default(0),
+                IconPicker::make('icon'),
             ]);
     }
 }

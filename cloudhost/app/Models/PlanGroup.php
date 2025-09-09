@@ -11,6 +11,8 @@ class PlanGroup extends Model
         'description',
         'sort_order',
         'is_active',
+        'icon',
+        'icon_color',
     ];
 
     protected $casts = [
