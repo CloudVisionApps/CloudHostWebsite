@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         $this->call([
-            DomainSeeder::class,
+//            DomainSeeder::class,
 //            WordPressPlanSeeder::class,
-            FAQSeeder::class,
+//            FAQSeeder::class,
             PlanGroupSeeder::class,
 //            PlanSeeder::class,
 //            PlanFeatureSeeder::class

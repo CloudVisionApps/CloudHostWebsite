@@ -14,43 +14,44 @@ class PlanGroupSeeder extends Seeder
      */
     public function run(): void
     {
-        PlanGroup::create([
-            'name' => 'Shared Hosting',
-            'description' => 'Affordable and reliable shared hosting plans for personal and small business websites.',
-            'sort_order' => 1,
-//            'is_active' => true,
-        ]);
-        PlanGroup::create([
-            'name' => 'VPS Hosting',
-            'description' => 'Powerful and scalable VPS hosting solutions for growing websites and applications.',
-            'sort_order' => 2,
-//            'is_active' => true,
-        ]);
-        PlanGroup::create([
-            'name' => 'Dedicated Servers',
-            'description' => 'High-performance dedicated servers for resource-intensive applications and large-scale websites.',
-            'sort_order' => 3,
-//            'is_active' => true,
-        ]);
+        $planGroups = [
+            [
+                'name' => 'Споделен хостинг',
+                'description' => 'Достоверни и достъпни планове за споделен хостинг за лични и малки бизнес уебсайтове.',
+                'sort_order' => 1,
+            ],
+            [
+                'name' => 'VPS хостинг',
+                'description' => 'Мощни и мащабируеми VPS хостинг решения за развиващи се уебсайтове и приложения.',
+                'sort_order' => 2,
+            ],
+            [
+                'name' => 'Специализирани сървъри',
+                'description' => 'Високопроизводителни специализирани сървъри за ресурсоемки приложения и големи уебсайтове.',
+                'sort_order' => 3,
+            ],
+            [
+                'name' => 'Облачен хостинг',
+                'description' => 'Гъвкави и мащабируеми облачни хостинг решения за бизнеси от всички размери.',
+                'sort_order' => 4,
+            ],
+            [
+                'name' => 'WordPress хостинг',
+                'description' => 'Оптимизирани WordPress хостинг планове за блогъри и бизнеси, които искат да подобрят онлайн присъствието си.',
+                'sort_order' => 5,
+            ],
+            [
+                'name' => 'WordPress поддръжка',
+                'description' => 'Управлявани WordPress планове за поддръжка за блогъри и бизнеси, които искат да подобрят онлайн присъствието си.',
+                'sort_order' => 6,
+            ],
+        ];
 
-        PlanGroup::create([
-            'name' => 'Cloud Hosting',
-            'description' => 'Flexible and scalable cloud hosting solutions for businesses of all sizes.',
-            'sort_order' => 4,
-//            'is_active' => true,
-        ]);
-
-        PlanGroup::create([
-            'name' => 'WordPress Hosting',
-            'description' => 'Optimized WordPress hosting plans for bloggers and businesses looking to enhance their online presence.',
-            'sort_order' => 5,
-//            'is_active' => true,
-        ]);
-        PlanGroup::create([
-            'name' => 'Wordpress Support',
-            'description' => 'Managed WordPress support plans for bloggers and businesses looking to enhance their online presence.',
-            'sort_order' => 6,
-//            'is_active' => true,
-        ]);
+        foreach ($planGroups as $planGroupData) {
+            PlanGroup::firstOrCreate(
+                ['name' => $planGroupData['name']],
+                $planGroupData
+            );
+        }
     }
 }
