@@ -125,6 +125,7 @@ class PlanForm
                     ]),
 
                 Section::make('Plan Features')
+                    ->columnSpanFull()
                     ->schema([
                         CheckboxList::make('feature_ids')
                             ->label('Select Features')
@@ -139,7 +140,7 @@ class PlanForm
                                 // Auto-populate feature_settings when features are selected
                                 $selectedFeatures = collect($state ?? []);
                                 $currentSettings = collect();
-                                
+
                                 $selectedFeatures->each(function ($featureId) use ($currentSettings) {
                                     $feature = PlanFeature::find($featureId);
                                     if ($feature) {
@@ -152,12 +153,13 @@ class PlanForm
                                         ]);
                                     }
                                 });
-                                
+
                                 $set('feature_settings', $currentSettings->toArray());
                             }),
                     ]),
 
                 Section::make('Feature Values & Settings')
+                    ->columnSpanFull()
                     ->schema([
                         Repeater::make('feature_settings')
                             ->schema([
@@ -190,26 +192,9 @@ class PlanForm
                             ->columns(2)
                             ->addActionLabel('Add Feature Setting')
                             ->collapsible()
-                            ->itemLabel(fn (array $state): ?string => 
+                            ->itemLabel(fn (array $state): ?string =>
                                 $state['feature_id'] ? PlanFeature::find($state['feature_id'])?->name : 'New Feature Setting'
                             ),
-                    ]),
-
-                Section::make('Legacy Features (JSON)')
-                    ->schema([
-                        Repeater::make('features')
-                            ->schema([
-                                TextInput::make('name')
-                                    ->required()
-                                    ->placeholder('Feature name'),
-                                TextInput::make('value')
-                                    ->placeholder('Feature value (optional)'),
-                            ])
-                            ->columns(2)
-                            ->addActionLabel('Add Legacy Feature')
-                            ->collapsible()
-                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? null)
-                            ->helperText('Legacy features stored as JSON. Consider using Plan Features above instead.'),
                     ]),
 
                 Section::make('Status')
