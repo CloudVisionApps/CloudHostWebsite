@@ -61,10 +61,10 @@
                         $hoverBorder = $isEven ? 'hover:border-emerald-400/50' : 'hover:border-blue-400/50';
                         $hoverShadow = $isEven ? 'hover:shadow-emerald-500/20' : 'hover:shadow-blue-500/20';
                         $hoverText = $isEven ? 'group-hover:text-emerald-300' : 'group-hover:text-blue-300';
-                        $accentColor = $isEven ? 'emerald' : 'blue'; 
+                        $accentColor = $isEven ? 'emerald' : 'blue';
                     @endphp
                     <div class="group {{ $slideClass }} transform transition-all duration-500 hover:scale-[1.02]" data-faq-index="{{ $index }}">
-                        <div class="relative bg-gradient-to-br from-white/8 to-white/12 backdrop-blur-xl rounded-3xl p-8 border border-white/20 {{ $hoverBorder }} transition-all duration-500 hover:bg-white/20 hover:shadow-2xl {{ $hoverShadow }} cursor-pointer overflow-hidden" onclick="toggleFAQ({{ $index }})">
+                        <div class="relative bg-gradient-to-br from-black/5 to-black/15 backdrop-blur-xl rounded-3xl p-8 border border-black/5 {{ $hoverBorder }} transition-all duration-500 hover:bg-black/20 hover:shadow-2xl {{ $hoverShadow }} cursor-pointer overflow-hidden" onclick="toggleFAQ({{ $index }})">
 
                             <!-- Background Glow Effect -->
                             <div class="absolute inset-0 bg-gradient-to-br from-{{ $accentColor }}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
