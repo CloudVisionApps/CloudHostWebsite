@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +24,9 @@ class DatabaseSeeder extends Seeder
 //            WordPressPlanSeeder::class,
 //            FAQSeeder::class,
             PlanGroupSeeder::class,
+            PlanFeatureGroupSeeder::class,
 //            PlanSeeder::class,
+//            PlanFeatureGroupSeeder::class
 //            PlanFeatureSeeder::class
         ]);
     }
