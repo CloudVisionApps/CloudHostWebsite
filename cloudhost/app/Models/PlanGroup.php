@@ -8,6 +8,7 @@ class PlanGroup extends Model
 {
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'sort_order',
         'is_active',

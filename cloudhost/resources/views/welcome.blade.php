@@ -4,6 +4,7 @@
 
     <body class="min-h-screen">
 
+    @include('parts.header')
     @include('parts.hero-section')
     @include('parts.migration-section')
     @include('parts.features-section')

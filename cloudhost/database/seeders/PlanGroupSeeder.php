@@ -17,6 +17,7 @@ class PlanGroupSeeder extends Seeder
         $planGroups = [
             [
                 'name' => 'Споделен хостинг',
+                'slug' => 'shared-hosting',
                 'description' => 'Достоверни и достъпни планове за споделен хостинг за лични и малки бизнес уебсайтове.',
                 'icon' => 'fas-share-alt',
                 'icon_color' => 'blue',
@@ -24,6 +25,7 @@ class PlanGroupSeeder extends Seeder
             ],
             [
                 'name' => 'VPS хостинг',
+                'slug' => 'vps-hosting',
                 'description' => 'Мощни и мащабируеми VPS хостинг решения за развиващи се уебсайтове и приложения.',
                 'icon' => 'fas-server',
                 'icon_color' => 'green',
@@ -31,6 +33,7 @@ class PlanGroupSeeder extends Seeder
             ],
             [
                 'name' => 'Специализирани сървъри',
+                'slug' => 'dedicated-servers',
                 'description' => 'Високопроизводителни специализирани сървъри за ресурсоемки приложения и големи уебсайтове.',
                 'icon' => 'fas-microchip',
                 'icon_color' => 'red',
@@ -38,6 +41,7 @@ class PlanGroupSeeder extends Seeder
             ],
             [
                 'name' => 'Облачен хостинг',
+                'slug' => 'cloud-hosting',
                 'description' => 'Гъвкави и мащабируеми облачни хостинг решения за бизнеси от всички размери.',
                 'icon' => 'fas-cloud',
                 'icon_color' => 'purple',
@@ -45,6 +49,7 @@ class PlanGroupSeeder extends Seeder
             ],
             [
                 'name' => 'WordPress хостинг',
+                'slug' => 'wordpress-hosting',
                 'description' => 'Оптимизирани WordPress хостинг планове за блогъри и бизнеси, които искат да подобрят онлайн присъствието си.',
                 'icon' => 'fab-wordpress',
                 'icon_color' => 'indigo',
@@ -52,6 +57,7 @@ class PlanGroupSeeder extends Seeder
             ],
             [
                 'name' => 'WordPress поддръжка',
+                'slug' => 'wordpress-support',
                 'description' => 'Управлявани WordPress планове за поддръжка за блогъри и бизнеси, които искат да подобрят онлайн присъствието си.',
                 'icon' => 'fas-headset',
                 'icon_color' => 'orange',
