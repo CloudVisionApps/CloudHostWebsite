@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
 //            PlanSeeder::class,
 //            DomainSeeder::class,
-//        WordPressPlanSeeder::class
+//        WordPressPlanSeeder::class,
+        FAQSeeder::class
         ]);
     }
 }
