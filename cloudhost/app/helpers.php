@@ -9,6 +9,21 @@ function settings($key, $default = null)
     return $default;
 }
 
+function get_social_networks()
+{
+    $socialNetworks = settings('social_networks', []);
+    
+    // Ensure each social network has all required fields with defaults
+    return array_map(function($network) {
+        return [
+            'name' => $network['name'] ?? 'Social Network',
+            'url' => $network['url'] ?? '#',
+            'icon' => $network['icon'] ?? 'fab fa-link',
+            'color' => $network['color'] ?? '#1683ab'
+        ];
+    }, $socialNetworks);
+}
+
 function get_hosting_mega_menu_data()
 {
     $getPlanGroups = \App\Models\PlanGroup::all();

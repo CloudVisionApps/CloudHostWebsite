@@ -24,36 +24,12 @@
                         Последвайте ни
                     </h5>
                     <div class="flex space-x-4 scroll-stagger">
-                        @if(settings('facebook'))
-                        <a href="{{settings('facebook')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                        @foreach(get_social_networks() as $social)
+                        <a href="{{$social['url']}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in" title="{{$social['name']}}">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fab fa-facebook-f text-lg relative z-10"></i>
+                            <i class="{{$social['icon']}} text-lg relative z-10"></i>
                         </a>
-                        @endif
-                        @if(settings('twitter'))
-                        <a href="{{settings('twitter')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fab fa-twitter text-lg relative z-10"></i>
-                        </a>
-                        @endif
-                        @if(settings('linkedin'))
-                        <a href="{{settings('linkedin')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fab fa-linkedin-in text-lg relative z-10"></i>
-                        </a>
-                        @endif
-                        @if(settings('instagram'))
-                        <a href="{{settings('instagram')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fab fa-instagram text-lg relative z-10"></i>
-                        </a>
-                        @endif
-                        @if(settings('youtube'))
-                        <a href="{{settings('youtube')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                            <i class="fab fa-youtube text-lg relative z-10"></i>
-                        </a>
-                        @endif
+                        @endforeach
                     </div>
                 </div>
 

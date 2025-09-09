@@ -15,11 +15,32 @@ return new class extends SettingsMigration
         $this->migrator->add('general.website', 'https://cloudhost.bg');
 
         // Social Media Links
-        $this->migrator->add('general.facebook', '#');
-        $this->migrator->add('general.twitter', '#');
-        $this->migrator->add('general.linkedin', '#');
-        $this->migrator->add('general.instagram', '#');
-        $this->migrator->add('general.youtube', '#');
+        $this->migrator->add('general.social_networks', [
+            'facebook' => [
+                'url' => 'https://facebook.com/cloudhostbg',
+                'icon' => 'fab fa-facebook-f',
+                'color' => '#3b5998',
+                'name' => 'Facebook'
+            ],
+            'twitter' => [
+                'url' => 'https://twitter.com/cloudhostbg',
+                'icon' => 'fab fa-twitter',
+                'color' => '#1da1f2',
+                'name' => 'Twitter'
+            ],
+            'linkedin' => [
+                'url' => 'https://linkedin.com/company/cloudhostbg',
+                'icon' => 'fab fa-linkedin-in',
+                'color' => '#0077b5',
+                'name' => 'LinkedIn'
+            ],
+            'instagram' => [
+                'url' => 'https://instagram.com/cloudhostbg',
+                'icon' => 'fab fa-instagram',
+                'color' => '#e4405f',
+                'name' => 'Instagram'
+            ]
+        ]);
 
         // Contact Information
         $this->migrator->add('general.support_hours', '24/7 Поддръжка');

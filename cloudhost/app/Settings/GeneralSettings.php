@@ -13,25 +13,21 @@ class GeneralSettings extends Settings
     public string $email;
     public string $address;
     public string $website;
-    
-    // Social Media Links
-    public string $facebook;
-    public string $twitter;
-    public string $linkedin;
-    public string $instagram;
-    public string $youtube;
-    
+
+    // Dynamic Social Networks Array
+    public array $social_networks;
+
     // Contact Information
     public string $support_hours;
     public string $response_time;
     public string $emergency_phone;
-    
+
     // Features
     public string $uptime;
     public string $customers;
     public string $experience;
     public string $support;
-    
+
     // SEO Settings
     public string $seo_title;
     public string $seo_description;

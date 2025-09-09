@@ -5,6 +5,8 @@ namespace App\Filament\Pages;
 use BackedEnum;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -47,26 +49,53 @@ class GeneralSettings extends SettingsPage
                     ])
                     ->columns(2),
 
-                Section::make('Social Media Links')
-                    ->description('Social media profile URLs')
+                Section::make('Social Media Networks')
+                    ->description('Configure your social media profiles dynamically')
                     ->schema([
-                        TextInput::make('facebook')
-                            ->label('Facebook URL')
-                            ->url(),
-                        TextInput::make('twitter')
-                            ->label('Twitter URL')
-                            ->url(),
-                        TextInput::make('linkedin')
-                            ->label('LinkedIn URL')
-                            ->url(),
-                        TextInput::make('instagram')
-                            ->label('Instagram URL')
-                            ->url(),
-                        TextInput::make('youtube')
-                            ->label('YouTube URL')
-                            ->url(),
-                    ])
-                    ->columns(2),
+                        Repeater::make('social_networks')
+                            ->label('Social Networks')
+                            ->schema([
+                                TextInput::make('name')
+                                    ->label('Network Name')
+                                    ->required()
+                                    ->placeholder('e.g., Facebook, Instagram, TikTok'),
+                                TextInput::make('url')
+                                    ->label('Profile URL')
+                                    ->url()
+                                    ->required()
+                                    ->placeholder('https://facebook.com/yourpage'),
+                                Select::make('icon')
+                                    ->label('Icon Class')
+                                    ->options([
+                                        'fab fa-facebook-f' => 'Facebook',
+                                        'fab fa-twitter' => 'Twitter',
+                                        'fab fa-linkedin-in' => 'LinkedIn',
+                                        'fab fa-instagram' => 'Instagram',
+                                        'fab fa-youtube' => 'YouTube',
+                                        'fab fa-tiktok' => 'TikTok',
+                                        'fab fa-discord' => 'Discord',
+                                        'fab fa-github' => 'GitHub',
+                                        'fab fa-telegram' => 'Telegram',
+                                        'fab fa-whatsapp' => 'WhatsApp',
+                                        'fab fa-snapchat' => 'Snapchat',
+                                        'fab fa-pinterest' => 'Pinterest',
+                                        'fab fa-reddit' => 'Reddit',
+                                        'fab fa-twitch' => 'Twitch',
+                                        'fab fa-vimeo' => 'Vimeo',
+                                    ])
+                                    ->required()
+                                    ->searchable(),
+                                TextInput::make('color')
+                                    ->label('Brand Color (Hex)')
+                                    ->placeholder('#1877F2')
+                                    ->helperText('Optional: Custom brand color for this network'),
+                            ])
+                            ->columns(2)
+                            ->addActionLabel('Add Social Network')
+                            ->reorderable()
+                            ->collapsible()
+                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? null),
+                    ]),
 
                 Section::make('Contact Information')
                     ->description('Support and contact details')
