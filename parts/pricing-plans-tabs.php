@@ -13,7 +13,14 @@
             
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-stagger">
-                <?php foreach (get_config('plans') as $planKey => $plan): ?>
+
+                <?php
+                if (!isset($plans)) {
+                    $plans = get_config('plans');
+                }
+                ?>
+
+                <?php foreach ($plans as $planKey => $plan): ?>
                 <div class="<?php echo $planKey === 'professional' ? 'bg-gradient-to-br from-[#1683ab]/10 to-[#1e9975]/10 rounded-3xl p-8 border-2 border-[#1683ab] relative group hover:scale-105 transition-all duration-500' : 'bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl p-8 border border-[#2a2a2a] hover:border-[#1683ab]/50 transition-all duration-500 group hover:scale-105'; ?>">
                     
                     <?php if (isset($plan['popular']) && $plan['popular']): ?>

@@ -121,16 +121,7 @@
             animation: float-particle 6s ease-in-out infinite;
         }
         
-        /* Interactive Hover Effects */
-        .hero-bg-element {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hero-bg-element:hover {
-            transform: scale(1.1) rotate(5deg);
-            filter: brightness(1.2);
-        }
-        
+
         /* Subtle Parallax Effect */
         @keyframes parallax-slow {
             0%, 100% { transform: translateY(0px) translateX(0px); }
@@ -178,145 +169,10 @@
             background: rgba(255, 255, 255, 0.03);
             transform: translateX(5px);
         }
-        
-        /* Enhanced Plan Card Styling */
-        .plan-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .plan-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .plan-card:hover::before {
-            left: 100%;
-        }
-        
-        .plan-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-                        0 0 30px rgba(22, 131, 171, 0.2);
-        }
-        
-        .popular-badge {
-            background: linear-gradient(135deg, #1e9975 0%, #1683ab 100%);
-            box-shadow: 0 4px 15px rgba(30, 153, 117, 0.4);
-        }
-
-        /* Enhanced Pricing Toggle Styles */
-        .pricing-toggle {
-            color: #9ca3af;
-            background: transparent;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-toggle::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.3s;
-        }
-        
-        .pricing-toggle:hover::before {
-            left: 100%;
-        }
-
-        .pricing-toggle.active {
-            color: #ffffff;
-            background: linear-gradient(135deg, #1683ab 0%, #1e9975 100%);
-            box-shadow: 0 4px 15px rgba(22, 131, 171, 0.3);
-        }
-
-        .pricing-toggle:hover:not(.active) {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-1px);
-        }
 
         .pricing-toggle.active span {
             background: rgba(255, 255, 255, 0.2) !important;
             color: #ffffff !important;
-        }
-
-        /* Enhanced Service Details Styling */
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(22, 131, 171, 0.1), transparent);
-            transition: left 0.6s;
-        }
-        
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(22, 131, 171, 0.15),
-                        0 0 30px rgba(30, 153, 117, 0.1);
-        }
-
-        .service-icon {
-            background: linear-gradient(135deg, #1683ab 0%, #1e9975 100%);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(22, 131, 171, 0.3);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.15) rotate(8deg);
-            box-shadow: 0 8px 25px rgba(22, 131, 171, 0.4);
-        }
-
-        /* Enhanced Plan Badge Styling */
-        .plan-badge {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .plan-badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.3s;
-        }
-        
-        .plan-badge:hover::before {
-            left: 100%;
-        }
-
-        .plan-badge:hover {
-            transform: scale(1.08) translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
         
         /* Scroll Animations */
@@ -433,18 +289,7 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #1e9975, #1683ab);
         }
-        
-        /* Loading Animation */
-        @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
-        }
-        
-        .shimmer {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            background-size: 200px 100%;
-            animation: shimmer 2s infinite;
-        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -508,80 +353,13 @@
         </div>
     </section>
 
-    <!-- Pricing Plans Overview -->
-    <section class="relative ">
-        <div class="max-w-7xl mx-auto px-4">
-        
+    <?php
+    $plans = get_config('wordpress_support', []);
+    ?>
 
-            <!-- Pricing Toggle -->
-            <div class="flex justify-center mb-20 scroll-fade-in">
-                <div class="bg-white/[0.05] rounded-2xl p-2 backdrop-blur-sm">
-                    <div class="flex">
-                        <button id="monthly-toggle" class="pricing-toggle active px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
-                            Месечно
-                        </button>
-                        <button id="yearly-toggle" class="pricing-toggle px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
-                            Годишно
-                            <span class="ml-2 bg-[#1e9975] text-white text-xs px-2 py-1 rounded-full">-17%</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                <?php 
-                $plans = get_config('wordpress_support', []);
-                foreach ($plans as $key => $plan) {
-                    $colorClasses = [
-                        'blue' => 'from-[#1683ab] to-[#1e9975]',
-                        'purple' => 'from-[#8b5cf6] to-[#a855f7]',
-                        'green' => 'from-[#1e9975] to-[#1683ab]'
-                    ];
-                    $colorClass = $colorClasses[$plan['color']] ?? 'from-[#1683ab] to-[#1e9975]';
-                ?>
-                <div class="plan-card bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8 relative <?php echo isset($plan['popular']) && $plan['popular'] ? 'ring-2 ring-[#1e9975]/50' : ''; ?>">
-                    <?php if (isset($plan['popular']) && $plan['popular']) { ?>
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="popular-badge text-white text-sm font-medium px-4 py-2 rounded-full">Най-популярен</span>
-                    </div>
-                    <?php } ?>
-                    
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 rounded-xl bg-gradient-to-r <?php echo $colorClass; ?> flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-brands fa-wordpress text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2"><?php echo htmlspecialchars($plan['name']); ?></h3>
-                        <p class="text-gray-400 mb-6"><?php echo htmlspecialchars($plan['description']); ?></p>
-                        
-                        <div class="mb-6">
-                            <!-- Monthly Price -->
-                            <div class="monthly-price">
-                                <div class="flex items-baseline justify-center gap-2">
-                                    <span class="text-4xl font-bold text-white"><?php echo htmlspecialchars($plan['monthly_price']); ?></span>
-                                    <span class="text-gray-400"><?php echo htmlspecialchars($plan['currency'] . $plan['monthly_period']); ?></span>
-                                </div>
-                            </div>
-                            
-                            <!-- Yearly Price -->
-                            <div class="yearly-price hidden">
-                                <div class="flex items-baseline justify-center gap-2">
-                                    <span class="text-4xl font-bold text-white"><?php echo htmlspecialchars($plan['yearly_monthly_price']); ?></span>
-                                    <span class="text-gray-400"><?php echo htmlspecialchars($plan['currency'] . $plan['yearly_period']); ?></span>
-                                </div>
-                                <div class="text-sm text-gray-500 mt-2">
-                                    <span class="line-through"><?php echo htmlspecialchars($plan['monthly_price'] . $plan['currency']); ?></span>
-                                    <span class="text-[#1e9975] ml-2"><?php echo htmlspecialchars($plan['yearly_discount']); ?> отстъпка</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full px-6 py-3 btn-primary text-white font-medium rounded-xl">
-                            Избери план
-                        </button>
-                    </div>
-                </div>
-                <?php } ?>
-            </div>
+    <section id="plans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+         <?php include 'parts/pricing-plans-tabs.php'; ?>
         </div>
     </section>
 
@@ -702,7 +480,7 @@
     </section>
 
     <!-- Service Details Section -->
-    <section class="relative py-20 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
+    <section class="relative py-20">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16 scroll-fade-in">
                 <div class="inline-flex items-center gap-2 bg-[#1683ab]/10 rounded-full px-4 py-2 mb-6">
@@ -812,7 +590,7 @@
     <!-- CTA Section -->
     <section class="relative py-16">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="bg-gradient-to-r from-[#1683ab]/15 via-transparent to-[#1e9975]/15 border border-white/10 rounded-2xl p-8 md:p-12 scroll-glow-in">
+            <div class="bg-gradient-to-r from-[#1683ab]/15 via-transparent to-[#1e9975]/15 border border-white/10 rounded-2xl p-8 md:p-12 ">
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 scroll-scale-in">Готови да започнете?</h2>
                 <p class="text-gray-300 mb-8 max-w-2xl mx-auto scroll-slide-left">
                     Изберете вашия WordPress Support план и получите професионална поддръжка за вашия сайт днес.
@@ -830,92 +608,6 @@
     </section>
 
     <?php include 'footer.php'; ?>
-
-    <script>
-        // Pricing Toggle Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthlyToggle = document.getElementById('monthly-toggle');
-            const yearlyToggle = document.getElementById('yearly-toggle');
-            const monthlyPrices = document.querySelectorAll('.monthly-price');
-            const yearlyPrices = document.querySelectorAll('.yearly-price');
-
-            function showMonthly() {
-                monthlyToggle.classList.add('active');
-                yearlyToggle.classList.remove('active');
-                monthlyPrices.forEach(price => price.classList.remove('hidden'));
-                yearlyPrices.forEach(price => price.classList.add('hidden'));
-            }
-
-            function showYearly() {
-                yearlyToggle.classList.add('active');
-                monthlyToggle.classList.remove('active');
-                monthlyPrices.forEach(price => price.classList.add('hidden'));
-                yearlyPrices.forEach(price => price.classList.remove('hidden'));
-            }
-
-            monthlyToggle.addEventListener('click', showMonthly);
-            yearlyToggle.addEventListener('click', showYearly);
-
-            // Initialize with monthly pricing
-            showMonthly();
-
-            // Scroll Animation Observer
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all scroll animation elements
-            const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in, .scroll-bounce-in, .scroll-glow-in');
-            scrollElements.forEach(el => observer.observe(el));
-
-            // Add stagger effect to service cards
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-
-            // Add stagger effect to plan cards
-            const planCards = document.querySelectorAll('.plan-card');
-            planCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.2}s`;
-            });
-
-            // Enhanced hover effects for interactive elements
-            const interactiveElements = document.querySelectorAll('.plan-card, .service-card, .btn-primary');
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 </html>
