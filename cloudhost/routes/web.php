@@ -9,3 +9,8 @@ Route::get('/', function () {
 Route::get('/plans/{group}', function ($group) {
     return view('plans', compact('group'));
 })->name('plans.index');
+
+
+Route::get('/domains', function () {
+    return view('domains');
+});

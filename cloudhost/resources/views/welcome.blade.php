@@ -19,10 +19,6 @@
 
 @push('scripts')
     <style>
-        body {
-            background-color: #121212;
-            font-family: 'Comfortaa', cursive;
-        }
 
         /* Floating Cloud Animations */
         @keyframes float-slow {

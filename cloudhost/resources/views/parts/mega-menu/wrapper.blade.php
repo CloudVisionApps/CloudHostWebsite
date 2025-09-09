@@ -16,7 +16,7 @@
                     <a href="{{$section->url}}" class="block">
                 @endif
 
-                <div class="flex items-start gap-4 mb-5">
+                <div class="flex items-start gap-4">
                     <div class="w-12 h-12 from-[#1683ab] to-[#1e9975] bg-gradient-to-br rounded-2xl flex items-center justify-center shadow-lg {{ $section->url ? 'group-hover/section:scale-110 group-hover/section:rotate-3 transition-all duration-500 ease-out' : '' }}">
                         <x-icon class="text-white w-6 h-6" :name="$section->icon" />
                     </div>
