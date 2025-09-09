@@ -33,6 +33,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->json('features')->nullable(); // Additional features as JSON
             $table->integer('sort_order')->default(0);
+            $table->integer('group_id')->nullable(); // Foreign key to plan_groups
             $table->timestamps();
             $table->softDeletes();
         });

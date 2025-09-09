@@ -88,6 +88,11 @@ class Plan extends Model
         return $query->orderBy('sort_order')->orderBy('monthly_price');
     }
 
+    public function group()
+    {
+        return $this->belongsTo(PlanGroup::class, 'group_id');
+    }
+
     /**
      * Get the features for this plan
      */
@@ -154,7 +159,7 @@ class Plan extends Model
 
             // Find settings for this feature
             $settings = collect($featureSettings)->firstWhere('feature_id', $featureId);
-            
+
             $pivotData = [
                 'value' => $settings['value'] ?? null,
                 'is_included' => $settings['is_included'] ?? true,

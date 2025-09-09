@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('addon_currency', 3)->default('USD'); // Currency for addon price
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);
+            $table->integer('group_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

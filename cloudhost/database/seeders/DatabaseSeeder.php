@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,11 +22,12 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         $this->call([
-//            PlanSeeder::class,
-//            DomainSeeder::class,
-//        WordPressPlanSeeder::class,
-//        FAQSeeder::class,
-        PlanFeatureSeeder::class
+            DomainSeeder::class,
+            WordPressPlanSeeder::class,
+            FAQSeeder::class,
+            PlanGroupSeeder::class,
+            PlanSeeder::class,
+            PlanFeatureSeeder::class
         ]);
     }
 }

@@ -10,6 +10,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -20,6 +21,7 @@ class PlanForm
         return $schema
             ->components([
                 Section::make('Basic Information')
+                    ->columnSpanFull()
                     ->schema([
                         Grid::make(2)
                             ->schema([
@@ -36,6 +38,15 @@ class PlanForm
                                     ->unique(ignoreRecord: true)
 //                                    ->rules(['alpha_dash'])
                                     ->helperText('Will be auto-generated from name if left empty'),
+
+                                    Select::make('group_id')
+                                        ->label('Plan Group')
+                                        ->relationship('group', 'name')
+                                        ->searchable()
+                                        ->preload()
+                                        ->required()
+                                        ->columnSpanFull()
+                                        ->helperText('Select the group this plan belongs to'),
                             ]),
                         Textarea::make('description')
                             ->rows(3)
