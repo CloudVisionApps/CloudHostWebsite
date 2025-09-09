@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Plan extends Model
 {
@@ -81,5 +82,56 @@ class Plan extends Model
     public function scopeOrdered($query)
     {
         return $query->orderBy('sort_order')->orderBy('monthly_price');
+    }
+
+    /**
+     * Get the features for this plan
+     */
+    public function features(): BelongsToMany
+    {
+        return $this->belongsToMany(PlanFeature::class, 'plan_plan_feature')
+                    ->withPivot(['value', 'is_included', 'is_available', 'addon_price', 'sort_order'])
+                    ->withTimestamps();
+    }
+
+    /**
+     * Get only included features (not addons)
+     */
+    public function includedFeatures()
+    {
+        return $this->features()->wherePivot('is_included', true);
+    }
+
+    /**
+     * Get available addon features
+     */
+    public function availableAddons()
+    {
+        return $this->features()->wherePivot('is_available', true)->where('is_addon', true);
+    }
+
+    /**
+     * Get a specific feature value for this plan
+     */
+    public function getFeatureValue($featureSlug)
+    {
+        $feature = $this->features()->where('slug', $featureSlug)->first();
+        return $feature ? $feature->pivot->value : null;
+    }
+
+    /**
+     * Check if plan has a specific feature
+     */
+    public function hasFeature($featureSlug): bool
+    {
+        return $this->features()->where('slug', $featureSlug)->wherePivot('is_included', true)->exists();
+    }
+
+    /**
+     * Check if plan has a specific addon available
+     */
+    public function hasAddonAvailable($featureSlug): bool
+    {
+        return $this->features()->where('slug', $featureSlug)->wherePivot('is_available', true)->exists();
     }
 }
