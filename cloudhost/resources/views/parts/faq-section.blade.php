@@ -141,14 +141,14 @@
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                            <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-blue-500 text-white text-xl px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
+                            <a href="/contact-us" class="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-blue-500 text-white text-xl px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:-translate-y-2 flex items-center justify-center">
                                 <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <span class="relative z-10 flex items-center">
                                     <i class="fas fa-headset mr-4 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                                     Свържете се с нас
                                 </span>
                             </a>
-                            <a href="#plans" class="group relative overflow-hidden border-2 border-white/30 text-white text-xl px-12 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:border-emerald-400/50 hover:bg-white/10">
+                            <a href="/" class="group relative overflow-hidden border-2 border-white/30 text-white text-xl px-12 py-5 rounded-2xl font-bold transition-all duration-500 flex items-center justify-center backdrop-blur-sm hover:border-emerald-400/50 hover:bg-white/10">
                                 <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <span class="relative z-10 flex items-center">
                                     <i class="fas fa-rocket mr-4 text-2xl group-hover:animate-bounce"></i>
