@@ -228,6 +228,83 @@ class WordPressPlanFeatureSeeder extends Seeder
                 'sort_order' => 27,
                 'group_id' => $groupIds['wordpress-support'],
             ],
+            [
+                'name' => 'Работно време',
+                'slug' => 'working-hours',
+                'description' => 'График на работа на техническата поддръжка - 9:00-18:00 (Пн-Пт), 8:00-20:00 (Пн-Пт) + 10:00-16:00 (Сб), или 24/7',
+                'icon' => 'fas-clock',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 28,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Време за отговор',
+                'slug' => 'response-time',
+                'description' => 'Гарантирано време за отговор на техническата поддръжка - 24 часа, 4 часа или 30 минути',
+                'icon' => 'fas-stopwatch',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 29,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Включени сайтове',
+                'slug' => 'included-sites',
+                'description' => 'Брой включени сайтове в плана - 1 сайт, 3 сайта или неограничени',
+                'icon' => 'fas-globe',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 30,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Честота на резервни копия',
+                'slug' => 'backup-frequency',
+                'description' => 'Честота на създаване на резервни копия - седмично, ежедневно или в реално време',
+                'icon' => 'fas-cloud-arrow-down',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 31,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Мониторинг на сигурността',
+                'slug' => 'security-monitoring',
+                'description' => 'Ниво на мониторинг на сигурността - основно, разширено или enterprise',
+                'icon' => 'fas-shield-virus',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 32,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Оптимизация на производителността',
+                'slug' => 'performance-optimization',
+                'description' => 'Ниво на оптимизация на производителността - основно, разширено или максимално',
+                'icon' => 'fas-tachometer-alt',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 33,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
+            [
+                'name' => 'Приоритет',
+                'slug' => 'priority',
+                'description' => 'Приоритет на техническата поддръжка - стандартно, високо или VIP',
+                'icon' => 'fas-star',
+                'type' => 'text',
+                'is_addon' => false,
+                'is_active' => true,
+                'sort_order' => 34,
+                'group_id' => $groupIds['wordpress-support'],
+            ],
         ];
 
         // Create WordPress support features
@@ -260,14 +337,56 @@ class WordPressPlanFeatureSeeder extends Seeder
         })->active()->get();
 
         foreach ($wordpressFeatures as $feature) {
+            // Determine if this is an addon feature or a plan-level feature
+            $isAddon = $feature->is_addon;
+            
+            // Get the appropriate value for plan-level features
+            $value = $this->getWordPressFeatureValueForPlan($plan, $feature);
+            
             $plan->features()->attach($feature->id, [
-                'value' => null,
-                'is_included' => false,
-                'is_available' => true,
-                'addon_price' => $feature->addon_price,
+                'value' => $value,
+                'is_included' => !$isAddon, // Plan-level features are included, addons are not
+                'is_available' => $isAddon, // Only addon features are available as upgrades
+                'addon_price' => $isAddon ? $feature->addon_price : null,
                 'sort_order' => $feature->sort_order,
             ]);
         }
+    }
+
+    private function getWordPressFeatureValueForPlan(Plan $plan, PlanFeature $feature): ?string
+    {
+        // Map plan attributes to feature values based on plan slug
+        $planFeatureMap = [
+            'wordpress-basic' => [
+                'working-hours' => '9:00 - 18:00 (Пн-Пт)',
+                'response-time' => '24 часа',
+                'included-sites' => '1 сайт',
+                'backup-frequency' => 'Седмично',
+                'security-monitoring' => 'Основно',
+                'performance-optimization' => 'Основно',
+                'priority' => 'Стандартно'
+            ],
+            'wordpress-professional' => [
+                'working-hours' => '8:00 - 20:00 (Пн-Пт), 10:00 - 16:00 (Сб)',
+                'response-time' => '4 часа',
+                'included-sites' => '3 сайта',
+                'backup-frequency' => 'Ежедневно',
+                'security-monitoring' => 'Разширено',
+                'performance-optimization' => 'Разширено',
+                'priority' => 'Високо'
+            ],
+            'wordpress-enterprise' => [
+                'working-hours' => '24/7',
+                'response-time' => '30 минути',
+                'included-sites' => 'Неограничени',
+                'backup-frequency' => 'В реално време',
+                'security-monitoring' => 'Enterprise',
+                'performance-optimization' => 'Максимално',
+                'priority' => 'VIP'
+            ]
+        ];
+
+        return $planFeatureMap[$plan->slug][$feature->slug] ?? null;
     }
 
     private function getFeatureGroupIds(): array
