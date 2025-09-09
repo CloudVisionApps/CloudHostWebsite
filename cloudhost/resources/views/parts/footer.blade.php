@@ -24,22 +24,36 @@
                         Последвайте ни
                     </h5>
                     <div class="flex space-x-4 scroll-stagger">
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                        @if(settings('facebook'))
+                        <a href="{{settings('facebook')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-facebook-f text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                        @endif
+                        @if(settings('twitter'))
+                        <a href="{{settings('twitter')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-twitter text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                        @endif
+                        @if(settings('linkedin'))
+                        <a href="{{settings('linkedin')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-linkedin-in text-lg relative z-10"></i>
                         </a>
-                        <a href="#" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                        @endif
+                        @if(settings('instagram'))
+                        <a href="{{settings('instagram')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                             <i class="fab fa-instagram text-lg relative z-10"></i>
                         </a>
+                        @endif
+                        @if(settings('youtube'))
+                        <a href="{{settings('youtube')}}" target="_blank" class="group relative w-12 h-12 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 border border-white/5 rounded-xl flex items-center justify-center text-gray-300 hover:text-[#1e9975] hover:border-[#1e9975]/50 hover:bg-[#1e9975]/10 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-[#1e9975]/20 scroll-bounce-in">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#1683ab] to-[#1e9975] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                            <i class="fab fa-youtube text-lg relative z-10"></i>
+                        </a>
+                        @endif
                     </div>
                 </div>
 
@@ -49,14 +63,30 @@
                         <div class="w-8 h-8 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-300">
                             <i class="fas fa-envelope text-[#1e9975] text-sm"></i>
                         </div>
-                        <span class="group-hover:text-white transition-colors duration-300">support@cloudhost.bg</span>
+                        <span class="group-hover:text-white transition-colors duration-300">{{settings('email', 'support@cloudhost.bg')}}</span>
                     </div>
                     <div class="flex items-center text-gray-300 group scroll-slide-right">
                         <div class="w-8 h-8 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-300">
                             <i class="fas fa-phone text-[#1e9975] text-sm"></i>
                         </div>
-                        <span class="group-hover:text-white transition-colors duration-300">+359 888 123 456</span>
+                        <span class="group-hover:text-white transition-colors duration-300">{{settings('phone', '+359 888 123 456')}}</span>
                     </div>
+                    @if(settings('address'))
+                    <div class="flex items-center text-gray-300 group scroll-slide-right">
+                        <div class="w-8 h-8 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-300">
+                            <i class="fas fa-map-marker-alt text-[#1e9975] text-sm"></i>
+                        </div>
+                        <span class="group-hover:text-white transition-colors duration-300">{{settings('address')}}</span>
+                    </div>
+                    @endif
+                    @if(settings('website'))
+                    <div class="flex items-center text-gray-300 group scroll-slide-right">
+                        <div class="w-8 h-8 bg-gradient-to-r from-[#1683ab]/20 to-[#1e9975]/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-[#1683ab]/40 group-hover:to-[#1e9975]/40 transition-all duration-300">
+                            <i class="fas fa-globe text-[#1e9975] text-sm"></i>
+                        </div>
+                        <a href="{{settings('website')}}" target="_blank" class="group-hover:text-white transition-colors duration-300 hover:underline">{{settings('website')}}</a>
+                    </div>
+                    @endif
                 </div>
             </div>
 
@@ -132,9 +162,9 @@
                         <i class="fas fa-user-shield mr-2 text-xs group-hover:scale-110 transition-transform duration-300"></i>
                         Политика за поверителност
                     </a>
-                    <a href="#terms" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group>
+                    <a href="#terms" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group">
                         <i class="fas fa-file-contract mr-2 text-xs group-hover:scale-110 transition-transform duration-300"></i>
-                    Условия за ползване
+                        Условия за ползване
                     </a>
                     <a href="#cookies" class="text-gray-400 hover:text-[#1e9975] transition-all duration-300 hover:underline flex items-center group">
                         <i class="fas fa-cookie-bite mr-2 text-xs group-hover:scale-110 transition-transform duration-300"></i>
