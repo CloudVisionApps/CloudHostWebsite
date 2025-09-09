@@ -34,7 +34,7 @@ return new class extends Migration
             $table->json('features')->nullable(); // Additional features as JSON
             $table->integer('sort_order')->default(0);
             $table->integer('group_id')->nullable(); // Foreign key to plan_groups
-            
+
             // Plan Properties
             $table->boolean('popular')->default(false);
             $table->string('color', 20)->nullable();
