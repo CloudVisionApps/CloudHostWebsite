@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-search text-[#1683ab]"></i>
                         Търсене и проверка на домейни
                     </h3>
-                    
+
                     <!-- Search Input with Toggle -->
                     <div class="flex flex-col gap-4">
                         <div class="flex-1">
@@ -56,7 +56,7 @@
                                 </button>
                             </div>
                         </div>
-                        
+
                         <!-- Search Type Toggle -->
                         <div class="flex items-center gap-4">
                             <span class="text-sm text-gray-400">Режим на търсене:</span>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Search Results -->
                     <div id="search-results" class="mt-4 hidden">
                         <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
@@ -146,8 +146,8 @@
                             <?php } ?>
                         </div>
                         <div class="mt-5 flex items-center justify-between">
-                            <button class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">Регистрация</button>
-                            <button class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">Трансфер</button>
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=DOMAIN_HERE" class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">Регистрация</a>
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=DOMAIN_HERE" class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">Трансфер</a>
                         </div>
                     </div>
                 </div>
@@ -393,22 +393,22 @@
             function initializeFromUrl() {
                 const searchQuery = getUrlParameter('search');
                 const searchMode = getUrlParameter('mode');
-                
+
                 console.log('Initializing from URL:', { searchQuery, searchMode });
-                
+
                 // Set the correct mode first
                 if (searchMode === 'tld') {
                     switchMode('tld');
                 } else {
                     switchMode('domain');
                 }
-                
+
                 if (searchQuery) {
                     // Set the search input value
                     if (unifiedSearch) {
                         unifiedSearch.value = searchQuery;
                     }
-                    
+
                     // Perform the search automatically after a short delay
                     setTimeout(() => {
                         console.log('Performing auto-search for:', searchQuery);
@@ -432,7 +432,7 @@
             // Mode switching
             function switchMode(mode) {
                 currentMode = mode;
-                
+
                 if (mode === 'domain') {
                     domainModeBtn.classList.add('bg-[#1683ab]', 'text-white');
                     domainModeBtn.classList.remove('text-gray-400');
@@ -448,11 +448,11 @@
                     searchIcon.className = 'fa-solid fa-list';
                     unifiedSearch.placeholder = 'Търсене на TLD (напр. .com, .bg)';
                 }
-                
+
                 // Clear search results when switching modes
                 searchResults.classList.add('hidden');
                 unifiedSearch.value = '';
-                
+
                 // Update URL parameter for mode
                 setUrlParameter('mode', mode);
                 setUrlParameter('search', '');
@@ -461,9 +461,9 @@
             // Unified search function
             function performSearch() {
                 const query = unifiedSearch?.value?.trim();
-                
+
                 console.log('performSearch called:', { query, currentMode, unifiedSearch: !!unifiedSearch });
-                
+
                 if (!query) {
                     showSearchError('Моля, въведете домейн или TLD за търсене');
                     // Clear URL parameters when search is empty
@@ -563,8 +563,8 @@
                 let resultHtml = `
                     <div class="flex items-start gap-3">
                         <div class="flex-shrink-0">
-                            ${isAvailable ? 
-                                '<i class="fa-solid fa-check-circle text-green-400 text-lg"></i>' : 
+                            ${isAvailable ?
+                                '<i class="fa-solid fa-check-circle text-green-400 text-lg"></i>' :
                                 '<i class="fa-solid fa-times-circle text-red-400 text-lg"></i>'
                             }
                         </div>
@@ -692,7 +692,7 @@
 
             // Initialize from URL parameters first
             initializeFromUrl();
-            
+
             // Set default state only if no URL parameters
             const hasUrlParams = getUrlParameter('search') || getUrlParameter('mode');
             if (!hasUrlParams) {
