@@ -199,7 +199,7 @@
 
                             <!-- Domain Check Results -->
                             <div id="hero-domain-results" class="mt-4 hidden">
-                                <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+                                <div class="p-4 rounded-xl border border-white/10 bg-white/[0.01] backdrop-blur-sm">
                                     <div id="hero-domain-content" class="text-sm"></div>
                                 </div>
                             </div>
@@ -231,42 +231,18 @@
                         <p class="text-sm text-gray-400 font-medium">Популярни домейн разширения</p>
                     </div>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3">
+                        @foreach(\App\Models\Domain::limit(7)->get() as $domain)
                         <div class="group cursor-pointer">
                             <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.com</span>
-                                <span class="text-xs text-gray-400 ml-1">15лв</span>
+                                <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">
+                                    {{ $domain->tld }}
+                                </span>
+                                <span class="text-xs text-gray-400 ml-1">
+                                        {{ $domain->price }} {{$domain->currency}}
+                                </span>
                             </div>
                         </div>
-                        <div class="group cursor-pointer">
-                            <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.bg</span>
-                                <span class="text-xs text-gray-400 ml-1">12лв</span>
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer">
-                            <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.net</span>
-                                <span class="text-xs text-gray-400 ml-1">18лв</span>
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer">
-                            <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.org</span>
-                                <span class="text-xs text-gray-400 ml-1">20лв</span>
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer">
-                            <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1683ab]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1683ab] transition-colors duration-300">.eu</span>
-                                <span class="text-xs text-gray-400 ml-1">16лв</span>
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer">
-                            <div class="bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 border border-white/20 transition-all duration-300 hover:border-[#1e9975]/50 hover:scale-105">
-                                <span class="text-xs font-bold text-white group-hover:text-[#1e9975] transition-colors duration-300">.info</span>
-                                <span class="text-xs text-gray-400 ml-1">14лв</span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -328,10 +304,10 @@
                 <div class="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
                 Проверявам...
             `;
-            
+
             // Update indicator
             heroIndicator.className = 'w-2 h-2 bg-[#1683ab] rounded-full animate-pulse';
-            
+
             // Show results area
             heroResults.classList.remove('hidden');
             heroContent.innerHTML = `
@@ -350,7 +326,7 @@
                 <i class="fas fa-search text-xl"></i>
                 Провери наличност
             `;
-            
+
             const isAvailable = data.available;
             const domain = data.domain;
             const expiryDate = data.expiry_date;
@@ -362,8 +338,8 @@
             let resultHtml = `
                 <div class="flex items-start gap-3">
                     <div class="flex-shrink-0">
-                        ${isAvailable ? 
-                            '<i class="fa-solid fa-check-circle text-green-400 text-lg"></i>' : 
+                        ${isAvailable ?
+                            '<i class="fa-solid fa-check-circle text-green-400 text-lg"></i>' :
                             '<i class="fa-solid fa-times-circle text-red-400 text-lg"></i>'
                         }
                     </div>
@@ -413,10 +389,10 @@
                 <i class="fas fa-search text-xl"></i>
                 Провери наличност
             `;
-            
+
             // Update indicator
             heroIndicator.className = 'w-2 h-2 bg-red-400 rounded-full animate-pulse';
-            
+
             // Show error
             heroResults.classList.remove('hidden');
             heroContent.innerHTML = `
