@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\DomainController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,6 @@ Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscrib
 // Domain routes
 Route::post('/domains/check-availability', [DomainController::class, 'checkAvailability'])->name('domains.check-availability');
 Route::get('/domains/suggestions', [DomainController::class, 'getSuggestions'])->name('domains.suggestions');
+
+// Contact form routes
+Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.submit');

@@ -113,7 +113,8 @@
             </div>
 
             <div class="bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8">
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" class="space-y-6" action="{{ route('contact.submit') }}" method="POST">
+                    @csrf
                     <input type="hidden" id="selected-department" name="department" value="">
 
                     <!-- Name and Email Row -->
@@ -327,30 +328,109 @@
             }
 
             // Form submission
-            contactForm.addEventListener('submit', (e) => {
+            contactForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                // Get form data
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-
-                // Simulate form submission
                 const submitButton = contactForm.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
 
                 submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Изпраща се...';
                 submitButton.disabled = true;
 
-                // Simulate API call
-                setTimeout(() => {
-                    alert('Съобщението е изпратено успешно! Ще се свържем с вас възможно най-скоро.');
-                    contactForm.reset();
-                    hideContactForm();
+                try {
+                    const formData = new FormData(contactForm);
+                    
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
+                    });
 
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Show success message
+                        showNotification(result.message, 'success');
+                        contactForm.reset();
+                        hideContactForm();
+                    } else {
+                        // Show validation errors
+                        showNotification(result.message, 'error');
+                        if (result.errors) {
+                            displayValidationErrors(result.errors);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    showNotification('Възникна грешка при изпращането на съобщението. Моля, опитайте отново.', 'error');
+                } finally {
                     submitButton.innerHTML = originalText;
                     submitButton.disabled = false;
-                }, 2000);
+                }
             });
+
+            // Show notification function
+            function showNotification(message, type) {
+                // Remove existing notifications
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notification => notification.remove());
+
+                const notification = document.createElement('div');
+                notification.className = `notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg max-w-md ${
+                    type === 'success' 
+                        ? 'bg-green-600 text-white' 
+                        : 'bg-red-600 text-white'
+                }`;
+                notification.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                        <span>${message}</span>
+                        <button onclick="this.parentElement.parentElement.remove()" class="ml-auto text-white hover:text-gray-200">
+                            <i class="fa-solid fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 5000);
+            }
+
+            // Display validation errors
+            function displayValidationErrors(errors) {
+                // Clear previous error styling
+                const inputs = contactForm.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.classList.remove('border-red-500', 'ring-red-500');
+                    input.classList.add('border-white/10');
+                });
+
+                // Remove previous error messages
+                const existingErrors = contactForm.querySelectorAll('.error-message');
+                existingErrors.forEach(error => error.remove());
+
+                // Add error styling and messages
+                Object.keys(errors).forEach(field => {
+                    const input = contactForm.querySelector(`[name="${field}"]`);
+                    if (input) {
+                        input.classList.remove('border-white/10');
+                        input.classList.add('border-red-500', 'ring-red-500');
+                        
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-message text-red-400 text-sm mt-1';
+                        errorDiv.textContent = errors[field][0];
+                        input.parentElement.appendChild(errorDiv);
+                    }
+                });
+            }
 
             // Check for hash on page load
             function checkHashOnLoad() {

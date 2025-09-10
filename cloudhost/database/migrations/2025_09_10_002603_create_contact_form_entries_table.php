@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('priority')->nullable(); // Приоритет
             $table->string('service_type')->nullable(); // Тип услуга
             $table->text('message'); // Съобщение *
+            $table->text('department')->nullable();
+            $table->text('ip_address')->nullable();
             $table->timestamps();
         });
     }
