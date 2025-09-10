@@ -48,3 +48,17 @@ function get_hosting_mega_menu_data()
         sections: $megaMenuSections
     );
 }
+
+function get_contact_info()
+{
+    return [
+        'email' => settings('email', 'support@example.com'),
+        'phone' => settings('phone', '+359 888 123 456'),
+        'address' => settings('address', 'София, България'),
+        'website' => settings('website', 'https://example.com'),
+        'support_hours' => settings('support_hours', 'Понеделник - Петък 9:00 - 18:00'),
+        'response_time' => settings('response_time', 'Отговоряме в рамките на 24 часа'),
+        'support' => settings('support', '24/7 - 365 дни в годината'),
+        'emergency_phone' => settings('emergency_phone', '+359 888 123 456'),
+    ];
+}

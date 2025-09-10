@@ -19,10 +19,10 @@
         <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
             <div class="mb-8">
                 <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
-                    Свържете се с <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">нас</span>
+                    Свържете се с <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">{{ settings('site_name', 'нас') }}</span>
                 </h1>
                 <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
-                    Имате въпроси? Нуждаете се от помощ? Нашият екип е тук да ви помогне с всичко, от техническа поддръжка до продажби.
+                    {{ settings('tagline', 'Имате въпроси? Нуждаете се от помощ? Нашият екип е тук да ви помогне с всичко, от техническа поддръжка до продажби.') }}
                 </p>
             </div>
         </div>
@@ -204,8 +204,8 @@
                         <i class="fa-solid fa-envelope text-xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-white mb-2">Имейл</h3>
-                    <p class="text-sm text-gray-400 mb-3">Отговоряме в рамките на 24 часа</p>
-                    <a href="mailto:support@example.com" class="text-[#1683ab] hover:text-[#1e9975] transition-colors text-sm font-medium">support@example.com</a>
+                    <p class="text-sm text-gray-400 mb-3">{{ get_contact_info()['response_time'] }}</p>
+                    <a href="mailto:{{ get_contact_info()['email'] }}" class="text-[#1683ab] hover:text-[#1e9975] transition-colors text-sm font-medium">{{ get_contact_info()['email'] }}</a>
                 </div>
 
                 <!-- Phone -->
@@ -214,8 +214,8 @@
                         <i class="fa-solid fa-phone text-xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-white mb-2">Телефон</h3>
-                    <p class="text-sm text-gray-400 mb-3">Понеделник - Петък 9:00 - 18:00</p>
-                    <a href="tel:+359888123456" class="text-[#1e9975] hover:text-[#1683ab] transition-colors text-sm font-medium">+359 888 123 456</a>
+                    <p class="text-sm text-gray-400 mb-3">{{ get_contact_info()['support_hours'] }}</p>
+                    <a href="tel:{{ get_contact_info()['phone'] }}" class="text-[#1e9975] hover:text-[#1683ab] transition-colors text-sm font-medium">{{ get_contact_info()['phone'] }}</a>
                 </div>
 
                 <!-- Live Chat -->
@@ -246,11 +246,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto scroll-stagger">
                         <div class="scroll-slide-left">
                             <h4 class="text-lg font-medium text-[#1683ab] mb-2">Техническа поддръжка</h4>
-                            <p class="text-gray-300">24/7 - 365 дни в годината</p>
+                            <p class="text-gray-300">{{ get_contact_info()['support'] }}</p>
                         </div>
                         <div class="scroll-slide-right">
                             <h4 class="text-lg font-medium text-[#1e9975] mb-2">Продажби</h4>
-                            <p class="text-gray-300">Понеделник - Петък: 9:00 - 18:00</p>
+                            <p class="text-gray-300">{{ get_contact_info()['support_hours'] }}</p>
                             <p class="text-gray-300">Събота: 10:00 - 14:00</p>
                         </div>
                     </div>
