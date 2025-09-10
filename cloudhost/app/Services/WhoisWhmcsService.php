@@ -43,8 +43,9 @@ class WhoisWhmcsService
                 'domain' => $domain
             ]);
 
-            if (!$result['success']) {
-                throw new \Exception('WHMCS API returned error: ' . ($result['message'] ?? 'Unknown error'));
+            // Check for WHMCS API errors
+            if (isset($result['result']) && $result['result'] === 'error') {
+                throw new \Exception('WHMCS API error: ' . ($result['message'] ?? 'Unknown error'));
             }
 
             return $this->parseWhmcsResponse($result, $domain);
@@ -72,8 +73,9 @@ class WhoisWhmcsService
 
             $result = $this->callWhmcsApi('GetTLDPricing', $params);
 
-            if (!$result['success']) {
-                return [];
+            // Check for WHMCS API errors
+            if (isset($result['result']) && $result['result'] === 'error') {
+                throw new \Exception('WHMCS API error: ' . ($result['message'] ?? 'Unknown error'));
             }
 
             return $result['pricing'] ?? [];
@@ -98,8 +100,9 @@ class WhoisWhmcsService
                 'domain' => $domain
             ]);
 
-            if (!$result['success']) {
-                return [];
+            // Check for WHMCS API errors
+            if (isset($result['result']) && $result['result'] === 'error') {
+                throw new \Exception('WHMCS API error: ' . ($result['message'] ?? 'Unknown error'));
             }
 
             return $result['suggestions'] ?? [];
@@ -143,6 +146,12 @@ class WhoisWhmcsService
 
         $data = $response->json();
 
+        // Log the response for debugging
+        Log::debug('WHMCS API Response', [
+            'action' => $action,
+            'response' => $data
+        ]);
+
         if (isset($data['result']) && $data['result'] === 'error') {
             throw new \Exception('WHMCS API error: ' . ($data['message'] ?? 'Unknown error'));
         }
@@ -155,8 +164,18 @@ class WhoisWhmcsService
      */
     protected function parseWhmcsResponse(array $result, string $domain): array
     {
-        $whoisData = $result['whois'] ?? '';
-        $status = $result['status'] ?? '';
+        // WHMCS DomainWhois API returns different structure
+        // Check for common WHMCS response patterns
+        $whoisData = $result['whois'] ?? $result['raw'] ?? '';
+        $status = $result['status'] ?? $result['result'] ?? '';
+
+        // Log the parsed data for debugging
+        Log::debug('Parsing WHMCS response', [
+            'domain' => $domain,
+            'whois_data_length' => strlen($whoisData),
+            'status' => $status,
+            'result_keys' => array_keys($result)
+        ]);
 
         // Check if domain is available
         $isAvailable = $this->isDomainAvailable($whoisData, $status);
