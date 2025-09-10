@@ -19,10 +19,10 @@
         <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
             <div class="mb-8">
                 <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
-                    Свържете се с <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">{{ settings('site_name', 'нас') }}</span>
+                    Свържете се с <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">нас</span>
                 </h1>
                 <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
-                    {{ settings('tagline', 'Имате въпроси? Нуждаете се от помощ? Нашият екип е тук да ви помогне с всичко, от техническа поддръжка до продажби.') }}
+                    Имате въпроси? Нуждаете се от помощ? Нашият екип е тук да ви помогне с всичко, от техническа поддръжка до продажби.
                 </p>
             </div>
         </div>
@@ -214,7 +214,7 @@
                         <i class="fa-solid fa-phone text-xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-white mb-2">Телефон</h3>
-                    <p class="text-sm text-gray-400 mb-3">{{ get_contact_info()['support_hours'] }}</p>
+                    <p class="text-sm text-gray-400 mb-3">{!! get_contact_info()['support_hours'] !!}</p>
                     <a href="tel:{{ get_contact_info()['phone'] }}" class="text-[#1e9975] hover:text-[#1683ab] transition-colors text-sm font-medium">{{ get_contact_info()['phone'] }}</a>
                 </div>
 
@@ -250,8 +250,7 @@
                         </div>
                         <div class="scroll-slide-right">
                             <h4 class="text-lg font-medium text-[#1e9975] mb-2">Продажби</h4>
-                            <p class="text-gray-300">{{ get_contact_info()['support_hours'] }}</p>
-                            <p class="text-gray-300">Събота: 10:00 - 14:00</p>
+                            <p class="text-gray-300">{!! get_contact_info()['support_hours'] !!}</p>
                         </div>
                     </div>
                 </div>
@@ -339,7 +338,7 @@
 
                 try {
                     const formData = new FormData(contactForm);
-                    
+
                     const response = await fetch(contactForm.action, {
                         method: 'POST',
                         body: formData,
@@ -380,8 +379,8 @@
 
                 const notification = document.createElement('div');
                 notification.className = `notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg max-w-md ${
-                    type === 'success' 
-                        ? 'bg-green-600 text-white' 
+                    type === 'success'
+                        ? 'bg-green-600 text-white'
                         : 'bg-red-600 text-white'
                 }`;
                 notification.innerHTML = `
@@ -393,7 +392,7 @@
                         </button>
                     </div>
                 `;
-                
+
                 document.body.appendChild(notification);
 
                 // Auto remove after 5 seconds
@@ -423,7 +422,7 @@
                     if (input) {
                         input.classList.remove('border-white/10');
                         input.classList.add('border-red-500', 'ring-red-500');
-                        
+
                         const errorDiv = document.createElement('div');
                         errorDiv.className = 'error-message text-red-400 text-sm mt-1';
                         errorDiv.textContent = errors[field][0];
