@@ -146,8 +146,8 @@
                             <?php } ?>
                         </div>
                         <div class="mt-5 flex items-center justify-between">
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=DOMAIN_HERE" class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">Регистрация</a>
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=DOMAIN_HERE" class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">Трансфер</a>
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=<?php echo urlencode($label); ?>" class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">Регистрация</a>
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=<?php echo urlencode($label); ?>" class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">Трансфер</a>
                         </div>
                     </div>
                 </div>
@@ -590,14 +590,15 @@
                 }
 
                 if (isAvailable) {
+                    const encodedDomain = encodeURIComponent(domain);
                     resultHtml += `
                         <div class="mt-3 flex gap-2">
-                            <button class="px-3 py-1.5 bg-[#1e9975] text-white text-xs rounded-lg hover:bg-[#1e9975]/90 transition-colors">
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=${encodedDomain}" class="px-3 py-1.5 bg-[#1e9975] text-white text-xs rounded-lg hover:bg-[#1e9975]/90 transition-colors">
                                 <i class="fa-solid fa-shopping-cart mr-1"></i> Регистрация
-                            </button>
-                            <button class="px-3 py-1.5 border border-white/20 text-gray-300 text-xs rounded-lg hover:border-[#1683ab]/40 hover:text-white transition-colors">
-                                <i class="fa-solid fa-heart mr-1"></i> Добави в любими
-                            </button>
+                            </a>
+                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=${encodedDomain}" class="px-3 py-1.5 border border-white/20 text-gray-300 text-xs rounded-lg hover:border-[#1683ab]/40 hover:text-white transition-colors">
+                                <i class="fa-solid fa-right-left mr-1"></i> Трансфер
+                            </a>
                         </div>
                     `;
                 }
