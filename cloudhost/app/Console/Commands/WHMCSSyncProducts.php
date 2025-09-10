@@ -129,14 +129,21 @@ class WHMCSSyncProducts extends Command
                 'group_id' => $defaultGroup->id,
             ];
 
-            // Check if plan already exists by name or slug
-            $existingPlan = Plan::where('name', $productData['name'])
-                ->orWhere('slug', $productData['slug'])
-                ->first();
+            // Check if plan already exists by name or slug (including soft-deleted)
+            $existingPlanByName = Plan::withTrashed()->where('name', $productData['name'])->first();
+            $existingPlanBySlug = Plan::withTrashed()->where('slug', $productData['slug'])->first();
+            
+            
+            $existingPlan = $existingPlanByName ?: $existingPlanBySlug;
 
             if ($dryRun) {
                 $action = $existingPlan ? 'UPDATE' : 'CREATE';
-                $conflict = $existingPlan && $existingPlan->name !== $productData['name'] ? ' (SLUG CONFLICT)' : '';
+                $conflict = '';
+                if ($existingPlan) {
+                    if ($existingPlan->name !== $productData['name']) {
+                        $conflict = ' (SLUG CONFLICT)';
+                    }
+                }
                 $this->line("[DRY-RUN] PRODUCT {$action}: {$productData['name']} - {$currency} {$monthlyPrice}/month{$conflict}");
                 $syncedProducts++;
                 continue;
@@ -147,6 +154,13 @@ class WHMCSSyncProducts extends Command
                 if ($existingPlan->name !== $productData['name']) {
                     $this->warn("Slug conflict: Plan '{$existingPlan->name}' already has slug '{$productData['slug']}', updating instead of creating '{$productData['name']}'");
                 }
+                
+                // If plan is soft-deleted, restore it first
+                if ($existingPlan->trashed()) {
+                    $this->info("Restoring soft-deleted plan: {$existingPlan->name}");
+                    $existingPlan->restore();
+                }
+                
                 // Update existing plan
                 $existingPlan->update($productData);
                 $updatedProducts++;
