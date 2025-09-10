@@ -4,6 +4,11 @@ import './bootstrap';
 class CartManager {
     constructor() {
         this.cartEndpoint = 'https://www.cloudhost.bg/members/cart.php';
+        this.tokenCache = {
+            value: null,
+            timestamp: null,
+            ttl: 5 * 60 * 1000 // 5 minutes TTL
+        };
         this.init();
     }
 
@@ -40,7 +45,7 @@ class CartManager {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 credentials: 'include', // Include cookies for WHMCS session
-                body: this.buildFormData(params)
+                body: await this.buildFormData(params)
             });
 
             if (response.ok) {
@@ -61,11 +66,11 @@ class CartManager {
         }
     }
 
-    buildFormData(params) {
+    async buildFormData(params) {
         const formData = new URLSearchParams();
         
         // Add token (you may need to get this from your backend or a meta tag)
-        const token = this.getToken();
+        const token = await this.getToken();
         if (token) {
             formData.append('token', token);
         }
@@ -95,7 +100,7 @@ class CartManager {
         return formData;
     }
 
-    getToken() {
+    async getToken() {
         // Try to get token from meta tag first
         const tokenMeta = document.querySelector('meta[name="whmcs-token"]');
         if (tokenMeta) {
@@ -107,8 +112,92 @@ class CartManager {
             return window.whmcsToken;
         }
         
-        // Default token (you should replace this with a proper token)
+        // Check if we have a valid cached token
+        if (this.tokenCache.value && this.tokenCache.timestamp) {
+            const now = Date.now();
+            if (now - this.tokenCache.timestamp < this.tokenCache.ttl) {
+                return this.tokenCache.value;
+            }
+        }
+        
+        // Try to fetch token from CloudHost.bg members page
+        try {
+            const token = await this.fetchTokenFromCloudHost();
+            if (token) {
+                // Cache the token
+                this.tokenCache.value = token;
+                this.tokenCache.timestamp = Date.now();
+                return token;
+            }
+        } catch (error) {
+            console.warn('Failed to fetch token from CloudHost.bg:', error);
+        }
+        
+        // Fallback to default token
         return 'ef7d7dfc51bdbd40aadeab642cdf2255c9edb28e';
+    }
+
+    async fetchTokenFromCloudHost() {
+        try {
+            const response = await fetch('https://cloudhost.bg/members/index.php', {
+                method: 'GET',
+                credentials: 'include', // Include cookies for session
+                headers: {
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const html = await response.text();
+            
+            // Parse the HTML to extract the token from the hidden input field
+            const tokenMatch = html.match(/<input[^>]*name="token"[^>]*value="([^"]*)"[^>]*>/i);
+            
+            if (tokenMatch && tokenMatch[1]) {
+                console.log('Successfully fetched token from CloudHost.bg');
+                return tokenMatch[1];
+            } else {
+                console.warn('Token not found in CloudHost.bg response');
+                return null;
+            }
+        } catch (error) {
+            console.error('Error fetching token from CloudHost.bg:', error);
+            throw error;
+        }
+    }
+
+    // Method to manually refresh the token cache
+    async refreshToken() {
+        try {
+            const token = await this.fetchTokenFromCloudHost();
+            if (token) {
+                this.tokenCache.value = token;
+                this.tokenCache.timestamp = Date.now();
+                console.log('Token cache refreshed successfully');
+                return token;
+            }
+        } catch (error) {
+            console.error('Failed to refresh token:', error);
+            throw error;
+        }
+    }
+
+    // Method to get current token value (synchronous)
+    getCurrentToken() {
+        return this.tokenCache.value;
+    }
+
+    // Method to check if token is expired
+    isTokenExpired() {
+        if (!this.tokenCache.value || !this.tokenCache.timestamp) {
+            return true;
+        }
+        const now = Date.now();
+        return now - this.tokenCache.timestamp >= this.tokenCache.ttl;
     }
 
     async handleAddToCart(button) {
@@ -221,7 +310,7 @@ class CartManager {
         const formData = new URLSearchParams();
         
         // Add token
-        const token = this.getToken();
+        const token = await this.getToken();
         if (token) {
             formData.append('token', token);
         }
@@ -270,6 +359,29 @@ class CartManager {
 // Initialize cart manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     window.cartManager = new CartManager();
+    
+    // Add global methods for testing and debugging
+    window.testTokenFetch = async function() {
+        console.log('Testing token fetch...');
+        try {
+            const token = await window.cartManager.refreshToken();
+            console.log('Current token:', token);
+            console.log('Token cache status:', {
+                hasToken: !!window.cartManager.getCurrentToken(),
+                isExpired: window.cartManager.isTokenExpired(),
+                timestamp: window.cartManager.tokenCache.timestamp
+            });
+            return token;
+        } catch (error) {
+            console.error('Token fetch failed:', error);
+            return null;
+        }
+    };
+    
+    // Auto-refresh token on page load
+    window.cartManager.getToken().then(token => {
+        console.log('Initial token loaded:', token);
+    });
 });
 
 // Export for use in other modules
