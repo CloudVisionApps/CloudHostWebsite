@@ -36,7 +36,7 @@ class CartManager {
             const url = new URL(window.location.origin + this.cartEndpoint);
 
             // Add action parameter to URL
-            url.searchParams.set('a', 'add');
+            url.searchParams.set('a', 'addToCart');
 
             // Make the request with the new POST format
             const response = await fetch(url.toString(), {
@@ -69,38 +69,46 @@ class CartManager {
     async buildFormData(params) {
         const formData = new URLSearchParams();
 
-        // Add token (you may need to get this from your backend or a meta tag)
-        const token = await this.getToken();
+        // Add token - ALWAYS fetch fresh token before adding to cart
+        const token = await this.getToken(true); // forceRefresh = true
         if (token) {
             formData.append('token', token);
         }
 
-        // Domain option (register or transfer)
-        formData.append('domainoption', params.domain || 'register');
-
-        // Domain array format: domains[]=domainname
-        if (params.query) {
-            formData.append('domains[]', params.query);
-
-            // Domain registration period: domainsregperiod[domainname]=1
-            formData.append(`domainsregperiod[${params.query}]`, params.regPeriod || '1');
+        // Domain parameters
+        if (params.domain == 'register') {
+            formData.append('domain', params.query);
         }
+
+        formData.append("whois", "0");
+        formData.append("sideorder", "0");
+        formData.append("idnlanguage", "");
 
         // Additional parameters
-        if (params.productId) {
+        if (params.productId > 0) {
             formData.append('pid', params.productId);
-        }
-        if (params.billingcycle) {
-            formData.append('billingcycle', params.billingcycle);
-        }
-        if (params.configoptions) {
-            formData.append('configoptions', params.configoptions);
         }
 
         return formData;
     }
 
-    async getToken() {
+    async getToken(forceRefresh = false) {
+        // If forceRefresh is true, always fetch fresh token from CloudHost.bg
+        if (forceRefresh) {
+            try {
+                const token = await this.fetchTokenFromCloudHost();
+                if (token) {
+                    // Cache the token
+                    this.tokenCache.value = token;
+                    this.tokenCache.timestamp = Date.now();
+                    console.log('Fresh token fetched from CloudHost.bg');
+                    return token;
+                }
+            } catch (error) {
+                console.warn('Failed to fetch fresh token from CloudHost.bg:', error);
+            }
+        }
+
         // Try to get token from meta tag first
         const tokenMeta = document.querySelector('meta[name="whmcs-token"]');
         if (tokenMeta) {
@@ -209,7 +217,7 @@ class CartManager {
         try {
             // Extract parameters from button data attributes
             const params = {
-                productId: button.dataset.productId || '64',
+                productId: button.dataset.productId || '0',
                 domainSelect: button.dataset.domainSelect || '1',
                 domain: button.dataset.domain || null,
                 query: button.dataset.query || null,
@@ -226,7 +234,7 @@ class CartManager {
                 // If there's a redirect URL, redirect after a short delay
                 if (result.redirectUrl) {
                     setTimeout(() => {
-                        window.location.href = result.redirectUrl;
+                        // window.location.href = result.redirectUrl;
                     }, 1500);
                 }
             } else {
@@ -283,77 +291,6 @@ class CartManager {
         }, 5000);
     }
 
-    // Public method to add domain to cart
-    async addDomainToCart(domain, action = 'register', regPeriod = '1') {
-        const params = {
-            productId: '64',
-            domain: action,
-            query: domain,
-            regPeriod: regPeriod
-        };
-
-        return await this.addToCart(params);
-    }
-
-    // Public method to add product to cart
-    async addProductToCart(productId, options = {}) {
-        const params = {
-            productId: productId,
-            ...options
-        };
-
-        return await this.addToCart(params);
-    }
-
-    // Method to add multiple domains at once
-    async addMultipleDomainsToCart(domains, action = 'register', regPeriod = '1') {
-        const formData = new URLSearchParams();
-
-        // Add token
-        const token = await this.getToken();
-        if (token) {
-            formData.append('token', token);
-        }
-
-        // Domain option
-        formData.append('domainoption', action);
-
-        // Add all domains
-        domains.forEach(domain => {
-            formData.append('domains[]', domain);
-            formData.append(`domainsregperiod[${domain}]`, regPeriod);
-        });
-
-        try {
-            const url = new URL(window.location.origin + this.cartEndpoint);
-            url.searchParams.set('a', 'add');
-
-            const response = await fetch(url.toString(), {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                credentials: 'include',
-                body: formData
-            });
-
-            if (response.ok) {
-                return {
-                    success: true,
-                    message: `${domains.length} домейна са добавени в количката успешно!`,
-                    redirectUrl: response.url
-                };
-            } else {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-        } catch (error) {
-            console.error('Cart error:', error);
-            return {
-                success: false,
-                message: 'Възникна грешка при добавянето на домейните в количката.'
-            };
-        }
-    }
 }
 
 // Initialize cart manager when DOM is loaded
