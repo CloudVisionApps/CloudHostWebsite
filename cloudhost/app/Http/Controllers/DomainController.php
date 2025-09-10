@@ -46,7 +46,7 @@ class DomainController extends Controller
             // Use WHMCS API for domain availability checking
             $result = $this->whmcsService->checkDomainAvailability($domain);
 
-            return response()->json([
+            $response = [
                 'success' => true,
                 'domain' => $domain,
                 'available' => $result['available'],
@@ -55,7 +55,23 @@ class DomainController extends Controller
                 'message' => $result['available']
                     ? 'Домейнът е наличен за регистрация'
                     : 'Домейнът е зает'
-            ]);
+            ];
+
+            // If domain is not available, get alternative suggestions
+            if (!$result['available']) {
+                try {
+                    $alternatives = $this->whmcsService->getAlternativeSuggestions($domain);
+                    $response['alternatives'] = $alternatives;
+                    $response['message'] = 'Домейнът е зает. Ето няколко алтернативи:';
+                } catch (\Exception $e) {
+                    \Log::warning('Failed to get alternative suggestions', [
+                        'domain' => $domain,
+                        'error' => $e->getMessage()
+                    ]);
+                }
+            }
+
+            return response()->json($response);
         } catch (\Exception $e) {
             \Log::error('WHMCS domain check failed', [
                 'domain' => $domain,

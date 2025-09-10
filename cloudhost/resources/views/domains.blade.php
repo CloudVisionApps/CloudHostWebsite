@@ -557,6 +557,7 @@
                 const domain = data.domain;
                 const expiryDate = data.expiry_date;
                 const registrar = data.registrar;
+                const alternatives = data.alternatives || [];
 
                 console.log('Showing domain result:', data);
 
@@ -579,7 +580,7 @@
                 `;
 
                 if (!isAvailable && (expiryDate || registrar)) {
-                    resultHtml += '<div class="text-xs text-gray-400 space-y-1">';
+                    resultHtml += '<div class="text-xs text-gray-400 space-y-1 mb-3">';
                     if (expiryDate) {
                         resultHtml += `<div><i class="fa-solid fa-calendar mr-1"></i> Изтича: ${expiryDate}</div>`;
                     }
@@ -587,6 +588,40 @@
                         resultHtml += `<div><i class="fa-solid fa-building mr-1"></i> Регистратор: ${registrar}</div>`;
                     }
                     resultHtml += '</div>';
+                }
+
+                // Show alternative suggestions if domain is not available
+                if (!isAvailable && alternatives.length > 0) {
+                    resultHtml += `
+                        <div class="mt-3">
+                            <h4 class="text-sm font-medium text-white mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-lightbulb text-[#1683ab]"></i>
+                                Предложения за алтернативи:
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    `;
+                    
+                    alternatives.slice(0, 6).forEach(alt => {
+                        const encodedAlt = encodeURIComponent(alt);
+                        resultHtml += `
+                            <div class="flex items-center justify-between p-2 bg-white/[0.05] rounded-lg border border-white/10 hover:border-[#1683ab]/40 transition-colors">
+                                <span class="text-sm text-gray-200">${alt}</span>
+                                <div class="flex gap-1">
+                                    <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=${encodedAlt}" class="px-2 py-1 bg-[#1e9975] text-white text-xs rounded hover:bg-[#1e9975]/90 transition-colors" title="Регистрация">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                    <button onclick="checkDomainAvailability('${alt}')" class="px-2 py-1 border border-white/20 text-gray-300 text-xs rounded hover:border-[#1683ab]/40 hover:text-white transition-colors" title="Провери наличност">
+                                        <i class="fa-solid fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    resultHtml += `
+                            </div>
+                        </div>
+                    `;
                 }
 
                 if (isAvailable) {
@@ -701,5 +736,17 @@
                 applyFilter();
             }
         });
+
+        // Global function for checking domain availability from alternative suggestions
+        window.checkDomainAvailability = function(domain) {
+            // Set the search input value
+            const searchInput = document.getElementById('unified-search');
+            if (searchInput) {
+                searchInput.value = domain;
+            }
+            
+            // Perform the search
+            performSearch();
+        };
     </script>
 @endpush

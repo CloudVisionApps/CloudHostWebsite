@@ -118,6 +118,67 @@ class WhoisWhmcsService
     }
 
     /**
+     * Get alternative domain suggestions when a domain is not available
+     */
+    public function getAlternativeSuggestions(string $domain): array
+    {
+        $suggestions = [];
+        
+        // Extract domain name and TLD
+        $parts = explode('.', $domain);
+        if (count($parts) < 2) {
+            return [];
+        }
+        
+        $domainName = $parts[0];
+        $tld = '.' . $parts[1];
+        
+        // Get available TLDs from database for alternative suggestions
+        $availableTlds = \App\Models\Domain::pluck('tld')->toArray();
+        
+        // Generate alternative suggestions
+        $alternatives = [
+            // Add numbers
+            $domainName . '1' . $tld,
+            $domainName . '2' . $tld,
+            $domainName . '2024' . $tld,
+            $domainName . '2025' . $tld,
+            
+            // Add common prefixes/suffixes
+            'my' . $domainName . $tld,
+            'get' . $domainName . $tld,
+            $domainName . 'online' . $tld,
+            $domainName . 'site' . $tld,
+            $domainName . 'app' . $tld,
+            
+            // Add hyphens
+            str_replace('', '-', $domainName) . $tld,
+            
+            // Different TLDs
+            $domainName . '.com',
+            $domainName . '.net',
+            $domainName . '.org',
+            $domainName . '.co',
+            $domainName . '.io',
+        ];
+        
+        // Filter out the original domain and limit suggestions
+        $alternatives = array_filter($alternatives, function($alt) use ($domain) {
+            return $alt !== $domain;
+        });
+        
+        // Add some random TLD suggestions from available TLDs
+        $randomTlds = array_slice($availableTlds, 0, 5);
+        foreach ($randomTlds as $randomTld) {
+            if ($randomTld !== $tld) {
+                $alternatives[] = $domainName . $randomTld;
+            }
+        }
+        
+        return array_slice($alternatives, 0, 10);
+    }
+
+    /**
      * Call WHMCS API
      */
     protected function callWhmcsApi(string $action, array $params = []): array
