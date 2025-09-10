@@ -24,7 +24,7 @@
             <!-- Compact Headline -->
             <div class="mb-8 scroll-fade-in">
                 <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 scroll-scale-in">
-                    Цени на <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Домейни (TLDs)</span>
+                    Регистрация на <span class="bg-gradient-to-r from-[#1683ab] to-[#1e9975] bg-clip-text text-transparent">Домейн</span>
                 </h1>
                 <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto scroll-slide-left">
                     Прозрачни годишни цени за популярни домейн разширения. Търсете по TLD и започнете онлайн присъствието си.
