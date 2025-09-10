@@ -60,8 +60,9 @@ class DomainController extends Controller
             // If domain is not available, get alternative suggestions
             if (!$result['available']) {
                 try {
-                    $alternatives = $this->whmcsService->getAlternativeSuggestions($domain);
-                    $response['alternatives'] = $alternatives;
+                    $alternativesData = $this->whmcsService->getAlternativeSuggestionsWithSource($domain);
+                    $response['alternatives'] = $alternativesData['suggestions'];
+                    $response['alternatives_source'] = $alternativesData['source'];
                     $response['message'] = 'Домейнът е зает. Ето няколко алтернативи:';
                 } catch (\Exception $e) {
                     \Log::warning('Failed to get alternative suggestions', [

@@ -119,11 +119,68 @@ class WhoisWhmcsService
 
     /**
      * Get alternative domain suggestions when a domain is not available
+     * Prioritizes WHMCS API suggestions, falls back to generated alternatives
      */
     public function getAlternativeSuggestions(string $domain): array
     {
-        $suggestions = [];
-        
+        // First, try to get suggestions from WHMCS API
+        try {
+            $whmcsSuggestions = $this->getDomainSuggestions($domain);
+            if (!empty($whmcsSuggestions)) {
+                Log::debug('Using WHMCS API suggestions', [
+                    'domain' => $domain,
+                    'suggestions_count' => count($whmcsSuggestions)
+                ]);
+                return array_slice($whmcsSuggestions, 0, 10);
+            }
+        } catch (\Exception $e) {
+            Log::warning('WHMCS suggestions failed, using fallback', [
+                'domain' => $domain,
+                'error' => $e->getMessage()
+            ]);
+        }
+
+        // Fallback to generated alternatives if WHMCS doesn't provide suggestions
+        return $this->generateAlternativeSuggestions($domain);
+    }
+
+    /**
+     * Get alternative suggestions with source information
+     */
+    public function getAlternativeSuggestionsWithSource(string $domain): array
+    {
+        // First, try to get suggestions from WHMCS API
+        try {
+            $whmcsSuggestions = $this->getDomainSuggestions($domain);
+            if (!empty($whmcsSuggestions)) {
+                Log::debug('Using WHMCS API suggestions', [
+                    'domain' => $domain,
+                    'suggestions_count' => count($whmcsSuggestions)
+                ]);
+                return [
+                    'suggestions' => array_slice($whmcsSuggestions, 0, 10),
+                    'source' => 'whmcs'
+                ];
+            }
+        } catch (\Exception $e) {
+            Log::warning('WHMCS suggestions failed, using fallback', [
+                'domain' => $domain,
+                'error' => $e->getMessage()
+            ]);
+        }
+
+        // Fallback to generated alternatives if WHMCS doesn't provide suggestions
+        return [
+            'suggestions' => $this->generateAlternativeSuggestions($domain),
+            'source' => 'generated'
+        ];
+    }
+
+    /**
+     * Generate alternative domain suggestions as fallback
+     */
+    protected function generateAlternativeSuggestions(string $domain): array
+    {
         // Extract domain name and TLD
         $parts = explode('.', $domain);
         if (count($parts) < 2) {
