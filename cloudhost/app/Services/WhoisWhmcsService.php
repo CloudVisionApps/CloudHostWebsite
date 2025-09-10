@@ -179,7 +179,7 @@ class WhoisWhmcsService
     /**
      * Call WHMCS API
      */
-    protected function callWhmcsApi(string $action, array $params = []): array
+    public function callWhmcsApi(string $action, array $params = []): array
     {
         if (!$this->isConfigured()) {
             throw new \Exception('WHMCS API not configured');
@@ -200,7 +200,14 @@ class WhoisWhmcsService
             ->post($this->apiUrl, $postData);
 
         if (!$response->successful()) {
-            throw new \Exception('WHMCS API request failed: ' . $response->status());
+            $errorBody = $response->body();
+            Log::error('WHMCS API Error', [
+                'status' => $response->status(),
+                'body' => $errorBody,
+                'action' => $action,
+                'url' => $this->apiUrl
+            ]);
+            throw new \Exception('WHMCS API request failed: ' . $response->status() . ' - ' . $errorBody);
         }
 
         $data = $response->json();

@@ -12,7 +12,7 @@ function settings($key, $default = null)
 function get_social_networks()
 {
     $socialNetworks = settings('social_networks', []);
-    
+
     // Ensure each social network has all required fields with defaults
     return array_map(function($network) {
         return [
@@ -62,3 +62,27 @@ function get_contact_info()
         'emergency_phone' => settings('emergency_phone', '+359 888 123 456'),
     ];
 }
+
+
+
+// Helper function to extract numeric values from strings
+if (!function_exists('extractNumericValue')) {
+    function extractNumericValue($value) {
+        if (is_numeric($value)) {
+            return (int) $value;
+        }
+
+        // Extract number from strings like "10GB", "unlimited", "0"
+        if (preg_match('/(\d+)/', $value, $matches)) {
+            return (int) $matches[1];
+        }
+
+        // Handle unlimited cases
+        if (stripos($value, 'unlimited') !== false || stripos($value, '-1') !== false) {
+            return -1; // Use -1 to represent unlimited
+        }
+
+        return 0;
+    }
+}
+
