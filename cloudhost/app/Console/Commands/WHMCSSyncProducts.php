@@ -15,7 +15,7 @@ class WHMCSSyncProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'whmcs:sync-products {--dry-run} {--delete-missing}';
+    protected $signature = 'whmcs:sync-products {--dry-run}';
 
     /**
      * The console command description.
@@ -33,12 +33,11 @@ class WHMCSSyncProducts extends Command
         $whmcs = app(WhoisWhmcsService::class);
 
         $dryRun = (bool) $this->option('dry-run');
-        $deleteMissing = (bool) $this->option('delete-missing');
 
         $this->info('Fetching products from WHMCS...');
 
-        // Fetch all products directly (without groups for now)
-        $products = $whmcs->callWhmcsApi('GetProducts');
+        // Fetch all products directly (try different parameters to get all products)
+        $products = $whmcs->callWhmcsApi('GetProducts', ['limit' => 1000]);
 
         if (empty($products['products']['product'])) {
             $this->error('No products returned from WHMCS. Aborting.');
@@ -63,14 +62,10 @@ class WHMCSSyncProducts extends Command
             ]
         );
 
-        $syncedGroups = 0;
-        $createdGroups = 0;
-        $updatedGroups = 0;
         $syncedProducts = 0;
         $createdProducts = 0;
         $updatedProducts = 0;
         $skippedProducts = 0;
-        $deletedProducts = 0;
 
         // Process products directly
         foreach ($productList as $product) {
@@ -132,8 +127,8 @@ class WHMCSSyncProducts extends Command
             // Check if plan already exists by name or slug (including soft-deleted)
             $existingPlanByName = Plan::withTrashed()->where('name', $productData['name'])->first();
             $existingPlanBySlug = Plan::withTrashed()->where('slug', $productData['slug'])->first();
-            
-            
+
+
             $existingPlan = $existingPlanByName ?: $existingPlanBySlug;
 
             if ($dryRun) {
@@ -154,13 +149,13 @@ class WHMCSSyncProducts extends Command
                 if ($existingPlan->name !== $productData['name']) {
                     $this->warn("Slug conflict: Plan '{$existingPlan->name}' already has slug '{$productData['slug']}', updating instead of creating '{$productData['name']}'");
                 }
-                
+
                 // If plan is soft-deleted, restore it first
                 if ($existingPlan->trashed()) {
                     $this->info("Restoring soft-deleted plan: {$existingPlan->name}");
                     $existingPlan->restore();
                 }
-                
+
                 // Update existing plan
                 $existingPlan->update($productData);
                 $updatedProducts++;
@@ -172,39 +167,8 @@ class WHMCSSyncProducts extends Command
             $syncedProducts++;
         }
 
-        // Handle deletion of products not present in WHMCS
-        if ($deleteMissing) {
-            $this->info('Checking for products to delete...');
 
-            // Get all product IDs from WHMCS
-            $whmcsProductIds = [];
-            foreach ($productList as $product) {
-                $whmcsProductIds[] = $product['pid'];
-            }
-
-            // Find products in database that are not in WHMCS
-            $productsToDelete = Plan::whereNotIn('id', $whmcsProductIds)->get();
-
-            if ($productsToDelete->count() > 0) {
-                $this->warn("Found {$productsToDelete->count()} products in database not present in WHMCS:");
-                foreach ($productsToDelete as $product) {
-                    $this->line("  - {$product->name} (ID: {$product->id})");
-                }
-
-                if ($dryRun) {
-                    $this->info("[DRY-RUN] Would delete {$productsToDelete->count()} products");
-                    $deletedProducts = $productsToDelete->count();
-                } else {
-                    $deletedCount = Plan::whereNotIn('id', $whmcsProductIds)->delete();
-                    $this->info("Deleted {$deletedCount} products not present in WHMCS");
-                    $deletedProducts = $deletedCount;
-                }
-            } else {
-                $this->info('No products to delete - all database products are present in WHMCS');
-            }
-        }
-
-        $this->info("Products - Total: {$syncedProducts}, Created: {$createdProducts}, Updated: {$updatedProducts}, Skipped: {$skippedProducts}, Deleted: {$deletedProducts}");
+        $this->info("Products - Total: {$syncedProducts}, Created: {$createdProducts}, Updated: {$updatedProducts}, Skipped: {$skippedProducts}");
         return 0;
     }
 }
