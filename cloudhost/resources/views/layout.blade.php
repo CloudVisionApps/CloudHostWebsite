@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="whmcs-token" content="ef7d7dfc51bdbd40aadeab642cdf2255c9edb28e">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 

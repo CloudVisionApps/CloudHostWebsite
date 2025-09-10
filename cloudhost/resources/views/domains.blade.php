@@ -146,8 +146,22 @@
                             <?php } ?>
                         </div>
                         <div class="mt-5 flex items-center justify-between">
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=<?php echo urlencode($label); ?>" class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">Регистрация</a>
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=<?php echo urlencode($label); ?>" class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">Трансфер</a>
+                            <button 
+                                data-cart-action="add" 
+                                data-product-id="64" 
+                                data-domain="register" 
+                                data-query="<?php echo htmlspecialchars($label); ?>"
+                                class="px-4 py-2 rounded-lg bg-[#1e9975] text-white text-sm font-medium hover:bg-[#1e9975]/90 transition-colors">
+                                Регистрация
+                            </button>
+                            <button 
+                                data-cart-action="add" 
+                                data-product-id="64" 
+                                data-domain="transfer" 
+                                data-query="<?php echo htmlspecialchars($label); ?>"
+                                class="px-4 py-2 rounded-lg border border-white/10 text-gray-200 text-sm hover:border-[#1683ab]/40 hover:text-white transition-colors">
+                                Трансфер
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -609,9 +623,15 @@
                             <div class="flex items-center justify-between p-2 bg-white/[0.05] rounded-lg border border-white/10 hover:border-[#1683ab]/40 transition-colors">
                                 <span class="text-sm text-gray-200">${alt}</span>
                                 <div class="flex gap-1">
-                                    <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=${encodedAlt}" class="px-2 py-1 bg-[#1e9975] text-white text-xs rounded hover:bg-[#1e9975]/90 transition-colors" title="Регистрация">
+                                    <button 
+                                        data-cart-action="add" 
+                                        data-product-id="64" 
+                                        data-domain="register" 
+                                        data-query="${alt}"
+                                        class="px-2 py-1 bg-[#1e9975] text-white text-xs rounded hover:bg-[#1e9975]/90 transition-colors" 
+                                        title="Регистрация">
                                         <i class="fa-solid fa-plus"></i>
-                                    </a>
+                                    </button>
                                     <button onclick="checkDomainAvailability('${alt}')" class="px-2 py-1 border border-white/20 text-gray-300 text-xs rounded hover:border-[#1683ab]/40 hover:text-white transition-colors" title="Провери наличност">
                                         <i class="fa-solid fa-search"></i>
                                     </button>
@@ -636,15 +656,24 @@
                 }
 
                 if (isAvailable) {
-                    const encodedDomain = encodeURIComponent(domain);
                     resultHtml += `
                         <div class="mt-3 flex gap-2">
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=register&query=${encodedDomain}" class="px-3 py-1.5 bg-[#1e9975] text-white text-xs rounded-lg hover:bg-[#1e9975]/90 transition-colors">
+                            <button 
+                                data-cart-action="add" 
+                                data-product-id="64" 
+                                data-domain="register" 
+                                data-query="${domain}"
+                                class="px-3 py-1.5 bg-[#1e9975] text-white text-xs rounded-lg hover:bg-[#1e9975]/90 transition-colors">
                                 <i class="fa-solid fa-shopping-cart mr-1"></i> Регистрация
-                            </a>
-                            <a href="https://cloudhost.bg/members/cart.php?a=add&domain=transfer&query=${encodedDomain}" class="px-3 py-1.5 border border-white/20 text-gray-300 text-xs rounded-lg hover:border-[#1683ab]/40 hover:text-white transition-colors">
+                            </button>
+                            <button 
+                                data-cart-action="add" 
+                                data-product-id="64" 
+                                data-domain="transfer" 
+                                data-query="${domain}"
+                                class="px-3 py-1.5 border border-white/20 text-gray-300 text-xs rounded-lg hover:border-[#1683ab]/40 hover:text-white transition-colors">
                                 <i class="fa-solid fa-right-left mr-1"></i> Трансфер
-                            </a>
+                            </button>
                         </div>
                     `;
                 }
