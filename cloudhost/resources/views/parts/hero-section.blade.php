@@ -168,32 +168,41 @@
                             </div>
 
                             <!-- Enhanced Domain Search Form -->
-                            <form class="space-y-4 lg:space-y-6 relative">
+                            <form id="hero-domain-form" class="space-y-4 lg:space-y-6 relative">
                                 <div class="relative group">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i class="fas fa-globe text-white/70 group-hover:text-[#1683ab] transition-colors duration-300 text-lg"></i>
                                     </div>
                                     <input
+                                        id="hero-domain-input"
                                         type="text"
-                                        placeholder="Въведете име на домейн"
+                                        placeholder="Въведете име на домейн (напр. bobi.com)"
                                         class="w-full pl-12 pr-4 py-4 bg-white/10 border-2 border-white/20 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-4 focus:ring-[#1683ab]/20 focus:border-[#1683ab] transition-all duration-300 text-base group-hover:border-[#1683ab]/40 group-hover:bg-white/15"
                                     >
                                     <div class="absolute inset-y-0 right-3 flex items-center">
-                                        <div class="w-2 h-2 bg-[#1e9975] rounded-full animate-pulse"></div>
+                                        <div id="hero-domain-indicator" class="w-2 h-2 bg-[#1e9975] rounded-full animate-pulse"></div>
                                     </div>
                                 </div>
 
                                 <button
+                                    id="hero-domain-btn"
                                     type="submit"
                                     class="w-full bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg relative overflow-hidden group shadow-xl"
                                 >
                                     <div class="absolute inset-0 bg-gradient-to-r from-[#1a8a6a] to-[#147a9a] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    <span class="relative z-10 flex items-center gap-3">
-                                            <i class="fas fa-search text-xl"></i>
-                                            Провери наличност
-                                        </span>
+                                    <span id="hero-btn-text" class="relative z-10 flex items-center gap-3">
+                                        <i class="fas fa-search text-xl"></i>
+                                        Провери наличност
+                                    </span>
                                 </button>
                             </form>
+
+                            <!-- Domain Check Results -->
+                            <div id="hero-domain-results" class="mt-4 hidden">
+                                <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+                                    <div id="hero-domain-content" class="text-sm"></div>
+                                </div>
+                            </div>
 
                             <!-- Enhanced Trust Indicators -->
                             <div class="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-white/20">
@@ -264,3 +273,181 @@
         </div>
     </div>
 </section>
+
+<script>
+    // Hero Domain Search Functionality
+    (function() {
+        const heroForm = document.getElementById('hero-domain-form');
+        const heroInput = document.getElementById('hero-domain-input');
+        const heroBtn = document.getElementById('hero-domain-btn');
+        const heroBtnText = document.getElementById('hero-btn-text');
+        const heroIndicator = document.getElementById('hero-domain-indicator');
+        const heroResults = document.getElementById('hero-domain-results');
+        const heroContent = document.getElementById('hero-domain-content');
+
+        if (!heroForm || !heroInput || !heroBtn) return;
+
+        // Domain availability checking
+        function checkDomainAvailability(domain) {
+            if (!domain || domain.trim() === '') {
+                showHeroError('Моля, въведете валиден домейн');
+                return;
+            }
+
+            // Show loading state
+            showHeroLoading();
+
+            // Make AJAX request
+            fetch('/domains/check-availability', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
+                },
+                body: JSON.stringify({ domain: domain })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showHeroResult(data);
+                } else {
+                    showHeroError(data.message || 'Възникна грешка при проверката');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showHeroError('Възникна грешка при проверката на домейна');
+            });
+        }
+
+        function showHeroLoading() {
+            // Update button state
+            heroBtn.disabled = true;
+            heroBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            heroBtnText.innerHTML = `
+                <div class="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
+                Проверявам...
+            `;
+            
+            // Update indicator
+            heroIndicator.className = 'w-2 h-2 bg-[#1683ab] rounded-full animate-pulse';
+            
+            // Show results area
+            heroResults.classList.remove('hidden');
+            heroContent.innerHTML = `
+                <div class="flex items-center gap-3 text-white/80">
+                    <div class="animate-spin rounded-full h-4 w-4 border-2 border-[#1683ab] border-t-transparent"></div>
+                    <span>Проверявам наличността на домейна...</span>
+                </div>
+            `;
+        }
+
+        function showHeroResult(data) {
+            // Reset button state
+            heroBtn.disabled = false;
+            heroBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            heroBtnText.innerHTML = `
+                <i class="fas fa-search text-xl"></i>
+                Провери наличност
+            `;
+            
+            const isAvailable = data.available;
+            const domain = data.domain;
+            const expiryDate = data.expiry_date;
+            const registrar = data.registrar;
+
+            // Update indicator
+            heroIndicator.className = `w-2 h-2 rounded-full animate-pulse ${isAvailable ? 'bg-green-400' : 'bg-red-400'}`;
+
+            let resultHtml = `
+                <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0">
+                        ${isAvailable ? 
+                            '<i class="fa-solid fa-check-circle text-green-400 text-lg"></i>' : 
+                            '<i class="fa-solid fa-times-circle text-red-400 text-lg"></i>'
+                        }
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-semibold text-white text-base">${domain}</span>
+                            <span class="px-2 py-1 rounded-full text-xs font-medium ${isAvailable ? 'bg-green-400/20 text-green-400' : 'bg-red-400/20 text-red-400'}">
+                                ${isAvailable ? 'Наличен' : 'Зает'}
+                            </span>
+                        </div>
+                        <p class="text-white/80 text-sm mb-3">${data.message}</p>
+            `;
+
+            if (!isAvailable && (expiryDate || registrar)) {
+                resultHtml += '<div class="text-xs text-white/60 space-y-1 mb-3">';
+                if (expiryDate) {
+                    resultHtml += `<div><i class="fa-solid fa-calendar mr-1"></i> Изтича: ${expiryDate}</div>`;
+                }
+                if (registrar) {
+                    resultHtml += `<div><i class="fa-solid fa-building mr-1"></i> Регистратор: ${registrar}</div>`;
+                }
+                resultHtml += '</div>';
+            }
+
+            if (isAvailable) {
+                resultHtml += `
+                    <div class="flex gap-2">
+                        <button class="px-4 py-2 bg-[#1e9975] text-white text-sm rounded-lg hover:bg-[#1e9975]/90 transition-colors">
+                            <i class="fa-solid fa-shopping-cart mr-1"></i> Регистрация
+                        </button>
+                        <button class="px-4 py-2 border border-white/20 text-white/80 text-sm rounded-lg hover:border-[#1683ab]/40 hover:text-white transition-colors">
+                            <i class="fa-solid fa-heart mr-1"></i> Добави в любими
+                        </button>
+                    </div>
+                `;
+            }
+
+            resultHtml += '</div></div>';
+            heroContent.innerHTML = resultHtml;
+        }
+
+        function showHeroError(message) {
+            // Reset button state
+            heroBtn.disabled = false;
+            heroBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            heroBtnText.innerHTML = `
+                <i class="fas fa-search text-xl"></i>
+                Провери наличност
+            `;
+            
+            // Update indicator
+            heroIndicator.className = 'w-2 h-2 bg-red-400 rounded-full animate-pulse';
+            
+            // Show error
+            heroResults.classList.remove('hidden');
+            heroContent.innerHTML = `
+                <div class="flex items-center gap-3 text-red-400">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+        }
+
+        // Event listeners
+        heroForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const domain = heroInput.value.trim();
+            checkDomainAvailability(domain);
+        });
+
+        heroInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const domain = heroInput.value.trim();
+                checkDomainAvailability(domain);
+            }
+        });
+
+        // Clear results when user starts typing
+        heroInput.addEventListener('input', () => {
+            if (heroResults && !heroResults.classList.contains('hidden')) {
+                heroResults.classList.add('hidden');
+                heroIndicator.className = 'w-2 h-2 bg-[#1e9975] rounded-full animate-pulse';
+            }
+        });
+    })();
+</script>
