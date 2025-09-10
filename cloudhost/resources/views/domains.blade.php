@@ -31,43 +31,47 @@
                 </p>
             </div>
 
-            <!-- Controls: Domain Search + TLD Search -->
+            <!-- Unified Search Controls -->
             <div class="relative z-10 max-w-5xl mx-auto mt-8">
-                <div class="flex flex-col gap-4">
-                    <!-- Domain Availability Checker -->
-                    <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10">
-                        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-search text-[#1683ab]"></i>
-                            Проверка на наличност на домейн
-                        </h3>
-                        <div class="flex flex-col md:flex-row gap-4">
-                            <div class="flex-1">
-                                <label for="domain-check" class="sr-only">Проверка на домейн</label>
-                                <div class="relative">
-                                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fa-solid fa-globe"></i></span>
-                                    <input id="domain-check" type="text" placeholder="Въведете домейн (напр. bobi.com)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-12 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
-                                    <button id="check-domain-btn" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-[#1683ab] text-white text-sm rounded-lg hover:bg-[#1683ab]/90 transition-colors">
-                                        <i class="fa-solid fa-search"></i>
-                                    </button>
-                                </div>
+                <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10">
+                    <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-search text-[#1683ab]"></i>
+                        Търсене и проверка на домейни
+                    </h3>
+                    
+                    <!-- Search Input with Toggle -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex-1">
+                            <label for="unified-search" class="sr-only">Търсене на домейн или TLD</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <i id="search-icon" class="fa-solid fa-globe"></i>
+                                </span>
+                                <input id="unified-search" type="text" placeholder="Въведете домейн (bobi.com) или TLD (.com, .bg)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-12 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
+                                <button id="search-btn" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-[#1683ab] text-white text-sm rounded-lg hover:bg-[#1683ab]/90 transition-colors">
+                                    <i class="fa-solid fa-search"></i>
+                                </button>
                             </div>
                         </div>
-                        <!-- Domain Check Results -->
-                        <div id="domain-check-results" class="mt-4 hidden">
-                            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                                <div id="domain-check-content" class="text-sm"></div>
+                        
+                        <!-- Search Type Toggle -->
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm text-gray-400">Режим на търсене:</span>
+                            <div class="flex bg-white/[0.05] rounded-lg p-1">
+                                <button id="domain-mode" class="px-3 py-1.5 text-xs font-medium rounded-md bg-[#1683ab] text-white transition-all">
+                                    <i class="fa-solid fa-globe mr-1"></i> Домейн
+                                </button>
+                                <button id="tld-mode" class="px-3 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white transition-all">
+                                    <i class="fa-solid fa-list mr-1"></i> TLD
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- TLD Search -->
-                    <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-                        <div class="flex-1">
-                            <label for="tld-search" class="sr-only">Търсене TLD</label>
-                            <div class="relative">
-                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input id="tld-search" type="text" placeholder="Търсене на TLD (напр. .com, .bg, .io)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
-                            </div>
+                    
+                    <!-- Search Results -->
+                    <div id="search-results" class="mt-4 hidden">
+                        <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                            <div id="search-content" class="text-sm"></div>
                         </div>
                     </div>
                 </div>
@@ -346,26 +350,66 @@
 
     <script>
         (function() {
-            const input = document.getElementById('tld-search');
+            const unifiedSearch = document.getElementById('unified-search');
+            const searchBtn = document.getElementById('search-btn');
+            const searchResults = document.getElementById('search-results');
+            const searchContent = document.getElementById('search-content');
+            const searchIcon = document.getElementById('search-icon');
+            const domainModeBtn = document.getElementById('domain-mode');
+            const tldModeBtn = document.getElementById('tld-mode');
             const toggle = document.getElementById('show-all-toggle');
             const cards = Array.from(document.querySelectorAll('.tld-card'));
-            const domainCheckInput = document.getElementById('domain-check');
-            const checkDomainBtn = document.getElementById('check-domain-btn');
-            const domainCheckResults = document.getElementById('domain-check-results');
-            const domainCheckContent = document.getElementById('domain-check-content');
+
+            let currentMode = 'domain'; // 'domain' or 'tld'
 
             console.log('Toggle element:', toggle);
             console.log('Cards found:', cards.length);
 
-            // Domain availability checking
-            function checkDomainAvailability(domain) {
-                if (!domain || domain.trim() === '') {
-                    showDomainCheckError('Моля, въведете валиден домейн');
+            // Mode switching
+            function switchMode(mode) {
+                currentMode = mode;
+                
+                if (mode === 'domain') {
+                    domainModeBtn.classList.add('bg-[#1683ab]', 'text-white');
+                    domainModeBtn.classList.remove('text-gray-400');
+                    tldModeBtn.classList.remove('bg-[#1683ab]', 'text-white');
+                    tldModeBtn.classList.add('text-gray-400');
+                    searchIcon.className = 'fa-solid fa-globe';
+                    unifiedSearch.placeholder = 'Въведете домейн (напр. bobi.com)';
+                } else {
+                    tldModeBtn.classList.add('bg-[#1683ab]', 'text-white');
+                    tldModeBtn.classList.remove('text-gray-400');
+                    domainModeBtn.classList.remove('bg-[#1683ab]', 'text-white');
+                    domainModeBtn.classList.add('text-gray-400');
+                    searchIcon.className = 'fa-solid fa-list';
+                    unifiedSearch.placeholder = 'Търсене на TLD (напр. .com, .bg)';
+                }
+                
+                // Clear search results when switching modes
+                searchResults.classList.add('hidden');
+                unifiedSearch.value = '';
+            }
+
+            // Unified search function
+            function performSearch() {
+                const query = unifiedSearch?.value?.trim();
+                
+                if (!query) {
+                    showSearchError('Моля, въведете домейн или TLD за търсене');
                     return;
                 }
 
+                if (currentMode === 'domain') {
+                    checkDomainAvailability(query);
+                } else {
+                    filterTldCards(query);
+                }
+            }
+
+            // Domain availability checking
+            function checkDomainAvailability(domain) {
                 // Show loading state
-                showDomainCheckLoading();
+                showSearchLoading('Проверявам наличността на домейна...');
 
                 // Make AJAX request
                 fetch('/domains/check-availability', {
@@ -379,28 +423,56 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        showDomainCheckResult(data);
+                        showDomainResult(data);
                     } else {
-                        showDomainCheckError(data.message || 'Възникна грешка при проверката');
+                        showSearchError(data.message || 'Възникна грешка при проверката');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    showDomainCheckError('Възникна грешка при проверката на домейна');
+                    showSearchError('Възникна грешка при проверката на домейна');
                 });
             }
 
-            function showDomainCheckLoading() {
-                domainCheckResults.classList.remove('hidden');
-                domainCheckContent.innerHTML = `
+            // TLD filtering
+            function filterTldCards(query) {
+                const q = query.toLowerCase();
+                let visibleCount = 0;
+                const maxVisible = 10;
+
+                cards.forEach((card) => {
+                    const tld = card.getAttribute('data-tld')?.toLowerCase() || '';
+                    const match = tld.includes(q);
+
+                    if (match && visibleCount < maxVisible) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update visible count
+                const visibleCountElement = document.getElementById('visible-count');
+                if (visibleCountElement) {
+                    visibleCountElement.textContent = visibleCount;
+                }
+
+                // Show search results
+                showTldResult(query, visibleCount);
+            }
+
+            function showSearchLoading(message) {
+                searchResults.classList.remove('hidden');
+                searchContent.innerHTML = `
                     <div class="flex items-center gap-3 text-gray-300">
                         <div class="animate-spin rounded-full h-4 w-4 border-2 border-[#1683ab] border-t-transparent"></div>
-                        <span>Проверявам наличността на домейна...</span>
+                        <span>${message}</span>
                     </div>
                 `;
             }
 
-            function showDomainCheckResult(data) {
+            function showDomainResult(data) {
                 const isAvailable = data.available;
                 const domain = data.domain;
                 const expiryDate = data.expiry_date;
@@ -449,12 +521,22 @@
                 }
 
                 resultHtml += '</div></div>';
-                domainCheckContent.innerHTML = resultHtml;
+                searchContent.innerHTML = resultHtml;
             }
 
-            function showDomainCheckError(message) {
-                domainCheckResults.classList.remove('hidden');
-                domainCheckContent.innerHTML = `
+            function showTldResult(query, count) {
+                searchResults.classList.remove('hidden');
+                searchContent.innerHTML = `
+                    <div class="flex items-center gap-3 text-gray-300">
+                        <i class="fa-solid fa-list text-[#1683ab]"></i>
+                        <span>Намерени ${count} TLD съвпадения за "${query}"</span>
+                    </div>
+                `;
+            }
+
+            function showSearchError(message) {
+                searchResults.classList.remove('hidden');
+                searchContent.innerHTML = `
                     <div class="flex items-center gap-3 text-red-400">
                         <i class="fa-solid fa-exclamation-triangle"></i>
                         <span>${message}</span>
@@ -462,49 +544,26 @@
                 `;
             }
 
-            // Event listeners for domain checking
-            if (checkDomainBtn) {
-                checkDomainBtn.addEventListener('click', () => {
-                    const domain = domainCheckInput?.value?.trim();
-                    checkDomainAvailability(domain);
-                });
-            }
-
-            if (domainCheckInput) {
-                domainCheckInput.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        const domain = domainCheckInput.value.trim();
-                        checkDomainAvailability(domain);
-                    }
-                });
-            }
-
-            // TLD filtering functionality
+            // TLD filtering functionality (for show all toggle)
             function applyFilter() {
                 const showAll = !!(toggle && toggle.checked);
                 const visibleCountElement = document.getElementById('visible-count');
-                console.log('Show all:', showAll);
 
                 if (showAll) {
                     // Show all domains when toggle is enabled
                     cards.forEach(card => { card.style.display = ''; });
-                    if (input) { input.value = ''; }
                     if (visibleCountElement) {
                         visibleCountElement.textContent = cards.length;
                     }
                     return;
                 }
 
-                // When toggle is disabled, limit to 10 domains and apply search filter
-                const q = (input?.value || '').trim().toLowerCase();
+                // When toggle is disabled, limit to 10 domains
                 let visibleCount = 0;
                 const maxVisible = 10;
 
-                cards.forEach((card, index) => {
-                    const tld = card.getAttribute('data-tld')?.toLowerCase() || '';
-                    const match = q === '' || tld.includes(q);
-
-                    if (match && visibleCount < maxVisible) {
+                cards.forEach((card) => {
+                    if (visibleCount < maxVisible) {
                         card.style.display = '';
                         visibleCount++;
                     } else {
@@ -517,19 +576,36 @@
                 }
             }
 
-            if (input) {
-                input.addEventListener('input', () => applyFilter());
+            // Event listeners
+            if (searchBtn) {
+                searchBtn.addEventListener('click', performSearch);
             }
+
+            if (unifiedSearch) {
+                unifiedSearch.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+
+            if (domainModeBtn) {
+                domainModeBtn.addEventListener('click', () => switchMode('domain'));
+            }
+
+            if (tldModeBtn) {
+                tldModeBtn.addEventListener('click', () => switchMode('tld'));
+            }
+
             if (toggle) {
                 toggle.addEventListener('change', (e) => {
                     console.log('Toggle changed:', e.target.checked);
-                    if (input) { input.disabled = toggle.checked; }
                     applyFilter();
                 });
             }
 
             // Initial state
-            if (input) { input.disabled = !!(toggle && toggle.checked); }
+            switchMode('domain');
             applyFilter();
         })();
     </script>
