@@ -48,6 +48,8 @@ return new class extends Migration
             $table->string('performance_optimization', 50)->nullable();
             $table->string('priority', 50)->nullable();
 
+            $table->integer('whmcs_product_id')->nullable()->unique();
+            $table->integer('whmcs_product_group_id')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
