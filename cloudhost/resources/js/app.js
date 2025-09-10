@@ -3,7 +3,7 @@ import './bootstrap';
 // Add to Cart functionality for WHMCS integration
 class CartManager {
     constructor() {
-        this.cartEndpoint = 'https://www.cloudhost.bg/members/cart.php';
+        this.cartEndpoint = '/members/cart.php';
         this.tokenCache = {
             value: null,
             timestamp: null,
@@ -21,10 +21,10 @@ class CartManager {
         // Listen for clicks on elements with cart-related classes
         document.addEventListener('click', (e) => {
             // Check for add to cart buttons
-            if (e.target.matches('[data-cart-action="add"]') || 
+            if (e.target.matches('[data-cart-action="add"]') ||
                 e.target.closest('[data-cart-action="add"]')) {
                 e.preventDefault();
-                const button = e.target.matches('[data-cart-action="add"]') ? 
+                const button = e.target.matches('[data-cart-action="add"]') ?
                     e.target : e.target.closest('[data-cart-action="add"]');
                 this.handleAddToCart(button);
             }
@@ -33,8 +33,8 @@ class CartManager {
 
     async addToCart(params) {
         try {
-            const url = new URL(this.cartEndpoint);
-            
+            const url = new URL(window.location.origin + this.cartEndpoint);
+
             // Add action parameter to URL
             url.searchParams.set('a', 'add');
 
@@ -68,24 +68,24 @@ class CartManager {
 
     async buildFormData(params) {
         const formData = new URLSearchParams();
-        
+
         // Add token (you may need to get this from your backend or a meta tag)
         const token = await this.getToken();
         if (token) {
             formData.append('token', token);
         }
-        
+
         // Domain option (register or transfer)
         formData.append('domainoption', params.domain || 'register');
-        
+
         // Domain array format: domains[]=domainname
         if (params.query) {
             formData.append('domains[]', params.query);
-            
+
             // Domain registration period: domainsregperiod[domainname]=1
             formData.append(`domainsregperiod[${params.query}]`, params.regPeriod || '1');
         }
-        
+
         // Additional parameters
         if (params.productId) {
             formData.append('pid', params.productId);
@@ -96,7 +96,7 @@ class CartManager {
         if (params.configoptions) {
             formData.append('configoptions', params.configoptions);
         }
-        
+
         return formData;
     }
 
@@ -106,12 +106,12 @@ class CartManager {
         if (tokenMeta) {
             return tokenMeta.getAttribute('content');
         }
-        
+
         // Try to get from window object
         if (window.whmcsToken) {
             return window.whmcsToken;
         }
-        
+
         // Check if we have a valid cached token
         if (this.tokenCache.value && this.tokenCache.timestamp) {
             const now = Date.now();
@@ -119,7 +119,7 @@ class CartManager {
                 return this.tokenCache.value;
             }
         }
-        
+
         // Try to fetch token from CloudHost.bg members page
         try {
             const token = await this.fetchTokenFromCloudHost();
@@ -132,14 +132,14 @@ class CartManager {
         } catch (error) {
             console.warn('Failed to fetch token from CloudHost.bg:', error);
         }
-        
+
         // Fallback to default token
-        return 'ef7d7dfc51bdbd40aadeab642cdf2255c9edb28e';
+        return '';
     }
 
     async fetchTokenFromCloudHost() {
         try {
-            const response = await fetch('https://cloudhost.bg/members/index.php', {
+            const response = await fetch('/members/index.php', {
                 method: 'GET',
                 credentials: 'include', // Include cookies for session
                 headers: {
@@ -153,10 +153,10 @@ class CartManager {
             }
 
             const html = await response.text();
-            
+
             // Parse the HTML to extract the token from the hidden input field
             const tokenMatch = html.match(/<input[^>]*name="token"[^>]*value="([^"]*)"[^>]*>/i);
-            
+
             if (tokenMatch && tokenMatch[1]) {
                 console.log('Successfully fetched token from CloudHost.bg');
                 return tokenMatch[1];
@@ -222,7 +222,7 @@ class CartManager {
             if (result.success) {
                 // Show success message
                 this.showNotification(result.message, 'success');
-                
+
                 // If there's a redirect URL, redirect after a short delay
                 if (result.redirectUrl) {
                     setTimeout(() => {
@@ -250,7 +250,7 @@ class CartManager {
             type === 'error' ? 'bg-red-500 text-white' :
             'bg-blue-500 text-white'
         }`;
-        
+
         notification.innerHTML = `
             <div class="flex items-center gap-3">
                 <i class="fa-solid ${
@@ -291,7 +291,7 @@ class CartManager {
             query: domain,
             regPeriod: regPeriod
         };
-        
+
         return await this.addToCart(params);
     }
 
@@ -301,33 +301,33 @@ class CartManager {
             productId: productId,
             ...options
         };
-        
+
         return await this.addToCart(params);
     }
 
     // Method to add multiple domains at once
     async addMultipleDomainsToCart(domains, action = 'register', regPeriod = '1') {
         const formData = new URLSearchParams();
-        
+
         // Add token
         const token = await this.getToken();
         if (token) {
             formData.append('token', token);
         }
-        
+
         // Domain option
         formData.append('domainoption', action);
-        
+
         // Add all domains
         domains.forEach(domain => {
             formData.append('domains[]', domain);
             formData.append(`domainsregperiod[${domain}]`, regPeriod);
         });
-        
+
         try {
-            const url = new URL(this.cartEndpoint);
+            const url = new URL(window.location.origin + this.cartEndpoint);
             url.searchParams.set('a', 'add');
-            
+
             const response = await fetch(url.toString(), {
                 method: 'POST',
                 headers: {
@@ -359,7 +359,7 @@ class CartManager {
 // Initialize cart manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     window.cartManager = new CartManager();
-    
+
     // Add global methods for testing and debugging
     window.testTokenFetch = async function() {
         console.log('Testing token fetch...');
@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return null;
         }
     };
-    
+
     // Auto-refresh token on page load
     window.cartManager.getToken().then(token => {
         console.log('Initial token loaded:', token);
