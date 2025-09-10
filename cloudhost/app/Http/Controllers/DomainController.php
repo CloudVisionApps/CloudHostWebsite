@@ -25,12 +25,12 @@ class DomainController extends Controller
         ]);
 
         $domain = strtolower(trim($request->input('domain')));
-        
+
         // Simple rate limiting - check if user has made too many requests
         $cacheKey = 'domain_check_' . $request->ip();
         $requests = cache()->get($cacheKey, 0);
-        
-        if ($requests >= 10) { // Max 10 requests per minute
+
+        if ($requests >= 30) { // Max 10 requests per minute
             return response()->json([
                 'success' => false,
                 'domain' => $domain,
@@ -38,21 +38,21 @@ class DomainController extends Controller
                 'message' => 'Моля, изчакайте малко преди да опитате отново'
             ], 429);
         }
-        
+
         // Increment request counter
         cache()->put($cacheKey, $requests + 1, 60); // 1 minute cache
-        
+
         try {
             $result = $this->whoisService->checkDomainAvailability($domain);
-            
+
             return response()->json([
                 'success' => true,
                 'domain' => $domain,
                 'available' => $result['available'],
                 'expiry_date' => $result['expiry_date'],
                 'registrar' => $result['registrar'],
-                'message' => $result['available'] 
-                    ? 'Домейнът е наличен за регистрация' 
+                'message' => $result['available']
+                    ? 'Домейнът е наличен за регистрация'
                     : 'Домейнът е зает'
             ]);
         } catch (\Exception $e) {
@@ -71,7 +71,7 @@ class DomainController extends Controller
     public function getSuggestions(Request $request): JsonResponse
     {
         $query = strtolower(trim($request->input('q', '')));
-        
+
         if (strlen($query) < 2) {
             return response()->json([
                 'success' => true,
@@ -93,7 +93,7 @@ class DomainController extends Controller
 
         // Get available TLDs from database
         $availableTlds = \App\Models\Domain::pluck('tld')->toArray();
-        
+
         $suggestions = [];
         foreach ($availableTlds as $availableTld) {
             if (strpos($availableTld, $tld) !== false) {

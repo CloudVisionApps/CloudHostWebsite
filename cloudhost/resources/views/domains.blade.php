@@ -47,7 +47,10 @@
                                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                                     <i id="search-icon" class="fa-solid fa-globe"></i>
                                 </span>
-                                <input id="unified-search" type="text" placeholder="Въведете домейн (bobi.com) или TLD (.com, .bg)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-12 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
+                                <input id="unified-search" type="text" placeholder="Въведете домейн (bobi.com) или TLD (.com, .bg)" class="w-full bg-[#0f0f0f] border border-white/10 rounded-xl pl-10 pr-20 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1683ab]/50 focus:border-[#1683ab]/50">
+                                <button id="clear-btn" class="absolute right-12 top-1/2 -translate-y-1/2 px-2 py-1 text-gray-400 hover:text-white transition-colors" title="Изчисти търсенето">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
                                 <button id="search-btn" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-[#1683ab] text-white text-sm rounded-lg hover:bg-[#1683ab]/90 transition-colors">
                                     <i class="fa-solid fa-search"></i>
                                 </button>
@@ -349,9 +352,10 @@
     </style>
 
     <script>
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const unifiedSearch = document.getElementById('unified-search');
             const searchBtn = document.getElementById('search-btn');
+            const clearBtn = document.getElementById('clear-btn');
             const searchResults = document.getElementById('search-results');
             const searchContent = document.getElementById('search-content');
             const searchIcon = document.getElementById('search-icon');
@@ -364,6 +368,66 @@
 
             console.log('Toggle element:', toggle);
             console.log('Cards found:', cards.length);
+            console.log('Current URL:', window.location.href);
+            console.log('URL parameters:', {
+                search: getUrlParameter('search'),
+                mode: getUrlParameter('mode')
+            });
+
+            // URL parameter handling
+            function getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            function setUrlParameter(name, value) {
+                const url = new URL(window.location);
+                if (value) {
+                    url.searchParams.set(name, value);
+                } else {
+                    url.searchParams.delete(name);
+                }
+                window.history.replaceState({}, '', url);
+            }
+
+            function initializeFromUrl() {
+                const searchQuery = getUrlParameter('search');
+                const searchMode = getUrlParameter('mode');
+                
+                console.log('Initializing from URL:', { searchQuery, searchMode });
+                
+                // Set the correct mode first
+                if (searchMode === 'tld') {
+                    switchMode('tld');
+                } else {
+                    switchMode('domain');
+                }
+                
+                if (searchQuery) {
+                    // Set the search input value
+                    if (unifiedSearch) {
+                        unifiedSearch.value = searchQuery;
+                    }
+                    
+                    // Perform the search automatically after a short delay
+                    setTimeout(() => {
+                        console.log('Performing auto-search for:', searchQuery);
+                        performSearch();
+                    }, 300);
+                } else {
+                    // If no search query, just apply the default filter
+                    applyFilter();
+                }
+            }
+
+            function clearSearch() {
+                unifiedSearch.value = '';
+                searchResults.classList.add('hidden');
+                setUrlParameter('search', '');
+                setUrlParameter('mode', '');
+                // Reset to show all domains
+                applyFilter();
+            }
 
             // Mode switching
             function switchMode(mode) {
@@ -388,20 +452,35 @@
                 // Clear search results when switching modes
                 searchResults.classList.add('hidden');
                 unifiedSearch.value = '';
+                
+                // Update URL parameter for mode
+                setUrlParameter('mode', mode);
+                setUrlParameter('search', '');
             }
 
             // Unified search function
             function performSearch() {
                 const query = unifiedSearch?.value?.trim();
                 
+                console.log('performSearch called:', { query, currentMode, unifiedSearch: !!unifiedSearch });
+                
                 if (!query) {
                     showSearchError('Моля, въведете домейн или TLD за търсене');
+                    // Clear URL parameters when search is empty
+                    setUrlParameter('search', '');
+                    setUrlParameter('mode', '');
                     return;
                 }
 
+                // Save search query and mode to URL parameters
+                setUrlParameter('search', query);
+                setUrlParameter('mode', currentMode);
+
                 if (currentMode === 'domain') {
+                    console.log('Checking domain availability for:', query);
                     checkDomainAvailability(query);
                 } else {
+                    console.log('Filtering TLD cards for:', query);
                     filterTldCards(query);
                 }
             }
@@ -463,6 +542,7 @@
             }
 
             function showSearchLoading(message) {
+                console.log('Showing search loading:', message);
                 searchResults.classList.remove('hidden');
                 searchContent.innerHTML = `
                     <div class="flex items-center gap-3 text-gray-300">
@@ -477,6 +557,8 @@
                 const domain = data.domain;
                 const expiryDate = data.expiry_date;
                 const registrar = data.registrar;
+
+                console.log('Showing domain result:', data);
 
                 let resultHtml = `
                     <div class="flex items-start gap-3">
@@ -581,6 +663,10 @@
                 searchBtn.addEventListener('click', performSearch);
             }
 
+            if (clearBtn) {
+                clearBtn.addEventListener('click', clearSearch);
+            }
+
             if (unifiedSearch) {
                 unifiedSearch.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') {
@@ -604,9 +690,15 @@
                 });
             }
 
-            // Initial state
-            switchMode('domain');
-            applyFilter();
-        })();
+            // Initialize from URL parameters first
+            initializeFromUrl();
+            
+            // Set default state only if no URL parameters
+            const hasUrlParams = getUrlParameter('search') || getUrlParameter('mode');
+            if (!hasUrlParams) {
+                switchMode('domain');
+                applyFilter();
+            }
+        });
     </script>
 @endpush
