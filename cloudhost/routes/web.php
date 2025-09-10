@@ -16,6 +16,10 @@ Route::get('/domains', function () {
     return view('domains');
 });
 
+Route::get('/contact-us', function () {
+    return view('contact-us');
+});
+
 // Newsletter routes
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
