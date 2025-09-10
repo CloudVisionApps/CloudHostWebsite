@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\DomainController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +19,7 @@ Route::get('/domains', function () {
 // Newsletter routes
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
+
+// Domain routes
+Route::post('/domains/check-availability', [DomainController::class, 'checkAvailability'])->name('domains.check-availability');
+Route::get('/domains/suggestions', [DomainController::class, 'getSuggestions'])->name('domains.suggestions');
