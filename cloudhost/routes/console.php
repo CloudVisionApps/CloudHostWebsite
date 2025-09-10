@@ -9,7 +9,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Artisan::command('whmcs:sync-tlds {--dry-run}', function () {
+Artisan::command('whmcs:sync-tlds {--dry-run} {--delete-missing}', function () {
     /** @var WhoisWhmcsService $whmcs */
     $whmcs = app(WhoisWhmcsService::class);
 
@@ -49,10 +49,12 @@ Artisan::command('whmcs:sync-tlds {--dry-run}', function () {
     };
 
     $dryRun = (bool) $this->option('dry-run');
+    $deleteMissing = (bool) $this->option('delete-missing');
     $synced = 0;
     $updated = 0;
     $created = 0;
     $skipped = 0;
+    $deleted = 0;
 
     foreach ($pricing as $tld => $data) {
         if (!is_string($tld) || !is_array($data)) {
@@ -138,6 +140,44 @@ Artisan::command('whmcs:sync-tlds {--dry-run}', function () {
         $synced++;
     }
 
-    $this->info("Sync complete. Total: {$synced}, Created: {$created}, Updated: {$updated}, Skipped: {$skipped}");
+    // Handle deletion of TLDs not present in WHMCS
+    if ($deleteMissing) {
+        $this->info('Checking for TLDs to delete...');
+        
+        // Get all TLDs from WHMCS response (normalized with dots)
+        $whmcsTlds = [];
+        foreach ($pricing as $tld => $data) {
+            if (is_string($tld) && is_array($data)) {
+                $normalizedTld = $tld;
+                if ($normalizedTld !== '' && $normalizedTld[0] !== '.') {
+                    $normalizedTld = '.' . $normalizedTld;
+                }
+                $whmcsTlds[] = $normalizedTld;
+            }
+        }
+        
+        // Find TLDs in database that are not in WHMCS
+        $tldsToDelete = Domain::whereNotIn('tld', $whmcsTlds)->get();
+        
+        if ($tldsToDelete->count() > 0) {
+            $this->warn("Found {$tldsToDelete->count()} TLDs in database not present in WHMCS:");
+            foreach ($tldsToDelete as $domain) {
+                $this->line("  - {$domain->tld} (ID: {$domain->id})");
+            }
+            
+            if ($dryRun) {
+                $this->info("[DRY-RUN] Would delete {$tldsToDelete->count()} TLDs");
+                $deleted = $tldsToDelete->count();
+            } else {
+                $deletedCount = Domain::whereNotIn('tld', $whmcsTlds)->delete();
+                $this->info("Deleted {$deletedCount} TLDs not present in WHMCS");
+                $deleted = $deletedCount;
+            }
+        } else {
+            $this->info('No TLDs to delete - all database TLDs are present in WHMCS');
+        }
+    }
+
+    $this->info("Sync complete. Total: {$synced}, Created: {$created}, Updated: {$updated}, Skipped: {$skipped}, Deleted: {$deleted}");
     return 0;
 })->purpose('Sync WHMCS TLD pricing into the domains table');
