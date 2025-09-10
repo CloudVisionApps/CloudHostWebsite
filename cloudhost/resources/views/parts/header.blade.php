@@ -66,6 +66,14 @@
 
             <!-- Right Side Actions -->
             <div class="flex items-center space-x-4">
+                <!-- Cart Count Badge -->
+                <div class="hidden md:block relative">
+                    <a href="#cart" class="flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-2xl transition-all duration-300 group">
+                        <i class="fas fa-shopping-cart text-gray-200 group-hover:text-white text-lg"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-gradient-to-r from-[#1683ab] to-[#1e9975] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg" style="display: none;">0</span>
+                    </a>
+                </div>
+
                 <!-- Sign In Button -->
                 <a href="#login" class="hidden md:block group relative px-8 py-3 bg-gradient-to-r from-[#1683ab] to-[#1e9975] hover:from-[#147a9a] hover:to-[#1a8a6a] text-white font-semibold transition-all duration-300 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-[#1e9975]/30 transform hover:-translate-y-1 hover:scale-105 overflow-hidden">
                     <!-- Animated Background Overlay -->

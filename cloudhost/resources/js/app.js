@@ -9,6 +9,7 @@ class CartManager {
             timestamp: null,
             ttl: 5 * 60 * 1000 // 5 minutes TTL
         };
+        this.cartCount = this.getCartCountFromStorage();
         this.init();
     }
 
@@ -49,10 +50,24 @@ class CartManager {
             });
 
             if (response.ok) {
+                // Try to parse the response as JSON to get cart count
+                let cartCount = 0;
+                try {
+                    const responseText = await response.text();
+                    const responseData = JSON.parse(responseText);
+                    if (responseData.cartCount !== undefined) {
+                        cartCount = parseInt(responseData.cartCount);
+                        this.updateCartCount(cartCount);
+                    }
+                } catch (parseError) {
+                    console.warn('Could not parse cart response:', parseError);
+                }
+
                 return {
                     success: true,
                     message: 'Продуктът е добавен в количката успешно!',
-                    redirectUrl: response.url
+                    redirectUrl: response.url,
+                    cartCount: cartCount
                 };
             } else {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -291,11 +306,47 @@ class CartManager {
         }, 5000);
     }
 
+    // Cart count management methods
+    getCartCountFromStorage() {
+        try {
+            const stored = localStorage.getItem('cartCount');
+            return stored ? parseInt(stored) : 0;
+        } catch (error) {
+            console.warn('Could not retrieve cart count from localStorage:', error);
+            return 0;
+        }
+    }
+
+    saveCartCountToStorage(count) {
+        try {
+            localStorage.setItem('cartCount', count.toString());
+        } catch (error) {
+            console.warn('Could not save cart count to localStorage:', error);
+        }
+    }
+
+    updateCartCount(count) {
+        this.cartCount = count;
+        this.saveCartCountToStorage(count);
+        this.updateCartCountDisplay();
+    }
+
+    updateCartCountDisplay() {
+        const cartCountElement = document.getElementById('cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = this.cartCount;
+            cartCountElement.style.display = this.cartCount > 0 ? 'block' : 'none';
+        }
+    }
+
 }
 
 // Initialize cart manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     window.cartManager = new CartManager();
+    
+    // Update cart count display on page load
+    window.cartManager.updateCartCountDisplay();
 
     // Add global methods for testing and debugging
     window.testTokenFetch = async function() {
