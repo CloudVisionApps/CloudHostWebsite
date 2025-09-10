@@ -593,15 +593,12 @@
 
                 // Show alternative suggestions if domain is not available
                 if (!isAvailable && alternatives.length > 0) {
-                    const sourceIcon = alternativesSource === 'whmcs' ? 'fa-solid fa-server' : 'fa-solid fa-lightbulb';
-                    const sourceText = alternativesSource === 'whmcs' ? 'Предложения от WHMCS:' : 'Предложения за алтернативи:';
-                    
                     resultHtml += `
                         <div class="mt-3">
                             <h4 class="text-sm font-medium text-white mb-2 flex items-center gap-2">
-                                <i class="${sourceIcon} text-[#1683ab]"></i>
-                                ${sourceText}
-                                ${alternativesSource === 'whmcs' ? '<span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">WHMCS</span>' : ''}
+                                <i class="fa-solid fa-server text-[#1683ab]"></i>
+                                Предложения от WHMCS:
+                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">WHMCS</span>
                             </h4>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     `;
@@ -624,6 +621,15 @@
                     });
                     
                     resultHtml += `
+                            </div>
+                        </div>
+                    `;
+                } else if (!isAvailable && alternatives.length === 0) {
+                    resultHtml += `
+                        <div class="mt-3 p-3 bg-white/[0.05] rounded-lg border border-white/10">
+                            <div class="flex items-center gap-2 text-gray-400">
+                                <i class="fa-solid fa-info-circle"></i>
+                                <span class="text-sm">Няма налични предложения от WHMCS за този домейн</span>
                             </div>
                         </div>
                     `;

@@ -119,11 +119,10 @@ class WhoisWhmcsService
 
     /**
      * Get alternative domain suggestions when a domain is not available
-     * Prioritizes WHMCS API suggestions, falls back to generated alternatives
+     * Uses only WHMCS API suggestions
      */
     public function getAlternativeSuggestions(string $domain): array
     {
-        // First, try to get suggestions from WHMCS API
         try {
             $whmcsSuggestions = $this->getDomainSuggestions($domain);
             if (!empty($whmcsSuggestions)) {
@@ -134,22 +133,22 @@ class WhoisWhmcsService
                 return array_slice($whmcsSuggestions, 0, 10);
             }
         } catch (\Exception $e) {
-            Log::warning('WHMCS suggestions failed, using fallback', [
+            Log::warning('WHMCS suggestions failed', [
                 'domain' => $domain,
                 'error' => $e->getMessage()
             ]);
         }
 
-        // Fallback to generated alternatives if WHMCS doesn't provide suggestions
-        return $this->generateAlternativeSuggestions($domain);
+        // Return empty array if WHMCS doesn't provide suggestions
+        return [];
     }
 
     /**
      * Get alternative suggestions with source information
+     * Uses only WHMCS API suggestions
      */
     public function getAlternativeSuggestionsWithSource(string $domain): array
     {
-        // First, try to get suggestions from WHMCS API
         try {
             $whmcsSuggestions = $this->getDomainSuggestions($domain);
             if (!empty($whmcsSuggestions)) {
@@ -163,77 +162,19 @@ class WhoisWhmcsService
                 ];
             }
         } catch (\Exception $e) {
-            Log::warning('WHMCS suggestions failed, using fallback', [
+            Log::warning('WHMCS suggestions failed', [
                 'domain' => $domain,
                 'error' => $e->getMessage()
             ]);
         }
 
-        // Fallback to generated alternatives if WHMCS doesn't provide suggestions
+        // Return empty suggestions if WHMCS doesn't provide any
         return [
-            'suggestions' => $this->generateAlternativeSuggestions($domain),
-            'source' => 'generated'
+            'suggestions' => [],
+            'source' => 'whmcs'
         ];
     }
 
-    /**
-     * Generate alternative domain suggestions as fallback
-     */
-    protected function generateAlternativeSuggestions(string $domain): array
-    {
-        // Extract domain name and TLD
-        $parts = explode('.', $domain);
-        if (count($parts) < 2) {
-            return [];
-        }
-        
-        $domainName = $parts[0];
-        $tld = '.' . $parts[1];
-        
-        // Get available TLDs from database for alternative suggestions
-        $availableTlds = \App\Models\Domain::pluck('tld')->toArray();
-        
-        // Generate alternative suggestions
-        $alternatives = [
-            // Add numbers
-            $domainName . '1' . $tld,
-            $domainName . '2' . $tld,
-            $domainName . '2024' . $tld,
-            $domainName . '2025' . $tld,
-            
-            // Add common prefixes/suffixes
-            'my' . $domainName . $tld,
-            'get' . $domainName . $tld,
-            $domainName . 'online' . $tld,
-            $domainName . 'site' . $tld,
-            $domainName . 'app' . $tld,
-            
-            // Add hyphens
-            str_replace('', '-', $domainName) . $tld,
-            
-            // Different TLDs
-            $domainName . '.com',
-            $domainName . '.net',
-            $domainName . '.org',
-            $domainName . '.co',
-            $domainName . '.io',
-        ];
-        
-        // Filter out the original domain and limit suggestions
-        $alternatives = array_filter($alternatives, function($alt) use ($domain) {
-            return $alt !== $domain;
-        });
-        
-        // Add some random TLD suggestions from available TLDs
-        $randomTlds = array_slice($availableTlds, 0, 5);
-        foreach ($randomTlds as $randomTld) {
-            if ($randomTld !== $tld) {
-                $alternatives[] = $domainName . $randomTld;
-            }
-        }
-        
-        return array_slice($alternatives, 0, 10);
-    }
 
     /**
      * Call WHMCS API
