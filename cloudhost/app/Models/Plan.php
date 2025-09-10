@@ -50,19 +50,19 @@ class Plan extends Model
         'feature_settings' => 'array',
     ];
 
-    protected function monthlyPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string $value) => number_format($value, 2),
-        );
-    }
-
-    protected function yearlyPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string $value) => $value ? number_format($value, 2) : null,
-        );
-    }
+//    protected function monthlyPrice(): Attribute
+//    {
+//        return Attribute::make(
+//            get: fn (string $value) => number_format($value, 2),
+//        );
+//    }
+//
+//    protected function yearlyPrice(): Attribute
+//    {
+//        return Attribute::make(
+//            get: fn (string $value) => $value ? number_format($value, 2) : null,
+//        );
+//    }
 
     public function getFormattedMonthlyPriceAttribute(): string
     {

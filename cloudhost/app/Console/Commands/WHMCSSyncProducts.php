@@ -129,23 +129,31 @@ class WHMCSSyncProducts extends Command
                 'group_id' => $defaultGroup->id,
             ];
 
+            // Check if plan already exists by name or slug
+            $existingPlan = Plan::where('name', $productData['name'])
+                ->orWhere('slug', $productData['slug'])
+                ->first();
+
             if ($dryRun) {
-                $exists = Plan::where('name', $productData['name'])->exists();
-                $action = $exists ? 'UPDATE' : 'CREATE';
-                $this->line("[DRY-RUN] PRODUCT {$action}: {$productData['name']} - {$currency} {$monthlyPrice}/month");
+                $action = $existingPlan ? 'UPDATE' : 'CREATE';
+                $conflict = $existingPlan && $existingPlan->name !== $productData['name'] ? ' (SLUG CONFLICT)' : '';
+                $this->line("[DRY-RUN] PRODUCT {$action}: {$productData['name']} - {$currency} {$monthlyPrice}/month{$conflict}");
                 $syncedProducts++;
                 continue;
             }
 
-            $plan = Plan::updateOrCreate(
-                ['name' => $productData['name']],
-                $productData
-            );
-
-            if ($plan->wasRecentlyCreated) {
-                $createdProducts++;
-            } else {
+            if ($existingPlan) {
+                // Check for slug conflicts
+                if ($existingPlan->name !== $productData['name']) {
+                    $this->warn("Slug conflict: Plan '{$existingPlan->name}' already has slug '{$productData['slug']}', updating instead of creating '{$productData['name']}'");
+                }
+                // Update existing plan
+                $existingPlan->update($productData);
                 $updatedProducts++;
+            } else {
+                // Create new plan
+                $plan = Plan::create($productData);
+                $createdProducts++;
             }
             $syncedProducts++;
         }
