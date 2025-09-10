@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Services\WhoisService;
+use App\Services\WhoisWhmcsService;
 
 class DomainController extends Controller
 {
-    protected $whoisService;
+    protected $whmcsService;
 
-    public function __construct(WhoisService $whoisService)
+    public function __construct(WhoisWhmcsService $whmcsService)
     {
-        $this->whoisService = $whoisService;
+        $this->whmcsService = $whmcsService;
     }
 
     /**
-     * Check domain availability using WHOIS
+     * Check domain availability using WHMCS API
      */
     public function checkAvailability(Request $request): JsonResponse
     {
@@ -30,7 +30,7 @@ class DomainController extends Controller
         $cacheKey = 'domain_check_' . $request->ip();
         $requests = cache()->get($cacheKey, 0);
 
-        if ($requests >= 30) { // Max 10 requests per minute
+        if ($requests >= 300) { // Max 30 requests per minute
             return response()->json([
                 'success' => false,
                 'domain' => $domain,
@@ -43,7 +43,8 @@ class DomainController extends Controller
         cache()->put($cacheKey, $requests + 1, 60); // 1 minute cache
 
         try {
-            $result = $this->whoisService->checkDomainAvailability($domain);
+            // Use WHMCS API for domain availability checking
+            $result = $this->whmcsService->checkDomainAvailability($domain);
 
             return response()->json([
                 'success' => true,
@@ -56,6 +57,11 @@ class DomainController extends Controller
                     : 'Домейнът е зает'
             ]);
         } catch (\Exception $e) {
+            \Log::error('WHMCS domain check failed', [
+                'domain' => $domain,
+                'error' => $e->getMessage()
+            ]);
+
             return response()->json([
                 'success' => false,
                 'domain' => $domain,
@@ -66,7 +72,7 @@ class DomainController extends Controller
     }
 
     /**
-     * Get domain suggestions based on search query
+     * Get domain suggestions using WHMCS API
      */
     public function getSuggestions(Request $request): JsonResponse
     {
@@ -79,35 +85,48 @@ class DomainController extends Controller
             ]);
         }
 
-        // Extract domain name and TLD
-        $parts = explode('.', $query);
-        if (count($parts) < 2) {
+        try {
+            // Use WHMCS domain suggestions
+            $suggestions = $this->whmcsService->getDomainSuggestions($query);
+
             return response()->json([
                 'success' => true,
-                'suggestions' => []
+                'suggestions' => array_slice($suggestions, 0, 10)
             ]);
+        } catch (\Exception $e) {
+            \Log::error('WHMCS suggestions failed', [
+                'query' => $query,
+                'error' => $e->getMessage()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'error' => 'Failed to fetch domain suggestions',
+                'message' => 'Please try again later'
+            ], 500);
         }
+    }
 
-        $domainName = $parts[0];
-        $tld = '.' . $parts[1];
+    /**
+     * Get domain pricing from WHMCS
+     */
+    public function getPricing(Request $request): JsonResponse
+    {
+        $tld = $request->input('tld');
 
-        // Get available TLDs from database
-        $availableTlds = \App\Models\Domain::pluck('tld')->toArray();
+        try {
+            $pricing = $this->whmcsService->getDomainPricing($tld);
 
-        $suggestions = [];
-        foreach ($availableTlds as $availableTld) {
-            if (strpos($availableTld, $tld) !== false) {
-                $suggestions[] = [
-                    'domain' => $domainName . $availableTld,
-                    'tld' => $availableTld,
-                    'type' => 'tld_suggestion'
-                ];
-            }
+            return response()->json([
+                'success' => true,
+                'pricing' => $pricing
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Failed to fetch pricing information',
+                'message' => 'Please try again later'
+            ], 500);
         }
-
-        return response()->json([
-            'success' => true,
-            'suggestions' => array_slice($suggestions, 0, 10)
-        ]);
     }
 }

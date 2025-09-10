@@ -28,6 +28,7 @@ Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscrib
 // Domain routes
 Route::post('/domains/check-availability', [DomainController::class, 'checkAvailability'])->name('domains.check-availability');
 Route::get('/domains/suggestions', [DomainController::class, 'getSuggestions'])->name('domains.suggestions');
+Route::get('/domains/pricing', [DomainController::class, 'getPricing'])->name('domains.pricing');
 
 // Contact form routes
 Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.submit');

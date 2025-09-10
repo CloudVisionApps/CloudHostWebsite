@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'whmcs' => [
+        'api_url' => env('WHMCS_API_URL'),
+        'api_identifier' => env('WHMCS_API_IDENTIFIER'),
+        'api_secret' => env('WHMCS_API_SECRET'),
+        'api_access_key' => env('WHMCS_API_ACCESS_KEY'),
+        'timeout' => env('WHMCS_API_TIMEOUT', 30),
+    ],
+
 ];
