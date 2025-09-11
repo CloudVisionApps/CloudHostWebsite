@@ -10,6 +10,7 @@
 
         <div class="grid {{$gridCols}} gap-8">
 
+            @if(!empty($sections))
             @foreach($sections as $section)
             <div class="relative {{ $section->url ? 'cursor-pointer group/section' : '' }} {{ $section->url ? 'hover:bg-gradient-to-br from-white/5 to-white/10 rounded-2xl p-6 -m-6 transition-all duration-500 ease-out' : '' }} {{ $section->url ? 'hover:shadow-xl hover:shadow-black/20' : '' }}">
                 @if($section->url)
@@ -17,9 +18,11 @@
                 @endif
 
                 <div class="flex items-start gap-4">
+                    @if($section->icon)
                     <div class="w-12 h-12 from-[#1683ab] to-[#1e9975] bg-gradient-to-br rounded-2xl flex items-center justify-center shadow-lg {{ $section->url ? 'group-hover/section:scale-110 group-hover/section:rotate-3 transition-all duration-500 ease-out' : '' }}">
                         <x-icon class="text-white w-6 h-6" :name="$section->icon" />
                     </div>
+                    @endif
                     <div class="flex-1">
                         <h3 class="text-white font-bold text-xl mb-2 {{ $section->url ? 'group-hover/section:text-[#fff] transition-colors duration-500' : '' }}">
                             {{$section->name}}
@@ -54,6 +57,7 @@
                 @endif
             </div>
             @endforeach
+            @endif
 
 
         </div>
